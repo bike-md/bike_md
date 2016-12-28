@@ -1,0 +1,6 @@
+.DS_store
+.direnv
+__pycache__
+.cache
+scrap.py
+.envrc
