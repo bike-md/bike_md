@@ -8,7 +8,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1',  'pacific-depths-50874.herokuapp.com']
 
 INSTALLED_APPS = [
     'diag_app.apps.DiagAppConfig',
