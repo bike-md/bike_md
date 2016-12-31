@@ -13,22 +13,7 @@ class Tech(models.Model):
 
 class Rating(models.Model):
     tech = models.ForeignKey(Tech)
-    value = models.IntegerField(default=1)
-
-
-class Solution(models.Model):
-    description = models.TextField(max_length=500)
-    time_required = models.FloatField(default=0)
-    parts_cost = models.DecimalField(max_digits=6, decimal_places=2)
-    tech = models.ForeignKey(Tech)
-    posted = models.DateTimeField(auto_now=True)
-    score = models.IntegerField(default=0)
-
-
-class Vote(models.Model):
-    tech = models.ForeignKey(Tech)
-    solution = models.ForeignKey(Solution)
-    value = models.IntegerField(default=1)
+    value = models.IntegerField(default=5)
 
 
 class System(models.Model):
@@ -38,20 +23,51 @@ class System(models.Model):
 class Brand(models.Model):
     name = models.CharField(max_length=25)
 
+    def __repr__(self):
+        return str(self.name)
+
 
 class Model(models.Model):
-    name = models.CharField(max_length=25)
-    motor_size = models.IntegerField(default=0)
+    name = models.CharField(max_length=40)
     brand = models.ForeignKey(Brand)
     year = models.IntegerField(default=0)
 
+    @property
+    def url(self):
+        return reverse('model_detail', args=[self.pk])
+
+    def __repr__(self):
+        return str(self.name)
+
 
 class Problem(models.Model):
+    title = models.CharField(max_length=65)
     system = models.ForeignKey(System)
-    solution = models.ForeignKey(Solution)
     description = models.TextField(max_length=500)
     tech = models.ForeignKey(Tech)
+    model = models.ForeignKey(Model)
     posted = models.DateTimeField(auto_now=True)
+
+    @property
+    def url(self):
+        return reverse('problem_detail', args=[self.pk])
+
+
+
+class Solution(models.Model):
+    description = models.TextField(max_length=500)
+    time_required = models.FloatField(default=0)
+    parts_cost = models.DecimalField(max_digits=6, decimal_places=2)
+    problem = models.ForeignKey(Problem, related_name='solutions')
+    tech = models.ForeignKey(Tech)
+    posted = models.DateTimeField(auto_now=True)
+    score = models.IntegerField(default=0)
+
+
+class Vote(models.Model):
+    tech = models.ForeignKey(Tech)
+    solution = models.ForeignKey(Solution, related_name='votes')
+    value = models.IntegerField(default=1)
 
 
 class Problem_Model(models.Model):

@@ -1,0 +1,56 @@
+<!DOCTYPE html>.
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bike Detail</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{bike.name}}</h4>
+                    <h4>{{bike.year}}</h4>
+                    <br>
+                    <br>
+                    <form class="newProblem" action="" method="POST">
+                        {%csrf_token%}
+                        <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
+                        <input id="bikeId" type="hidden" name="bike_id" value="{{bike.id}}">
+                        <h4>Enter a title for your post:</h4>
+                        <input id="probTitle" type="text" name="probTitle" value="Enter Problem title">
+                        <br>
+                        <br>
+                        <h4>Choose System:</h4>
+                            <div id="probSystem"></div>
+                        <br>
+                        <h4>Describe you problem:</h4>
+
+                        <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
+                        <br>
+                        <input id="newProbSubmit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script id="post-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select id="probSystem">
+                    {% verbatim %}
+                    {{#each .}}
+                        <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
+                    {{/each}}
+                    {% endverbatim %}
+                </select>
+            </article>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/bike_detail.js' %}"></script>
+    </body>
+</html>

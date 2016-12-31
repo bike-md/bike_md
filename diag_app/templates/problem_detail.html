@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Problem Detail</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{problem.title}}</h4>
+                    <h4>{{problem.text}}</h4>
+                    <br>
+                    <br>
+                    <form class="newSolution" action="" method="POST">
+                        {%csrf_token%}
+                        <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
+                        <input id="problemId" type="hidden" name="bike_id" value="{{problem.id}}">
+
+                        <h4>Enter the time required for your solution:</h4>
+                        <input id="solutionTime" type="text" name="solutionTime" value="Enter time here">
+                        <br>
+
+                        <h4>Enter the parts cost, if any, for this solution:</h4>
+                        <input id="partsCost" type="text" name="partsCost" value="Enter cost here">
+                        <br>
+
+                        <h4>Describe your solution:</h4>
+                        <textarea id="solutionText" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+                        <br>
+
+                        <input id="newSolutionSubmit" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/problem_detail.js' %}"></script>
+    </body>
+</html>

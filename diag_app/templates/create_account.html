@@ -2,16 +2,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Login</title>
+        <title>Create Account</title>
     </head>
     <body>
+        <h1>Create New Account</h1>
         <form method="post">
             {%csrf_token%}
-            {{form.as_p}}
-            <button id="button" type="submit">Login</button>
-        </form>
-
-        <form action="/create_account/">
+            {{user_form}}
+            {{tech_form}}
             <input type="submit" value="Create Account">
         </form>
     </body>

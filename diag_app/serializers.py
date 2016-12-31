@@ -17,18 +17,22 @@ class VoteSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ProblemSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Problem
-        fields = "__all__"
-
-
 class  SolutionSerializer(serializers.ModelSerializer):
+    votes = VoteSerializer(many=True, read_only=True)
 
     class Meta:
         model = Solution
-        fields = "__all__"
+        fields = ['votes', 'id', 'description', 'time_required', 'parts_cost',
+                  'posted', 'score', 'problem', 'tech']
+
+
+class ProblemSerializer(serializers.ModelSerializer):
+    solutions = SolutionSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Problem
+        fields = ['solutions', 'description', 'posted', 'system', 'model',
+                  'tech', 'id', 'title', 'url']
 
 
 class RatingSerializer(serializers.ModelSerializer):
@@ -49,11 +53,11 @@ class BrandSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Brand
-        fields = "__all__"
+        fields = ['id', 'url', 'name']
 
 
 class ModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Model
-        fields = "__all__"
+        fields = ['brand', 'id', 'url', 'year', 'name']
