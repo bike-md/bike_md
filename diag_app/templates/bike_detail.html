@@ -11,13 +11,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>{{bike.name}}</h4>
-                    <h4>{{bike.year}}</h4>
+                    <div id="bikeDetail"></div>
                     <br>
                     <br>
                     <form class="newProblem" action="" method="POST">
                         {%csrf_token%}
-                        <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
+                        <input id="userId" type="hidden" name="user_id" value="{{request.user.tech}}">
                         <input id="bikeId" type="hidden" name="bike_id" value="{{bike.id}}">
                         <h4>Enter a title for your post:</h4>
                         <input id="probTitle" type="text" name="probTitle" value="Enter Problem title">
@@ -35,6 +34,18 @@
                 </div>
             </div>
         </div>
+
+        <script id="bike-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select id="probSystem">
+                    {% verbatim %}
+                    {{#each .}}
+                    
+                    {{/each}}
+                    {% endverbatim %}
+                </select>
+            </article>
+        </script>
 
 
         <script id="post-template" type="text/x-handlebars-template">

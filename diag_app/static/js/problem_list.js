@@ -43,3 +43,13 @@ function getProblems(){
 }
 
 getProblems()
+
+
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/problem_detail/' + id
+    console.log(url)
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})

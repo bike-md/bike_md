@@ -29,6 +29,38 @@ $.ajaxSetup({
 });
 
 
+function currentURL(){
+    var url = window.location.href
+    showBike(url)
+
+}
+currentURL()
+
+
+
+function showBike(url){
+    var id = url.split('/')
+    id = id[5]
+    console.log(id)
+    var url = '/api/problems/' + id
+    $.ajax({
+        url: url,
+        type: 'GET',
+    }).done(function(results){
+        console.log(results.tech.user.username)
+        var source1 = $("#problem-template").html()
+        var template1 = Handlebars.compile(source1)
+        var html1 = template1(results)
+        $("#problem").append(html1)
+        var source2 = $("#solutions-template").html()
+        var template2 = Handlebars.compile(source2)
+        var html2 = template2(results.solutions)
+        $("#solutions").append(html2)
+
+    })
+}
+
+
 function loadSystems(){
     var dropdown = $("#probSystem")
     $.ajax({
@@ -50,7 +82,7 @@ function postProblem(){
     var user = $("#userId").val()
     var bike = $("#bikeId").val()
     var header = $("#probTitle").val()
-    console.log(header)
+    console.log(user)
     var context = {
         system: sys,
         description: text,
@@ -62,7 +94,8 @@ function postProblem(){
     $.ajax({
         url: '/api/problems/',
         type: 'POST',
-        data: context,
+
+        data: JSON.stringify(context),
     }).done(function(results){
         console.log(results)
     })

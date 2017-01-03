@@ -19,7 +19,7 @@
             <article class="post-container">
                     {% verbatim %}
                     {{#each .}}
-                    <a href="{{this.url}}"><h4>{{this.title}}</h4></a>
+                    <h4>{{{ linkURL this }}}</h4>
                     {{/each}}
                     {% endverbatim %}
             </article>
