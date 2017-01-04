@@ -59,33 +59,6 @@ $("#loadBikes").click(loadModels)
 
 
 
-// update solution score
-function updateScore(){
-    var solutionId = 2
-    var url = '/api/solutions/' + solutionId + '/'
-    $.ajax({
-        url: url,
-        type: 'GET'
-    }).done(function(results){
-        var votes = results.votes
-        var currentScore = results.score
-        var voteTotal = 0
-        for (var i=0; i < votes.length; i++){
-            voteTotal += votes[i].value
-        }
-        currentScore = voteTotal
-        var newScore = {
-            score: currentScore
-        }
-        $.ajax({
-            url: url,
-            type: 'PATCH',
-            data: newScore,
-        }).done(function(results){
-        })
-    })
-}
-$("#updateScore").click(updateScore)
 
 
 

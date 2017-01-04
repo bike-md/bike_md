@@ -32,9 +32,9 @@ class Model(models.Model):
     brand = models.ForeignKey(Brand)
     year = models.IntegerField(default=0)
 
-    @property
-    def url(self):
-        return reverse('model_detail', args=[self.pk])
+    # @property
+    # def url(self):
+    #     return reverse('model_detail', args=[self.pk])
 
     def __repr__(self):
         return str(self.name)
@@ -48,9 +48,9 @@ class Problem(models.Model):
     model = models.ForeignKey(Model)
     posted = models.DateTimeField(auto_now=True)
 
-    @property
-    def url(self):
-        return reverse('problem_detail', args=[self.pk])
+    # @property
+    # def url(self):
+    #     return reverse('problem_detail', args=[self.pk])
 
 
 
@@ -62,6 +62,13 @@ class Solution(models.Model):
     tech = models.ForeignKey(Tech)
     posted = models.DateTimeField(auto_now=True)
     score = models.IntegerField(default=0)
+
+
+class Commit(models.Model):
+    solution = models.ForeignKey(Solution, related_name='commits')
+    tech = models.ForeignKey(Tech)
+    posted = models.DateTimeField(auto_now=True)
+    text = models.TextField(max_length=200)
 
 
 class Vote(models.Model):

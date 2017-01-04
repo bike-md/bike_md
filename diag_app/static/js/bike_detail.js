@@ -29,6 +29,31 @@ $.ajaxSetup({
 });
 
 
+function currentURL(){
+    var url = window.location.href
+    showBike(url)
+
+}
+currentURL()
+
+
+function showBike(url){
+    var id = url.split('/')
+    id = id[5]
+    var url = '/api/models/' + id
+    $.ajax({
+        url: url,
+        type: 'GET',
+    }).done(function(results){
+        var source = $("#bike-template").html()
+        var template = Handlebars.compile(source)
+        var html = template(results)
+        $("#bikeDetail").append(html)
+
+    })
+}
+
+
 function loadSystems(){
     var dropdown = $("#probSystem")
     $.ajax({
@@ -50,7 +75,7 @@ function postProblem(){
     var user = $("#userId").val()
     var bike = $("#bikeId").val()
     var header = $("#probTitle").val()
-    console.log(header)
+    console.log(user)
     var context = {
         system: sys,
         description: text,
@@ -66,6 +91,6 @@ function postProblem(){
     }).done(function(results){
         console.log(results)
     })
-
 }
+
 $("#newProbSubmit").click(postProblem)

@@ -15,17 +15,12 @@ import django_filters
 
 
 
-
 def index(request):
     return render(request, 'index.html')
 
 
 def test(request):
     return render(request, 'load.html')
-
-
-# def problem_list(request):
-#     return render(request, 'problem_list')
 
 
 class SystemViewSet(viewsets.ModelViewSet):
@@ -49,28 +44,25 @@ class ModelViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-def model_page(request, key):
-    bike = models.Model.objects.get(pk=key)
-    return render(request, 'bike_detail.html', {'bike': bike})
-
-
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
+class ProblemFilter(django_filters.rest_framework.FilterSet):
+    class Meta:
+        model = Problem
+        fields = ['system', 'model']
+
+
 class ProblemViewSet(viewsets.ModelViewSet):
     template_name = 'problem_list.html'
     queryset = Problem.objects.all()
     serializer_class = ProblemSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_class = ProblemFilter
     permission_classes = (permissions.IsAuthenticated,)
-
-
-def problem_page(request, key):
-    problem = models.Problem.objects.get(pk=key)
-    return render(request, 'problem_detail.html', {'problem': problem})
-
 
 
 class SolutionViewSet(viewsets.ModelViewSet):
@@ -79,9 +71,18 @@ class SolutionViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
 
+class VoteFilter(django_filters.rest_framework.FilterSet):
+
+    class Meta:
+        model = Vote
+        fields = ['solution', 'tech']
+
+
 class VoteViewSet(viewsets.ModelViewSet):
     queryset = Vote.objects.all()
     serializer_class = VoteSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_class = VoteFilter
     permission_classes = (permissions.IsAuthenticated,)
 
 
@@ -112,7 +113,6 @@ def create_account(request):
             return HttpResponseRedirect('/diag_app/brands/')
     return render(request, 'create_account.html', {'user_form': user_form,
                   'tech_form': tech_form})
-
 
 
 class RatingViewSet(viewsets.ModelViewSet):
