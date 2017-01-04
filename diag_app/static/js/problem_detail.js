@@ -45,11 +45,12 @@ function showProblem(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        console.log(results.tech.user.username)
+        // console.log(results)
         var source1 = $("#problem-template").html()
         var template1 = Handlebars.compile(source1)
         var html1 = template1(results)
         $("#problem").append(html1)
+
         var source2 = $("#solutions-template").html()
         var template2 = Handlebars.compile(source2)
         var html2 = template2(results.solutions)
@@ -57,7 +58,6 @@ function showProblem(url){
 
     })
 }
-
 
 
 function postSolution(){
@@ -101,7 +101,31 @@ function postVote(id, value){
     }).done(function(results){
         updateScore(id, value)
     })
+}
 
+// better way to do this?
+function validateVote(solutionId, value){
+    var user = $("#userId").val()
+    var voted = []
+    var vote = {}
+    $.ajax({
+        url: '/api/votes?solution=' + solutionId,
+        type: 'GET',
+    }).done(function(results){
+        var votes = results.results
+        for (var i=0; i < votes.length; i++){
+            if(user == votes[i].tech){
+                vote['tech'] = user
+                voted.push(vote)
+            }
+        }
+        if(voted.length > 0){
+            console.log("You've already voted for that one!")
+            alert("You've already voted for that one!")
+        }else{
+            postVote(solutionId, value)
+        }
+    })
 }
 
 
@@ -127,6 +151,25 @@ function updateScore(id, voteValue){
 
 
 }
+
+
+// function postCommit(id, ){
+//     var user = $("#userId").val()
+//     var voteValue = value
+//     var votedFor = id
+//     var context = {
+//         tech: user,
+//         value: voteValue,
+//         solution: votedFor,
+//     }
+//     $.ajax({
+//         url: '/api/votes/',
+//         type: 'POST',
+//         data: context,
+//     }).done(function(results){
+//         updateScore(id, value)
+//     })
+// }
 
 
 Handlebars.registerHelper('formatTime', function (posted) {

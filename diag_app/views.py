@@ -44,11 +44,6 @@ class ModelViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-# def model_page(request, key):
-#     bike = models.Model.objects.get(pk=key)
-#     return render(request, 'bike_detail.html', {'bike': bike})
-
-
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brand.objects.all()
     serializer_class = BrandSerializer
@@ -58,7 +53,7 @@ class BrandViewSet(viewsets.ModelViewSet):
 class ProblemFilter(django_filters.rest_framework.FilterSet):
     class Meta:
         model = Problem
-        fields = ['system']
+        fields = ['system', 'model']
 
 
 class ProblemViewSet(viewsets.ModelViewSet):

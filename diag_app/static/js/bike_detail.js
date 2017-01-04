@@ -37,25 +37,18 @@ function currentURL(){
 currentURL()
 
 
-
 function showBike(url){
     var id = url.split('/')
     id = id[5]
-    console.log(id)
-    var url = '/api/problems/' + id
+    var url = '/api/models/' + id
     $.ajax({
         url: url,
         type: 'GET',
     }).done(function(results){
-        console.log(results.tech.user.username)
-        var source1 = $("#problem-template").html()
-        var template1 = Handlebars.compile(source1)
-        var html1 = template1(results)
-        $("#problem").append(html1)
-        var source2 = $("#solutions-template").html()
-        var template2 = Handlebars.compile(source2)
-        var html2 = template2(results.solutions)
-        $("#solutions").append(html2)
+        var source = $("#bike-template").html()
+        var template = Handlebars.compile(source)
+        var html = template(results)
+        $("#bikeDetail").append(html)
 
     })
 }
@@ -94,11 +87,10 @@ function postProblem(){
     $.ajax({
         url: '/api/problems/',
         type: 'POST',
-
-        data: JSON.stringify(context),
+        data: context,
     }).done(function(results){
         console.log(results)
     })
-
 }
+
 $("#newProbSubmit").click(postProblem)

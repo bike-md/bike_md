@@ -70,10 +70,10 @@
                     <p>Date: {{{ formatTime posted }}}</p>
                     <p>Posted by: {{ tech.user.username }}</p>
                     <p id="solutionScore{{id}}">Score: {{score}}</p>
-                    <button type="submit" onclick="postVote({{id}}, 1)">
+                    <button type="submit" onclick="validateVote({{id}}, 1)">
                         <span class="glyphicon glyphicon-thumbs-up"></span>
                     </button>
-                    <button type="submit" onclick="postVote({{id}}, -1)">
+                    <button type="submit" onclick="validateVote({{id}}, -1)">
                         <span class="glyphicon glyphicon-thumbs-down"></span>
                     </button>
                     {{/each}}

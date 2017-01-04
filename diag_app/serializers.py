@@ -32,6 +32,15 @@ class VoteSerializer(serializers.ModelSerializer):
         model = Vote
         fields = "__all__"
 
+    def validate(self, data):
+        instance = self.instance
+        if instance is not None:
+            originalOwner = instance.tech
+            dataOwner = data.get('tech')
+            if dataOwner is not None and (originalOwner != dataOwner):
+                raise ValidationError('Cannot vote more that once!')
+        return data
+
 
 class  SolutionSerializer(serializers.ModelSerializer):
     votes = VoteSerializer(many=True, read_only=True)
@@ -51,7 +60,7 @@ class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
         fields = ['solutions', 'description', 'posted', 'system', 'model',
-                  'id', 'title', 'url', 'tech', 'tech_id']
+                  'id', 'title', 'url', 'tech']
 
 
 class RatingSerializer(serializers.ModelSerializer):
