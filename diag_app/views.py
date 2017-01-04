@@ -16,7 +16,7 @@ import django_filters
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'main.html')
 
 
 def test(request):

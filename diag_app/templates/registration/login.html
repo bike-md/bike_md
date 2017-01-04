@@ -5,11 +5,14 @@
         <title>Login</title>
     </head>
     <body>
-        <form method="post">
+
+      <!-- leave this here  -->
+        <form class="" method="post">
             {%csrf_token%}
             {{form.as_p}}
             <button id="button" type="submit">Login</button>
         </form>
+        <!-- end of this -->
 
         <form action="/create_account/">
             <input type="submit" value="Create Account">
