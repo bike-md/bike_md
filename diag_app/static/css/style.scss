@@ -1,0 +1,30 @@
+@import "index.scss";
+@import "createaccount.scss";
+@import "main.scss";
+@import "bikedetails.scss";
+@import "problem-detail-solution.scss";
+@import "problem-detail.scss";
+@import "profile.scss";
+@import "system-problem-list.scss";
+
+$charcoal: #313237;
+$seafoam: #a8bdba;
+$golden: #b68d58;
+
+@mixin regularfont{
+  font-size:1.5rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:2.25rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:3.75rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
