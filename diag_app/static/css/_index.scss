@@ -1,0 +1,135 @@
+$charcoal: #313237;
+$seafoam: #a8bdba;
+$golden: #b68d58;
+
+@mixin regularfont{
+  font-size:1.5rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:2.25rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin largefont{
+  font-size:3.75rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+
+
+.indexbody{
+  background-image:
+  linear-gradient(
+        rgba(black, 0.25),
+        rgba(black, 0.25)
+      ),
+  url("../images/index-background.jpg");
+  background-size:cover;
+
+  margin:0;
+}
+
+  .indexnav{
+    height:640px;
+    width:12%;
+    margin-left:10%;
+    background-color:rgba(white, .25);
+    padding:1%;
+    float:left;
+    overflow:hidden;
+
+    ul{
+      text-align:right;
+      text-transform:uppercase;
+      padding:0;
+      margin:0;
+      margin-bottom:15%;
+      float:left;
+
+      li{
+        clear:both;
+        list-style-type:none;
+        padding-bottom:1%;
+        @include regularfont;
+
+        a{
+          text-decoration:none;
+          color:white;
+          position:relative;
+        }
+
+        a:after{
+          display:block;
+          position:absolute;
+          bottom:0px;
+          height:30px;
+          width:0px;
+          background-color:$golden;
+          transition:width .5s;
+          content:"";
+          z-index:-1;
+        }
+
+        .link1:hover:after{
+          width:155%;
+        }
+
+        .link2:hover:after{
+          width:165%;
+        }
+
+        .link3:hover:after{
+          width:138%;
+        }
+      }
+
+      .logobox{
+        height:300px;
+        width:100%;
+        margin-bottom:28%;
+
+        .logo{
+          width:100%;
+        }
+      }
+    }
+  }
+
+
+
+  form input{
+    height:40px;
+    width:97%;
+    margin-bottom:10px;
+    text-align:center;
+    text-transform:uppercase;
+  }
+
+  .button{
+    height:70px;
+    width:100%;
+    padding-top:9%;
+    box-sizing:border-box;
+    background-color:$seafoam;
+    @include mediumfont;
+    text-align:center;
+
+    a{
+      text-decoration:none;
+      color:$charcoal;
+      padding:15%;
+    }
+
+    a:hover{
+      color:$seafoam;
+    }
+  }
+
+  .button:hover{
+    background-color:$charcoal;
+  }

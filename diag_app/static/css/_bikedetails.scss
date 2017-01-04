@@ -1,0 +1,183 @@
+$charcoal: #313237;
+$seafoam: #a8bdba;
+$golden: #b68d58;
+
+@mixin regularfont{
+  font-size:1.5rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:2.25rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin largefont{
+  font-size:3.75rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin verticalcenter{
+  position: relative;
+  top: 43%;
+  transform: translateY(-43%);
+}
+
+
+.bikedetailsbody{
+  background:
+  linear-gradient(
+        rgba(black, 0.25),
+        rgba(black, 0.25)
+      ),
+  url("../images/bikedetails-background.png");
+  background-size:cover;
+  margin:0;
+}
+
+header{
+  background:linear-gradient(
+        rgba(white, 0.15),
+        rgba(white, 0.15)
+      );
+  height:58px;
+  padding:1% 2%;
+
+.templatelogo{
+  width:20%;
+  float:left;
+}
+
+.search{
+  width:20%;
+  margin:0 3%;
+  float:left;
+  position:relative;
+  bottom:10px;
+}
+
+.templatenav{
+
+    li{
+      list-style-type:none;
+      display:inline-block;
+      padding:0 2%;
+      margin:0;
+      float:left;
+
+      a{
+        text-decoration:none;
+        color:white;
+        @include regularfont;
+        position:relative;
+      }
+
+
+      a:after{
+        display:block;
+        position:absolute;
+        bottom:30px;
+        height:5px;
+        width:0px;
+        background-color:$golden;
+        transition:width .5s;
+        content:"";
+      }
+
+      .link1:hover:after{
+        width:100%;
+      }
+
+      .link2:hover:after{
+        width:100%;
+      }
+
+      .link3:hover:after{
+        width:100%;
+      }
+    }
+  }
+}
+
+.specs{
+  @include regularfont;
+  color:white;
+  font-weight:200;
+  text-align:center;
+  border:1px solid white;
+  background-color:rgba(black, .25);
+  padding:0 3%;
+  display:inline-block;
+  position:relative;
+  top:50px;
+  left:38%;
+
+  .specstitle{
+    @include mediumfont;
+    color:white;
+    font-weight:500;
+    text-align:center;
+
+  }
+}
+
+.systems{
+  text-align:center;
+  position:relative;
+  top:100px;
+
+    .systitle{
+      @include mediumfont;
+      color:white;
+      font-weight:500;
+    }
+
+    .sys{
+      height:150px;
+      width:150px;
+      margin:0 4%;
+      display:inline-block;
+      background-color:rgba($seafoam, .75);
+      border-radius:100%;
+      padding:1%;
+
+      a{
+        text-align:center;
+        text-decoration:none;
+        @include regularfont;
+        color:white;
+        @include verticalcenter;
+        margin:0;
+      }
+    }
+
+    .sys:hover{
+      background-color:rgba($golden, 1);
+      transform:rotate(360deg);
+      transition:.5s;
+    }
+}
+
+
+
+footer{
+  clear:both;
+  background-color:rgba(white, .15);
+  height:30px;
+  position:absolute;
+  bottom:0;
+  width:100%;
+
+  p{
+    color:white;
+    text-align:center;
+    padding-top:.5%;
+    margin:0;
+    font-family:gill sans;
+    text-transform:uppercase;
+
+  }
+}
