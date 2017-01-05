@@ -84,135 +84,54 @@ form input {
   background-size: cover;
   margin: 0; }
 
-header {
-  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  height: 58px;
-  padding: 1% 2%; }
-  header .templatelogo {
-    width: 20%;
-    float: left; }
-  header .search {
-    width: 20%;
-    margin: 0 3%;
-    float: left;
-    position: relative;
-    bottom: 10px; }
-  header .templatenav li {
-    display: inline-block;
-    padding: 0 2%;
-    margin: 0;
-    float: left; }
-    header .templatenav li a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-      font-family: gill sans;
-      text-transform: uppercase;
-      position: relative; }
-    header .templatenav li a:after {
-      display: block;
-      position: absolute;
-      bottom: 30px;
-      height: 5px;
-      width: 0px;
-      background-color: #b68d58;
-      transition: width .5s;
-      content: ""; }
-    header .templatenav li .link1:hover:after {
-      width: 100%; }
-    header .templatenav li .link2:hover:after {
-      width: 100%; }
-    header .templatenav li .link3:hover:after {
-      width: 100%; }
-
-h3 {
+.diag-main-title {
   font-size: 3.75rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: 500;
   color: white;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 0; }
 
-section {
-  margin: 0 auto; }
-  section h3 {
-    background-color: rgba(0, 0, 0, 0.25);
-    border: 2px solid white;
-    padding: 1%;
-    width: 35%;
-    margin: 0;
-    box-sizing: border-box;
+.outer-box {
+  background-color: rgba(255, 255, 255, 0.25);
+  height: 300px;
+  width: 80%;
+  padding: 1%;
+  margin: 0 auto;
+  position: relative; }
+  .outer-box .diag-select-title {
     font-size: 2.25rem;
     font-family: gill sans;
-    text-transform: uppercase; }
-  section .solutions {
-    float: left;
-    margin-left: 12%; }
-  section .unanswered {
-    float: right;
-    margin-right: 12%; }
-
-footer {
-  clear: both;
-  background-color: rgba(255, 255, 255, 0.15);
-  height: 30px;
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
-  footer p {
+    text-transform: uppercase;
+    font-weight: 500;
     color: white;
     text-align: center;
-    padding-top: .5%;
-    margin: 0;
-    font-family: gill sans;
-    text-transform: uppercase; }
+    margin-top: 0; }
+  .outer-box .diag-select-box {
+    background-color: white;
+    height: 55px;
+    width: 20%;
+    margin: 0 auto; }
+    .outer-box .diag-select-box p {
+      font-size: 1.5rem;
+      font-family: gill sans;
+      text-transform: uppercase;
+      color: #45756e;
+      font-size: 16px;
+      text-align: center;
+      padding-top: 4px; }
+  .outer-box a {
+    text-decoration: none; }
+  .outer-box .diag-select-box:hover {
+    background-color: #45756e; }
+    .outer-box .diag-select-box:hover p {
+      color: white; }
 
 .bikedetailsbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/bikedetails-background.png");
   background-size: cover;
   margin: 0; }
-
-header {
-  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  height: 58px;
-  padding: 1% 2%; }
-  header .templatelogo {
-    width: 20%;
-    float: left; }
-  header .search {
-    width: 20%;
-    margin: 0 3%;
-    float: left;
-    position: relative;
-    bottom: 10px; }
-  header .templatenav li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 0 2%;
-    margin: 0;
-    float: left; }
-    header .templatenav li a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-      font-family: gill sans;
-      text-transform: uppercase;
-      position: relative; }
-    header .templatenav li a:after {
-      display: block;
-      position: absolute;
-      bottom: 30px;
-      height: 5px;
-      width: 0px;
-      background-color: #b68d58;
-      transition: width .5s;
-      content: ""; }
-    header .templatenav li .link1:hover:after {
-      width: 100%; }
-    header .templatenav li .link2:hover:after {
-      width: 100%; }
-    header .templatenav li .link3:hover:after {
-      width: 100%; }
 
 .specs {
   font-size: 1.5rem;
@@ -246,29 +165,71 @@ header {
     text-transform: uppercase;
     color: white;
     font-weight: 500; }
-  .systems .sys {
-    height: 150px;
-    width: 150px;
-    margin: 0 4%;
-    display: inline-block;
-    background-color: rgba(168, 189, 186, 0.75);
-    border-radius: 100%;
-    padding: 1%; }
-    .systems .sys a {
-      text-align: center;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-family: gill sans;
-      text-transform: uppercase;
-      color: white;
-      position: relative;
-      top: 43%;
-      transform: translateY(-43%);
-      margin: 0; }
+  .systems a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+    margin: 0; }
+    .systems a .sys {
+      height: 150px;
+      width: 150px;
+      margin: 0 4%;
+      display: inline-block;
+      background-color: rgba(168, 189, 186, 0.75);
+      border-radius: 100%;
+      padding: 1%; }
   .systems .sys:hover {
     background-color: #b68d58;
     transform: rotate(360deg);
     transition: .5s; }
+
+header {
+  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  height: 58px;
+  padding: 1% 2%; }
+  header .templatelogo {
+    width: 20%;
+    float: left; }
+  header .search {
+    width: 20%;
+    margin: 0 3%;
+    float: left;
+    position: relative;
+    bottom: 10px; }
+  header .templatenav li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 1%;
+    margin: 0;
+    float: left; }
+    header .templatenav li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-family: gill sans;
+      text-transform: uppercase;
+      position: relative; }
+    header .templatenav li a:after {
+      display: block;
+      position: absolute;
+      bottom: 30px;
+      height: 5px;
+      width: 0px;
+      background-color: #b68d58;
+      transition: width .5s;
+      content: ""; }
+    header .templatenav li .link1:hover:after {
+      width: 100%; }
+    header .templatenav li .link2:hover:after {
+      width: 100%; }
+    header .templatenav li .link3:hover:after {
+      width: 100%; }
 
 footer {
   clear: both;
