@@ -1,6 +1,7 @@
 $charcoal: #313237;
 $seafoam: #a8bdba;
 $golden: #b68d58;
+$teal: #45756e;
 
 @mixin regularfont{
   font-size:1.5rem;
@@ -21,6 +22,7 @@ $golden: #b68d58;
 }
 
 
+
 .mainbody{
   background:
   linear-gradient(
@@ -32,119 +34,72 @@ $golden: #b68d58;
   margin:0;
 }
 
-header{
-  background:linear-gradient(
-        rgba(white, 0.15),
-        rgba(white, 0.15)
-      );
-  height:58px;
-  padding:1% 2%;
-
-.templatelogo{
-  width:20%;
-  float:left;
-}
-
-.search{
-  width:20%;
-  margin:0 3%;
-  float:left;
-  position:relative;
-  bottom:10px;
-}
-
-.templatenav{
-
-    li{
-      display:inline-block;
-      padding:0 2%;
-      margin:0;
-      float:left;
-
-      a{
-        text-decoration:none;
-        color:white;
-        @include regularfont;
-        position:relative;
-      }
 
 
-      a:after{
-        display:block;
-        position:absolute;
-        bottom:30px;
-        height:5px;
-        width:0px;
-        background-color:$golden;
-        transition:width .5s;
-        content:"";
-      }
-
-      .link1:hover:after{
-        width:100%;
-      }
-
-      .link2:hover:after{
-        width:100%;
-      }
-
-      .link3:hover:after{
-        width:100%;
-      }
-    }
-  }
-}
-
-
-h3{
+// diagnose title
+.diag-main-title{
   @include largefont;
   font-weight:500;
   color:white;
   text-align:center;
+  margin-bottom:0;
 }
 
-section{
+// .diag-state-circle{
+//   height:10px;
+//   width:10px;
+//   display:inline-block;
+//   text-align:center;
+//   background-color:rgba($seafoam, .75);
+//   border-radius:100%;
+//   padding:1%;
+// }
+
+// select make/year/model box
+.outer-box{
+  background-color:rgba(white, .25);
+  height:300px;
+  width:80%;
+  padding:1%;
   margin:0 auto;
+  position:relative;
+  // top:100px;
 
-  h3{
-    background-color:rgba(black, .25);
-    border:2px solid white;
-    padding:1%;
-    width:35%;
-    margin:0;
-    box-sizing:border-box;
+  .diag-select-title{
     @include mediumfont;
-  }
-
-  .solutions{
-    float:left;
-    margin-left:12%;
-  }
-
-  .unanswered{
-    float:right;
-    margin-right:12%;
-  }
-}
-
-
-
-
-footer{
-  clear:both;
-  background-color:rgba(white, .15);
-  height:30px;
-  position:absolute;
-  bottom:0;
-  width:100%;
-
-  p{
+    font-weight:500;
     color:white;
     text-align:center;
-    padding-top:.5%;
-    margin:0;
-    font-family:gill sans;
-    text-transform:uppercase;
-
+    margin-top:0;
   }
+
+  .diag-select-box{
+    background-color:white;
+    height:55px;
+    width:20%;
+    margin:0 auto;
+
+    p{
+      @include regularfont;
+      color:$teal;
+      font-size:16px;
+      text-align:center;
+      padding-top:4px;
+    }
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+
+
+  .diag-select-box:hover{
+    background-color:$teal;
+     p{
+       color:white;
+     }
+  }
+
+
 }
