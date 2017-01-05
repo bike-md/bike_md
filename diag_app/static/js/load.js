@@ -58,12 +58,8 @@ function loadModels(){
 $("#loadBikes").click(loadModels)
 
 
-
-
-
-
 // brand/model listing
-function getBrands(){
+function showBrands(){
     $.ajax({
         url: '/api/brands/',
         type: 'GET',
@@ -75,12 +71,28 @@ function getBrands(){
 
     })
 }
-getBrands()
+showBrands()
 
 
-function showModels(id){
+function showYears(id){
     $.ajax({
         url: '/api/models?brand=' + id,
+        type: 'GET'
+    }).done(function(results){
+        $('#listing').empty()
+        var bike = results.results
+        console.log(bikeyear)
+        var source = $('#year-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(bike)
+        $('#listing').append(html)
+    })
+}
+
+
+function showModels(brandId, year){
+    $.ajax({
+        url: '/api/models?brand=' + id ,
         type: 'GET'
     }).done(function(results){
         $('#listing').empty()
@@ -91,3 +103,11 @@ function showModels(id){
         $('#listing').append(html)
     })
 }
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/model_detail/' + id
+    console.log(url)
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})

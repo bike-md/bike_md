@@ -5,22 +5,18 @@ from . import models, forms
 from .forms import UserForm, TechForm
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
 from .models import Model, Problem_Model
-from .serializers import VoteSerializer, ProblemSerializer, SolutionSerializer
+from .serializers import VoteSerializer, ProblemGetSerializer
 from .serializers import TechSerializer, RatingSerializer, SystemSerializer
-from .serializers import BrandSerializer, ModelSerializer
+from .serializers import BrandSerializer, ModelSerializer, ProblemPostSerializer
+from .serializers import SolutionPostSerializer, SolutionGetSerializer
 from django.views.generic import ListView
 from django.contrib.auth import login, authenticate
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
 
 
-
-def index(request):
-    return render(request, 'main.html')
-
-
 def test(request):
-    return render(request, 'load.html')
+    return render(request, 'build_templates/load.html')
 
 
 class SystemViewSet(viewsets.ModelViewSet):
@@ -53,21 +49,34 @@ class BrandViewSet(viewsets.ModelViewSet):
 class ProblemFilter(django_filters.rest_framework.FilterSet):
     class Meta:
         model = Problem
-        fields = ['system', 'model']
+        fields = ['system', 'model', 'tech']
 
 
-class ProblemViewSet(viewsets.ModelViewSet):
-    template_name = 'problem_list.html'
+class ProblemGetViewSet(viewsets.ModelViewSet):
     queryset = Problem.objects.all()
-    serializer_class = ProblemSerializer
+    serializer_class = ProblemGetSerializer
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
     filter_class = ProblemFilter
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class SolutionViewSet(viewsets.ModelViewSet):
+class ProblemPostViewSet(viewsets.ModelViewSet):
+    queryset = Problem.objects.all()
+    serializer_class = ProblemPostSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_class = ProblemFilter
+    permission_classes = (permissions.IsAuthenticated,)
+
+
+class SolutionGetViewSet(viewsets.ModelViewSet):
     queryset = Solution.objects.all()
-    serializer_class = SolutionSerializer
+    serializer_class = SolutionGetSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
+class SolutionPostViewSet(viewsets.ModelViewSet):
+    queryset = Solution.objects.all()
+    serializer_class = SolutionPostSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
 
@@ -111,7 +120,7 @@ def create_account(request):
             user = authenticate(username = user.username, password =password)
             login(request, user)
             return HttpResponseRedirect('/diag_app/brands/')
-    return render(request, 'create_account.html', {'user_form': user_form,
+    return render(request, 'createaccount.html', {'user_form': user_form,
                   'tech_form': tech_form})
 
 

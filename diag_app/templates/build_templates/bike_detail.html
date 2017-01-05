@@ -14,10 +14,10 @@
                     <div id="bikeDetail"></div>
                     <br>
                     <br>
-                    <form class="newProblem" action="/diag_app/" method="POST">
+                    <form class="newProblem" action="/diag_app/model_details/1/" method="POST">
                         {%csrf_token%}
-                        <input id="userId" type="hidden" name="user_id" value="{{request.user.tech}}">
-                        <input id="bikeId" type="hidden" name="bike_id" value="{{bike.id}}">
+                        <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
+
                         <h4>Enter a title for your post:</h4>
                         <input id="probTitle" type="text" name="probTitle" value="Enter Problem title">
                         <br>
@@ -41,6 +41,7 @@
                     {% verbatim %}
                         <h4>{{year}}</h4>
                         <h4>{{name}}</h4>
+                        <input id="bikeId" type="hidden" name="bike_id" value="{{id}}">
                     {% endverbatim %}
             </article>
         </script>

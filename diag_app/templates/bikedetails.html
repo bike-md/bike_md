@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+{%load static%}
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link href ="css/style.css" type ="text/css" rel ="stylesheet">
+    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
     <title></title>
   </head>
 
   <body class ="bikedetailsbody">
     <header>
-      <li><a href ="#"><img class ="templatelogo" src ="images/logo-template.png"></a></li>
+      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
       <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>

@@ -32,10 +32,6 @@ class Model(models.Model):
     brand = models.ForeignKey(Brand)
     year = models.IntegerField(default=0)
 
-    # @property
-    # def url(self):
-    #     return reverse('model_detail', args=[self.pk])
-
     def __repr__(self):
         return str(self.name)
 
@@ -44,14 +40,9 @@ class Problem(models.Model):
     title = models.CharField(max_length=65)
     system = models.ForeignKey(System)
     description = models.TextField(max_length=500)
-    tech = models.ForeignKey(Tech)
+    tech = models.ForeignKey(Tech, related_name='problems')
     model = models.ForeignKey(Model)
     posted = models.DateTimeField(auto_now=True)
-
-    # @property
-    # def url(self):
-    #     return reverse('problem_detail', args=[self.pk])
-
 
 
 class Solution(models.Model):
@@ -59,7 +50,7 @@ class Solution(models.Model):
     time_required = models.FloatField(default=0)
     parts_cost = models.DecimalField(max_digits=6, decimal_places=2)
     problem = models.ForeignKey(Problem, related_name='solutions')
-    tech = models.ForeignKey(Tech)
+    tech = models.ForeignKey(Tech, related_name='solutions')
     posted = models.DateTimeField(auto_now=True)
     score = models.IntegerField(default=0)
 
