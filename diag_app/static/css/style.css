@@ -189,6 +189,11 @@ form input {
     transform: rotate(360deg);
     transition: .5s; }
 
+.prob-detailbody {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
+  background-size: cover;
+  margin: 0; }
+
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   height: 58px;
@@ -221,7 +226,7 @@ header {
       bottom: 30px;
       height: 5px;
       width: 0px;
-      background-color: #b68d58;
+      background-color: #a8bdba;
       transition: width .5s;
       content: ""; }
     header .templatenav li .link1:hover:after {
