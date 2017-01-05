@@ -40,7 +40,7 @@ currentURL()
 function showProblem(url){
     var id = url.split('/')
     id = id[5]
-    var url = '/api/problems/' + id
+    var url = '/api/get-problems/' + id
     $.ajax({
         url: url,
         type: 'GET',
@@ -74,7 +74,7 @@ function postSolution(){
         problem: issue,
     }
     $.ajax({
-        url: '/api/solutions/',
+        url: '/api/post-solutions/',
         type: 'POST',
         data: context,
     }).done(function(results){
@@ -131,7 +131,7 @@ function validateVote(solutionId, value){
 
 function updateScore(id, voteValue){
     $.ajax({
-        url: '/api/solutions/' + id ,
+        url: '/api/get-solutions/' + id ,
         type: 'GET',
     }).done(function(results){
         var currentScore = results.score
@@ -140,7 +140,7 @@ function updateScore(id, voteValue){
             score: newScore
         }
         $.ajax({
-            url: '/api/solutions/' + id + '/',
+            url: '/api/post-solutions/' + id + '/',
             type: 'PATCH',
             data: context,
         }).done(function(results){

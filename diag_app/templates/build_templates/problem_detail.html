@@ -24,7 +24,7 @@
                         <h1>Post a new Solution</h1>
                         {%csrf_token%}
                         <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
-                        <input id="problemId" type="hidden" name="bike_id" value="{{problem.id}}">
+                        <input id="problemId" type="hidden" name="problem_id" value="{{problem.id}}">
 
                         <h4>Enter the time required for your solution:</h4>
                         <input id="solutionTime" type="text" name="solutionTime" value="Enter time here">

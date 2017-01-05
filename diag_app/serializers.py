@@ -10,20 +10,21 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = "__all__"
 
+#eliminate double tech serializer
+class TechSerializer(serializers.ModelSerializer):
+    user = UserSerializer(many=False, read_only=True)
+
+    class Meta:
+        model = Tech
+        fields = ['id', 'experience', 'job_title', 'shop', 'user',
+                  'tech_rating']
+
 
 class CommitSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Commit
-        fields = ['tech', 'solution', 'url', 'id', 'posted', 'text']
-
-
-class TechSerializer(serializers.ModelSerializer):
-    user = UserSerializer(many=False, read_only=True)
-    class Meta:
-        model = Tech
-        fields = ['id', 'experience', 'job_title', 'shop', 'tech_rating',
-                  'user']
+        fields = ['id', 'solution', 'tech', 'posted', 'text', 'url']
 
 
 class VoteSerializer(serializers.ModelSerializer):
@@ -32,35 +33,53 @@ class VoteSerializer(serializers.ModelSerializer):
         model = Vote
         fields = "__all__"
 
-    def validate(self, data):
-        instance = self.instance
-        if instance is not None:
-            originalOwner = instance.tech
-            dataOwner = data.get('tech')
-            if dataOwner is not None and (originalOwner != dataOwner):
-                raise ValidationError('Cannot vote more that once!')
-        return data
 
-
-class  SolutionSerializer(serializers.ModelSerializer):
+class SolutionGetSerializer(serializers.ModelSerializer):
     votes = VoteSerializer(many=True, read_only=True)
     commits = CommitSerializer(many=True, read_only=True)
     tech = TechSerializer(many=False, read_only=True)
 
     class Meta:
         model = Solution
-        fields = ['votes', 'id', 'description', 'time_required', 'parts_cost',
-                  'posted', 'score', 'problem', 'tech', 'commits']
+        fields = ['id', 'description', 'time_required', 'parts_cost',
+                  'problem', 'tech', 'posted', 'score', 'commits',
+                  'votes', 'url']
 
 
-class ProblemSerializer(serializers.ModelSerializer):
-    solutions = SolutionSerializer(many=True, read_only=True)
+class SolutionPostSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Solution
+        fields = ['id', 'description', 'time_required', 'parts_cost',
+                  'problem', 'tech', 'posted', 'score', 'url']
+
+
+class ProblemGetSerializer(serializers.ModelSerializer):
+    solutions = SolutionGetSerializer(many=True, read_only=True)
     tech = TechSerializer(many=False, read_only=True)
+    class Meta:
+        model = Problem
+        fields = ['id', 'title', 'system', 'description', 'tech',
+                  'model', 'posted', 'url', 'solutions']
+
+
+class ProblemPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Problem
-        fields = ['solutions', 'description', 'posted', 'system', 'model',
-                  'id', 'title', 'url', 'tech']
+        fields = ['id', 'title', 'system', 'description', 'tech',
+                  'model', 'posted', 'url']
+
+
+# class TechGetSerializer(serializers.ModelSerializer):
+#     problems = ProblemGetSerializer(many=False, read_only=True)
+#     solutions = SolutionGetSerializer(many=False, read_only=True)
+#     user = UserSerializer(many=False, read_only=True)
+#
+#     class Meta:
+#         model = Tech
+#         fields = ['id', 'experience', 'job_title', 'shop', 'user',
+#                   'tech_rating', 'problems', 'solutions']
 
 
 class RatingSerializer(serializers.ModelSerializer):
@@ -81,11 +100,11 @@ class BrandSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Brand
-        fields = ['id', 'url', 'name']
+        fields = ['id', 'name', 'url']
 
 
 class ModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Model
-        fields = ['brand', 'id', 'url', 'year', 'name']
+        fields = ['id', 'name', 'brand', 'year', 'url']

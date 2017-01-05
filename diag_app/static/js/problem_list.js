@@ -31,7 +31,7 @@ $.ajaxSetup({
 
 function getProblems(){
     $.ajax({
-        url: '/api/problems/',
+        url: '/api/get-problems/',
         type: 'GET',
     }).done(function(results){
         console.log(results.results)

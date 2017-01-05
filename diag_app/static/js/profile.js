@@ -29,66 +29,35 @@ $.ajaxSetup({
 });
 
 
-function currentURL(){
-    var url = window.location.href
-    showBike(url)
-
-}
-currentURL()
-
-
-function showBike(url){
-    var id = url.split('/')
-    id = id[5]
-    var url = '/api/models/' + id
+function getTechInfo(){
+    var id = $("#currentTech").val()
     $.ajax({
-        url: url,
+        url: '/api/techs/' + id,
         type: 'GET',
-    }).done(function(results){
-        var source = $("#bike-template").html()
-        var template = Handlebars.compile(source)
-        var html = template(results)
-        $("#bikeDetail").append(html)
-
-    })
-}
-
-
-function loadSystems(){
-    var dropdown = $("#probSystem")
-    $.ajax({
-        url: '/api/systems/',
-        type: 'GET',
-    }).done(function(results){
-        var source = $('#post-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(results.results)
-        $('#probSystem').append(html)
-    })
-}
-loadSystems()
-
-
-function postProblem(){
-    var sys =  $("#probSystem option:selected").val()
-    var text = $("#probText").val()
-    var user = $("#userId").val()
-    var bike = $("#bikeId").val()
-    var header = $("#probTitle").val()
-    var context = {
-        system: sys,
-        description: text,
-        tech: user,
-        model: bike,
-        title: header,
-    }
-    $.ajax({
-        url: '/api/post-problems/',
-        type: 'POST',
-        data: context,
     }).done(function(results){
         console.log(results)
+        var source = $("#profile-template").html()
+        var template = Handlebars.compile(source)
+        var html = template(results)
+        $("#profile").append(html)
     })
 }
 
-$("#newProbSubmit").click(postProblem)
+getTechInfo()
+
+
+function getTechProblems(){
+    var id = $("#currentTech").val()
+    $.ajax({
+        url: '/api/get-problems?tech=' + id,
+        type: 'GET',
+    }).done(function(results){
+        console.log(results.results)
+        var source = $('#techProblem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(results.results)
+        $('#problemList').append(html)
+    })
+}
+
+getTechProblems()

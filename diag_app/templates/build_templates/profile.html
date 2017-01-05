@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Profile</title>
+    </head>
+    <body>
+        <input id="currentTech" type="hidden" name="user_id" value="{{request.user.id}}">
+
+        <div id="profile"></div>
+        <div id="problemList"></div>
+        <div id="solutionList"></div>
+
+
+        <script id="profile-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                    {% verbatim %}
+                    <h4>{{this.user.username}}</h4>
+                    {% endverbatim %}
+            </article>
+        </script>
+
+        <script id="techProblem-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                    {% verbatim %}
+                    <h4>Problems:</h4>
+                    {{#each .}}
+                        <h4>{{this.title}}</h4>
+                    {{/each}}
+                    {% endverbatim %}
+            </article>
+        </script>
+
+        <script id="techSolution-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                    {% verbatim %}
+                    <h4>{{}}</h4>
+                    {% endverbatim %}
+            </article>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
+    </body>
+</html>
