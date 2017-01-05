@@ -81,33 +81,45 @@ function showYears(id){
     }).done(function(results){
         $('#listing').empty()
         var bike = results.results
-        console.log(bikeyear)
+        var years = []
+        for(var i=0; i < bike.length; i++){
+            if (!(years.includes(bike[i].year))){
+                years.push(bike[i].year)
+            }
+        }
+        var context = {
+            modelYears : years,
+            brandId : id,
+        }
+        console.log(context)
         var source = $('#year-template').html()
         var template = Handlebars.compile(source)
-        var html = template(bike)
+        var html = template(context)
         $('#listing').append(html)
     })
 }
 
 
-function showModels(brandId, year){
+function showModels(id){
+    var year = $("#selectedYear")
+    year = year[0].innerHTML
     $.ajax({
-        url: '/api/models?brand=' + id ,
+        url: '/api/models?brand=' + id + '&year=' + year ,
         type: 'GET'
     }).done(function(results){
         $('#listing').empty()
-        console.log(results.results)
+        var bikes = results.results
         var source = $('#model-template').html()
         var template = Handlebars.compile(source)
-        var html = template(results.results)
+        var html = template(bikes)
         $('#listing').append(html)
     })
 }
 
 Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
-    title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/model_detail/' + id
+    name = Handlebars.Utils.escapeExpression(object.name)
+    url = '/diag_app/model_detail/' + id 
     console.log(url)
-    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+    return '<a href="' +  url + '">' + '<b>' + name + '</b>' + '</a>'
 })

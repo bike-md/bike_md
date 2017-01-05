@@ -7,7 +7,8 @@
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <title>Bike Detail</title>
   </head>
 
   <body class ="bikedetailsbody">
@@ -32,7 +33,7 @@
     </section>
 
     <section class ="systems">
-      <h2 class ="systitle">View problems Systems</h2>
+      <h2 class ="systitle">View Problems By System</h2>
       <a href ="#"><div class ="sys">p</div></a>
       <a href ="#"><div class ="sys">p</div></a>
       <a href ="#"><div class ="sys">p</div></a>
@@ -53,7 +54,8 @@
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src ="js/script.js" type ="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/load.js' %}"></script>
   </body>
 </html>
