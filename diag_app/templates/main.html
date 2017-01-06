@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+        <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
         <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <title>Main</title>
@@ -20,7 +22,20 @@
           <form>
 
           <nav class ="templatenav">
-            <li><a class ="link1" href ="#">Ask Question</a></li>
+            <!-- <li><a class ="link1" href ="#">Ask Question</a></li> -->
+
+            <li><a data-remodal-target="modal" class ="link1" href="#modal">Ask Question</a></li>
+
+            <div class="remodal" data-remodal-id="modal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+              <p>About the book but not too much. Just enough to</p>
+              <p>intrigue you to the point that you just</p>
+              <p>have to read it to find out more. I mean, this book</p>
+              <p>needs to sound good even if it isn't. If you are still reading</p>
+              <p>this then I hope you will stop and read this book.</p>
+              <p>It's good. I promise.</p>
+            </div>
+
             <li><a class ="link2" href ="#">Answer Questions</a></li>
             <li><a class ="link3" href ="#">MY Account</a></li>
           </nav>

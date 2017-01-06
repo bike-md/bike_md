@@ -214,6 +214,9 @@ form input {
   text-align: center;
   margin: 0; }
 
+body {
+  padding: 0; }
+
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   height: 58px;
@@ -259,7 +262,8 @@ header {
 footer {
   clear: both;
   background-color: rgba(255, 255, 255, 0.15);
-  height: 30px;
+  position: absolute;
+  bottom: 0;
   width: 100%; }
   footer p {
     color: white;
