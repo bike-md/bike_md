@@ -36,10 +36,10 @@ function getTechInfo(){
         type: 'GET',
     }).done(function(results){
         console.log(results)
-        var source = $("#profile-template").html()
-        var template = Handlebars.compile(source)
-        var html = template(results)
-        $("#profile").append(html)
+        // var source = $("#profile-template").html()
+        // var template = Handlebars.compile(source)
+        // var html = template(results)
+        // $("#profile").append(html)
     })
 }
 
@@ -53,10 +53,10 @@ function getTechProblems(){
         type: 'GET',
     }).done(function(results){
         console.log(results.results)
-        var source = $('#techProblem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(results.results)
-        $('#problemList').append(html)
+        // var source = $('#techProblem-template').html()
+        // var template = Handlebars.compile(source)
+        // var html = template(results.results)
+        // $('#problemList').append(html)
     })
 }
 
