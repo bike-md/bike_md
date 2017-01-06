@@ -47,30 +47,39 @@
             <p>Copyright Bike MD 2017. All rights reserved.</p>
         </footer>
 
-        <!-- <script id="Img-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                {% endverbatim %}
-            </article>
-        </script> -->
 
         <script id="info-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h4>experience:{{id}}</h4>
+                    <h1 class="">{{this.user.username}}</h1>
+                    <h4 class="">experience: {{this.experience}}</h4>
+                    <h4 class="">Current position: {{this.job_title}}</h4>
+                    <h4 class="">Shop: {{this.shop}}</h4>
                 {% endverbatim %}
             </article>
         </script>
 
-        <!-- <script id="problem-template" type="text/x-handlebars-template">
+        <script id="techProblem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3>Problems Posted</h3>
                 {{#each .}}
+                    <h3 class="">{{this.title}}</h3>
+                    <h5 class="">{{{formatTime this.posted}}}</h5>
                 {{/each}}
                 {% endverbatim %}
-            </article> -->
-        <!-- </script> -->
+            </article>
+        </script>
+
+        <script id="techSolution-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                    {% verbatim %}
+                    {{#each .}}
+                        <h4 class="">{{description}}</h4>
+                        <h5 class="">{{{formatTime this.posted}}}</h5>
+                    {{/each}}
+                    {% endverbatim %}
+            </article>
+        </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
