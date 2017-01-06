@@ -5,7 +5,7 @@
 
 .indexnav {
   height: 640px;
-  width: 12%;
+  width: 11%;
   margin-left: 10%;
   background-color: rgba(255, 255, 255, 0.25);
   padding: 1%;
@@ -288,14 +288,14 @@ form input {
   margin: 1%; }
 
 .profile-information {
-  width: 66%;
+  width: 30%;
   height: 224px;
   float: right;
-  background-color: #000000;
+  background-color: #ffffff;
   margin: 1%; }
 
 .profile-questions-asked {
-  width: 30%;
+  width: 66%;
   height: 300px;
   float: left;
   background-color: #ffffff;
