@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <title>Bike Detail</title>
@@ -27,17 +26,13 @@
     </header>
 
 
-    <section class ="specs">
+    <section id="bikeSpecs" class ="specs">
       <!-- <h2 class ="specstitle">Specs</h2> -->
-      <p>Vespa Scooter 1978</p>
+
     </section>
 
-    <section class ="systems">
+    <section id="system" class ="systems">
       <h2 class ="systitle">View Problems By System</h2>
-      <a href ="#"><div class ="sys">p</div></a>
-      <a href ="#"><div class ="sys">p</div></a>
-      <a href ="#"><div class ="sys">p</div></a>
-      <a href ="#"><div class ="sys">p</div></a>
     </section>
 
 
@@ -50,12 +45,29 @@
 
 
 
+    <script id="bike-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+                <h4>Year: {{year}}</h4>
+                <h4>Model: {{name}}</h4>
+            {% endverbatim %}
+        </article>
+    </script>
 
 
+    <script id="system-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+                {{#each .}}
+                <a href ="#"><div class ="sys">{{name}}</div></a>
+                {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/load.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bike_detail.js' %}"></script>
   </body>
 </html>

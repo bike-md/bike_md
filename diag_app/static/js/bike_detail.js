@@ -29,6 +29,7 @@ $.ajaxSetup({
 });
 
 
+// get current url
 function currentURL(){
     var url = window.location.href
     showBike(url)
@@ -37,6 +38,7 @@ function currentURL(){
 currentURL()
 
 
+// get bike details
 function showBike(url){
     var id = url.split('/')
     id = id[5]
@@ -48,27 +50,29 @@ function showBike(url){
         var source = $("#bike-template").html()
         var template = Handlebars.compile(source)
         var html = template(results)
-        $("#bikeDetail").append(html)
+        $("#bikeSpecs").append(html)
 
     })
 }
 
 
+// load systems
 function loadSystems(){
-    var dropdown = $("#probSystem")
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        var source = $('#post-template').html()
+        console.log(results)
+        var source = $('#system-template').html()
         var template = Handlebars.compile(source)
         var html = template(results.results)
-        $('#probSystem').append(html)
+        $('#system').append(html)
     })
 }
 loadSystems()
 
 
+// post new problem
 function postProblem(){
     var sys =  $("#probSystem option:selected").val()
     var text = $("#probText").val()

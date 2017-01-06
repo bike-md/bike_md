@@ -43,8 +43,8 @@
         </div> -->
 
         <section id="listing" class="outer-box">
-            <div id="step" class="step"></div>
-          <h3 class ="diag-select-title">select make</h3>
+            <!-- <div id="step" class="step"></div> -->
+          <!-- <h3 class ="diag-select-title">select make</h3> -->
         <!-- <a href=""><div class ="diag-select-box"></div></a> -->
         </section>
 
@@ -59,18 +59,13 @@
         <script id="brand-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
+                <h3 class ="diag-select-title">select make</h3>
                 {{#each .}}
-                    <div class="row">
-                        <div class='col-sm-10'>
-                            <div class="row">
-                                <a onclick="showYears({{this.id}})">
-                                    <div class ="diag-select-box">
-                                        <h4 class="make">{{ this.name }}</h4>
-                                    </div>
-                                </a>
-                            </div>
+                    <a onclick="showYears({{this.id}})">
+                        <div class ="diag-select-box">
+                            <h4 class="make">{{ this.name }}</h4>
                         </div>
-                    </div>
+                    </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -79,6 +74,7 @@
         <script id="year-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
+                <h3 class ="diag-select-title">select year</h3>
                 <a onclick="showModels({{this.brandId}})">
                     {{#each this.modelYears}}
                     <div class ="diag-select-box">
@@ -93,10 +89,13 @@
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
+                <h3 class ="diag-select-title">select model</h3>
                 {{#each .}}
+                    <a onclick="linkBike({{this.id}})">
                         <div class ="diag-select-box">
-                            <h4 class="year">{{{ linkURL this }}}</h4>
+                            <h4 class="year">{{ this.name }}</h4>
                         </div>
+                    </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -104,6 +103,6 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/load.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     </body>
     </html>

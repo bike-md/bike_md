@@ -10,7 +10,8 @@ from .serializers import TechSerializer, RatingSerializer, SystemSerializer
 from .serializers import BrandSerializer, ModelSerializer, ProblemPostSerializer
 from .serializers import SolutionPostSerializer, SolutionGetSerializer
 from django.views.generic import ListView
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
+    # from django.contrib.auth.decorators import login_required
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
 
@@ -117,11 +118,26 @@ def create_account(request):
             password = user.password
             user.set_password(password)
             user.save()
-            user = authenticate(username = user.username, password =password)
+            user = authenticate(username=user.username, password=password)
             login(request, user)
             return HttpResponseRedirect('/diag_app/brands/')
     return render(request, 'createaccount.html', {'user_form': user_form,
                   'tech_form': tech_form})
+
+
+def login_user(request):
+    print("hi")
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None and user.is_active:
+            print(user)
+            login(request, user)
+            return HttpResponseRedirect('/diag_app/')
+    else:
+
+        return render(request, 'registration/login.html')
 
 
 class RatingViewSet(viewsets.ModelViewSet):
