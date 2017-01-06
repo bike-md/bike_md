@@ -30,6 +30,7 @@ $golden: #b68d58;
 
 body {
   // position: relative;
+  padding:0;
 }
 
 header{
@@ -100,9 +101,8 @@ header{
 footer{
   clear:both;
   background-color:rgba(white, .15);
-  height:30px;
-  // position:absolute;
-  // bottom:0;
+  position:absolute;
+  bottom:0;
   width:100%;
 
   p{
