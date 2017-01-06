@@ -30,11 +30,10 @@
         <div class="profile-title"><p>User Profile<p></div>
 
         <div class="profile-details">
-        <div id="profileImg" class="profile-photo">Photo goes here</div>
-        <div id="techInfo" class="profile-information"></div>
-        <div id="techQuestions" class="profile-questions-asked"></div>
-        <div id="techAnswers" class="profile-questions-answered"></div>
-
+            <div id="profileImg" class="profile-photo">Img</div>
+            <div id="techInfo" class="profile-information">Info</div>
+            <div id="techQuestions" class="profile-questions-asked">questions</div>
+            <div id="techAnswers" class="profile-questions-answered">answers</div>
         </div>
 
         <footer>
@@ -46,16 +45,17 @@
                 {%verbatim%}
                 {% endverbatim %}
             </article>
-        </script>
+        </script> -->
 
         <script id="info-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
+                <h4>experience:{{id}}</h4>
                 {% endverbatim %}
             </article>
         </script>
 
-        <script id="problem-template" type="text/x-handlebars-template">
+        <!-- <script id="problem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 <h3>Problems Posted</h3>
@@ -63,6 +63,7 @@
                 {{/each}}
                 {% endverbatim %}
             </article> -->
+        <!-- </script> -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

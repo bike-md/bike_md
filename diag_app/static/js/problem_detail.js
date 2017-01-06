@@ -45,13 +45,13 @@ function showProblem(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        // console.log(results)
+        console.log(results.solutions)
         var source1 = $("#problem-template").html()
         var template1 = Handlebars.compile(source1)
         var html1 = template1(results)
-        $("#problem").append(html1)
+        $("#problemDetail").append(html1)
 
-        var source2 = $("#solutions-template").html()
+        var source2 = $("#solution-template").html()
         var template2 = Handlebars.compile(source2)
         var html2 = template2(results.solutions)
         $("#solutions").append(html2)

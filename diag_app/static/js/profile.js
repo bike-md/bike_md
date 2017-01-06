@@ -36,13 +36,12 @@ function getTechInfo(){
         type: 'GET',
     }).done(function(results){
         console.log(results)
-        // var source = $("#profile-template").html()
-        // var template = Handlebars.compile(source)
-        // var html = template(results)
-        // $("#profile").append(html)
+        var source = $("#info-template").html()
+        var template = Handlebars.compile(source)
+        var html = template(results)
+        $("#techInfo").append(html)
     })
 }
-
 getTechInfo()
 
 
@@ -59,5 +58,4 @@ function getTechProblems(){
         // $('#problemList').append(html)
     })
 }
-
 getTechProblems()
