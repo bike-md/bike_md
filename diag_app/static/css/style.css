@@ -79,6 +79,48 @@ form input {
 .button:hover {
   background-color: #313237; }
 
+.createaccountbody {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-size: cover;
+  margin: 0; }
+
+.create-account-overlay-box {
+  display: inline-block;
+  width: 70%;
+  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+  margin-left: 16%;
+  margin-right: 10%; }
+
+.create-account-overlay-box {
+  width: 30%;
+  height: 150px;
+  float: left;
+  background-color: #2B7F7B;
+  margin: 1%; }
+
+.profile-information {
+  width: 66%;
+  height: 224px;
+  float: right;
+  background-color: #000000;
+  margin: 1%; }
+
+.profile-questions-asked {
+  width: 30%;
+  height: 300px;
+  float: left;
+  background-color: #ffffff;
+  margin-left: 1%;
+  margin-bottom: 1%; }
+
+.profile-questions-answered {
+  width: 66%;
+  height: 224px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 1%;
+  margin-bottom: 1%; }
+
 .mainbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
   background-size: cover;
@@ -213,6 +255,57 @@ form input {
   color: white;
   text-align: center;
   margin: 0; }
+
+.userprofilebody {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-size: cover;
+  margin: 0; }
+
+.profile-title p {
+  font-size: 2.25rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: -.25%; }
+
+.profile-details {
+  display: inline-block;
+  width: 70%;
+  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+  margin-left: 16%;
+  margin-right: 10%; }
+
+.profile-photo {
+  width: 30%;
+  height: 150px;
+  float: left;
+  background-color: #2B7F7B;
+  margin: 1%; }
+
+.profile-information {
+  width: 66%;
+  height: 224px;
+  float: right;
+  background-color: #000000;
+  margin: 1%; }
+
+.profile-questions-asked {
+  width: 30%;
+  height: 300px;
+  float: left;
+  background-color: #ffffff;
+  margin-left: 1%;
+  margin-bottom: 1%; }
+
+.profile-questions-answered {
+  width: 66%;
+  height: 224px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 1%;
+  margin-bottom: 1%; }
 
 body {
   padding: 0; }
