@@ -23,22 +23,23 @@ $golden: #b68d58;
 
 
 .indexbody{
-  background-image:
-  linear-gradient(
-        rgba(black, 0.25),
-        rgba(black, 0.25)
-      ),
+  background: linear-gradient(to right, rgba(black,0.8),
+  rgba(255,255,255,0)),
+  // linear-gradient(
+  //       rgba(black, 0.25),
+  //       rgba(black, 0.25)
+  //     ),
   url("../images/index-background.jpg");
   background-size:cover;
-
+  repeat: no repeat;
   margin:0;
 }
 
   .indexnav{
-    height:640px;
+    height:100%;
     width:11%;
     margin-left:10%;
-    background-color:rgba(white, .25);
+    background-color:rgba(#afafb2, .35);
     padding:1%;
     float:left;
     overflow:hidden;
@@ -48,7 +49,7 @@ $golden: #b68d58;
       text-transform:uppercase;
       padding:0;
       margin:0;
-      margin-bottom:15%;
+      margin-bottom:35%;
       float:left;
 
       li{
@@ -89,9 +90,8 @@ $golden: #b68d58;
       }
 
       .logobox{
-        height:300px;
         width:100%;
-        margin-bottom:28%;
+        margin-bottom:35%;
 
         .logo{
           width:100%;
@@ -113,11 +113,12 @@ $golden: #b68d58;
   .button{
     height:70px;
     width:100%;
-    padding-top:9%;
+    // padding-top:9%;
     box-sizing:border-box;
     background-color:$seafoam;
     @include mediumfont;
     text-align:center;
+
 
     a{
       text-decoration:none;

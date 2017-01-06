@@ -1,13 +1,14 @@
 .indexbody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), url("../images/index-background.jpg");
   background-size: cover;
+  repeat: no repeat;
   margin: 0; }
 
 .indexnav {
-  height: 640px;
+  height: 100%;
   width: 11%;
   margin-left: 10%;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(175, 175, 178, 0.35);
   padding: 1%;
   float: left;
   overflow: hidden; }
@@ -16,7 +17,7 @@
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 15%;
+    margin-bottom: 35%;
     float: left; }
     .indexnav ul li {
       clear: both;
@@ -46,9 +47,8 @@
       .indexnav ul li .link3:hover:after {
         width: 138%; }
     .indexnav ul .logobox {
-      height: 300px;
       width: 100%;
-      margin-bottom: 28%; }
+      margin-bottom: 35%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
@@ -62,7 +62,6 @@ form input {
 .button {
   height: 70px;
   width: 100%;
-  padding-top: 9%;
   box-sizing: border-box;
   background-color: #a8bdba;
   font-size: 2.25rem;
