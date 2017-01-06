@@ -285,14 +285,14 @@ form input {
   margin: 1%; }
 
 .profile-information {
-  width: 66%;
+  width: 30%;
   height: 224px;
   float: right;
   background-color: #ffffff;
   margin: 1%; }
 
 .profile-questions-asked {
-  width: 30%;
+  width: 66%;
   height: 300px;
   float: left;
   background-color: #ffffff;
