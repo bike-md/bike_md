@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
         <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-        <title></title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+        <title>Main</title>
       </head>
 
       <body class ="mainbody">
@@ -41,11 +42,10 @@
           <p>1</p>
         </div> -->
 
-        <section class="outer-box">
+        <section id="listing" class="outer-box">
+            <div id="step" class="step"></div>
           <h3 class ="diag-select-title">select make</h3>
-            <a href=""><div class ="diag-select-box">
-
-            </div></a>
+        <!-- <a href=""><div class ="diag-select-box"></div></a> -->
         </section>
 
 
@@ -56,8 +56,48 @@
         </footer>
 
 
+        <script id="brand-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                {{#each .}}
+                  <a onclick="showYears({{this.id}})">
+                      <div class ="diag-select-box">
+                          <h4 class="diag-select-text">{{ this.name }}</h4>
+                      </div>
+                  </a>
+                {{/each}}
+                {% endverbatim %}
+            </article>
+        </script>
 
+        <script id="year-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                <a onclick="showModels({{this.brandId}})">
+                    {{#each this.modelYears}}
+                    <div class ="diag-select-box">
+                        <h4 id="selectedYear" class="diag-select-text">{{ this }}</h4>
+                    </div>
+                    {{/each}}
+                </a>
+                {% endverbatim %}
+            </article>
+        </script>
+
+        <script id="model-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                {{#each .}}
+                        <div class ="diag-select-box">
+                            <h4 class="diag-select-text">{{{ linkURL this }}}</h4>
+                        </div>
+                {{/each}}
+                {% endverbatim %}
+            </article>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <!-- <script src ="js/script.js" type ="text/javascript"></script> -->
-      </body>
+        <script type="text/javascript" src="{% static 'js/load.js' %}"></script>
+    </body>
     </html>

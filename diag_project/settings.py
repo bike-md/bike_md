@@ -84,7 +84,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = '/diag_app/brands'
+LOGIN_REDIRECT_URL = '/diag_app/'
 
 LANGUAGE_CODE = 'en-us'
 
