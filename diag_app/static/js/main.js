@@ -77,6 +77,7 @@ function showModels(id){
         url: '/api/models?brand=' + id + '&year=' + year ,
         type: 'GET'
     }).done(function(results){
+        console.log(results)
         $('#listing').empty()
         var bikes = results.results
         var source = $('#model-template').html()
