@@ -1,0 +1,53 @@
+$charcoal: #313237;
+$seafoam: #a8bdba;
+$golden: #b68d58;
+$teal: #45756e;
+
+@mixin regularfont{
+  font-size:1.5rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:2.25rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin largefont{
+  font-size:3.75rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+.servicespagebody {
+  background-image:
+  linear-gradient(
+        rgba(black, 0.75),
+        rgba(black, 0.75)
+      ),
+  url("../images/index-background.jpg");
+  background-size:cover;
+  margin:0;
+}
+
+//
+// .create-account-overlay-box {
+//   display: inline-block;
+//   width:70%;
+//   background:
+//   linear-gradient(
+//         rgba(white, 0.25),
+//         rgba(white, 0.25)
+//       ),;
+//   margin-left: 16%;
+//   margin-right: 10%;
+// }
+
+  .sabout-us-details {
+    width: auto;
+    height: auto;
+    background-color: #2B7F7B;
+    margin: 1%;
+  }

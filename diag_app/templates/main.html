@@ -22,22 +22,25 @@
           <form>
 
           <nav class ="templatenav">
-            <!-- <li><a class ="link1" href ="#">Ask Question</a></li> -->
 
+          <div class ="askmodal-container">
             <li><a data-remodal-target="modal" class ="link1" href="#modal">Ask Question</a></li>
 
             <div class="remodal" data-remodal-id="modal">
             <button data-remodal-action="close" class="remodal-close"></button>
-              <p>About the book but not too much. Just enough to</p>
-              <p>intrigue you to the point that you just</p>
-              <p>have to read it to find out more. I mean, this book</p>
-              <p>needs to sound good even if it isn't. If you are still reading</p>
-              <p>this then I hope you will stop and read this book.</p>
-              <p>It's good. I promise.</p>
+              <p>Stuff</p>
             </div>
+          </div>
 
-            <li><a class ="link1">Ask Question</a></li>
-            <li><a class ="link2" href ="#">Answer Questions</a></li>
+          <div class ="askmodal-container">
+            <li><a data-remodal-target="modal" class ="link2" href="#modal">Answer Questions</a></li>
+
+            <div class="remodal" data-remodal-id="modal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+              <p>Stuff</p>
+            </div>
+          </div>
+
             <li><a class ="link3" href ="#">MY Account</a></li>
           </nav>
         </header>
@@ -125,5 +128,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
     </body>
     </html>
