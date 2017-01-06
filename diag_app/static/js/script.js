@@ -26,3 +26,10 @@ function loadModels(){
     })
 }
 $("#loadBikes").click(loadModels)
+
+
+$(document).ready(function(){
+  $(".link3").click(function(){
+    $(".dropdown").slideToggle();
+  });
+});

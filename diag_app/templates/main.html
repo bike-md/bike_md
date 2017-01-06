@@ -23,6 +23,7 @@
 
           <nav class ="templatenav">
 
+            <!-- ask questions -->
           <div class ="askmodal-container">
             <li><a data-remodal-target="modal" class ="link1" href="#modal">Ask Question</a></li>
 
@@ -32,7 +33,8 @@
             </div>
           </div>
 
-          <div class ="askmodal-container">
+          <!-- answer questions -->
+          <div class ="answermodal-container">
             <li><a data-remodal-target="modal" class ="link2" href="#modal">Answer Questions</a></li>
 
             <div class="remodal" data-remodal-id="modal">
@@ -41,11 +43,15 @@
             </div>
           </div>
 
+          <!-- my account -->
             <li><a class ="link3" href ="#">MY Account</a></li>
+              <ul class ="dropdown">
+                <li><a href ="#">Notifications</a></li>
+                <li><a href ="#">Edit Profile</a></li>
+                <li><a href ="#">Log Out</a></li>
+              </ul>
           </nav>
         </header>
-
-
 
         <h1 class ="diag-main-title">Diagnose</h1>
 
@@ -129,5 +135,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
     </body>
     </html>

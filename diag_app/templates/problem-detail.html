@@ -1,33 +1,53 @@
 <!DOCTYPE html>
+{%load static%}
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-    <link href ="../static/css/style.css" type ="text/css" rel ="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
+    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
     <title></title>
   </head>
 
   <body class ="prob-detailbody">
 
     <header>
-      <li><a href ="#"><img class ="templatelogo" src ="../static/images/logo-template.png"></a></li>
+      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
       <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
       <form>
 
       <nav class ="templatenav">
-        <li><a class ="link1" href ="#">Ask Question</a></li>
-        <li><a class ="link2" href ="#">Answer Questions</a></li>
+
+        <!-- ask questions -->
+      <div class ="askmodal-container">
+        <li><a data-remodal-target="modal" class ="link1" href="#modal">Ask Question</a></li>
+
+        <div class="remodal" data-remodal-id="modal">
+        <button data-remodal-action="close" class="remodal-close"></button>
+          <p>Stuff</p>
+        </div>
+      </div>
+
+      <!-- answer questions -->
+      <div class ="answermodal-container">
+        <li><a data-remodal-target="modal" class ="link2" href="#modal">Answer Questions</a></li>
+
+        <div class="remodal" data-remodal-id="modal">
+        <button data-remodal-action="close" class="remodal-close"></button>
+          <p>Stuff</p>
+        </div>
+      </div>
+
+      <!-- my account -->
         <li><a class ="link3" href ="#">MY Account</a></li>
       </nav>
     </header>
 
-    <div class ="prob-detail-title-box">
-      <h2 class ="question-title"></h2>
-      <h2 class ="date-time"></h2>
-    </div>
+    
 
     <section class ="prob-detail-boxes-container">
       <h2 class="prob-detail-box-name">Questions</h2>
@@ -58,5 +78,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/problem_detail.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
   </body>
 </html>
