@@ -61,11 +61,11 @@
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make</h3>
                 {{#each .}}
-                    <a onclick="showYears({{this.id}})">
-                        <div class ="diag-select-box">
-                            <h4 class="make">{{ this.name }}</h4>
-                        </div>
-                    </a>
+                  <a onclick="showYears({{this.id}})">
+                      <div class ="diag-select-box">
+                          <h4 class="diag-select-text">{{ this.name }}</h4>
+                      </div>
+                  </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -78,7 +78,7 @@
                 <a onclick="showModels({{this.brandId}})">
                     {{#each this.modelYears}}
                     <div class ="diag-select-box">
-                        <h4 id="selectedYear" class="year">{{ this }}</h4>
+                        <h4 id="selectedYear" class="diag-select-text">{{ this }}</h4>
                     </div>
                     {{/each}}
                 </a>
@@ -94,6 +94,7 @@
                     <a onclick="linkBike({{this.id}})">
                         <div class ="diag-select-box">
                             <h4 class="year">{{ this.name }}</h4>
+                            <h4 class="diag-select-text">{{{ linkURL this }}}</h4>
                         </div>
                     </a>
                 {{/each}}

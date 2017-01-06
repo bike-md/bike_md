@@ -1,0 +1,61 @@
+$charcoal: #313237;
+$seafoam: #a8bdba;
+$golden: #b68d58;
+$teal: #45756e;
+
+@mixin regularfont{
+  font-size:1.5rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin mediumfont{
+  font-size:2.25rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+@mixin largefont{
+  font-size:3.75rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
+
+
+
+.prob-detailbody{
+  background:
+  linear-gradient(
+        rgba(black, 0.25),
+        rgba(black, 0.25)
+      ),
+  url("../images/main-background.jpg");
+  background-size:cover;
+  margin:0;
+}
+
+.prob-detail-boxes-container{
+  // position:relative;
+  // top:90px;
+}
+
+.prob-detail-boxes{
+  height:125px;
+  width:60%;
+  margin:2% auto;
+  background-color:white;
+}
+
+.prob-detail-comments-box{
+  width:40%;
+  float:left;
+  margin:3% 0 0 20%;
+}
+
+.prob-detail-box-name{
+  @include regularfont;
+  color:white;
+  text-align:center;
+  margin:0;
+}

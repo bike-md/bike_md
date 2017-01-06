@@ -28,6 +28,10 @@ $golden: #b68d58;
   text-transform:uppercase;
 }
 
+body {
+  // position: relative;
+}
+
 header{
   background:linear-gradient(
         rgba(white, 0.15),
@@ -72,7 +76,7 @@ header{
         bottom:30px;
         height:5px;
         width:0px;
-        background-color:$golden;
+        background-color:$seafoam;
         transition:width .5s;
         content:"";
       }
@@ -97,8 +101,8 @@ footer{
   clear:both;
   background-color:rgba(white, .15);
   height:30px;
-  position:absolute;
-  bottom:0;
+  // position:absolute;
+  // bottom:0;
   width:100%;
 
   p{

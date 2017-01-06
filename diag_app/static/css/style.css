@@ -112,20 +112,21 @@ form input {
     background-color: white;
     height: 55px;
     width: 20%;
-    margin: 0 auto; }
-    .outer-box .diag-select-box p {
+    display: inline-block;
+    margin: 2%; }
+    .outer-box .diag-select-box .diag-select-text {
       font-size: 1.5rem;
       font-family: gill sans;
       text-transform: uppercase;
       color: #45756e;
       font-size: 16px;
-      text-align: center;
-      padding-top: 4px; }
+      text-align: center; }
   .outer-box a {
     text-decoration: none; }
   .outer-box .diag-select-box:hover {
-    background-color: #45756e; }
-    .outer-box .diag-select-box:hover p {
+    background-color: #45756e;
+    cursor: pointer; }
+    .outer-box .diag-select-box:hover .diag-select-text {
       color: white; }
 
 .bikedetailsbody {
@@ -189,6 +190,30 @@ form input {
     transform: rotate(360deg);
     transition: .5s; }
 
+.prob-detailbody {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
+  background-size: cover;
+  margin: 0; }
+
+.prob-detail-boxes {
+  height: 125px;
+  width: 60%;
+  margin: 2% auto;
+  background-color: white; }
+
+.prob-detail-comments-box {
+  width: 40%;
+  float: left;
+  margin: 3% 0 0 20%; }
+
+.prob-detail-box-name {
+  font-size: 1.5rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: 0; }
+
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   height: 58px;
@@ -221,7 +246,7 @@ header {
       bottom: 30px;
       height: 5px;
       width: 0px;
-      background-color: #b68d58;
+      background-color: #a8bdba;
       transition: width .5s;
       content: ""; }
     header .templatenav li .link1:hover:after {
@@ -235,8 +260,6 @@ footer {
   clear: both;
   background-color: rgba(255, 255, 255, 0.15);
   height: 30px;
-  position: absolute;
-  bottom: 0;
   width: 100%; }
   footer p {
     color: white;
