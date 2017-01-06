@@ -16,7 +16,6 @@ router.register(r'get-solutions', views.SolutionGetViewSet)
 router.register(r'post-solutions', views.SolutionPostViewSet)
 router.register(r'votes', views.VoteViewSet)
 router.register(r'techs', views.TechViewSet)
-# router.register(r'get-techs', views.TechGetViewSet)
 router.register(r'ratings', views.RatingViewSet)
 
 
@@ -26,7 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^create_account/$', views.create_account, name='create_account'),
     url((r'^accounts/profile$'), TemplateView.as_view(template_name='build_templates/profile.html')),
-    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^login/$', views.login_user, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'},
         name='logout'),
 ]
