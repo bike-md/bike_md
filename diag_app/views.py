@@ -47,6 +47,9 @@ def login_user(request):
         if user is not None and user.is_active:
             login(request, user)
             return HttpResponseRedirect('/diag_app/')
+        else:
+            print("Username or password invaild")
+            return render(request, 'registration/login.html')
     else:
         return render(request, 'registration/login.html')
 
