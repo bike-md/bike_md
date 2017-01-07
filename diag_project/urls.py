@@ -23,8 +23,6 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^diag_app/', include('diag_app.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^create_account/$', views.create_account, name='create_account'),
-    url((r'^accounts/profile$'), views.profile, name='profile'),
     url(r'^login/$', views.login_user, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'},
         name='logout'),
