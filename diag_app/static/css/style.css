@@ -419,14 +419,37 @@ form input {
 
 .prob-detailbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
-  background-size: cover;
-  margin: 0; }
+  background-size: cover; }
+
+.prob-detail-boxes-container {
+  text-align: center;
+  font-size: 1em;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 60px; }
+
+.solutiontimecost-container {
+  background-color: #45756e;
+  border: 1px solid white;
+  display: inline-block;
+  width: 40%;
+  margin: 2%;
+  padding: 1%;
+  box-sizing: border-box; }
+
+.solutiontimecost-input {
+  text-align: center;
+  padding: 3%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: #45756e; }
 
 .prob-detail-boxes {
   height: 125px;
   width: 60%;
-  margin: 2% auto;
-  background-color: white; }
+  margin: 2% auto 5% auto;
+  background-color: rgba(255, 255, 255, 0.9); }
 
 .prob-detail-comments-box {
   width: 40%;
@@ -495,7 +518,7 @@ form input {
   margin-bottom: 1%; }
 
 body {
-  padding: 0; }
+  margin: 0; }
 
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));

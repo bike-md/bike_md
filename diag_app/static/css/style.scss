@@ -5,14 +5,15 @@
 @import "problem-detail.scss";
 @import "profile.scss";
 @import "system-problem-list.scss";
-
 @import "variables";
 @import "mixins";
 
 body {
   // position: relative;
-  padding:0;
+  margin:0;
+  // overflow:auto;
 }
+
 
 header{
   background:linear-gradient(
