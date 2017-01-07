@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets, permissions, generics
 from . import models, forms
-from .forms import UserForm, TechForm
+from .forms import UserForm, TechForm, LoginForm
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
 from .models import Model, Problem_Model
 from .serializers import VoteSerializer, ProblemGetSerializer
@@ -23,10 +23,13 @@ def create_account(request):
     elif request.method =='POST':
         user_form = UserForm(request.POST)
         tech_form = TechForm(request.POST)
+        print(tech_form)
+        print(user_form)
         if user_form.is_valid() and tech_form.is_valid():
             user = user_form.save()
             tech = tech_form.save(commit=False)
             tech.user = user
+            print(tech)
             tech.save()
             login(request, user)
             password = user.password
@@ -34,24 +37,20 @@ def create_account(request):
             user.save()
             user = authenticate(username=user.username, password=password)
             login(request, user)
-            return HttpResponseRedirect('/diag_app/brands/')
-    return render(request, 'createaccount.html', {'user_form': user_form,
+            return HttpResponseRedirect('/diag_app/')
+
+    return render(request, 'build_templates/create_account.html', {'user_form': user_form,
                   'tech_form': tech_form})
 
 
 def login_user(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None and user.is_active:
+    form = LoginForm(request.POST or None)
+    if request.POST and form.is_valid():
+        user = form.login(request)
+        if user:
             login(request, user)
-            return HttpResponseRedirect('/diag_app/')
-        else:
-            print("Username or password invaild")
-            return render(request, 'registration/login.html')
-    else:
-        return render(request, 'registration/login.html')
+            return HttpResponseRedirect("/diag_app/")
+    return render(request, 'registration/login.html')
 
 
 @login_required(login_url='/login/')
