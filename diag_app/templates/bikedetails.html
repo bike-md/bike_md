@@ -77,6 +77,7 @@
     <script id="bike-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
+            <input id="modelId" type="hidden" name="user_id" value="{{id}}">
                 <h4>Year: {{year}}</h4>
                 <h4>Model: {{name}}</h4>
             {% endverbatim %}
@@ -89,7 +90,7 @@
             {%verbatim%}
                 {{#each .}}
                 <a data-remodal-target="modal{{id}}" class="link2" href="#modal{{id}}"
-                    onclick="loadProblemsBySystem({{id}})">
+                    onclick="loadProblemsBySystemForModel({{id}})">
                     <div class ="sys">{{name}}</div>
                 </a>
 

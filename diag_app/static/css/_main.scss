@@ -1,16 +1,31 @@
 @import "variables";
 @import "mixins";
 
-.mainbody{
-  background:
-  linear-gradient(
-        rgba(black, 0.25),
+body {
+  background: linear-gradient(to right, rgba(black,0.5),
+  rgba(255,255,255,0)),
+   linear-gradient(
+         rgba(black, 0.25),
         rgba(black, 0.25)
-      ),
-  url("../images/main-background.jpg");
-  background-size:cover;
-  margin:0;
-}
+       ),
+       url("../images/main-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow:hidden;
+  }
+//
+// .mainbody{
+//   background:
+//   linear-gradient(
+//         rgba(black, 0.25),
+//         rgba(black, 0.25)
+//       ),
+//   url("../images/main-background.jpg");
+//   background-size:cover;
+//   margin:0;
+// }
 
 
 
