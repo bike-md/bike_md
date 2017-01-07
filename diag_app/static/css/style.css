@@ -403,9 +403,6 @@ form input {
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
-    position: relative;
-    top: 30%;
-    transform: translateY(-30%);
     margin: 0; }
     .systems a .sys {
       height: 150px;
