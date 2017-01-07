@@ -313,13 +313,12 @@ form input {
   margin: 0; }
 
 .diag-main-title {
-  font-size: 3.75em;
+  font-size: 3.75rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: 500;
   color: white;
-  text-align: center;
-  margin-bottom: 0; }
+  text-align: center; }
 
 .outer-box {
   background-color: rgba(255, 255, 255, 0.25);
@@ -329,7 +328,7 @@ form input {
   margin: 0 auto;
   position: relative; }
   .outer-box .diag-select-title {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 500;
@@ -343,7 +342,7 @@ form input {
     display: inline-block;
     margin: 2%; }
     .outer-box .diag-select-box .diag-select-text {
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-family: gill sans;
       text-transform: uppercase;
       color: #45756e;
@@ -542,8 +541,21 @@ header {
       width: 100%; }
     header .templatenav li .link3:hover:after {
       width: 100%; }
-  header .dropdown {
-    display: none; }
+
+.dropdown {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 50px; }
+  .dropdown .droplist {
+    display: block;
+    clear: both;
+    margin-top: 3px;
+    padding: 2%; }
+    .dropdown .droplist a {
+      font-size: 1rem; }
+    .dropdown .droplist a:hover {
+      color: #a8bdba; }
 
 footer {
   clear: both;
