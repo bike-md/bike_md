@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+        <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
         <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <title>Profile</title>
@@ -22,25 +24,25 @@
 
           <nav class ="templatenav">
 
-            <!-- ask questions -->
-          <div class ="askmodal-container">
-            <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
+              <!-- ask questions -->
+              <div class ="askmodal-container">
+                <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
 
-            <div class="remodal" data-remodal-id="askModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
-              <p>Stuff1</p>
-            </div>
-          </div>
+                <div class="remodal" data-remodal-id="askModal">
+                  <button data-remodal-action="close" class="remodal-close"></button>
+                  <p>Stuff1</p>
+                </div>
+              </div>
 
-          <!-- answer questions -->
-          <div class ="answermodal-container">
-            <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
+              <!-- answer questions -->
+              <div class ="answermodal-container">
+                <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
 
-            <div class="remodal" data-remodal-id="answerModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
-              <p>Stuff</p>
-            </div>
-          </div>
+                <div class="remodal" data-remodal-id="answerModal">
+                  <button data-remodal-action="close" class="remodal-close"></button>
+                  <p>Stuff</p>
+                </div>
+              </div>
 
           <!-- my account -->
             <li><a class ="link3" href ="#">MY Account</a>
