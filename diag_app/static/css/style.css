@@ -1,17 +1,19 @@
 .indexbody {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), url("../images/index-background.jpg");
   background-size: cover;
-  repeat: no repeat;
-  margin: 0; }
+  margin: 0;
+  background-repeat: no-repeat;
+  overflow: hidden; }
 
 .indexnav {
-  height: 100%;
+  height: 110%;
   width: 11%;
   margin-left: 10%;
   background-color: rgba(175, 175, 178, 0.35);
   padding: 1%;
   float: left;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0; }
   .indexnav ul {
     text-align: right;
     text-transform: uppercase;
@@ -23,7 +25,7 @@
       clear: both;
       list-style-type: none;
       padding-bottom: 1%;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase; }
       .indexnav ul li a {
@@ -34,7 +36,7 @@
         display: block;
         position: absolute;
         bottom: 0px;
-        height: 30px;
+        height: 1.2em;
         width: 0px;
         background-color: #b68d58;
         transition: width .5s;
@@ -55,7 +57,7 @@
 form input {
   height: 40px;
   width: 97%;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
   text-align: center;
   text-transform: uppercase; }
 
@@ -64,7 +66,7 @@ form input {
   width: 100%;
   box-sizing: border-box;
   background-color: #a8bdba;
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
   text-align: center; }
@@ -78,6 +80,185 @@ form input {
 .button:hover {
   background-color: #313237; }
 
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 15%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 5%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 275px;
+          width: auto; } }
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
 .createaccountbody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
@@ -126,7 +307,7 @@ form input {
   margin: 0; }
 
 .diag-main-title {
-  font-size: 3.75rem;
+  font-size: 3.75em;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: 500;
@@ -142,7 +323,7 @@ form input {
   margin: 0 auto;
   position: relative; }
   .outer-box .diag-select-title {
-    font-size: 2.25rem;
+    font-size: 2.25em;
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 500;
@@ -156,7 +337,7 @@ form input {
     display: inline-block;
     margin: 2%; }
     .outer-box .diag-select-box .diag-select-text {
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase;
       color: #45756e;
@@ -176,7 +357,7 @@ form input {
   margin: 0; }
 
 .specs {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -190,7 +371,7 @@ form input {
   top: 50px;
   left: 38%; }
   .specs .specstitle {
-    font-size: 2.25rem;
+    font-size: 2.25em;
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
@@ -198,7 +379,7 @@ form input {
     text-align: center; }
 
 .systitle {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -213,7 +394,7 @@ form input {
   .systems a {
     text-align: center;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
@@ -251,7 +432,7 @@ form input {
   margin: 3% 0 0 20%; }
 
 .prob-detail-box-name {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -264,7 +445,7 @@ form input {
   margin: 0; }
 
 .profile-title p {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -336,7 +517,7 @@ header {
     header .templatenav li a {
       text-decoration: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase;
       position: relative; }

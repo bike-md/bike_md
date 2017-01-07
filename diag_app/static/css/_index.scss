@@ -1,21 +1,28 @@
 $charcoal: #313237;
 $seafoam: #a8bdba;
 $golden: #b68d58;
+$teal: #45756e;
+
+@mixin smallfont{
+  font-size:1em;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
 
 @mixin regularfont{
-  font-size:1.5rem;
+  font-size:1.5em;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin mediumfont{
-  font-size:2.25rem;
+  font-size:2.25em;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin largefont{
-  font-size:3.75rem;
+  font-size:3.75em;
   font-family:gill sans;
   text-transform:uppercase;
 }
@@ -31,18 +38,24 @@ $golden: #b68d58;
   //     ),
   url("../images/index-background.jpg");
   background-size:cover;
-  repeat: no repeat;
+  // height: auto;
+  // background-repeat: no-repeat;
   margin:0;
+  // background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  overflow:hidden;
+
 }
 
   .indexnav{
-    height:100%;
+    height:110%;
     width:11%;
     margin-left:10%;
     background-color:rgba(#afafb2, .35);
     padding:1%;
     float:left;
     overflow:hidden;
+    margin-bottom: 0;
 
     ul{
       text-align:right;
@@ -68,7 +81,7 @@ $golden: #b68d58;
           display:block;
           position:absolute;
           bottom:0px;
-          height:30px;
+          height:1.2em;
           width:0px;
           background-color:$golden;
           transition:width .5s;
@@ -105,7 +118,7 @@ $golden: #b68d58;
   form input{
     height:40px;
     width:97%;
-    margin-bottom:10px;
+    margin-bottom:1.5rem;
     text-align:center;
     text-transform:uppercase;
   }
@@ -118,7 +131,6 @@ $golden: #b68d58;
     background-color:$seafoam;
     @include mediumfont;
     text-align:center;
-
 
     a{
       text-decoration:none;
@@ -134,3 +146,262 @@ $golden: #b68d58;
   .button:hover{
     background-color:$charcoal;
   }
+
+  /* ----------- iPad mini ----------- */
+
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+  {
+
+      .indexbody{
+        background:
+        url("../images/media-index-background.jpg");
+        background-width: auto;
+        background-height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position: 40% 10%;
+        margin:0;
+      }
+
+      .indexnav{
+        height:100%;
+        width:60%;
+        margin:10%;
+        background-color:rgba(#afafb2, .35);
+        padding:10%;
+        float:left;
+        overflow:hidden;
+
+        ul{
+          text-align:left;
+          text-transform:uppercase;
+          padding:0;
+          margin:0;
+          margin-bottom:5%;
+          float:left;
+
+          li{
+            clear:both;
+            list-style-type:none;
+            padding-bottom:1%;
+            @include regularfont;
+
+            a{
+              text-decoration:none;
+              color:white;
+              position:relative;
+            }
+
+            a:after{
+              display:block;
+              position:absolute;
+              bottom:0px;
+              height:1.2em;
+              width:0px;
+              background-color:$golden;
+              transition:width .5s;
+              content:"";
+              z-index:-1;
+            }
+
+            .link1:hover:after{
+              width:155%;
+            }
+
+            .link2:hover:after{
+              width:165%;
+            }
+
+            .link3:hover:after{
+              width:138%;
+            }
+          }
+
+          .logobox{
+            width:100%;
+            margin-bottom:35%;
+
+            .logo{
+              height:150px;
+              width: auto;
+            }
+          }
+        }
+      }
+  }
+
+  /* ----------- iPad 1 and 2 ----------- */
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    {
+
+        .indexbody{
+          background:
+          url("../images/media-index-background.jpg");
+          background-width: auto;
+          background-height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-position: 40% 10%;
+          margin:0;
+        }
+
+        .indexnav{
+          height:100%;
+          width:60%;
+          margin:10%;
+          background-color:rgba(#afafb2, .35);
+          padding:10%;
+          float:left;
+          overflow:hidden;
+
+
+          ul{
+            text-align:left;
+            text-transform:uppercase;
+            padding:0;
+            margin:0;
+            margin-bottom:15%;
+            float:left;
+
+            li{
+              clear:both;
+              list-style-type:none;
+              padding-bottom:5%;
+              @include regularfont;
+
+              a{
+                text-decoration:none;
+                color:white;
+                position:relative;
+              }
+
+              a:after{
+                display:block;
+                position:absolute;
+                bottom:0px;
+                height:1.2em;
+                width:0px;
+                background-color:$golden;
+                transition:width .5s;
+                content:"";
+                z-index:-1;
+              }
+
+              .link1:hover:after{
+                width:155%;
+              }
+
+              .link2:hover:after{
+                width:165%;
+              }
+
+              .link3:hover:after{
+                width:138%;
+              }
+            }
+
+            .logobox{
+              width:100%;
+              margin-bottom:35%;
+
+              .logo{
+                height:275px;
+                width: auto;
+              }
+            }
+          }
+        }
+    }
+
+
+    /* Portrait and Landscape */
+    @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2)   {
+
+            .indexbody{
+              background:
+              url("../images/media-index-background.jpg");
+              background-width: auto;
+              background-height: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-position: 40% 10%;
+              margin:0;
+            }
+
+            .indexnav{
+              height:100%;
+              width:60%;
+              margin:10%;
+              background-color:rgba(#afafb2, .35);
+              padding:10%;
+              float:left;
+              overflow:hidden;
+
+              ul{
+                text-align:left;
+                text-transform:uppercase;
+                padding:0;
+                margin:0;
+                margin-bottom:5%;
+                float:left;
+
+                li{
+                  clear:both;
+                  list-style-type:none;
+                  padding-bottom:1%;
+                  @include regularfont;
+
+                  a{
+                    text-decoration:none;
+                    color:white;
+                    position:relative;
+                  }
+
+                  a:after{
+                    display:block;
+                    position:absolute;
+                    bottom:0px;
+                    height:1.2em;
+                    width:0px;
+                    background-color:$golden;
+                    transition:width .5s;
+                    content:"";
+                    z-index:-1;
+                  }
+
+                  .link1:hover:after{
+                    width:155%;
+                  }
+
+                  .link2:hover:after{
+                    width:165%;
+                  }
+
+                  .link3:hover:after{
+                    width:138%;
+                  }
+                }
+
+                .logobox{
+                  width:100%;
+                  margin-bottom:35%;
+
+                  .logo{
+                    height:150px;
+                    width: auto;
+                  }
+                }
+              }
+            }
+        }
