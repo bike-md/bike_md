@@ -63,7 +63,7 @@ def model_detail(request, id):
 
 @login_required(login_url='/login/')
 def problem_detail(request, id):
-    return render(request, 'problem-details.html')
+    return render(request, 'problem-detail.html')
 
 
 @login_required(login_url='/login/')

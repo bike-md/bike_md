@@ -79,11 +79,11 @@ class RatingSerializer(serializers.ModelSerializer):
 
 
 class SystemSerializer(serializers.ModelSerializer):
-    problems= ProblemGetSerializer(many=True, read_only=True)
+    # problems= ProblemGetSerializer(many=True, read_only=True)
 
     class Meta:
         model = System
-        fields = ['id', 'name', 'url', 'problems']
+        fields = ['id', 'name', 'url']
 
 
 class BrandSerializer(serializers.ModelSerializer):

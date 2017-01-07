@@ -64,9 +64,13 @@
     <h2 class ="systitle">View Problems By System</h2>
         <div class ="answermodal-container">
 
-            <section id="system" class ="systems"></section>
+            <section id="system" class ="systems">
+
+
+            </section>
 
         </div>
+
 
 
 
@@ -89,14 +93,27 @@
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                <a data-remodal-target="modal{{this.id}}" class ="link2" href="#modal{{this.id}}">
-                    <div class ="sys">{{name}}</div></a>
+                <a data-remodal-target="modal{{id}}" class="link2" href="#modal{{id}}"
+                    onclick="loadProblemsBySystem({{id}})">
+                    <div class ="sys">{{name}}</div>
+                </a>
 
-                <div class="remodal" data-remodal-id="modal{{this.id}}">
+                <div class="remodal" data-remodal-id="modal{{id}}">
                     <button data-remodal-action="close" class="remodal-close"></button>
-                    <p>{{name}}</p>
+                    <p id="problems{{id}}"></p>
                 </div>
                 {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
+
+    <script id="problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+            {{/each}}
             {% endverbatim %}
         </article>
     </script>
