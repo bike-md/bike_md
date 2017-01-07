@@ -39,7 +39,7 @@ def create_account(request):
             login(request, user)
             return HttpResponseRedirect('/diag_app/')
 
-    return render(request, 'build_templates/create_account.html', {'user_form': user_form,
+    return render(request, 'createaccount.html', {'user_form': user_form,
                   'tech_form': tech_form})
 
 
