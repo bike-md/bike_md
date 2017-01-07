@@ -53,16 +53,11 @@
     <div class="create-account-overlay-box">
 
       <div class="create-account-box">
-          <form class="" method="POST">
+          <form method="post">
               {%csrf_token%}
-              <input type="text" name="username" placeholder="Username">
-              <input type="password" name="password" placeholder="Password">
-              <input type="text" name="email" placeholder="Email">
-
-              <input type="text" name="experience" placeholder="Years Experience">
-              <input type="text" name="job_title" placeholder="Current Position">
-              <input type="text" name="shop" placeholder="Current place of Employment">
-              <input type="submit" value="Submit">
+              {{user_form}}
+              {{tech_form}}
+              <input type="submit" value="Create Account">
           </form>
 
 
