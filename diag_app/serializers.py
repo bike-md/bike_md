@@ -71,17 +71,6 @@ class ProblemPostSerializer(serializers.ModelSerializer):
                   'model', 'posted', 'url']
 
 
-# class TechGetSerializer(serializers.ModelSerializer):
-#     problems = ProblemGetSerializer(many=False, read_only=True)
-#     solutions = SolutionGetSerializer(many=False, read_only=True)
-#     user = UserSerializer(many=False, read_only=True)
-#
-#     class Meta:
-#         model = Tech
-#         fields = ['id', 'experience', 'job_title', 'shop', 'user',
-#                   'tech_rating', 'problems', 'solutions']
-
-
 class RatingSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -90,10 +79,11 @@ class RatingSerializer(serializers.ModelSerializer):
 
 
 class SystemSerializer(serializers.ModelSerializer):
+    problems= ProblemGetSerializer(many=True, read_only=True)
 
     class Meta:
         model = System
-        fields = "__all__"
+        fields = ['id', 'name', 'url', 'problems']
 
 
 class BrandSerializer(serializers.ModelSerializer):

@@ -62,10 +62,11 @@ function loadSystems(){
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        console.log(results)
+        var systems = results.results
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
-        var html = template(results.results)
+        var html = template(systems)
+        console.log(html)
         $('#system').append(html)
     })
 }
