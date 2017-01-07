@@ -28,22 +28,41 @@ $teal: #45756e;
 }
 
 
+html {
+  background: linear-gradient(to right, rgba(black,0.5),
+  rgba(255,255,255,0)),
+   linear-gradient(
+         rgba(black, 0.25),
+        rgba(black, 0.25)
+       ),
+       url("../images/index-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow:hidden;
+  // background-image: linear-gradient(to right, rgba(black,0.8),
+  // rgba(255,255,255,0)),
+}
+
 
 .indexbody{
-  background: linear-gradient(to right, rgba(black,0.8),
+    margin: 0;
+  background: linear-gradient(to right, rgba(black,1),
   rgba(255,255,255,0)),
-  // linear-gradient(
-  //       rgba(black, 0.25),
-  //       rgba(black, 0.25)
-  //     ),
-  url("../images/index-background.jpg");
-  background-size:cover;
-  // height: auto;
+   linear-gradient(
+         rgba(black, 0.25),
+        rgba(black, 0.25)
+       ),
+  // url("../images/index-background.jpg");
+  // background-size:cover;
+  // // height: auto;
   // background-repeat: no-repeat;
-  margin:0;
-  // background-size: 100vw 100vh;
-  background-repeat: no-repeat;
-  overflow:hidden;
+  // margin:0;
+  // background-size: 100vw 100vh auto;
+  // background-repeat: no-repeat;
+  // overflow:hidden;
+
 
 }
 
@@ -131,6 +150,8 @@ $teal: #45756e;
     background-color:$seafoam;
     @include mediumfont;
     text-align:center;
+    margin-bottom: 10%;
+
 
     a{
       text-decoration:none;
@@ -324,7 +345,7 @@ $teal: #45756e;
 
     /* Portrait and Landscape */
     @media only screen
-      and (min-device-width: 375px)
+      and (min-device-width: 320px)
       and (max-device-width: 667px)
       and (-webkit-min-device-pixel-ratio: 2)   {
 

@@ -1,9 +1,14 @@
-.indexbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), url("../images/index-background.jpg");
+html {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  margin: 0;
-  background-repeat: no-repeat;
   overflow: hidden; }
+
+.indexbody {
+  margin: 0;
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); }
 
 .indexnav {
   height: 110%;
@@ -69,7 +74,8 @@ form input {
   font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 10%; }
   .button a {
     text-decoration: none;
     color: #313237;
@@ -201,7 +207,7 @@ form input {
           height: 275px;
           width: auto; } }
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .indexbody {
     background: url("../images/media-index-background.jpg");
     background-width: auto;
