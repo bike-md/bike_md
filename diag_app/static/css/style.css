@@ -1,4 +1,4 @@
-html {
+body {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -307,10 +307,13 @@ form input {
   margin-right: 1%;
   margin-bottom: 1%; }
 
-.mainbody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
+body {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  margin: 0; }
+  overflow: hidden; }
 
 .diag-main-title {
   font-size: 3.75em;
@@ -318,8 +321,7 @@ form input {
   text-transform: uppercase;
   font-weight: 500;
   color: white;
-  text-align: center;
-  margin-bottom: 0; }
+  text-align: center; }
 
 .outer-box {
   background-color: rgba(255, 255, 255, 0.25);
@@ -404,9 +406,6 @@ form input {
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
-    position: relative;
-    top: 30%;
-    transform: translateY(-30%);
     margin: 0; }
     .systems a .sys {
       height: 150px;
@@ -542,8 +541,21 @@ header {
       width: 100%; }
     header .templatenav li .link3:hover:after {
       width: 100%; }
-  header .dropdown {
-    display: none; }
+
+.dropdown {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 50px; }
+  .dropdown .droplist {
+    display: block;
+    clear: both;
+    margin-top: 3px;
+    padding: 2%; }
+    .dropdown .droplist a {
+      font-size: 1rem; }
+    .dropdown .droplist a:hover {
+      color: #a8bdba; }
 
 footer {
   clear: both;

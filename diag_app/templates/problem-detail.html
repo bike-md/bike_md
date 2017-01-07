@@ -14,7 +14,7 @@
   <body class ="prob-detailbody">
     <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
     <header>
-      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
       <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
@@ -43,7 +43,13 @@
       </div>
 
       <!-- my account -->
-        <li><a class ="link3" href ="#">MY Account</a></li>
+        <li><a class ="link3" href ="#">MY Account</a>
+          <ul class ="dropdown">
+            <li class ="droplist"><a href ="#">Notifications</a></li>
+            <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+            <li class ="droplist"><a href ="/logout/">Log Out</a></li>
+          </ul>
+        </li>
       </nav>
     </header>
 
@@ -116,5 +122,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/problem_detail.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

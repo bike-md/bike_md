@@ -62,14 +62,30 @@ function loadSystems(){
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        console.log(results)
+        var systems = results.results
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
-        var html = template(results.results)
+        var html = template(systems)
         $('#system').append(html)
     })
 }
 loadSystems()
+
+
+function loadProblemsBySystem(id){
+    var probId = id
+    $.ajax({
+        url: '/api/get-problems?system=' + id,
+        type: 'GET',
+    }).done(function(results){
+        var problems = results.results
+        var source = $('#problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#problems' + probId).empty()
+        $('#problems' + probId).append(html)
+    })
+}
 
 
 // post new problem
@@ -96,3 +112,12 @@ function postProblem(){
 }
 
 $("#newProbSubmit").click(postProblem)
+
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/problem_detail/' + id
+    console.log(url)
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})
