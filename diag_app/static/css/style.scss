@@ -71,6 +71,7 @@ header{
       }
 
 
+// hover state overline
       a:after{
         display:block;
         position:absolute;
@@ -94,14 +95,35 @@ header{
         width:100%;
       }
     }
-  }
 
-  .dropdown{
-    display:none;
+  }
+}
+// end hover state overline
+
+// my account dropdown menu
+.dropdown{
+  display:none;
+  padding:0;
+  position:absolute;
+  top:50px;
+
+  .droplist{
+    display:block;
+    clear:both;
+    margin-top:3px;
+    padding:2%;
+
+    a{
+      font-size:1rem;
+    }
+
+    a:hover{
+      color:$seafoam;
+    }
   }
 }
 
-
+// footer
 footer{
   clear:both;
   background-color:rgba(white, .15);

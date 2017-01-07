@@ -132,8 +132,7 @@ form input {
   text-transform: uppercase;
   font-weight: 500;
   color: white;
-  text-align: center;
-  margin-bottom: 0; }
+  text-align: center; }
 
 .outer-box {
   background-color: rgba(255, 255, 255, 0.25);
@@ -354,8 +353,21 @@ header {
       width: 100%; }
     header .templatenav li .link3:hover:after {
       width: 100%; }
-  header .dropdown {
-    display: none; }
+
+.dropdown {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 50px; }
+  .dropdown .droplist {
+    display: block;
+    clear: both;
+    margin-top: 3px;
+    padding: 2%; }
+    .dropdown .droplist a {
+      font-size: 1rem; }
+    .dropdown .droplist a:hover {
+      color: #a8bdba; }
 
 footer {
   clear: both;
