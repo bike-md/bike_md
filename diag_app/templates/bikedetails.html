@@ -14,38 +14,44 @@
 
   <body class ="bikedetailsbody">
     <header>
-      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-      <form>
+        <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-      <form>
+        </form>
 
-      <nav class ="templatenav">
+        <nav class ="templatenav">
 
-        <!-- ask questions -->
-      <div class ="askmodal-container">
-        <li><a data-remodal-target="modal" class ="link1" href="#modal">Ask Question</a></li>
+          <!-- ask questions -->
+            <div class ="askmodal-container">
+              <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
 
-        <div class="remodal" data-remodal-id="modal">
-        <button data-remodal-action="close" class="remodal-close"></button>
-          <p>Stuff</p>
-        </div>
-      </div>
+              <div class="remodal" data-remodal-id="askModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+                <p>Stuff1</p>
+              </div>
+            </div>
 
-      <!-- answer questions -->
-      <div class ="answermodal-container">
-        <li><a data-remodal-target="modal" class ="link2" href="#modal">Answer Questions</a></li>
+            <!-- answer questions -->
+            <div class ="answermodal-container">
+              <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
 
-        <div class="remodal" data-remodal-id="modal">
-        <button data-remodal-action="close" class="remodal-close"></button>
-          <p>Stuff</p>
-        </div>
-      </div>
+              <div class="remodal" data-remodal-id="answerModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+                <p>Stuff</p>
+              </div>
+            </div>
 
-      <!-- my account -->
-        <li><a class ="link3" href ="#">MY Account</a></li>
+        <!-- my account -->
+            <li><a class ="link3" href ="#">MY Account</a></li>
+                <ul class ="dropdown">
+                    <li><a href ="#">Notifications</a></li>
+                    <li><a href ="/accounts/profile/">Profile</a></li>
+                    <li><a href ="/logout/">Log Out</a></li>
+                </ul>
       </nav>
     </header>
+
 
     <!-- specs -->
     <section id="bikeSpecs" class ="specs">
@@ -53,26 +59,22 @@
 
     </section>
 
+
     <!-- circles -->
     <h2 class ="systitle">View Problems By System</h2>
-      <div class ="answermodal-container">
-        <a data-remodal-target="modal" class ="link2" href="#modal">
-          <section id="system" class ="systems">
+        <div class ="answermodal-container">
 
-          </section>
-        </a>
+            <section id="system" class ="systems">
 
-        <div class="remodal" data-remodal-id="modal">
-          <button data-remodal-action="close" class="remodal-close"></button>
-            <p>Stuff</p>
+
+
+            </section>
+
         </div>
-      </div>
-
+        
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
-
-
 
 
     <script id="bike-template" type="text/x-handlebars-template">
@@ -89,8 +91,27 @@
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                <a href ="#"><div class ="sys">{{name}}</div></a>
+                <a data-remodal-target="modal{{id}}" class="link2" href="#modal{{id}}"
+                    onclick="loadProblemsBySystem({{id}})">
+                    <div class ="sys">{{name}}</div>
+                </a>
+
+                <div class="remodal" data-remodal-id="modal{{id}}">
+                    <button data-remodal-action="close" class="remodal-close"></button>
+                    <p id="problems{{id}}"></p>
+                </div>
                 {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
+
+    <script id="problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+            {{/each}}
             {% endverbatim %}
         </article>
     </script>

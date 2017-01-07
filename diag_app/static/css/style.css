@@ -1,28 +1,36 @@
-.indexbody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg");
+html {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  margin: 0; }
+  overflow: hidden; }
+
+.indexbody {
+  margin: 0;
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); }
 
 .indexnav {
-  height: 640px;
+  height: 110%;
   width: 11%;
   margin-left: 10%;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(175, 175, 178, 0.35);
   padding: 1%;
   float: left;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0; }
   .indexnav ul {
     text-align: right;
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 15%;
+    margin-bottom: 35%;
     float: left; }
     .indexnav ul li {
       clear: both;
       list-style-type: none;
       padding-bottom: 1%;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase; }
       .indexnav ul li a {
@@ -33,7 +41,7 @@
         display: block;
         position: absolute;
         bottom: 0px;
-        height: 30px;
+        height: 1.2em;
         width: 0px;
         background-color: #b68d58;
         transition: width .5s;
@@ -46,29 +54,28 @@
       .indexnav ul li .link3:hover:after {
         width: 138%; }
     .indexnav ul .logobox {
-      height: 300px;
       width: 100%;
-      margin-bottom: 28%; }
+      margin-bottom: 35%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
 form input {
   height: 40px;
   width: 97%;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
   text-align: center;
   text-transform: uppercase; }
 
 .button {
   height: 70px;
   width: 100%;
-  padding-top: 9%;
   box-sizing: border-box;
   background-color: #a8bdba;
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 10%; }
   .button a {
     text-decoration: none;
     color: #313237;
@@ -79,6 +86,185 @@ form input {
 .button:hover {
   background-color: #313237; }
 
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 15%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 5%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 275px;
+          width: auto; } }
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5em;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #b68d58;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
 .createaccountbody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
@@ -176,7 +362,7 @@ form input {
   margin: 0; }
 
 .specs {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -190,7 +376,7 @@ form input {
   top: 50px;
   left: 38%; }
   .specs .specstitle {
-    font-size: 2.25rem;
+    font-size: 2.25em;
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
@@ -198,7 +384,7 @@ form input {
     text-align: center; }
 
 .systitle {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -213,7 +399,7 @@ form input {
   .systems a {
     text-align: center;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
@@ -251,7 +437,7 @@ form input {
   margin: 3% 0 0 20%; }
 
 .prob-detail-box-name {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -264,7 +450,7 @@ form input {
   margin: 0; }
 
 .profile-title p {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -281,29 +467,31 @@ form input {
 
 .profile-photo {
   width: 30%;
-  height: 150px;
+  height: 224px;
   float: left;
   background-color: #2B7F7B;
-  margin: 1%; }
-
-.profile-information {
-  width: 30%;
-  height: 224px;
-  float: right;
-  background-color: #ffffff;
-  margin: 1%; }
+  margin-top: 1%;
+  margin-left: 1%; }
 
 .profile-questions-asked {
   width: 66%;
+  height: 224px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 1%;
+  margin-top: 1%; }
+
+.profile-information {
+  width: 30%;
   height: 300px;
   float: left;
   background-color: #ffffff;
-  margin-left: 1%;
+  margin: 1%;
   margin-bottom: 1%; }
 
 .profile-questions-answered {
   width: 66%;
-  height: 224px;
+  height: 300px;
   float: right;
   background-color: #ffffff;
   margin-right: 1%;
@@ -334,7 +522,7 @@ header {
     header .templatenav li a {
       text-decoration: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase;
       position: relative; }

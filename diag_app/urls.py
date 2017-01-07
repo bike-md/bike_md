@@ -5,10 +5,9 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    url((r'^$'),  TemplateView.as_view(template_name='main.html')),
-    url(r'^brands/$', diag_app.views.test, name='brands'),
-    url((r'^model_detail/([0-9]+)'), TemplateView.as_view(template_name='bikedetails.html')),
-    url((r'^problem_detail/([0-9]+)'), TemplateView.as_view(template_name='problem-detail.html')),
+    url((r'^$'), views.main_page, name='main'),
+    url((r'^model_detail/([0-9]+)'), views.model_detail, name='model_detail'),
+    url((r'^problem_detail/([0-9]+)'), views.problem_detail, name='problem_detail'),
 
     # developemnt urls
     url((r'^problems/'),TemplateView.as_view(template_name="build_templates/problem_listing.html")),

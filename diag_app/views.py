@@ -11,15 +11,74 @@ from .serializers import BrandSerializer, ModelSerializer, ProblemPostSerializer
 from .serializers import SolutionPostSerializer, SolutionGetSerializer
 from django.views.generic import ListView
 from django.contrib.auth import login, authenticate, logout
-    # from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
+
+
+def create_account(request):
+    if request.method == 'GET':
+        user_form = UserForm()
+        tech_form = TechForm()
+    elif request.method =='POST':
+        user_form = UserForm(request.POST)
+        tech_form = TechForm(request.POST)
+        if user_form.is_valid() and tech_form.is_valid():
+            user = user_form.save()
+            tech = tech_form.save(commit=False)
+            tech.user = user
+            tech.save()
+            login(request, user)
+            password = user.password
+            user.set_password(password)
+            user.save()
+            user = authenticate(username=user.username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/diag_app/brands/')
+    return render(request, 'createaccount.html', {'user_form': user_form,
+                  'tech_form': tech_form})
+
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None and user.is_active:
+            login(request, user)
+            return HttpResponseRedirect('/diag_app/')
+        else:
+            print("Username or password invaild")
+            return render(request, 'registration/login.html')
+    else:
+        return render(request, 'registration/login.html')
+
+
+@login_required(login_url='/login/')
+def main_page(request):
+    return render(request, 'main.html')
+
+
+@login_required(login_url='/login/')
+def model_detail(request, id):
+    return render(request, 'bikedetails.html')
+
+
+@login_required(login_url='/login/')
+def problem_detail(request, id):
+    return render(request, 'problem-detail.html')
+
+
+@login_required(login_url='/login/')
+def profile(request):
+    return render(request, 'profile.html')
 
 
 def test(request):
     return render(request, 'build_templates/load.html')
 
 
+# class viewsets and filters
 class SystemViewSet(viewsets.ModelViewSet):
     queryset = System.objects.all()
     serializer_class = SystemSerializer
@@ -100,44 +159,6 @@ class TechViewSet(viewsets.ModelViewSet):
     queryset = Tech.objects.all()
     serializer_class = TechSerializer
     permission_classes = (permissions.IsAuthenticated,)
-
-
-def create_account(request):
-    if request.method == 'GET':
-        user_form = UserForm()
-        tech_form = TechForm()
-    elif request.method =='POST':
-        user_form = UserForm(request.POST)
-        tech_form = TechForm(request.POST)
-        if user_form.is_valid() and tech_form.is_valid():
-            user = user_form.save()
-            tech = tech_form.save(commit=False)
-            tech.user = user
-            tech.save()
-            login(request, user)
-            password = user.password
-            user.set_password(password)
-            user.save()
-            user = authenticate(username=user.username, password=password)
-            login(request, user)
-            return HttpResponseRedirect('/diag_app/brands/')
-    return render(request, 'createaccount.html', {'user_form': user_form,
-                  'tech_form': tech_form})
-
-
-def login_user(request):
-    print("hi")
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None and user.is_active:
-            print(user)
-            login(request, user)
-            return HttpResponseRedirect('/diag_app/')
-    else:
-
-        return render(request, 'registration/login.html')
 
 
 class RatingViewSet(viewsets.ModelViewSet):

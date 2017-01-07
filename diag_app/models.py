@@ -38,7 +38,7 @@ class Model(models.Model):
 
 class Problem(models.Model):
     title = models.CharField(max_length=65)
-    system = models.ForeignKey(System)
+    system = models.ForeignKey(System, related_name='problems')
     description = models.TextField(max_length=500)
     tech = models.ForeignKey(Tech, related_name='problems')
     model = models.ForeignKey(Model)

@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
     <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <title></title>
+    <title>Problem Detail</title>
   </head>
 
   <body class ="prob-detailbody">
-
+    <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
     <header>
-      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
       <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
@@ -47,33 +47,70 @@
       </nav>
     </header>
 
-    
 
     <section class ="prob-detail-boxes-container">
-      <h2 class="prob-detail-box-name">Questions</h2>
-      <div class="prob-detail-question-box prob-detail-boxes">
+      <h2 class="prob-detail-box-name">Problem</h2>
+
+      <div id="problemDetail" class="prob-detail-question-box prob-detail-boxes">
 
       </div>
 
-      <h2 class="prob-detail-box-name">Answers</h2>
-      <div class ="prob-detail-solution-box prob-detail-boxes">
+      <div id="solutions">
 
       </div>
 
-      <h2 class="prob-detail-box-name"></h2>
-      <form class ="prob-detail-solutioninput-box prob-detail-boxes">
+      <h2 class="prob-detail-box-name">Post new Solution</h2>
+      <form class="solution-input" action="submit" method="POST">
+          <h1>Post a new Solution</h1>
+          {%csrf_token%}
+          <h4>Enter the time required for your solution:</h4>
+          <input id="solutionTime" type="text" name="solutionTime" value="Enter time here">
 
+          <h4>Enter the parts cost, if any, for this solution:</h4>
+          <input id="partsCost" type="text" name="partsCost" value="Enter cost here">
+
+          <h4>Describe your solution:</h4>
+          <textarea id="solutionText" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+          <input id="newSolutionSubmit" type="submit" value="Submit">
       </form>
 
-      <h2 class="prob-detail-box-name">Comments</h2>
-      <form class ="prob-detail-solution-box prob-detail-boxes">
-
-      </form>
     </section>
 
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
+
+    <script id="problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            <input id="problemId" type="hidden" name="problem_id" value="{{id}}">
+                <h2 class="question-title">{{title}}</h2>
+                <h5 class="date-time">{{{formatTime posted}}}</h5>
+                <h5 class="posted-by">{{tech.user.username}}</h5>
+                <h5 class="question-text">{{description}}</h5>
+            {% endverbatim %}
+        </article>
+    </script>
+
+    <script id="solution-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+            <div class ="prob-detail-solution-box prob-detail-boxes">
+                <h2 class="prob-detail-box-name">Answer:</h2>
+                <h5 class="date-time">{{{formatTime this.posted}}}</h5>
+                <h5 class="posted-by">{{this.tech.user.username}}</h5>
+                <h5 class="solution-text">{{this.description}}</h5>
+                <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
+                <button class="up-vote" type="submit" onclick="validateVote({{id}}, 1)">
+                Up</button>
+                <button class="down-vote" type="submit" onclick="validateVote({{id}}, -1)">
+                Down</button>
+            </div>
+            {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

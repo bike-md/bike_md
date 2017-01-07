@@ -3,20 +3,26 @@ $seafoam: #a8bdba;
 $golden: #b68d58;
 $teal: #45756e;
 
+@mixin smallfont{
+  font-size:1em;
+  font-family:gill sans;
+  text-transform:uppercase;
+}
+
 @mixin regularfont{
-  font-size:1.5rem;
+  font-size:1.5em;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin mediumfont{
-  font-size:2.25rem;
+  font-size:2.25em;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin largefont{
-  font-size:3.75rem;
+  font-size:3.75em;
   font-family:gill sans;
   text-transform:uppercase;
 }
@@ -55,32 +61,34 @@ $teal: #45756e;
 
   .profile-photo {
     width: 30%;
-    height: 150px;
+    height: 224px;
     float: left;
     background-color: #2B7F7B;
-    margin: 1%;
-  }
-
-  .profile-information {
-    width: 30%;
-    height: 224px;
-    float: right;
-    background-color: #ffffff;
-    margin: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
   }
 
   .profile-questions-asked {
     width: 66%;
+    height: 224px;
+    float: right;
+    background-color: #ffffff;
+    margin-right: 1%;
+    margin-top: 1%;
+  }
+
+  .profile-information {
+    width: 30%;
     height: 300px;
     float: left;
     background-color: #ffffff;
-    margin-left: 1%;
+    margin: 1%;
     margin-bottom: 1%;
   }
 
   .profile-questions-answered {
     width: 66%;
-    height: 224px;
+    height: 300px;
     float: right;
     background-color: #ffffff;
     margin-right: 1%;

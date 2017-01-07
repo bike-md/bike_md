@@ -35,14 +35,12 @@ function getTechInfo(){
         url: '/api/techs/' + id,
         type: 'GET',
     }).done(function(results){
-        console.log(results)
-        var source = $("#profile-template").html()
+        var source = $("#info-template").html()
         var template = Handlebars.compile(source)
         var html = template(results)
-        $("#profile").append(html)
+        $("#techInfo").append(html)
     })
 }
-
 getTechInfo()
 
 
@@ -52,12 +50,57 @@ function getTechProblems(){
         url: '/api/get-problems?tech=' + id,
         type: 'GET',
     }).done(function(results){
-        console.log(results.results)
         var source = $('#techProblem-template').html()
         var template = Handlebars.compile(source)
         var html = template(results.results)
-        $('#problemList').append(html)
+        $('#techQuestions').append(html)
     })
 }
-
 getTechProblems()
+
+
+function getTechSolutions(){
+    var id = $("#currentTech").val()
+    $.ajax({
+        url: '/api/get-solutions?tech=' + id,
+        type: 'GET',
+    }).done(function(results){
+        console.log(results)
+        var source = $('#techSolution-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(results.results)
+        $('#techAnswers').append(html)
+    })
+}
+getTechSolutions()
+
+
+Handlebars.registerHelper('formatTime', function (posted) {
+    var time = posted.replace('T', ':')
+    // var hour = Number(time.split(":")[1])
+    // var min = Number(time.split(":")[2])
+    var date = time.split(":")[0]
+    var year = Number(date.split("-")[0])
+    var month = Number(date.split("-")[1])
+    var day = Number(date.split("-")[2])
+    var months = {
+        "January": 1,
+        "February ": 2,
+        "March": 3,
+        "April": 4,
+        "May": 5,
+        "June": 6,
+        "July": 7,
+        "August": 8,
+        "September": 9,
+        "October": 10,
+        "November": 11,
+        "December": 12,
+    }
+    for(var i in months){
+        if(month == months[i]){
+            month = i
+        }
+    }
+    return month + " " + day + " " + year
+})
