@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-html {
+body {
   background: linear-gradient(to right, rgba(black,0.5),
   rgba(255,255,255,0)),
    linear-gradient(
@@ -27,7 +27,7 @@ html {
          rgba(black, 0.25),
         rgba(black, 0.25)
        ),
-  // url("../images/index-background.jpg");
+   url("../images/index-background.jpg");
   // background-size:cover;
   // // height: auto;
   // background-repeat: no-repeat;

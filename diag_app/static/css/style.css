@@ -1,4 +1,4 @@
-html {
+body {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -8,7 +8,7 @@ html {
 
 .indexbody {
   margin: 0;
-  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)); }
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg"); }
 
 .indexnav {
   height: 110%;
@@ -307,10 +307,13 @@ form input {
   margin-right: 1%;
   margin-bottom: 1%; }
 
-.mainbody {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
+body {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  margin: 0; }
+  overflow: hidden; }
 
 .diag-main-title {
   font-size: 3.75em;
