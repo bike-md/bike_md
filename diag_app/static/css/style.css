@@ -313,7 +313,7 @@ form input {
   margin: 0; }
 
 .diag-main-title {
-  font-size: 3.75rem;
+  font-size: 3.75em;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: 500;
@@ -328,7 +328,7 @@ form input {
   margin: 0 auto;
   position: relative; }
   .outer-box .diag-select-title {
-    font-size: 2.25rem;
+    font-size: 2.25em;
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 500;
@@ -342,7 +342,7 @@ form input {
     display: inline-block;
     margin: 2%; }
     .outer-box .diag-select-box .diag-select-text {
-      font-size: 1.5rem;
+      font-size: 1.5em;
       font-family: gill sans;
       text-transform: uppercase;
       color: #45756e;
@@ -403,9 +403,6 @@ form input {
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
-    position: relative;
-    top: 30%;
-    transform: translateY(-30%);
     margin: 0; }
     .systems a .sys {
       height: 150px;

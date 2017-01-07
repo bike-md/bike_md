@@ -1,90 +1,69 @@
 <!DOCTYPE html>
-    {%load static%}
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-        <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
-        <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
-        <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-        <title>Main</title>
-      </head>
+{%load static%}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
+    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <title>Main</title>
+  </head>
 
-      <body class ="mainbody">
+  <body class ="mainbody">
 
-        <header>
-          <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+    <header>
+      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-          <form>
-            <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-          <form>
+      <form>
+        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
+      <form>
 
-          <nav class ="templatenav">
+      <nav class ="templatenav">
+        <!-- ask questions -->
+        <div class ="askmodal-container">
+          <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
 
-            <!-- ask questions -->
-          <div class ="askmodal-container">
-            <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
-
-            <div class="remodal" data-remodal-id="askModal">
+          <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
-              <p>Stuff1</p>
-            </div>
+            <p>Stuff1</p>
           </div>
+        </div>
 
-          <!-- answer questions -->
-          <div class ="answermodal-container">
-            <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
+        <!-- answer questions -->
+        <div class ="answermodal-container">
+          <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
 
-            <div class="remodal" data-remodal-id="answerModal">
+          <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
-              <p>Stuff</p>
-            </div>
+            <p>Stuff</p>
           </div>
+        </div>
 
-          <!-- my account -->
-            <li><a class ="link3" href ="#">MY Account</a>
-              <ul class ="dropdown">
-                <li class ="droplist"><a href ="#">Notifications</a></li>
-                <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
-                <li class ="droplist"><a href ="/logout/">Log Out</a></li>
-              </ul>
-            </li>
-          </nav>
-        </header>
+        <!-- my account -->
+          <li><a class ="link3" href ="#">MY Account</a>
+            <ul class ="dropdown">
+              <li class ="droplist"><a href ="#">Notifications</a></li>
+              <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+              <li class ="droplist"><a href ="/logout/">Log Out</a></li>
+            </ul>
+          </li>
+      </nav>
+    </header>
 
         <h1 class ="diag-main-title">Diagnose</h1>
-
-        <!-- <div class ="diag-state-circle">
-          <p>1</p>
-        </div>
-
-        <div class ="diag-state-circle">
-          <p>1</p>
-        </div>
-
-        <div class ="diag-state-circle">
-          <p>1</p>
-        </div> -->
-
+  
         <section id="listing" class="outer-box">
             <!-- <div id="step" class="step"></div> -->
           <!-- <h3 class ="diag-select-title">select make</h3> -->
         <!-- <a href=""><div class ="diag-select-box"></div></a> -->
         </section>
 
-
-
-
-
         <footer>
           <p>Copyright Bike MD 2017. All rights reserved.</p>
         </footer>
-
-
-
-
 
 
         <script id="brand-template" type="text/x-handlebars-template">

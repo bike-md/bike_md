@@ -16,31 +16,31 @@
     <header>
       <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-        <form>
+      <form>
         <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-        </form>
+      </form>
 
-        <nav class ="templatenav">
+      <nav class ="templatenav">
 
-          <!-- ask questions -->
-            <div class ="askmodal-container">
-              <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
+        <!-- ask questions -->
+        <div class ="askmodal-container">
+          <li><a data-remodal-target="askModal" class ="link1" href="#askModal">Ask Question</a></li>
 
-              <div class="remodal" data-remodal-id="askModal">
-              <button data-remodal-action="close" class="remodal-close"></button>
-                <p>Stuff1</p>
-              </div>
-            </div>
+          <div class="remodal" data-remodal-id="askModal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <p>Stuff1</p>
+          </div>
+        </div>
 
-            <!-- answer questions -->
-            <div class ="answermodal-container">
-              <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
+        <!-- answer questions -->
+        <div class ="answermodal-container">
+          <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
 
-              <div class="remodal" data-remodal-id="answerModal">
-              <button data-remodal-action="close" class="remodal-close"></button>
-                <p>Stuff</p>
-              </div>
-            </div>
+          <div class="remodal" data-remodal-id="answerModal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <p>Stuff</p>
+          </div>
+        </div>
 
         <!-- my account -->
         <li><a class ="link3" href ="#">MY Account</a>
@@ -53,25 +53,21 @@
       </nav>
     </header>
 
-
     <!-- specs -->
     <section id="bikeSpecs" class ="specs">
       <!-- <h2 class ="specstitle">Specs</h2> -->
-
     </section>
 
-
-    <!-- circles -->
     <h2 class ="systitle">View Problems By System</h2>
-        <div class ="answermodal-container">
+      <div class ="answermodal-container">
+        <!-- circles -->
+        <section id="system" class ="systems">
 
-            <section id="system" class ="systems">
 
 
+        </section>
 
-            </section>
-
-        </div>
+      </div>
 
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>
@@ -122,5 +118,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/bike_detail.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
