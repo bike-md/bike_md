@@ -72,10 +72,11 @@ function loadSystems(){
 loadSystems()
 
 
-function loadProblemsBySystem(id){
+function loadProblemsBySystemForModel(id){
     var probId = id
+    var modelId = $("#modelId").val()
     $.ajax({
-        url: '/api/get-problems?system=' + id,
+        url: '/api/get-problems?system=' + probId + '&model=' + modelId,
         type: 'GET',
     }).done(function(results){
         var problems = results.results
