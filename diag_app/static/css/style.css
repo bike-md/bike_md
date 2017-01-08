@@ -1,17 +1,9 @@
-body {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden; }
-
 .indexbody {
   margin: 0;
-  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/index-background.jpg"); }
+  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/index-background.jpg");
+  background-size: cover; }
 
 .indexnav {
-  height: 110%;
   width: 11%;
   margin-left: 10%;
   background-color: rgba(175, 175, 178, 0.35);
@@ -24,7 +16,7 @@ body {
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 35%;
+    margin-bottom: 20%;
     float: left; }
     .indexnav ul li {
       clear: both;
@@ -55,23 +47,23 @@ body {
         width: 138%; }
     .indexnav ul .logobox {
       width: 100%;
-      margin-bottom: 35%; }
+      margin-bottom: 15%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
 form input {
-  height: 40px;
+  height: 30px;
   width: 97%;
   margin-bottom: 1.5rem;
   text-align: center;
   text-transform: uppercase; }
 
 .button {
-  height: 70px;
+  height: 50px;
   width: 100%;
   box-sizing: border-box;
   background-color: #a8bdba;
-  font-size: 2.25rem;
+  font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   text-align: center;
