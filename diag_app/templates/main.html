@@ -85,13 +85,15 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select year</h3>
-                <a onclick="showModels({{this.brandId}})">
+                <input id="brandId" type="hidden" name="brand" value="{{this.brandId}}">
                     {{#each this.modelYears}}
-                    <div class ="diag-select-box">
-                        <h4 class="diag-select-text">{{ this }}</h4>
-                    </div>
+                    <a onclick="showModels({{this}})">
+                        <div class ="diag-select-box">
+                            <h4 class="diag-select-text">{{this}}</h4>
+                        </div>
+                    </a>
                     {{/each}}
-                </a>
+
                 {% endverbatim %}
             </article>
         </script>
