@@ -19,21 +19,8 @@
   color:white;
   font-weight:200;
   text-align:center;
-  border:1px solid white;
-  background-color:rgba(black, .25);
-  padding:0 3%;
-  display:inline-block;
-  position:relative;
-  top:50px;
-  left:38%;
-
-  .specstitle{
-    @include mediumfont;
-    color:white;
-    font-weight:500;
-    text-align:center;
-
-  }
+  background-color:rgba($golden, 1);
+  margin:0;
 }
 
 .systitle{
@@ -58,13 +45,14 @@
         margin:0;
 
         .sys{
-          height:150px;
-          width:150px;
+          height:170px;
+          width:170px;
           margin:0 4%;
           display:inline-block;
-          background-color:rgba($seafoam, .75);
+          background-color:rgba($teal, .8);
           border-radius:100%;
-          padding:1%;
+          padding-top:5.5%;
+          box-sizing:border-box;
         }
       }
 

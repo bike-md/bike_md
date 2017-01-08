@@ -30,7 +30,7 @@ body {
       clear: both;
       list-style-type: none;
       padding-bottom: 1%;
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-family: gill sans;
       text-transform: uppercase; }
       .indexnav ul li a {
@@ -71,7 +71,7 @@ form input {
   width: 100%;
   box-sizing: border-box;
   background-color: #a8bdba;
-  font-size: 2.25em;
+  font-size: 2.25rem;
   font-family: gill sans;
   text-transform: uppercase;
   text-align: center;
@@ -117,7 +117,7 @@ form input {
         clear: both;
         list-style-type: none;
         padding-bottom: 1%;
-        font-size: 1.5em;
+        font-size: 1.5rem;
         font-family: gill sans;
         text-transform: uppercase; }
         .indexnav ul li a {
@@ -177,7 +177,7 @@ form input {
         clear: both;
         list-style-type: none;
         padding-bottom: 5%;
-        font-size: 1.5em;
+        font-size: 1.5rem;
         font-family: gill sans;
         text-transform: uppercase; }
         .indexnav ul li a {
@@ -236,7 +236,7 @@ form input {
         clear: both;
         list-style-type: none;
         padding-bottom: 1%;
-        font-size: 1.5em;
+        font-size: 1.5rem;
         font-family: gill sans;
         text-transform: uppercase; }
         .indexnav ul li a {
@@ -316,7 +316,7 @@ body {
   overflow: hidden; }
 
 .diag-main-title {
-  font-size: 3.75em;
+  font-size: 3.75rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: 500;
@@ -331,7 +331,7 @@ body {
   margin: 0 auto;
   position: relative; }
   .outer-box .diag-select-title {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 500;
@@ -345,7 +345,7 @@ body {
     display: inline-block;
     margin: 2%; }
     .outer-box .diag-select-box .diag-select-text {
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-family: gill sans;
       text-transform: uppercase;
       color: #45756e;
@@ -369,29 +369,17 @@ body {
   margin: 0; }
 
 .specs {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
   font-weight: 200;
   text-align: center;
-  border: 1px solid white;
-  background-color: rgba(0, 0, 0, 0.25);
-  padding: 0 3%;
-  display: inline-block;
-  position: relative;
-  top: 50px;
-  left: 38%; }
-  .specs .specstitle {
-    font-size: 2.25em;
-    font-family: gill sans;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 500;
-    text-align: center; }
+  background-color: #b68d58;
+  margin: 0; }
 
 .systitle {
-  font-size: 2.25em;
+  font-size: 2.25rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -406,19 +394,20 @@ body {
   .systems a {
     text-align: center;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
     color: white;
     margin: 0; }
     .systems a .sys {
-      height: 150px;
-      width: 150px;
+      height: 170px;
+      width: 170px;
       margin: 0 4%;
       display: inline-block;
-      background-color: rgba(168, 189, 186, 0.75);
+      background-color: rgba(69, 117, 110, 0.8);
       border-radius: 100%;
-      padding: 1%; }
+      padding-top: 5.5%;
+      box-sizing: border-box; }
   .systems .sys:hover {
     background-color: #b68d58;
     transform: rotate(360deg);
@@ -435,7 +424,7 @@ body {
 
 .prob-detail-boxes-container {
   text-align: center;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -469,7 +458,7 @@ body {
   margin: 3% 0 0 20%; }
 
 .prob-detail-box-name {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -477,13 +466,13 @@ body {
   margin: 0; }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237; }
 
 h4 {
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
@@ -497,7 +486,7 @@ h4 {
   overflow: auto; }
 
 .profile-title p {
-  font-size: 2.25em;
+  font-size: 2.25rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
@@ -545,7 +534,7 @@ h4 {
   padding: 2%;
   overflow: scroll; }
   .profile-information p {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase;
     background-color: #b68d58;
@@ -565,7 +554,7 @@ h4 {
   padding: 2%;
   overflow: scroll; }
   .profile-questions-asked p {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase;
     background-color: #a8bdba;
@@ -584,7 +573,7 @@ h4 {
   padding: 2%;
   overflow: scroll; }
   .profile-questions-answered p {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase;
     background-color: #a8bdba;
@@ -597,7 +586,7 @@ h4 {
   height: 40px;
   width: 100%;
   box-sizing: border-box;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   float: right;
@@ -639,7 +628,7 @@ header {
     header .templatenav li a {
       text-decoration: none;
       color: white;
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-family: gill sans;
       text-transform: uppercase;
       position: relative; }
@@ -679,7 +668,7 @@ header {
 
 .modaltext {
   color: white;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase; }
 
@@ -687,7 +676,7 @@ header {
   height: 50px;
   width: 30%;
   text-align: center;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237; }
@@ -695,7 +684,7 @@ header {
 .submit-button {
   color: #45756e;
   background-color: white;
-  font-size: 1em;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   border: transparent;

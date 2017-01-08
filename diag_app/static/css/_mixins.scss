@@ -1,23 +1,23 @@
 @mixin smallfont{
-  font-size:1em;
+  font-size:1rem;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin regularfont{
-  font-size:1.5em;
+  font-size:1.5rem;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin mediumfont{
-  font-size:2.25em;
+  font-size:2.25rem;
   font-family:gill sans;
   text-transform:uppercase;
 }
 
 @mixin largefont{
-  font-size:3.75em;
+  font-size:3.75rem;
   font-family:gill sans;
   text-transform:uppercase;
 }
