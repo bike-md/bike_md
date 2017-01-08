@@ -9,19 +9,38 @@
       ),
   url("../images/main-background.jpg");
   background-size:cover;
-  margin:0;
 }
 
 .prob-detail-boxes-container{
-  // position:relative;
-  // top:90px;
+  text-align:center;
+  @include smallfont;
+  color:white;
+  margin-top:60px;
+}
+
+.solutiontimecost-container{
+  background-color:rgba($teal, 1);
+  border:1px solid white;
+  display:inline-block;
+  width:40%;
+  margin:2%;
+  padding:1%;
+  box-sizing:border-box;
+}
+
+.solutiontimecost-input{
+  text-align:center;
+  padding:3%;
+  box-sizing:border-box;
+  text-transform:uppercase;
+  color:$teal;
 }
 
 .prob-detail-boxes{
   height:125px;
   width:60%;
-  margin:2% auto;
-  background-color:white;
+  margin:2% auto 5% auto;
+  background-color:rgba(white, .9);
 }
 
 .prob-detail-comments-box{
