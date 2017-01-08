@@ -32,18 +32,18 @@
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
 
-                <h4>Enter a title for your post:</h4>
-                <input id="probTitle" type="text" name="probTitle" value="Enter Problem title">
+                <h4 class ="modaltext">Enter a title for your post:</h4>
+                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
                 <br>
                 <br>
-                <h4>Choose System:</h4>
-                    <div id="systemSelect"></div>
+                <h4 class ="modaltext">Choose System:</h4>
+                    <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
-                <h4>Describe you problem:</h4>
+                <h4 class ="modaltext">Describe your problem:</h4>
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
-                <input id="newProbSubmit" type="submit" value="Submit">
+                <input id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
             </form>
           </div>
         </div>

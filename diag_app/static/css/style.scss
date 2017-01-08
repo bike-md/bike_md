@@ -60,7 +60,7 @@ header{
         bottom:30px;
         height:5px;
         width:0px;
-        background-color:$seafoam;
+        background-color:$teal;
         transition:width .5s;
         content:"";
       }
@@ -103,6 +103,39 @@ header{
       color:$seafoam;
     }
   }
+}
+
+// modal
+.remodal{
+  background-color:$teal;
+}
+
+.modaltext{
+  color:white;
+  @include smallfont;
+}
+
+.problemtitle-field{
+  height:50px;
+  width:30%;
+  text-align:center;
+  @include smallfont;
+  color:$charcoal;
+}
+
+.submit-button{
+  color:$teal;
+  background-color:white;
+  @include smallfont;
+  border:transparent;
+  padding:2%;
+  margin-top:10px;
+}
+
+.submit-button:hover{
+  color:white;
+  background-color:$teal;
+  border:1px solid white;
 }
 
 // footer
