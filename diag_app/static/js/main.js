@@ -96,30 +96,88 @@ function linkBike (id){
 }
 
 
-// load systems
-function loadSystems(){
+// modal functions
+function loadBrandsAskModal(){
+    $.ajax({
+        url: '/api/brands/',
+        type: 'GET',
+    }).done(function(results){
+        $('#brandSelect').empty()
+        var source = $('#brand-modal-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(results.results)
+        $('#brandSelect').append(html)
+        var brand =  $("#probBrand option:selected").val()
+        loadYearsAskModal(brand)
+    })
+
+}
+
+$("#ask").click(loadBrandsAskModal)
+
+
+// year select step modal
+function loadYearsAskModal(id){
+    $.ajax({
+        url: '/api/models?brand=' + id,
+        type: 'GET'
+    }).done(function(results){
+        $('#yearSelect').empty()
+        var bike = results.results
+        var years = []
+
+        for(var i=0; i < bike.length; i++){
+            if (!(years.includes(bike[i].year))){
+                years.push(bike[i].year)
+            }
+        }
+        var source = $('#year-modal-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(years)
+        $('#yearSelect').append(html)
+    })
+}
+
+
+// model step 3
+function loadModelsAskModal(year){
+    var brandId =  $("#probBrand option:selected").val()
+    $.ajax({
+        url: '/api/models?brand=' + brandId + '&year=' + year,
+        type: 'GET'
+    }).done(function(results){
+        $('#modelSelect').empty()
+        var bikes = results.results
+        var source = $('#model-modal-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(bikes)
+        $('#modelSelect').append(html)
+    })
+}
+
+// load systems modal
+function loadSystemsAskModal(){
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
+        $('#systemSelect').empty()
         var systems = results.results
-        console.log(systems)
-        var source = $('#system-template').html()
-        console.log(source)
+        var source = $('#system-modal-template').html()
         var template = Handlebars.compile(source)
         var html = template(systems)
         $('#systemSelect').append(html)
     })
 }
-$("#ask").click(loadSystems)
+$("#ask").click(loadSystemsAskModal)
 
 
-// post new problem
+// post new problem modal
 function postProblem(){
+    var bike =  $("#probModel option:selected").val()
     var sys =  $("#probSystem option:selected").val()
     var text = $("#probText").val()
     var user = $("#userId").val()
-    var bike = $("#bikeId").val()
     var header = $("#probTitle").val()
     var context = {
         system: sys,
@@ -133,7 +191,6 @@ function postProblem(){
         type: 'POST',
         data: context,
     }).done(function(results){
-        console.log(results)
     })
 }
 
