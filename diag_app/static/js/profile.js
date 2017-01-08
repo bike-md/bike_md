@@ -65,7 +65,6 @@ function getTechSolutions(){
         url: '/api/get-solutions?tech=' + id,
         type: 'GET',
     }).done(function(results){
-        console.log(results)
         var source = $('#techSolution-template').html()
         var template = Handlebars.compile(source)
         var html = template(results.results)
@@ -103,4 +102,20 @@ Handlebars.registerHelper('formatTime', function (posted) {
         }
     }
     return month + " " + day + " " + year
+})
+
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/problem_detail/' + id
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})
+
+
+Handlebars.registerHelper('linkURLAnswers', function (object){
+    id = Handlebars.Utils.escapeExpression(object.problem)
+    description = Handlebars.Utils.escapeExpression(object.description)
+    url = '/diag_app/problem_detail/' + id
+    return '<a href="' +  url + '">' + '<b>' + description + '</b>' + '</a>'
 })

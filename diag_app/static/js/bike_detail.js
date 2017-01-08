@@ -63,9 +63,11 @@ function loadSystems(){
         type: 'GET',
     }).done(function(results){
         var systems = results.results
+        console.log(systems)
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
         var html = template(systems)
+        console.log(html)
         $('#system').append(html)
     })
 }

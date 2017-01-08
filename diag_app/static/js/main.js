@@ -94,3 +94,47 @@ function linkBike (id){
     url = '/diag_app/model_detail/' + id
     window.location = url;
 }
+
+
+// load systems
+function loadSystems(){
+    $.ajax({
+        url: '/api/systems/',
+        type: 'GET',
+    }).done(function(results){
+        var systems = results.results
+        console.log(systems)
+        var source = $('#system-template').html()
+        console.log(source)
+        var template = Handlebars.compile(source)
+        var html = template(systems)
+        $('#systemSelect').append(html)
+    })
+}
+$("#ask").click(loadSystems)
+
+
+// post new problem
+function postProblem(){
+    var sys =  $("#probSystem option:selected").val()
+    var text = $("#probText").val()
+    var user = $("#userId").val()
+    var bike = $("#bikeId").val()
+    var header = $("#probTitle").val()
+    var context = {
+        system: sys,
+        description: text,
+        tech: user,
+        model: bike,
+        title: header,
+    }
+    $.ajax({
+        url: '/api/post-problems/',
+        type: 'POST',
+        data: context,
+    }).done(function(results){
+        console.log(results)
+    })
+}
+
+$("#newProbSubmit").click(postProblem)
