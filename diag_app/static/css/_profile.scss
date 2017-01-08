@@ -1,6 +1,17 @@
 @import "variables";
 @import "mixins";
 
+h1 {
+  @include regularfont;
+  color: $charcoal;
+}
+
+h4 {
+  @include smallfont;
+  color: $charcoal;
+  font-weight: 400;
+  font-size: .75em;
+}
 .userprofilebody {
   background-image:
   linear-gradient(
@@ -10,6 +21,7 @@
   url("../images/index-background.jpg");
   background-size:cover;
   margin:0;
+  overflow: scroll;
 }
 
 .profile-title p {
@@ -20,51 +32,167 @@
   margin-bottom: -.25%;
 }
 
+.profile-photo {
+  background-image: url("../images/userprofileimg1.png");
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  border: 3px $golden solid;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
 .profile-details {
   display: inline-block;
   width:70%;
   background:
   linear-gradient(
-        rgba(white, 0.25),
-        rgba(white, 0.25)
+        rgba(#afafb2, 0.55),
+        rgba(#afafb2, 0.55)
       ),;
   margin-left: 16%;
   margin-right: 10%;
 }
 
-  .profile-photo {
-    width: 30%;
-    height: 224px;
+.profile-box {
+    width: 26%;
+    height: 170px;
     float: left;
-    background-color: #2B7F7B;
-    margin-top: 1%;
-    margin-left: 1%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 4%;
+}
+
+
+  .profile-information {
+    width: 26%;
+    height: 170px;
+    float: left;
+    background-color: #ffffff;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    overflow: scroll;
+
+    p {
+      @include smallfont;
+      background-color: $golden;
+      color: white;
+      text-align: center;
+      margin-top: 1px;
+      padding: 2%;
+    }
   }
 
   .profile-questions-asked {
-    width: 66%;
-    height: 224px;
+    width: 60%;
+    height: 170px;
     float: right;
     background-color: #ffffff;
-    margin-right: 1%;
-    margin-top: 1%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    overflow: scroll;
+
+      p {
+        @include smallfont;
+        background-color: $seafoam;
+        color: white;
+        text-align: center;
+        margin-top: 1px;
+        padding: 2%;
+      }
   }
 
-  .profile-information {
-    width: 30%;
-    height: 300px;
-    float: left;
-    background-color: #ffffff;
-    margin: 1%;
-    margin-bottom: 1%;
-  }
 
   .profile-questions-answered {
-    width: 66%;
-    height: 300px;
+    width: 60%;
+    height: 170px;
     float: right;
     background-color: #ffffff;
-    margin-right: 1%;
-    margin-bottom: 1%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    overflow: scroll;
+      p {
+        @include smallfont;
+        background-color: $seafoam;
+        color: white;
+        text-align: center;
+        margin-top: 1px;
+        padding: 2%;
+      }
   }
+
+
+    .exitbutton {
+      height:40px;
+      width:100%;
+      // padding-top:9%;
+      box-sizing:border-box;
+      @include smallfont;
+      float: right;
+      text-align: right;
+      margin-right: 15%;
+      margin-top: 1%;
+      // margin-bottom: 10%;
+
+
+      a{
+        text-decoration:none;
+        color:$charcoal;
+        padding:.5%;
+        background-color:$seafoam;
+
+      }
+
+      a:hover{
+        color:$seafoam;
+        background-color:$charcoal;
+
+      }
+    }
+
+
+
+//
+//   /* ----------- iPad mini ----------- */
+//
+//   /* Portrait and Landscape */
+//   @media only screen
+//     and (min-device-width: 768px)
+//     and (max-device-width: 1024px)
+//     and (-webkit-min-device-pixel-ratio: 1)
+//
+// {
+//
+//
+// }
+//
+//
+//     /* ----------- iPad 1 and 2 ----------- */
+//     /* Portrait and Landscape */
+//     @media only screen
+//       and (min-device-width: 768px)
+//       and (max-device-width: 1024px)
+//       and (-webkit-min-device-pixel-ratio: 1)
+// {
+//
+//
+// }
+//
+//
+//
+//
+//       /* Portrait and Landscape */
+//       @media only screen
+//         and (min-device-width: 320px)
+//         and (max-device-width: 667px)
+//         and (-webkit-min-device-pixel-ratio: 2)
