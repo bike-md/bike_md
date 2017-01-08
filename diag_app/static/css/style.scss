@@ -11,7 +11,7 @@
 body {
   // position: relative;
   margin:0;
-  // overflow:auto;
+  overflow:auto;
 }
 
 
@@ -109,8 +109,6 @@ header{
 footer{
   clear:both;
   background-color:rgba(white, .15);
-  position:absolute;
-  bottom:0;
   width:100%;
 
   p{
@@ -120,6 +118,5 @@ footer{
     margin:0;
     font-family:gill sans;
     text-transform:uppercase;
-
   }
 }

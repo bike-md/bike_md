@@ -359,6 +359,10 @@ body {
     .outer-box .diag-select-box:hover .diag-select-text {
       color: white; }
 
+.mainfooter {
+  position: absolute;
+  bottom: 0; }
+
 .bikedetailsbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/bikedetails-background.png");
   background-size: cover;
@@ -420,9 +424,14 @@ body {
     transform: rotate(360deg);
     transition: .5s; }
 
+.bikedetails-footer {
+  position: absolute;
+  bottom: 0; }
+
 .prob-detailbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
-  background-size: cover; }
+  background-size: cover;
+  overflow: auto; }
 
 .prob-detail-boxes-container {
   text-align: center;
@@ -470,7 +479,8 @@ body {
 .userprofilebody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
-  margin: 0; }
+  margin: 0;
+  overflow: auto; }
 
 .profile-title p {
   font-size: 2.25em;
@@ -521,7 +531,8 @@ body {
   margin-bottom: 1%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  overflow: auto; }
 
 header {
   background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
@@ -583,8 +594,6 @@ header {
 footer {
   clear: both;
   background-color: rgba(255, 255, 255, 0.15);
-  position: absolute;
-  bottom: 0;
   width: 100%; }
   footer p {
     color: white;
