@@ -476,6 +476,20 @@ body {
   text-align: center;
   margin: 0; }
 
+h1 {
+  font-size: 1.5em;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237; }
+
+h4 {
+  font-size: 1em;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237;
+  font-weight: 400;
+  font-size: .75em; }
+
 .userprofilebody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
@@ -491,44 +505,113 @@ body {
   margin-top: 1%;
   margin-bottom: -.25%; }
 
+.profile-photo {
+  background-image: url("../images/userprofileimg1.png");
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  border: 3px #b68d58 solid;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
 .profile-details {
   display: inline-block;
   width: 70%;
-  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
+  background: linear-gradient(rgba(175, 175, 178, 0.55), rgba(175, 175, 178, 0.55));
   margin-left: 16%;
   margin-right: 10%; }
 
-.profile-photo {
-  width: 30%;
-  height: 224px;
+.profile-box {
+  width: 26%;
+  height: 170px;
   float: left;
-  background-color: #2B7F7B;
-  margin-top: 1%;
-  margin-left: 1%; }
-
-.profile-questions-asked {
-  width: 66%;
-  height: 224px;
-  float: right;
-  background-color: #ffffff;
-  margin-right: 1%;
-  margin-top: 1%; }
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 4%; }
 
 .profile-information {
-  width: 30%;
-  height: 300px;
+  width: 26%;
+  height: 170px;
   float: left;
   background-color: #ffffff;
-  margin: 1%;
-  margin-bottom: 1%; }
+  margin-left: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  overflow: scroll; }
+  .profile-information p {
+    font-size: 1em;
+    font-family: gill sans;
+    text-transform: uppercase;
+    background-color: #b68d58;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+    padding: 2%; }
 
-.profile-questions-answered {
-  width: 66%;
-  height: 300px;
+.profile-questions-asked {
+  width: 60%;
+  height: 170px;
   float: right;
   background-color: #ffffff;
-  margin-right: 1%;
-  margin-bottom: 1%; }
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  overflow: scroll; }
+  .profile-questions-asked p {
+    font-size: 1em;
+    font-family: gill sans;
+    text-transform: uppercase;
+    background-color: #a8bdba;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+    padding: 2%; }
+
+.profile-questions-answered {
+  width: 60%;
+  height: 170px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  overflow: scroll; }
+  .profile-questions-answered p {
+    font-size: 1em;
+    font-family: gill sans;
+    text-transform: uppercase;
+    background-color: #a8bdba;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+    padding: 2%; }
+
+.exitbutton {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-family: gill sans;
+  text-transform: uppercase;
+  float: right;
+  text-align: right;
+  margin-right: 15%;
+  margin-top: 1%; }
+  .exitbutton a {
+    text-decoration: none;
+    color: #313237;
+    padding: .5%;
+    background-color: #a8bdba; }
+  .exitbutton a:hover {
+    color: #a8bdba;
+    background-color: #313237; }
 
 body {
   margin: 0;
