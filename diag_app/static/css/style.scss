@@ -100,14 +100,19 @@ header{
     }
 
     a:hover{
-      color:$seafoam;
+      color:$teal;
     }
   }
 }
 
 // modal
 .remodal{
-  background-color:$teal;
+  // background-color:$teal;
+  background:linear-gradient(
+        37.5deg,
+        rgba($seafoam, .5)1%,
+        rgba($teal, 1)99%
+      );
 }
 
 .modaltext{
@@ -134,8 +139,9 @@ header{
 
 .submit-button:hover{
   color:white;
-  background-color:$teal;
+  background-color:transparent;
   border:1px solid white;
+  cursor:pointer;
 }
 
 // footer

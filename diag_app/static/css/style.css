@@ -672,10 +672,10 @@ header {
     .dropdown .droplist a {
       font-size: 1rem; }
     .dropdown .droplist a:hover {
-      color: #a8bdba; }
+      color: #45756e; }
 
 .remodal {
-  background-color: #45756e; }
+  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #45756e 99%); }
 
 .modaltext {
   color: white;
@@ -704,8 +704,9 @@ header {
 
 .submit-button:hover {
   color: white;
-  background-color: #45756e;
-  border: 1px solid white; }
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer; }
 
 footer {
   clear: both;
