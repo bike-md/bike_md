@@ -2,7 +2,6 @@
 @import "mixins";
 
 
-
 .searchbar{
   width:20%;
   margin:2% 3%;
@@ -55,11 +54,12 @@
     }
 
 .mainbody{
-  background:
-  linear-gradient(
-        rgba(black, 0.35),
-        rgba(black, 0.25)
-      ),
+  background: linear-gradient(to right, rgba(black,.6),
+  rgba(255,255,255,0)),
+   linear-gradient(
+         rgba(#5c605f, 0.15),
+        rgba(#5c605f, 0.15)
+       ),
   url("../images/main-background.jpg");
   background-size:cover;
   margin:0;
@@ -68,17 +68,19 @@
 
 
 // diagnose title
-.diag-main-title{
-  @include largefont;
+.diag-main-title {
+  @include mediumfont;
   font-weight:500;
   color:white;
-  text-align:center;
+  text-align:left;
+  margin-left: 10%;
 }
-  h1 {
-    margin-top: 2%;
-    margin-bottom: 0%;
-  }
 
+hr {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 3%;
+}
 
 // .diag-state-circle{
 //   height:10px;
@@ -128,6 +130,9 @@
       @include smallfont;
       color: $teal;
       margin-top: 5%;
+    }
+    h4:hover {
+      color: white;
     }
     .diag-select-text{
       @include regularfont;

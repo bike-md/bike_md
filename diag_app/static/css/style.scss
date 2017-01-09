@@ -40,6 +40,7 @@ header{
 }
 
 .templatenav{
+  position: relative;
 
     li{
       list-style-type:none;
@@ -91,8 +92,8 @@ header{
 .dropdown{
   display:none;
   padding-left:1%;
-  position:relative;
-  top:23px;
+  position:absolute;
+  top:70px;
 }
 
 header .templatenav .dropdown li a {
