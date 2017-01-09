@@ -5,20 +5,41 @@ from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username'],
+            email=validated_data['email']
+            )
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
 
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ['id', 'password', 'email', 'username']
+        read_only_fields = ['is_staff', 'is_superuser', 'is_active',
+                            'date_joined',]
 
 
-#eliminate double tech serializer if possible
-class TechSerializer(serializers.ModelSerializer):
+class TechGetSerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
 
     class Meta:
         model = Tech
         fields = ['id', 'experience', 'job_title', 'shop', 'user',
                   'tech_rating']
+
+
+class TechPostSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Tech
+        fields = ['id', 'experience', 'job_title', 'shop', 'user',
+                  'tech_rating']
+
 
 
 class CommitSerializer(serializers.ModelSerializer):
@@ -38,7 +59,7 @@ class VoteSerializer(serializers.ModelSerializer):
 class SolutionGetSerializer(serializers.ModelSerializer):
     votes = VoteSerializer(many=True, read_only=True)
     commits = CommitSerializer(many=True, read_only=True)
-    tech = TechSerializer(many=False, read_only=True)
+    tech = TechGetSerializer(many=False, read_only=True)
 
     class Meta:
         model = Solution
@@ -57,7 +78,7 @@ class SolutionPostSerializer(serializers.ModelSerializer):
 
 class ProblemGetSerializer(serializers.ModelSerializer):
     solutions = SolutionGetSerializer(many=True, read_only=True)
-    tech = TechSerializer(many=False, read_only=True)
+    tech = TechGetSerializer(many=False, read_only=True)
     class Meta:
         model = Problem
         fields = ['id', 'title', 'system', 'description', 'tech',
