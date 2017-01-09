@@ -173,8 +173,6 @@ function updateScore(id, voteValue){
 
 Handlebars.registerHelper('formatTime', function (posted) {
     var time = posted.replace('T', ':')
-    // var hour = Number(time.split(":")[1])
-    // var min = Number(time.split(":")[2])
     var date = time.split(":")[0]
     var year = Number(date.split("-")[0])
     var month = Number(date.split("-")[1])
