@@ -52,16 +52,18 @@
             </div>
           </div>
 
-        <!-- answer questions -->
-        <div class ="answermodal-container">
-          <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
+          <!-- answer questions -->
+          <div class ="answermodal-container">
+            <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Answer Questions</a></li>
 
-          <div class="remodal" data-remodal-id="answerModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
-            <p>Stuff</p>
+            <div class="remodal" data-remodal-id="answerModal">
+              <button data-remodal-action="close" class="remodal-close"></button>
+
+              <div id="modalProblemList" class="unsolved-problems-list"></div>
+
+            </div>
           </div>
-        </div>
-
+          
         <!-- my account -->
         <li><a class ="link3" href ="#">MY Account</a>
           <ul class ="dropdown">
@@ -94,6 +96,20 @@
     </footer>
 
     <!-- modal scripts     -->
+
+    <!-- answer modal -->
+    <script id="unsolved-problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+            {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
+
+    <!-- ask modal -->
     <script id="brand-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
             <select onchange="loadYearsAskModal(value)" id="probBrand">

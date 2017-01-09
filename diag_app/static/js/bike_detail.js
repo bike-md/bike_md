@@ -80,11 +80,9 @@ function loadSystemModals(){
         type: 'GET',
     }).done(function(results){
         var systems = results.results
-        console.log(systems)
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
         var html = template(systems)
-        console.log(html)
         $('#system').append(html)
     })
 }
@@ -95,7 +93,6 @@ Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
     url = '/diag_app/problem_detail/' + id
-    console.log(url)
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 
@@ -199,3 +196,21 @@ function postProblem(){
 }
 
 $("#newProbSubmit").click(postProblem)
+
+
+// unsolved modal function
+function loadUnsolvedProblemsModal(){
+    $.ajax({
+        url: '/api/get-problems?no_solutions=True',
+        type: 'GET',
+    }).done(function(results){
+        var problems = results.results
+        console.log(problems)
+        var source = $('#unsolved-problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#modalProblemList').empty()
+        $('#modalProblemList').append(html)
+    })
+}
+$("#answer").click(loadUnsolvedProblemsModal)

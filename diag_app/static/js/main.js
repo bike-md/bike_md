@@ -54,7 +54,6 @@ function showYears(id){
         $('#listing').empty()
         var bike = results.results
         var years = []
-
         for(var i=0; i < bike.length; i++){
             if (!(years.includes(bike[i].year))){
                 years.push(bike[i].year)
@@ -112,7 +111,6 @@ function loadBrandsAskModal(){
     })
 
 }
-
 $("#ask").click(loadBrandsAskModal)
 
 
@@ -125,7 +123,6 @@ function loadYearsAskModal(id){
         $('#yearSelect').empty()
         var bike = results.results
         var years = []
-
         for(var i=0; i < bike.length; i++){
             if (!(years.includes(bike[i].year))){
                 years.push(bike[i].year)
@@ -154,6 +151,7 @@ function loadModelsAskModal(year){
         $('#modelSelect').append(html)
     })
 }
+
 
 // load systems modal
 function loadSystemsAskModal(){
@@ -193,5 +191,29 @@ function postProblem(){
     }).done(function(results){
     })
 }
-
 $("#newProbSubmit").click(postProblem)
+
+
+// unsolved modal functions
+function loadUnsolvedProblemsModal(){
+    $.ajax({
+        url: '/api/get-problems?no_solutions=True',
+        type: 'GET',
+    }).done(function(results){
+        var problems = results.results
+        var source = $('#unsolved-problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#modalProblemList').empty()
+        $('#modalProblemList').append(html)
+    })
+}
+$("#answer").click(loadUnsolvedProblemsModal)
+
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/problem_detail/' + id
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})

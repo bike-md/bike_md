@@ -45,7 +45,6 @@ function showProblem(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        console.log(results.solutions)
         var source1 = $("#problem-template").html()
         var template1 = Handlebars.compile(source1)
         var html1 = template1(results)
@@ -302,3 +301,29 @@ function postProblem(){
 }
 
 $("#newProbSubmit").click(postProblem)
+
+
+// unsolved modal functions
+function loadUnsolvedProblemsModal(){
+    $.ajax({
+        url: '/api/get-problems?no_solutions=True',
+        type: 'GET',
+    }).done(function(results){
+        var problems = results.results
+        console.log(problems)
+        var source = $('#unsolved-problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#modalProblemList').empty()
+        $('#modalProblemList').append(html)
+    })
+}
+$("#answer").click(loadUnsolvedProblemsModal)
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/diag_app/problem_detail/' + id
+    console.log(url)
+    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+})

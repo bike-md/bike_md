@@ -220,3 +220,20 @@ function postProblem(){
 }
 
 $("#newProbSubmit").click(postProblem)
+
+
+// unsolved modal function
+function loadUnsolvedProblemsModal(){
+    $.ajax({
+        url: '/api/get-problems?no_solutions=True',
+        type: 'GET',
+    }).done(function(results){
+        var problems = results.results
+        var source = $('#unsolved-problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#modalProblemList').empty()
+        $('#modalProblemList').append(html)
+    })
+}
+$("#answer").click(loadUnsolvedProblemsModal)
