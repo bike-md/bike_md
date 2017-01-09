@@ -186,7 +186,7 @@
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                <a data-remodal-target="#modal{{id}}"
+                <a data-remodal-target="#modal{{id}}" href="#modal{{id}}"
                     onclick="loadProblemsBySystemForModel({{id}})">
                     <div class ="sys">{{name}}</div>
                 </a>
