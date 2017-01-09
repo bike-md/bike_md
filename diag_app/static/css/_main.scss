@@ -1,31 +1,69 @@
 @import "variables";
 @import "mixins";
 
-body {
-  background: linear-gradient(to right, rgba(black,0.5),
-  rgba(255,255,255,0)),
-   linear-gradient(
-         rgba(black, 0.25),
+
+
+.searchbar{
+  width:20%;
+  margin:2% 3%;
+  float:left;
+  position:relative;
+  bottom:10px;
+}
+
+.templatenav{
+
+    li{
+      display:inline-block;
+      padding:2% .75%;
+      margin:0;
+      float:left;
+
+      a{
+        text-decoration:none;
+        color:white;
+        @include smallfont;
+        font-size: 1.25rem;
+        position:relative;
+      }
+
+}
+
+      a:after{
+        display:block;
+        position:absolute;
+        bottom:30px;
+        height:5px;
+        width:0px;
+        background-color:$golden;
+        transition:width .5s;
+        content:"";
+        z-index:-1;
+      }
+
+      .link1:hover:after{
+        width:100%;
+      }
+
+      .link2:hover:after{
+        width:100%;
+      }
+
+      .link3:hover:after{
+        width:100%;
+      }
+    }
+
+.mainbody{
+  background:
+  linear-gradient(
+        rgba(black, 0.35),
         rgba(black, 0.25)
-       ),
-       url("../images/main-background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow:hidden;
-  }
-//
-// .mainbody{
-//   background:
-//   linear-gradient(
-//         rgba(black, 0.25),
-//         rgba(black, 0.25)
-//       ),
-//   url("../images/main-background.jpg");
-//   background-size:cover;
-//   margin:0;
-// }
+      ),
+  url("../images/main-background.jpg");
+  background-size:cover;
+  margin:0;
+}
 
 
 
@@ -36,6 +74,11 @@ body {
   color:white;
   text-align:center;
 }
+  h1 {
+    margin-top: 2%;
+    margin-bottom: 0%;
+  }
+
 
 // .diag-state-circle{
 //   height:10px;
@@ -49,29 +92,43 @@ body {
 
 // select make/year/model box
 .outer-box{
-  background-color:rgba(white, .25);
-  height:300px;
-  width:80%;
-  padding:1%;
+  background-color:rgba(white, .15);
+  height:auto;
+  width: auto;
+  max-width: 50%;
+  // padding-left:3%;
+  padding-top: 1%;
+  // padding-right: 3%;
+  padding-bottom: 1%;
   margin:0 auto;
   position:relative;
-  // top:100px;
 
   .diag-select-title{
     @include mediumfont;
-    font-weight:500;
+    font-weight:400;
     color:white;
     text-align:center;
     margin-top:0;
+    margin-bottom: 0;
+
   }
 
   .diag-select-box{
     background-color:white;
-    height:55px;
-    width:20%;
+    height:35px;
+    width:21%;
     display:inline-block;
-    margin:2%;
+    margin-left: 2.85%;
+    margin-top:1%;
+    margin-bottom: 1%;
+    padding: 0;
 
+
+    h4 {
+      @include smallfont;
+      color: $teal;
+      margin-top: 5%;
+    }
     .diag-select-text{
       @include regularfont;
       color:$teal;
@@ -85,14 +142,42 @@ body {
   }
 
 
-
   .diag-select-box:hover{
     background-color:$teal;
     cursor:pointer;
+    transition: .5s;
      .diag-select-text{
        color:white;
      }
   }
+}
+
+.progression {
+  display: flex;
+  -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+ }
+
+.stepscircles {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background-color: $seafoam;
+  flex: 0 0 20px;
+  margin-left: 10px;
+  margin-bottom: 2%;
+}
+
+.stepscircles:hover {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background-color: $golden;
+  flex: 0 0 20px;
+  margin-left: 10px;
+  margin-bottom: 2%;
 }
 
 .mainfooter{

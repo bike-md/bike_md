@@ -15,13 +15,16 @@
   <body class ="mainbody">
 
     <header>
-      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-      <form>
-        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-      <form>
+
 
       <nav class ="templatenav">
+
+          <form>
+            <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
+          <form>
+
         <!-- ask questions -->
         <div class ="askmodal-container">
           <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Ask Question</a></li>
@@ -71,6 +74,12 @@
 
         <h1 class ="diag-main-title">Diagnose</h1>
 
+        <!--Profression circles-->
+<div class="progression">
+        <div class="stepscircles"></div>
+        <div class="stepscircles"></div>
+        <div class="stepscircles"></div>
+</div>
         <section id="listing" class="outer-box">
             <!-- <div id="step" class="step"></div> -->
           <!-- <h3 class ="diag-select-title">select make</h3> -->

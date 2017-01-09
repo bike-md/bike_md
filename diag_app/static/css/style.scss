@@ -21,16 +21,19 @@ header{
         rgba(white, 0.15)
       );
   height:58px;
-  padding:1% 2%;
+  padding-left: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 
 .templatelogo{
-  width:20%;
+  width:23%;
   float:left;
+
 }
 
 .search{
   width:20%;
-  margin:0 3%;
+  margin:2% 3%;
   float:left;
   position:relative;
   bottom:10px;
@@ -41,15 +44,17 @@ header{
     li{
       list-style-type:none;
       display:inline-block;
-      padding:0 1%;
+      padding:2% .75%;
       margin:0;
       float:left;
 
       a{
         text-decoration:none;
         color:white;
-        @include regularfont;
+        @include smallfont;
+        font-size: 1.25rem;
         position:relative;
+        text-align: right;
       }
 
 
@@ -60,7 +65,7 @@ header{
         bottom:30px;
         height:5px;
         width:0px;
-        background-color:$teal;
+        background-color:$seafoam;
         transition:width .5s;
         content:"";
       }
@@ -85,25 +90,34 @@ header{
 // my account dropdown menu
 .dropdown{
   display:none;
-  padding:0;
-  position:absolute;
-  top:50px;
+  padding-left:1%;
+  position:relative;
+  top:23px;
+}
+
+header .templatenav .dropdown li a {
+  font-size: 1.1rem;
+}
+
+header .templatenav .dropdown li a:hover {
+    color: $charcoal;
+}
 
   .droplist{
     display:block;
     clear:both;
-    margin-top:3px;
-    padding:2%;
-
-    a{
-      font-size:1rem;
-    }
-
-    a:hover{
-      color:$teal;
-    }
+    width: 100%;
+    background:linear-gradient(
+          rgba(white, 0.15),
+          rgba(white, 0.15)
+        );
   }
-}
+
+    .droplist:hover {
+      background-color: $seafoam;
+      transition: .5s;
+    }
+
 
 // modal
 .remodal{
