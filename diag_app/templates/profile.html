@@ -84,25 +84,19 @@
         <div class="profile-details">
 
           <div class="profile-box">
-
-            <div id="profileImg" class="profile-photo">
-                <img  src ="{% static 'images/transport-3.png' %}"  alt="">
-            </div>
-
+                <div id="profileImg" class="profile-photo">
+                    <img  src ="{% static 'images/transport-3.png' %}"  alt="">
+                </div>
           </div>
 
               <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
 
-            <div id="techInfo" class="profile-information"><p>Information</p>
-            </div>
+              <div id="techInfo" class="profile-information"><p>Information</p></div>
 
-            <div id="techAnswers" class="profile-questions-answered"><p>answers</p>
-        </div>
+              <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
       </div>
 
-      <div class="exitbutton">
-              <a href="/diag_app/">close</a>
-      </div>
+      <div class="exitbutton"><a href="/diag_app/">close</a></div>
 
 
       <!-- modal scripts     -->
@@ -181,9 +175,9 @@
             <article class="post-container">
                 {%verbatim%}
                     <h1 class="">{{this.user.username}}</h1>
-                    <h4 class="">experience: {{this.experience}}</h4>
-                    <h4 class="">Current position: {{this.job_title}}</h4>
-                    <h4 class="">Shop: {{this.shop}}</h4>
+                    <h4 class="">experience: {{experience}}</h4>
+                    <h4 class="">Current position: {{job_title}}</h4>
+                    <h4 class="">Shop: {{shop}}</h4>
                 {% endverbatim %}
             </article>
         </script>
@@ -213,8 +207,8 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
     </body>
 </html>

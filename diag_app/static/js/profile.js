@@ -35,9 +35,11 @@ function getTechInfo(){
         url: '/api/techs/' + id,
         type: 'GET',
     }).done(function(results){
+        console.log(results.experience)
         var source = $("#info-template").html()
         var template = Handlebars.compile(source)
         var html = template(results)
+        console.log(html)
         $("#techInfo").append(html)
     })
 }
