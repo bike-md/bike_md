@@ -304,12 +304,22 @@ form input {
   margin-right: 1%;
   margin-bottom: 1%; }
 
-.searchbar {
-  width: 20%;
-  margin: 2% 3%;
+.search {
+  width: 15%;
+  margin: 2% 0%;
   float: left;
   position: relative;
   bottom: 10px; }
+
+.glass {
+  margin-top: 1%;
+  position: absolute;
+  width: 30px;
+  background: #00B4CC;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  float: left; }
 
 .templatenav li {
   display: inline-block;
@@ -342,7 +352,7 @@ form input {
   width: 100%; }
 
 .mainbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/main-background.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/main-background.jpg");
   background-size: cover;
   margin: 0; }
 
@@ -705,11 +715,19 @@ header {
     width: 23%;
     float: left; }
   header .search {
-    width: 20%;
-    margin: 2% 3%;
+    width: 15%;
     float: left;
     position: relative;
     bottom: 10px; }
+  header .glass {
+    margin-top: 1%;
+    position: absolute;
+    width: 30px;
+    background: #00B4CC;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    float: left; }
   header .templatenav {
     position: relative; }
     header .templatenav li {

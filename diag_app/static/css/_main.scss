@@ -2,12 +2,23 @@
 @import "mixins";
 
 
-.searchbar{
-  width:20%;
-  margin:2% 3%;
+.search{
+  width:15%;
+  margin:2% 0%;
   float:left;
   position:relative;
   bottom:10px;
+}
+
+.glass {
+  margin-top: 1%;
+  position: absolute;
+  width: 30px;
+  background: #00B4CC;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  float: left;
 }
 
 .templatenav{
@@ -54,7 +65,7 @@
     }
 
 .mainbody{
-  background: linear-gradient(to right, rgba(black,.6),
+  background: linear-gradient(to right, rgba(black,.8),
   rgba(255,255,255,0)),
    linear-gradient(
          rgba(#5c605f, 0.15),
