@@ -105,9 +105,12 @@ class BrandViewSet(viewsets.ModelViewSet):
 
 
 class ProblemFilter(django_filters.rest_framework.FilterSet):
+    no_solutions = django_filters.BooleanFilter(name='solutions',
+                                                lookup_expr='isnull')
+
     class Meta:
         model = Problem
-        fields = ['system', 'model', 'tech']
+        fields = ['system', 'model', 'tech', 'no_solutions']
 
 
 class ProblemGetViewSet(viewsets.ModelViewSet):

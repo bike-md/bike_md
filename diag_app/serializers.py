@@ -10,7 +10,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = "__all__"
 
-#eliminate double tech serializer
+
+#eliminate double tech serializer if possible
 class TechSerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
 

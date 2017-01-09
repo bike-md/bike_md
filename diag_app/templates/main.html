@@ -31,14 +31,17 @@
 
           <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
+            <!-- new problem form -->
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
 
                 <h4 class ="modaltext">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
-                <br>
-                <br>
+                <h4 class ="modaltext">Choose Bike:</h4>
+                    <div id="brandSelect" class ="systems-dropdown"></div>
+                    <div id="yearSelect" class ="systems-dropdown"></div>
+                    <div id="modelSelect" class ="systems-dropdown"></div>
                 <h4 class ="modaltext">Choose System:</h4>
                     <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
@@ -46,18 +49,21 @@
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
-                <input id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
+                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
             </form>
+            <!-- end new problem form -->
           </div>
         </div>
 
         <!-- answer questions -->
         <div class ="answermodal-container">
-          <li><a data-remodal-target="answerModal" class ="link2" href="#answerModal">Answer Questions</a></li>
+          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Answer Questions</a></li>
 
           <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
-            <p>Stuff</p>
+
+            <div id="modalProblemList" class="unsolved-problems-list"></div>
+
           </div>
         </div>
 
@@ -91,10 +97,54 @@
         </footer>
 
 
-        <script id="system-template" type="text/x-handlebars-template">
+        <!-- modal scripts     -->
+
+        <!-- answer modal -->
+        <script id="unsolved-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
-                <select id="probSystem">
+                {%verbatim%}
+                {{#each .}}
+                    <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+                {{/each}}
+                {% endverbatim %}
+            </article>
+        </script>
+
+
+        <!-- ask modal -->
+        <script id="brand-modal-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select onchange="loadYearsAskModal(value)" id="probBrand">
                     {% verbatim %}
+                    <option value="none"></option>
+                    {{#each .}}
+                    <option  value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
+                    {{/each}}
+                    {% endverbatim %}
+                </select>
+            </article>
+        </script>
+
+
+        <script id="year-modal-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select onchange="loadModelsAskModal(value)" id="probYear">
+                    {% verbatim %}
+                    <option value="none"></option>
+                    {{#each .}}
+                        <option value="{{this}}"{{#selected}}selected="selected"{{/selected}}>{{this}}</option>
+                    {{/each}}
+                    {% endverbatim %}
+                </select>
+            </article>
+        </script>
+
+
+        <script id="model-modal-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select id="probModel">
+                    {% verbatim %}
+                    <option value="none"></option>
                     {{#each .}}
                         <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                     {{/each}}
@@ -102,6 +152,21 @@
                 </select>
             </article>
         </script>
+
+
+        <script id="system-modal-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                <select id="probSystem">
+                    {% verbatim %}
+                    <option value="none"></option>
+                    {{#each .}}
+                        <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
+                    {{/each}}
+                    {% endverbatim %}
+                </select>
+            </article>
+        </script>
+        <!-- end modal scripts -->
 
         <script id="brand-template" type="text/x-handlebars-template">
             <article class="post-container">
