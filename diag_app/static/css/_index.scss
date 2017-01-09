@@ -107,6 +107,8 @@
     @include regularfont;
     text-align:center;
     margin-bottom: 10%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 
 
     a{
@@ -116,12 +118,14 @@
     }
 
     a:hover{
+      text-decoration:none;
       color:$seafoam;
     }
   }
 
   .button:hover{
-    background-color:$charcoal;
+    background-color: $charcoal;
+    color: $seafoam;
   }
 
   /* ----------- iPad mini ----------- */

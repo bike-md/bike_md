@@ -14,73 +14,80 @@
 
   <body class ="bikedetailsbody">
     <header>
-      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-      <form>
-        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-      </form>
+
 
       <nav class ="templatenav">
 
-          <!-- ask questions -->
-          <div class ="askmodal-container">
-            <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Ask Question</a></li>
+          <form>
+            <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
+          <form>
 
-            <div class="remodal" data-remodal-id="askModal">
-              <button data-remodal-action="close" class="remodal-close"></button>
-              <!-- new problem form -->
-              <form class="newProblem" method="POST">
-                  {%csrf_token%}
-                  <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
+        <!-- ask questions -->
+        <div class ="askmodal-container">
+          <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Ask Question</a></li>
 
-                  <h4 class ="modaltext">Enter a title for your post:</h4>
-                  <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
-                  <h4 class ="modaltext">Choose Bike:</h4>
-                      <div id="brandSelect" class ="systems-dropdown"></div>
-                      <div id="yearSelect" class ="systems-dropdown"></div>
-                      <div id="modelSelect" class ="systems-dropdown"></div>
-                  <h4 class ="modaltext">Choose System:</h4>
-                      <div id="systemSelect" class ="systems-dropdown"></div>
-                  <br>
-                  <h4 class ="modaltext">Describe your problem:</h4>
+          <div class="remodal" data-remodal-id="askModal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <!-- new problem form -->
+            <form class="newProblem" method="POST">
+                {%csrf_token%}
+                <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
 
-                  <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
-                  <br>
-                  <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
-              </form>
-              <!-- end new problem form -->
-            </div>
+                <h4 class ="modaltext">Enter a title for your post:</h4>
+                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
+                <h4 class ="modaltext">Choose Bike:</h4>
+                    <div id="brandSelect" class ="systems-dropdown"></div>
+                    <div id="yearSelect" class ="systems-dropdown"></div>
+                    <div id="modelSelect" class ="systems-dropdown"></div>
+                <h4 class ="modaltext">Choose System:</h4>
+                    <div id="systemSelect" class ="systems-dropdown"></div>
+                <br>
+                <h4 class ="modaltext">Describe your problem:</h4>
+
+                <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
+                <br>
+                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
+            </form>
+            <!-- end new problem form -->
           </div>
+        </div>
 
-          <!-- answer questions -->
-          <div class ="answermodal-container">
-            <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Answer Questions</a></li>
+        <!-- answer questions -->
+        <div class ="answermodal-container">
+          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Answer Questions</a></li>
 
-            <div class="remodal" data-remodal-id="answerModal">
-              <button data-remodal-action="close" class="remodal-close"></button>
+          <div class="remodal" data-remodal-id="answerModal">
+            <button data-remodal-action="close" class="remodal-close"></button>
 
-              <div id="modalProblemList" class="unsolved-problems-list"></div>
+            <div id="modalProblemList" class="unsolved-problems-list"></div>
 
-            </div>
           </div>
-          
+        </div>
+
         <!-- my account -->
-        <li><a class ="link3" href ="#">MY Account</a>
-          <ul class ="dropdown">
-            <li class ="droplist"><a href ="#">Notifications</a></li>
-            <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
-            <li class ="droplist"><a href ="/logout/">Log Out</a></li>
-          </ul>
-        </li>
+          <li><a class ="link3" href ="#">MY Account</a>
+            <ul class ="dropdown">
+              <li class ="droplist"><a href ="#">Notifications</a></li>
+              <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+              <li class ="droplist"><a href ="/logout/">Log Out</a></li>
+            </ul>
+          </li>
       </nav>
     </header>
 
+<h1 class ="details-main-title">Select the system for this bike:</h1>
+
+<hr>
     <!-- specs -->
+    <!-- <div class="specks-box"> -->
+      <!-- <div class="background-white"> -->
     <section id="bikeSpecs" class ="specs">
 
     </section>
 
-    <h2 class ="systitle">View Problems By System</h2>
+    <!-- <h2 class ="systitle">View Problems By System</h2> -->
 
         <!-- circles -->
         <section id="system" class ="systems">
@@ -88,8 +95,8 @@
 
 
         </section>
-
-
+<!-- </div> -->
+<!-- </div> -->
 
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>

@@ -2,34 +2,81 @@
 @import "mixins";
 
 .bikedetailsbody{
-  background:
-  linear-gradient(
-        rgba(black, 0.25),
-        rgba(black, 0.25)
-      ),
-  url("../images/bikedetails-background.png");
+  background: linear-gradient(to right, rgba(black,.7),
+  rgba(255,255,255,0)),
+   linear-gradient(
+         rgba(#5c605f, 0.15),
+        rgba(#5c605f, 0.15)
+       ),
+
+  url("../images/bikedetails-background.jpg");
   background-size:cover;
   margin:0;
 }
+// background:
+// linear-gradient(
+//       rgba(black, 0.25),
+//       rgba(black, 0.25)
+//     ),
+// .specks-box {
+//   background-color:rgba(white, .85);
+//   height:auto;
+//   width: auto;
+//   max-width: 70%;
+//   padding: 1%;
+//   margin:0 auto;
+//   position:relative;
+//   height: auto;
+// }
 
+// .background-white {
+//   background-color:rgba(white, .9);
+//   margin:0;
+//   height: 360px;
+//   padding-top: 3%;
+// }
+.details-main-title{
+  @include mediumfont;
+  font-weight:500;
+  color:white;
+  text-align:left;
+  margin-left: 10%;
+}
 
+hr {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+  h1 {
+    margin-top: 2%;
+    margin-bottom: 0%;
+  }
 
+  // h4 {
+  //   margin-top: 0%;
+  //   margin-bottom: 0%;
+  //   color: $teal;
+  // }
 .specs{
   @include regularfont;
   color:white;
   font-weight:200;
   text-align:center;
-  background-color:rgba($golden, 1);
-  margin:0;
 }
 
-.systitle{
-  @include mediumfont;
-  color:white;
-  font-weight:500;
-  text-align:center;
-  margin-top:100px;
+// .systitle{
+//   @include mediumfont;
+//   color:$seafoam;
+//   font-weight:500;
+//   text-align:center;
+//   margin-top:5%;
+// }
+.post-container h4 {
+  @include regularfont;
+  color: white;
+
 }
+
 
 // circles
 .systems{
@@ -41,15 +88,15 @@
         text-align:center;
         text-decoration:none;
         @include regularfont;
-        color:white;
+        color:$teal;
         margin:0;
 
         .sys{
           height:170px;
           width:170px;
-          margin:0 4%;
+          margin:0 3%;
           display:inline-block;
-          background-color:rgba($teal, .8);
+          background-color:rgba(white, .8);
           border-radius:100%;
           padding-top:5.5%;
           box-sizing:border-box;
