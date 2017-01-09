@@ -304,52 +304,85 @@ form input {
   margin-right: 1%;
   margin-bottom: 1%; }
 
+form {
+  display: block; }
+  form img {
+    display: inline; }
+
+input .search {
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none; }
+  input .search:focus {
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF; }
+    input .search:focus::-webkit-input-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0; }
+    input .search:focus::-moz-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0; }
+    input .search:focus:-ms-placeholder {
+      transition: opacity 0.45s ease;
+      opacity: 0; }
+
+.search-container {
+  width: 10%;
+  display: inline;
+  margin: 0 auto;
+  margin-top: 2%; }
+
+.search-icon {
+  position: relative;
+  float: right;
+  width: 15px;
+  height: 15px;
+  top: -62px;
+  right: -45px; }
+
 .search {
-  width: 15%;
+  width: 10%;
   margin: 2% 0%;
   float: left;
   position: relative;
   bottom: 10px; }
 
-.glass {
-  margin-top: 1%;
-  position: absolute;
-  width: 30px;
-  background: #00B4CC;
-  color: #fff;
-  cursor: pointer;
-  font-size: 20px;
-  float: left; }
-
-.templatenav li {
-  display: inline-block;
-  padding: 2% .75%;
-  margin: 0;
-  float: left; }
-  .templatenav li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    font-size: 1.25rem;
-    position: relative; }
-.templatenav a:after {
-  display: block;
-  position: absolute;
-  bottom: 30px;
-  height: 5px;
-  width: 0px;
-  background-color: #b68d58;
-  transition: width .5s;
-  content: "";
-  z-index: -1; }
-.templatenav .link1:hover:after {
-  width: 100%; }
-.templatenav .link2:hover:after {
-  width: 100%; }
-.templatenav .link3:hover:after {
-  width: 100%; }
+.templatenav {
+  display: inline; }
+  .templatenav li {
+    display: inline-block;
+    padding: 2% .75%;
+    margin: 0;
+    float: left; }
+    .templatenav li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      font-family: gill sans;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      position: relative; }
+  .templatenav a:after {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    height: 5px;
+    width: 0px;
+    background-color: #b68d58;
+    transition: width .5s;
+    content: "";
+    z-index: -1; }
+  .templatenav .link1:hover:after {
+    width: 100%; }
+  .templatenav .link2:hover:after {
+    width: 100%; }
+  .templatenav .link3:hover:after {
+    width: 100%; }
 
 .mainbody {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/main-background.jpg");
@@ -714,22 +747,51 @@ header {
   header .templatelogo {
     width: 23%;
     float: left; }
-  header .search {
+  header form {
+    display: block; }
+    header form img {
+      display: inline; }
+  header .search-container {
     width: 15%;
+    display: inline;
+    margin: 0 auto;
+    margin-top: 2%; }
+  header input .search {
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none; }
+    header input .search:focus {
+      border: 1px solid #008ABF;
+      transition: 0.35s ease;
+      color: #008ABF; }
+      header input .search:focus::-webkit-input-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0; }
+      header input .search:focus::-moz-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0; }
+      header input .search:focus:-ms-placeholder {
+        transition: opacity 0.45s ease;
+        opacity: 0; }
+  header .search-icon {
+    position: relative;
+    float: right;
+    width: 15px;
+    height: 15px;
+    top: -62px;
+    right: -45px; }
+  header .search {
+    width: 10%;
     float: left;
     position: relative;
     bottom: 10px; }
-  header .glass {
-    margin-top: 1%;
-    position: absolute;
-    width: 30px;
-    background: #00B4CC;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    float: left; }
   header .templatenav {
-    position: relative; }
+    position: relative;
+    display: inline; }
     header .templatenav li {
       list-style-type: none;
       display: inline-block;
