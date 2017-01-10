@@ -29,12 +29,25 @@
 //   height: auto;
 // }
 
-// .background-white {
-//   background-color:rgba(white, .9);
-//   margin:0;
-//   height: 360px;
-//   padding-top: 3%;
-// }
+.background-white {
+  background-color:rgba(#cab298, .40);
+  height:auto;
+  width: auto;
+  max-width: 80%;
+  padding-top: 1%;
+  // padding-right: 3%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin:0 auto;
+  position:relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  // background-color:rgba(white, .9);
+  // margin:0;
+  // height: 360px;
+  // padding-top: 3%;
+}
 .details-main-title{
   @include mediumfont;
   font-weight:500;
@@ -62,8 +75,13 @@ hr {
   color:white;
   font-weight:200;
   text-align:center;
+  background-color: $golden;
 }
 
+.bikedetailsline {
+  display: inline;
+
+}
 // .systitle{
 //   @include mediumfont;
 //   color:$seafoam;
