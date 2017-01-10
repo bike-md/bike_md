@@ -77,8 +77,8 @@
     </header>
 
 
-    <section class ="prob-detail-boxes-container">
-      <h2 class="prob-detail-box-name">Problem</h2>
+    <section class ="prob-detail-container">
+      <h2 class="prob-detail-title">Problem</h2>
 
       <div id="problemDetail" class="prob-detail-question-box prob-detail-boxes">
 
@@ -88,24 +88,24 @@
 
       </div>
 
-      <h2 class="prob-detail-box-name">Post new Solution</h2>
+      <h2 class="prob-detail-title">Post new Solution</h2>
       <!-- post new solution form -->
       <form class="solution-input" action="submit" method="POST">
           <!-- <h1>Post a new Solution</h1> -->
           {%csrf_token%}
           <div class ="solutiontimecost-container">
-            <h4>Enter the time required for your solution:</h4>
+            <h4 class ="solutiontimecost-text">Enter the time required for your solution:</h4>
             <input id="solutionTime" class ="solutiontimecost-input" type="text" name="solutionTime" value="Enter time here">
           </div>
 
           <div class ="solutiontimecost-container">
-            <h4>Enter the parts cost, if any, for this solution:</h4>
+            <h4 class ="solutiontimecost-text">Enter the parts cost, if any, for this solution:</h4>
             <input id="partsCost" class ="solutiontimecost-input" type="text" name="partsCost" value="Enter cost here">
           </div>
 
-          <h4>Describe your solution:</h4>
+          <h4 class ="prob-detail-title">Describe your solution:</h4>
           <textarea id="solutionText" class ="prob-detail-boxes" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
-          <input id="newSolutionSubmit" type="submit" value="Submit">
+          <input id="newSolutionSubmit" class ="prob-detail-submit" type="submit" value="Submit">
       </form>
       <!-- end post new solution -->
     </section>

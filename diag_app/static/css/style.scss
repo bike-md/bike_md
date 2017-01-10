@@ -183,7 +183,6 @@ header .templatenav .dropdown li a:hover {
 
 // modal
 .remodal{
-  // background-color:$teal;
   background:linear-gradient(
         37.5deg,
         rgba($seafoam, .5)1%,
@@ -208,8 +207,9 @@ header .templatenav .dropdown li a:hover {
   color:$teal;
   background-color:white;
   @include smallfont;
-  border:transparent;
   padding:2%;
+  padding-top:1%;
+  border:transparent;
   margin-top:10px;
 }
 

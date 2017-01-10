@@ -220,28 +220,26 @@ hr {
 
   .diag-select-box{
     background-color:white;
-    height:35px;
-    width:21%;
+    height:45px;
+    width:30%;
     display:inline-block;
     margin-left: 2.85%;
     margin-top:1%;
     margin-bottom: 1%;
-    padding: 0;
-
 
     h4 {
-      @include smallfont;
       color: $teal;
-      margin-top: 5%;
     }
     h4:hover {
       color: white;
     }
     .diag-select-text{
       @include regularfont;
+      @include verticalcenter;
+      text-align:center;
       color:$teal;
       font-size:16px;
-      text-align:center;
+      margin:0;
     }
   }
 
