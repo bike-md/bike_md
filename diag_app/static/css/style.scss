@@ -9,7 +9,6 @@
 @import "mixins";
 
 body {
-  // position: relative;
   margin:0;
   overflow:auto;
 }
@@ -102,7 +101,6 @@ header{
 // }
 
 .templatenav{
-  position: relative;
   display: inline;
 
     li{
@@ -117,7 +115,7 @@ header{
         color:white;
         @include smallfont;
         font-size: 1.25rem;
-        position:relative;
+        // position:relative;
         text-align: right;
       }
 
