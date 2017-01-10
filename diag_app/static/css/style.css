@@ -1,6 +1,6 @@
 .indexbody {
   margin: 0;
-  background: linear-gradient(to right, black, rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/index-background.jpg");
+  background-image: url("../images/index-background.jpg");
   background-size: cover; }
 
 .indexnav {
@@ -35,7 +35,7 @@
         bottom: 0px;
         height: 1.2em;
         width: 0px;
-        background-color: #b68d58;
+        background-color: #ba973a;
         transition: width .5s;
         content: "";
         z-index: -1; }
@@ -58,12 +58,15 @@ form input {
   text-transform: uppercase;
   width: 150px; }
 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
 .button {
   height: 50px;
   width: 100%;
   text-align: center;
   box-sizing: border-box;
-  background-color: #a8bdba;
+  background-color: #87b0aa;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -71,7 +74,8 @@ form input {
   margin-bottom: 10%;
   -webkit-transition-duration: 0.4s;
   /* Safari */
-  transition-duration: 0.4s; }
+  transition-duration: 0.4s;
+  border: 0; }
   .button a {
     text-decoration: none;
     color: #313237;
@@ -128,7 +132,7 @@ form input {
           bottom: 0px;
           height: 1.2em;
           width: 0px;
-          background-color: #b68d58;
+          background-color: #ba973a;
           transition: width .5s;
           content: "";
           z-index: -1; }
@@ -188,7 +192,7 @@ form input {
           bottom: 0px;
           height: 1.2em;
           width: 0px;
-          background-color: #b68d58;
+          background-color: #ba973a;
           transition: width .5s;
           content: "";
           z-index: -1; }
@@ -247,7 +251,7 @@ form input {
           bottom: 0px;
           height: 1.2em;
           width: 0px;
-          background-color: #b68d58;
+          background-color: #ba973a;
           transition: width .5s;
           content: "";
           z-index: -1; }
@@ -323,6 +327,12 @@ form input {
   border: 0px;
   width: 40px; }
 
+#searchButton:hover {
+  background-color: #a8bdba;
+  border: 0px;
+  width: 40px;
+  transition: .5s; }
+
 .templatenav {
   display: inline; }
   .templatenav li {
@@ -344,7 +354,7 @@ form input {
     bottom: 30px;
     height: 5px;
     width: 0px;
-    background-color: #b68d58;
+    background-color: #ba973a;
     transition: width .5s;
     content: "";
     z-index: -1; }
@@ -356,7 +366,7 @@ form input {
     width: 100%; }
 
 .mainbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/main-background.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bikedetails-background.jpg");
   background-size: cover;
   margin: 0; }
 
@@ -372,17 +382,21 @@ form input {
 hr {
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 3%; }
+  margin-bottom: 4%; }
 
 .outer-box {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(202, 178, 152, 0.4);
   height: auto;
   width: auto;
-  max-width: 50%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  max-width: 80%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%; }
   .outer-box .diag-select-title {
     font-size: 2rem;
     font-family: gill sans;
@@ -396,12 +410,20 @@ hr {
     background-color: white;
     height: 45px;
     width: 30%;
+    opacity: .8;
+    height: 35px;
+    width: 21%;
     display: inline-block;
     margin-left: 2.85%;
     margin-top: 1%;
     margin-bottom: 1%; }
     .outer-box .diag-select-box h4 {
-      color: #45756e; }
+      color: #709c97;
+      font-size: 1rem;
+      font-family: gill sans;
+      text-transform: uppercase;
+      color: #ba973a;
+      margin-top: 5%; }
     .outer-box .diag-select-box h4:hover {
       color: white; }
     .outer-box .diag-select-box .diag-select-text {
@@ -412,39 +434,55 @@ hr {
       top: 50%;
       transform: translateY(-50%);
       text-align: center;
-      color: #45756e;
+      color: #709c97;
       font-size: 16px;
       margin: 0; }
   .outer-box a {
     text-decoration: none; }
   .outer-box .diag-select-box:hover {
-    background-color: #45756e;
+    background-color: #313237;
     cursor: pointer;
     transition: .5s; }
     .outer-box .diag-select-box:hover .diag-select-text {
-      color: white; }
+      color: #87b0aa; }
+
+.outer-box .diag-select-title {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 40px;
+  background-color: rgba(135, 176, 170, 0.9); }
 
 .progression {
   display: flex;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
-  justify-content: center; }
+  justify-content: center;
+  position: fixed;
+  bottom: 5%;
+  margin: 0 auto;
+  position: relative;
+  width: 100%; }
 
 .stepscircles {
   height: 20px;
   width: 20px;
   border-radius: 50px;
   background-color: #a8bdba;
-  flex: 0 0 20px;
   margin-left: 10px;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  margin-top: 10%; }
 
 .stepscircles:hover {
   height: 20px;
   width: 20px;
   border-radius: 50px;
-  background-color: #b68d58;
+  background-color: #ba973a;
   flex: 0 0 20px;
   margin-left: 10px;
   margin-bottom: 2%; }
@@ -457,6 +495,20 @@ hr {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
   margin: 0; }
+
+.background-white {
+  background-color: rgba(202, 178, 152, 0.4);
+  height: auto;
+  width: auto;
+  max-width: 80%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: 0 auto;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%; }
 
 .details-main-title {
   font-size: 2rem;
@@ -481,7 +533,11 @@ h1 {
   text-transform: uppercase;
   color: white;
   font-weight: 200;
-  text-align: center; }
+  text-align: center;
+  background-color: #ba973a; }
+
+.bikedetailsline {
+  display: inline; }
 
 .post-container h4 {
   font-size: 1.5rem;
@@ -499,7 +555,7 @@ h1 {
     font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
-    color: #45756e;
+    color: #709c97;
     margin: 0; }
     .systems a .sys {
       height: 170px;
@@ -511,7 +567,7 @@ h1 {
       padding-top: 5.5%;
       box-sizing: border-box; }
   .systems .sys:hover {
-    background-color: #b68d58;
+    background-color: #ba973a;
     transform: rotate(360deg);
     transition: .5s; }
 
@@ -526,7 +582,7 @@ h1 {
   background-attachment: fixed; }
 
 .prob-detail-container {
-  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #45756e 99%);
+  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #709c97 99%);
   text-align: center;
   font-size: 1rem;
   font-family: gill sans;
@@ -566,7 +622,7 @@ h1 {
     padding: 3%;
     box-sizing: border-box;
     text-transform: uppercase;
-    color: #45756e; }
+    color: #709c97; }
 
 .prob-detail-comments-box {
   width: 40%;
@@ -574,7 +630,7 @@ h1 {
   margin: 3% 0 0 20%; }
 
 .prob-detail-submit {
-  color: #45756e;
+  color: #709c97;
   background-color: white;
   font-size: 1rem;
   font-family: gill sans;
@@ -617,7 +673,7 @@ h4 {
   display: inline-block;
   width: 170px;
   height: 170px;
-  border: 3px #b68d58 solid;
+  border: 3px #ba973a solid;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -655,7 +711,7 @@ h4 {
     font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase;
-    background-color: #b68d58;
+    background-color: #ba973a;
     color: white;
     text-align: center;
     margin-top: 1px;
@@ -725,15 +781,15 @@ body {
   overflow: auto; }
 
 header {
-  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   height: 58px;
   padding-left: 10%;
-  padding-top: 2%;
+  padding-top: 1%;
   padding-bottom: 2%; }
   header .templatelogo {
-    width: 23%;
+    width: 15%;
     float: left;
-    margin-right: 2%; }
+    margin-right: 2%;
+    margin-top: 1.5%; }
   header .search {
     width: 10%;
     float: left;
@@ -793,7 +849,7 @@ header .templatenav .dropdown li a:hover {
   transition: .5s; }
 
 .remodal {
-  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #45756e 99%); }
+  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #709c97 99%); }
 
 .modaltext {
   color: white;
@@ -811,7 +867,7 @@ header .templatenav .dropdown li a:hover {
   color: #313237; }
 
 .submit-button {
-  color: #45756e;
+  color: #709c97;
   background-color: white;
   font-size: 1rem;
   font-family: gill sans;
