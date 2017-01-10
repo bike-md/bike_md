@@ -90,17 +90,18 @@
 
 
 
-  form input{
+form input{
     height:30px;
-    width:97%;
     margin-bottom:1.5rem;
     text-align:center;
     text-transform:uppercase;
+    width: 150px;
   }
 
   .button{
     height:50px;
     width:100%;
+    text-align: center;
     // padding-top:9%;
     box-sizing:border-box;
     background-color:$seafoam;
