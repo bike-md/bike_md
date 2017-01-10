@@ -51,42 +51,40 @@ function showBike(url){
         var template = Handlebars.compile(source)
         var html = template(results)
         $("#bikeSpecs").append(html)
+        loadSystemModals(results.id)
 
-    })
-}
-
-
-function loadProblemsBySystemForModel(id){
-    var probId = id
-    var modelId = $("#modelId").val()
-    $.ajax({
-        url: '/api/get-problems?system=' + probId + '&model=' + modelId,
-        type: 'GET',
-    }).done(function(results){
-        var problems = results.results
-        var source = $('#problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#problems' + probId).empty()
-        $('#problems' + probId).append(html)
     })
 }
 
 
 // load systems
-function loadSystemModals(){
+function loadSystemModals(name){
+    var model = name
+    console.log(model)
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        var systems = results.results
+        var system = results.results
+        console.log(system)
+        var list = {}
+        var index = 0;
+        $.each(system, function() {
+            list[index] = {
+                system : system[index],
+                model : model
+            };
+        index++;
+        });
+        console.log(list)
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
-        var html = template(systems)
+        var html = template(list)
         $('#system').append(html)
+
     })
 }
-loadSystemModals()
+
 
 
 Handlebars.registerHelper('linkURL', function (object){

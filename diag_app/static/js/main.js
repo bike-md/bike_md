@@ -218,3 +218,15 @@ Handlebars.registerHelper('linkURL', function (object){
     url = '/diag_app/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
+
+
+// search function
+function searchProblems(){
+    var searchTerm = $("#searchBox").val()
+    $.ajax({
+        url: '/api/get-problems',
+        type: 'GET'
+    }).done(function(results){
+        console.log(results)
+    })
+}
