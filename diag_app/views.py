@@ -1,45 +1,26 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import viewsets, permissions, generics
 from . import models, forms
 from .forms import UserForm, TechForm, LoginForm
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
 from .models import Model, Problem_Model
-from .serializers import VoteSerializer, ProblemGetSerializer
-from .serializers import TechSerializer, RatingSerializer, SystemSerializer
+from .serializers import VoteSerializer, ProblemGetSerializer, UserSerializer
+from .serializers import TechGetSerializer, RatingSerializer, SystemSerializer
 from .serializers import BrandSerializer, ModelSerializer, ProblemPostSerializer
 from .serializers import SolutionPostSerializer, SolutionGetSerializer
+from .serializers import TechPostSerializer
 from django.views.generic import ListView
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
+from django.contrib.auth.models import User
+from .permissions import IsStaffOrTargetUser
 
 
 def create_account(request):
-    if request.method == 'GET':
-        user_form = UserForm()
-        tech_form = TechForm()
-    elif request.method =='POST':
-        user_form = UserForm(request.POST)
-        tech_form = TechForm(request.POST)
-        print(tech_form)
-        print(user_form)
-        if user_form.is_valid() and tech_form.is_valid():
-            user = user_form.save()
-            tech = tech_form.save(commit=False)
-            tech.user = user
-            print(tech)
-            tech.save()
-            login(request, user)
-            password = user.password
-            user.set_password(password)
-            user.save()
-            user = authenticate(username=user.username, password=password)
-            login(request, user)
-            return HttpResponseRedirect('/diag_app/')
-    return render(request, 'createaccount.html', {'user_form': user_form,
-                  'tech_form': tech_form})
+    return render(request, 'create_account.html')
 
 
 def login_user(request):
@@ -72,11 +53,17 @@ def profile(request):
     return render(request, 'profile.html')
 
 
-def test(request):
-    return render(request, 'build_templates/load.html')
-
-
 # class viewsets and filters
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    model = User
+
+    def get_permissions(self):
+        return (AllowAny() if self.request.method == 'POST'
+                else IsStaffOrTargetUser()),
+
+
 class SystemViewSet(viewsets.ModelViewSet):
     queryset = System.objects.all()
     serializer_class = SystemSerializer
@@ -156,10 +143,19 @@ class VoteViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
 
 
-class TechViewSet(viewsets.ModelViewSet):
+class TechGetViewSet(viewsets.ModelViewSet):
     queryset = Tech.objects.all()
-    serializer_class = TechSerializer
+    serializer_class = TechGetSerializer
     permission_classes = (permissions.IsAuthenticated,)
+
+
+class TechPostViewSet(viewsets.ModelViewSet):
+    queryset = Tech.objects.all()
+    serializer_class = TechPostSerializer
+
+    def get_permissions(self):
+        return (AllowAny() if self.request.method == 'POST'
+                else IsStaffOrTargetUser()),
 
 
 class RatingViewSet(viewsets.ModelViewSet):

@@ -90,11 +90,7 @@
     <!-- <h2 class ="systitle">View Problems By System</h2> -->
 
         <!-- circles -->
-        <section id="system" class ="systems">
-
-
-
-        </section>
+        <section id="system" class ="systems"></section>
 <!-- </div> -->
 <!-- </div> -->
 
@@ -173,6 +169,7 @@
     </script>
     <!-- end modal scripts -->
 
+    <!-- bike specs -->
     <script id="bike-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -184,15 +181,15 @@
     </script>
 
 
+    <!-- Circle modals -->
     <script id="system-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                <a data-remodal-target="modal{{id}}" href="#modal{{id}}"
+                <a data-remodal-target="#modal{{id}}" href="#modal{{id}}"
                     onclick="loadProblemsBySystemForModel({{id}})">
                     <div class ="sys">{{name}}</div>
                 </a>
-
                 <div class="remodal" data-remodal-id="modal{{id}}">
                     <button data-remodal-action="close" class="remodal-close"></button>
                     <p id="problems{{id}}"></p>
@@ -203,6 +200,7 @@
     </script>
 
 
+    <!-- load problems in modals -->
     <script id="problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
