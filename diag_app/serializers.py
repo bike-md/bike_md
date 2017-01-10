@@ -114,6 +114,7 @@ class BrandSerializer(serializers.ModelSerializer):
 
 
 class ModelSerializer(serializers.ModelSerializer):
+    brand = TechGetSerializer(many=False, read_only=True)
 
     class Meta:
         model = Model
