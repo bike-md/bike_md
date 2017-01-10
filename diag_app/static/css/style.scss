@@ -91,7 +91,7 @@ header{
 // my account dropdown menu
 .dropdown{
   display:none;
-  padding-left:1%;
+  padding:0;
   position:absolute;
   top:70px;
 }
@@ -101,21 +101,16 @@ header .templatenav .dropdown li a {
 }
 
 header .templatenav .dropdown li a:hover {
-    color: $charcoal;
+    color: $golden;
 }
 
   .droplist{
     display:block;
     clear:both;
     width: 100%;
-    background:linear-gradient(
-          rgba(white, 0.15),
-          rgba(white, 0.15)
-        );
   }
 
     .droplist:hover {
-      background-color: $seafoam;
       transition: .5s;
     }
 
@@ -162,15 +157,15 @@ header .templatenav .dropdown li a:hover {
 // footer
 footer{
   clear:both;
-  background-color:rgba(white, .15);
   width:100%;
 
   p{
     color:white;
-    text-align:center;
+    text-align:left;
     padding-top:.5%;
     margin:0;
     font-family:gill sans;
     text-transform:uppercase;
+    text-align:center;
   }
 }

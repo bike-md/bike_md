@@ -19,16 +19,15 @@
   //       rgba($seafoam, .5)1%,
   //       rgba($teal, 1)99%
   //     );
-  background-color:rgba($charcoal, .5);
   text-align:center;
   @include smallfont;
-  margin:5% 5%;
+  margin:5% 10%;
   padding:3% 0;
 }
 
 .prob-detail-title{
   @include regularfont;
-  color:white;
+  // color:white;
   font-weight:700;
   text-align:center;
   margin:0;
@@ -42,18 +41,20 @@
   background-color:rgba(white, .9);
 }
 
+.solution-container{
+  background-color:white;
+}
+
 // time and cost fields
 .solutiontimecost-container{
-  border:1px solid white;
-  display:inline-block;
-  width:40%;
-  margin: 2% auto 5% auto;
+  display:block;
+  // width:40%;
+  // margin: 2% auto 5% auto;
   padding:1%;
   box-sizing:border-box;
 
   .solutiontimecost-text{
     @include smallfont;
-    color:white;
   }
 
   .solutiontimecost-input{
