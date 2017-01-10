@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
     <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-    <title>Main</title>
+    <title>Problem List</title>
   </head>
 
-  <body class ="mainbody">
-
+  <body class ="bikedetailsbody">
     <header>
-      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
+      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+
+
 
       <nav class ="templatenav">
 
-        <!-- search -->
-        <ul>
-            <li>
-              <form id="searchThis" style="display: inline;" method="POST">
-                  <input onfocus="if(this.value==this.defaultValue)this.value='';"
-                  value="Search"
-                  type="text" id="searchBox"
-                  onblur="if(this.value=='')this.value=this.defaultValue;"
-                  vinput="" name="q"/>
-                  <input id="searchButton" value="Go" type="submit"/>
-              </form>
-            </li>
-        </ul>
+          <!-- search -->
+          <ul>
+              <li>
+                <form id="searchThis" style="display: inline;" method="POST">
+                    <input onfocus="if(this.value==this.defaultValue)this.value='';"
+                    value="Search"
+                    type="text" id="searchBox"
+                    onblur="if(this.value=='')this.value=this.defaultValue;"
+                    vinput="" name="q"/>
+                    <input id="searchButton" value="Go" type="submit"/>
+                </form>
+              </li>
+          </ul>
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -57,7 +57,7 @@
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
-                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button" type="submit" value="Submit">
+                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
             </form>
             <!-- end new problem form -->
           </div>
@@ -83,32 +83,23 @@
               <li class ="droplist"><a href ="/logout/">Log Out</a></li>
             </ul>
           </li>
-          </ul>
       </nav>
     </header>
 
-        <h1 class ="diag-main-title">Diagnose a problem</h1>
+<h1 class="details-main-title">Problem listing by system for:</h1>
+    <div><h2 class="details-main-title" id="model"></h2></div>
 
 <hr>
-        <!--Profression circles-->
 
-        <section id="listing" class="outer-box">
-            <!-- <div id="step" class="step"></div> -->
-          <!-- <h3 class ="diag-select-title">select make</h3> -->
-        <!-- <a href=""><div class ="diag-select-box"></div></a> -->
-        </section>
-        <div class="progression">
-                <div class="stepscircles"></div>
-                <div class="stepscircles"></div>
-                <div class="stepscircles"></div>
-        </div>
-        <footer class ="mainfooter">
-          <p>Copyright Bike MD 2017. All rights reserved.</p>
-        </footer>
+    <section id="problemList" class =""></section>
 
 
-        <!-- modal scripts     -->
 
+    <footer class ="bikedetails-footer">
+      <p>Copyright Bike MD 2017. All rights reserved.</p>
+    </footer>
+
+    <!-- modal scripts     -->
         <!-- answer modal -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -178,34 +169,14 @@
         </script>
         <!-- end modal scripts -->
 
-        <script id="brand-template" type="text/x-handlebars-template">
+        <script id="problem-list-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3 class ="diag-select-title">select make</h3>
                 {{#each .}}
-                  <a onclick="showYears({{this.id}})">
-                      <div class ="diag-select-box">
-                          <h4 class="diag-select-text">{{ this.name }}</h4>
-                      </div>
-                  </a>
+                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                    <h2 class="problem-date">{{{formatTime posted}}}</h2>
+                    <h2 class="problem-poster">{{tech.user.username}}</h2>
                 {{/each}}
-                {% endverbatim %}
-            </article>
-        </script>
-
-        <script id="year-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                <h3 class ="diag-select-title">select year</h3>
-                <input id="brandId" type="hidden" name="brand" value="{{this.brandId}}">
-                    {{#each this.modelYears}}
-                    <a onclick="showModels({{this}})">
-                        <div class ="diag-select-box">
-                            <h4 class="diag-select-text">{{this}}</h4>
-                        </div>
-                    </a>
-                    {{/each}}
-
                 {% endverbatim %}
             </article>
         </script>
@@ -213,25 +184,15 @@
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3 class ="diag-select-title">select model</h3>
-                {{#each .}}
-                    <a onclick="linkBike({{this.id}})">
-                        <div class ="diag-select-box">
-                            <h4 class="diag-select-text">{{{ this.name }}}</h4>
-                        </div>
-                    </a>
-                {{/each}}
+                    <h2 class="model-title">{{name}}</h2>
                 {% endverbatim %}
             </article>
         </script>
 
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <!-- <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/problem_list.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
-    </body>
-</html>
+      </body>
+    </html>

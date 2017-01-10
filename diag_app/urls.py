@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url((r'^$'), views.main_page, name='main'),
+    url((r'^problem_list/([A-Za-z0-9]+)/([0-9]+)'), views.problem_list, name='problem_list'),
     url((r'^model_detail/([0-9]+)'), views.model_detail, name='model_detail'),
     url((r'^problem_detail/([0-9]+)'), views.problem_detail, name='problem_detail'),
     url((r'^profile/$'), views.profile, name='profile'),

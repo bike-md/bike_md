@@ -32,7 +32,7 @@ $.ajaxSetup({
 function getTechInfo(){
     var id = $("#currentTech").val()
     $.ajax({
-        url: '/api/techs/' + id,
+        url: '/api/get-techs/' + id,
         type: 'GET',
     }).done(function(results){
         console.log(results.experience)
