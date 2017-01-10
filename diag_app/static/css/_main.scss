@@ -145,7 +145,6 @@ hr {
     background-color:white;
     height:45px;
     width:30%;
-    opacity: .8;
     height:35px;
     width:21%;
     display:inline-block;
@@ -178,11 +177,11 @@ hr {
 
 
   .diag-select-box:hover{
-    background-color:$charcoal;
+    background-color:$golden;
     cursor:pointer;
     transition: .5s;
      .diag-select-text{
-       color:$darkteal;
+       color:white;
      }
   }
 }

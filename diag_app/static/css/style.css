@@ -51,12 +51,11 @@
       .indexnav ul .logobox .logo {
         width: 100%; }
 
-form input {
+.loginform .loginfield {
   height: 30px;
-  margin-bottom: 1.5rem;
   text-align: center;
   text-transform: uppercase;
-  width: 150px; }
+  margin: 5% auto; }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset; }
@@ -410,7 +409,6 @@ hr {
     background-color: white;
     height: 45px;
     width: 30%;
-    opacity: .8;
     height: 35px;
     width: 21%;
     display: inline-block;
@@ -440,11 +438,11 @@ hr {
   .outer-box a {
     text-decoration: none; }
   .outer-box .diag-select-box:hover {
-    background-color: #313237;
+    background-color: #ba973a;
     cursor: pointer;
     transition: .5s; }
     .outer-box .diag-select-box:hover .diag-select-text {
-      color: #87b0aa; }
+      color: white; }
 
 .outer-box .diag-select-title {
   font-size: 2rem;
@@ -582,19 +580,17 @@ h1 {
   background-attachment: fixed; }
 
 .prob-detail-container {
-  background-color: rgba(49, 50, 55, 0.5);
   text-align: center;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  margin: 5% 5%;
+  margin: 5% 10%;
   padding: 3% 0; }
 
 .prob-detail-title {
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
-  color: white;
   font-weight: 700;
   text-align: center;
   margin: 0; }
@@ -606,18 +602,17 @@ h1 {
   margin: 2% auto 5% auto;
   background-color: rgba(255, 255, 255, 0.9); }
 
+.solution-container {
+  background-color: white; }
+
 .solutiontimecost-container {
-  border: 1px solid white;
-  display: inline-block;
-  width: 40%;
-  margin: 2% auto 5% auto;
+  display: block;
   padding: 1%;
   box-sizing: border-box; }
   .solutiontimecost-container .solutiontimecost-text {
     font-size: 1rem;
     font-family: gill sans;
-    text-transform: uppercase;
-    color: white; }
+    text-transform: uppercase; }
   .solutiontimecost-container .solutiontimecost-input {
     text-align: center;
     padding: 3%;
@@ -833,7 +828,7 @@ header {
 
 .dropdown {
   display: none;
-  padding-left: 1%;
+  padding: 0;
   position: absolute;
   top: 70px; }
 
@@ -841,16 +836,14 @@ header .templatenav .dropdown li a {
   font-size: 1.1rem; }
 
 header .templatenav .dropdown li a:hover {
-  color: #313237; }
+  color: #ba973a; }
 
 .droplist {
   display: block;
   clear: both;
-  width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)); }
+  width: 100%; }
 
 .droplist:hover {
-  background-color: #a8bdba;
   transition: .5s; }
 
 .remodal {
@@ -890,14 +883,14 @@ header .templatenav .dropdown li a:hover {
 
 footer {
   clear: both;
-  background-color: rgba(255, 255, 255, 0.15);
   width: 100%; }
   footer p {
     color: white;
-    text-align: center;
+    text-align: left;
     padding-top: .5%;
     margin: 0;
     font-family: gill sans;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

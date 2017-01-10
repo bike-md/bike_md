@@ -19,10 +19,10 @@
         <li><a class="link3" href ="#">About Us</a></li>
       </ul>
 
-    <form class ="username" name="LoginForm" action="/login/" method="POST">
+    <form class ="loginform" name="LoginForm" action="/login/" method="POST">
         {% csrf_token %}
-        <input name="username" type="text" placeholder ="username"></input>
-        <input name="password" type="password" placeholder ="password"></input>
+        <input class ="loginfield" name="username" type="text" placeholder ="username"></input>
+        <input class ="loginfield" name="password" type="password" placeholder ="password"></input>
         <button class="button" type="submit">Login</button>
     </form>
     </nav>
