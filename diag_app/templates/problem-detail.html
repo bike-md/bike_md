@@ -16,15 +16,25 @@
     <header>
       <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-      <form>
-        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-      <form>
+      <!-- search -->
+      <ul>
+          <li>
+            <form id="searchThis" style="display: inline;" method="POST">
+                <input onfocus="if(this.value==this.defaultValue)this.value='';"
+                value="Search"
+                type="text" id="searchBox"
+                onblur="if(this.value=='')this.value=this.defaultValue;"
+                vinput="" name="q"/>
+                <input id="searchButton" value="Go" type="submit"/>
+            </form>
+          </li>
+      </ul>
 
       <nav class ="templatenav">
 
         <!-- ask questions -->
         <div class ="askmodal-container">
-          <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Ask Question</a></li>
+          <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Post Problem</a></li>
 
           <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -54,7 +64,7 @@
 
         <!-- answer questions -->
         <div class ="answermodal-container">
-          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Answer Questions</a></li>
+          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Unsolved Problems</a></li>
 
           <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -77,8 +87,8 @@
     </header>
 
 
-    <section class ="prob-detail-boxes-container">
-      <h2 class="prob-detail-box-name">Problem</h2>
+    <section class ="prob-detail-container">
+      <h2 class="prob-detail-title">Problem</h2>
 
       <div id="problemDetail" class="prob-detail-question-box prob-detail-boxes">
 
@@ -88,25 +98,27 @@
 
       </div>
 
-      <h2 class="prob-detail-box-name">Post new Solution</h2>
+      <div class="solution-container">
+      <h2 class="prob-detail-title">Post new Solution</h2>
       <!-- post new solution form -->
       <form class="solution-input" action="submit" method="POST">
           <!-- <h1>Post a new Solution</h1> -->
           {%csrf_token%}
           <div class ="solutiontimecost-container">
-            <h4>Enter the time required for your solution:</h4>
+            <h4 class ="solutiontimecost-text">Time required for solution:</h4>
             <input id="solutionTime" class ="solutiontimecost-input" type="text" name="solutionTime" value="Enter time here">
           </div>
 
           <div class ="solutiontimecost-container">
-            <h4>Enter the parts cost, if any, for this solution:</h4>
+            <h4 class ="solutiontimecost-text">Parts cost for solution:</h4>
             <input id="partsCost" class ="solutiontimecost-input" type="text" name="partsCost" value="Enter cost here">
           </div>
 
-          <h4>Describe your solution:</h4>
+          <h4 class ="prob-detail-title">Describe your solution:</h4>
           <textarea id="solutionText" class ="prob-detail-boxes" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
-          <input id="newSolutionSubmit" type="submit" value="Submit">
+          <input id="newSolutionSubmit" class ="prob-detail-submit" type="submit" value="Submit">
       </form>
+      </div>
       <!-- end post new solution -->
     </section>
 

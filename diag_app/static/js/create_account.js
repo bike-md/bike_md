@@ -65,5 +65,11 @@ function createTech(id){
         type: 'POST',
         data: context
     }).done(function(results){
+        linkLogin()
     })
+}
+
+function linkLogin(){
+    url = '/login/'
+    window.location = url;
 }

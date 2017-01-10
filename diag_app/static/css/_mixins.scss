@@ -23,7 +23,7 @@
 }
 
 @mixin verticalcenter{
-  position: relative;
-  top: 30%;
-  transform: translateY(-30%);
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
 }

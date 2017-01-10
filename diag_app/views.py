@@ -23,6 +23,8 @@ def create_account(request):
     return render(request, 'create_account.html')
 
 
+
+
 def login_user(request):
     form = LoginForm(request.POST or None)
     if request.POST and form.is_valid():
@@ -36,6 +38,11 @@ def login_user(request):
 @login_required(login_url='/login/')
 def main_page(request):
     return render(request, 'main.html')
+
+
+@login_required(login_url='/login/')
+def problem_list(request, model, id):
+    return render(request, 'problem_list.html')
 
 
 @login_required(login_url='/login/')

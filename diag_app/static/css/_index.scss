@@ -85,12 +85,13 @@
 
 
 
-form input{
+.loginform .loginfield{
     height:30px;
-    margin-bottom:1.5rem;
+    // margin-bottom:1.5rem;
     text-align:center;
     text-transform:uppercase;
-    width: 150px;
+    // width: 96%;
+    margin:5% auto;
   }
 
   input:-webkit-autofill {
@@ -101,7 +102,6 @@ form input{
     height:50px;
     width:100%;
     text-align: center;
-    // padding-top:9%;
     box-sizing:border-box;
     background-color:$darkteal;
     @include regularfont;

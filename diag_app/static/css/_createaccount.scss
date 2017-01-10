@@ -9,6 +9,7 @@
       ),
   url("../images/index-background.jpg");
   background-size:cover;
+  background-position:center;
   margin:0;
   padding: 5%;
 }
@@ -17,14 +18,13 @@ header {
   margin: 0 auto;
 }
 .create-account-overlay-box {
-  display: inline-block;
-  width:75%;
+  display:block;
+  width:85%;
       background-image: url("../images/register-page-background-image.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-left: 12%;
-  margin-right: 10%;
-  margin-top: 1%;
+
+background-size: auto;
+  height: 550px;
+  margin:0 auto;
 }
 
 .create-account-box {
@@ -39,26 +39,28 @@ padding-top: 5%;
     margin: 1%;
   }
 
-  .profile-questions-asked {
-    width: 30%;
-    height: 300px;
-    float: left;
-    background-color: #ffffff;
-    margin-left: 1%;
-    margin-bottom: 1%;
-  }
+  // .profile-questions-asked {
+  //   width: 30%;
+  //   height: 300px;
+  //   float: left;
+  //   background-color: #ffffff;
+  //   margin-left: 1%;
+  //   margin-bottom: 1%;
+  // }
 
-  .profile-questions-answered {
-    width: 66%;
-    height: 224px;
-    float: right;
-    background-color: #ffffff;
-    margin-right: 1%;
-    margin-bottom: 1%;
-  }
+  // .profile-questions-answered {
+  //   width: 66%;
+  //   height: 224px;
+  //   float: right;
+  //   background-color: #ffffff;
+  //   margin-right: 1%;
+  //   margin-bottom: 1%;
+  // }
 
   .register-form {
-    padding: 2%;
+    padding-top: 1%;
+    padding-left:10%;
+    padding-bottom: 5%;
   }
 
   .register-form-questions {
@@ -66,5 +68,10 @@ padding-top: 5%;
   }
 
   .register-form input {
-    width: 300px;
+    width: 40%;
+    
+  }
+
+  .register-form-submit-button {
+    background-color: $golden;
   }
