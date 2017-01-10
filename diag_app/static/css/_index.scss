@@ -23,9 +23,7 @@
     margin-left:10%;
     background-color:rgba(#afafb2, .35);
     padding:1%;
-    float:left;
-    overflow:hidden;
-    margin-bottom: 0;
+    margin-bottom:0;
 
     ul{
       text-align:right;
@@ -33,7 +31,6 @@
       padding:0;
       margin:0;
       margin-bottom:20%;
-      float:left;
 
       li{
         clear:both;
@@ -60,15 +57,15 @@
         }
 
         .link1:hover:after{
-          width:155%;
+          width:150%;
         }
 
         .link2:hover:after{
-          width:165%;
+          width:160%;
         }
 
         .link3:hover:after{
-          width:138%;
+          width:133%;
         }
       }
 
@@ -87,10 +84,10 @@
 
 .loginform .loginfield{
     height:30px;
-    // margin-bottom:1.5rem;
     text-align:center;
     text-transform:uppercase;
-    // width: 96%;
+    border:transparent;
+    width: 100%;
     margin:5% auto;
   }
 
@@ -98,15 +95,15 @@
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-  .button{
+  .loginbutton{
     height:50px;
     width:100%;
     text-align: center;
-    box-sizing:border-box;
+    padding:0;
     background-color:$darkteal;
     @include regularfont;
     text-align:center;
-    margin-bottom: 10%;
+    margin:5% auto;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border: 0;
@@ -124,9 +121,9 @@
     }
   }
 
-  .button:hover{
-    background-color: $charcoal;
-    color: $seafoam;
+  .loginbutton:hover{
+    background-color:$golden;
+    color:white;
   }
 
   /* ----------- iPad mini ----------- */
