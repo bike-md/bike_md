@@ -12,36 +12,36 @@
   </head>
 
   <body class ="createaccountbody">
-    <header>
+
+    <div class="create-account-container">
+    <!-- <header>
       <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
-    </header>
+    </header> -->
 
     <div class="create-account-overlay-box">
 
       <div class="create-account-box">
-          <form method="POST">
+          <form method="POST" class="register-form">
               {%csrf_token%}
-              <h4>Enter username:</h4>
+              <h4 class="register-form-questions">Enter username:</h4>
               <input type="text" name="username" id="newUsername">
-              <h4>Enter password:</h4>
+              <h4 class="register-form-questions">Enter password:</h4>
               <input type="password" name="password" id="userPassword">
-              <h4>Enter Email:</h4>
+              <h4 class="register-form-questions">Enter Email:</h4>
               <input type="text" name="email" id="emailAddress">
-              <h4>Enter Enter experience in years:</h4>
+              <h4 class="register-form-questions">Enter Enter experience in years:</h4>
               <input type="text" name="experience" id="yrsExperience">
-              <h4>Enter Enter current job title:</h4>
+              <h4 class="register-form-questions">Enter Enter current job title:</h4>
               <input type="text" name="job_title" id="jobTitle">
-              <h4>Enter Enter current place of employment:</h4>
+              <h4 class="register-form-questions">Enter Enter current place of employment:</h4>
               <input type="text" name="shop" id="currentShop">
-              <input id='createAccount' type="submit" value="Create Account">
+              <input id='createAccount' class="register-form-submit-button" type="submit" value="Create Account">
           </form>
       </div>
 
     </div>
+  </div>
 
-    <footer>
-      <p>Copyright Bike MD 2017. All rights reserved.</p>
-    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>

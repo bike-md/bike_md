@@ -268,21 +268,23 @@ input:-webkit-autofill {
 .createaccountbody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
-  margin: 0; }
+  background-position: center;
+  margin: 0;
+  padding: 5%; }
+
+header {
+  margin: 0 auto; }
 
 .create-account-overlay-box {
-  display: inline-block;
-  width: 70%;
-  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
-  margin-left: 16%;
-  margin-right: 10%; }
+  display: block;
+  width: 85%;
+  background-image: url("../images/register-page-background-image.png");
+  background-size: auto;
+  height: 550px;
+  margin: 0 auto; }
 
-.create-account-overlay-box {
-  width: 30%;
-  height: 150px;
-  float: left;
-  background-color: #2B7F7B;
-  margin: 1%; }
+.create-account-box {
+  padding-top: 5%; }
 
 .profile-information {
   width: 66%;
@@ -291,21 +293,19 @@ input:-webkit-autofill {
   background-color: #000000;
   margin: 1%; }
 
-.profile-questions-asked {
-  width: 30%;
-  height: 300px;
-  float: left;
-  background-color: #ffffff;
-  margin-left: 1%;
-  margin-bottom: 1%; }
+.register-form {
+  padding-top: 1%;
+  padding-left: 10%;
+  padding-bottom: 5%; }
 
-.profile-questions-answered {
-  width: 66%;
-  height: 224px;
-  float: right;
-  background-color: #ffffff;
-  margin-right: 1%;
-  margin-bottom: 1%; }
+.register-form-questions {
+  margin: 0; }
+
+.register-form input {
+  width: 40%; }
+
+.register-form-submit-button {
+  background-color: #ba973a; }
 
 #searchThis {
   height: 30px;

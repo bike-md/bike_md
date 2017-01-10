@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
     <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <title>Main</title>
   </head>
 
@@ -217,7 +216,7 @@
                 {{#each .}}
                     <a onclick="linkBike({{this.id}})">
                         <div class ="diag-select-box">
-                            <h4 class="diag-select-text">{{{ this.name }}}</h4>
+                            <h4 class="diag-select-text">{{ this.name }}</h4>
                         </div>
                     </a>
                 {{/each}}
@@ -225,10 +224,8 @@
             </article>
         </script>
 
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <!-- <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
         <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
