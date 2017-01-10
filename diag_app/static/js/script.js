@@ -7,7 +7,6 @@ function loadModels(){
     }).done(function(results){
         var bike = results.Results
         var year = parseInt(results.SearchCriteria.substring(24,28))
-        console.log(year)
         for (var i=0; i < bike.length; i++){
             context = {
                 name: bike[i].Model_Name,
@@ -20,7 +19,6 @@ function loadModels(){
                 type: 'POST',
                 data: context,
             }).done(function(results){
-                console.log(results)
             })
         }
     })

@@ -213,7 +213,7 @@
             {%verbatim%}
             {{#each .}}
             <div class ="prob-detail-solution-box prob-detail-boxes">
-                <h2 class="prob-detail-box-name">Answer:</h2>
+                <h2 class="prob-detail-box-name">Solution:</h2>
                 <h5 class="date-time">{{{formatTime this.posted}}}</h5>
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
                 <h5 class="solution-text">{{this.description}}</h5>
@@ -231,8 +231,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
     <script type="text/javascript" src="{% static 'js/problem_detail.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/remodal.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

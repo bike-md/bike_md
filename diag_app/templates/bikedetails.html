@@ -17,13 +17,6 @@
 
       <nav class ="templatenav">
 
-
-        <ul>
-<li>
-  <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
-</li>
-
-
           <!-- search -->
           <ul>
               <li>
@@ -96,24 +89,13 @@
 <h1 class ="details-main-title">System Selection</h1>
 
 <hr>
-    <!-- specs -->
-    <!-- <div class="specks-box"> -->
-<<<<<<< HEAD
-      <!-- <div class="background-white"> -->
-    <section id="bikeSpecs" class ="specs"></section>
-=======
+
+    <!-- <section id="bikeSpecs" class ="specs"></section> -->
+
       <div class="background-white">
-    <section id="bikeSpecs" class ="specs">
-
-    </section>
->>>>>>> 8ebcc280f5a3cd38ee0f45b4e1afd29f9c6ff4fa
-
-    <!-- <h2 class ="systitle">View Problems By System</h2> -->
-
-        <!-- circles -->
-        <section id="system" class ="systems"></section>
-<!-- </div> -->
-</div>
+          <section id="bikeSpecs" class ="specs"></section>
+          <section id="system" class ="systems"></section>
+    </div>
 
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>
@@ -195,19 +177,15 @@
         <article class="post-container">
             {%verbatim%}
             <input id="modelId" type="hidden" name="user_id" value="{{id}}">
-<<<<<<< HEAD
-                <h4>Year: {{year}}</h4>
-                <h4 id="{{id}}">Model: {{name}}</h4>
-=======
+                <h4 class="bikedetailsline">Brand: {{brand.name}}</h4>
                 <h4 class="bikedetailsline">Year: {{year}}</h4>
-                <h4 class="bikedetailsline">Model: {{name}}</h4>
->>>>>>> 8ebcc280f5a3cd38ee0f45b4e1afd29f9c6ff4fa
+                <h4 id="{{id}}" class="bikedetailsline">Model: {{name}}</h4>
             {% endverbatim %}
         </article>
     </script>
 
 
-    <!-- Circle modals -->
+    <!-- Circle divs -->
     <script id="system-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -219,7 +197,6 @@
             {% endverbatim %}
         </article>
     </script>
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
