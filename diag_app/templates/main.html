@@ -19,21 +19,22 @@
 
       <nav class ="templatenav">
 
-</li>
-          <form class="search-container">
-            <input class="search" type="text"  placeholder="search">
 
-          </form>
-<img class="search-icon" src="{% static 'images/search-icon.png' %}">
+        <ul>
+<li>
+  <form id="searchThis" action="/search" style="display: inline;" method="get"><input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" vinput="" name="q" /> <input id="searchButton" value="Go" type="submit" /></form>
 </li>
-        <!-- <form>
-         <input class ="search" type ="text" placeholder ="Search" name ="search">
-<a href="#"><img class="glass" src="{% static 'images/search-icon.png' %}"></a></input>
-   <!-- <button type="submit" class="searchButton">
-     <i class="fa fa-search"></i>
-  </button> -->
 
-    <!-- <form> -->
+<!-- <div class="searchbar">
+        <form class="searchsite" method="POST">
+            <input class="search" type="text" placeholder="Search" name="search"></input>
+
+            <div class="searchButton"></div>
+                <!-- <img class="glass" src="{% static 'images/search-icon.png' %}">
+            </button> -->
+        <!-- </form> -->
+<!-- </div> -->
+
         <!-- ask questions -->
         <div class ="askmodal-container">
           <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Ask Question</a></li>
@@ -84,6 +85,7 @@
               <li class ="droplist"><a href ="/logout/">Log Out</a></li>
             </ul>
           </li>
+          </ul>
       </nav>
     </header>
 
