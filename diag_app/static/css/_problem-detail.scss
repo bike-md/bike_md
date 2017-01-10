@@ -19,7 +19,7 @@
   //       rgba($seafoam, .5)1%,
   //       rgba($teal, 1)99%
   //     );
-  background-color:rgba($charcoal, .7);
+  background-color:rgba($charcoal, .5);
   text-align:center;
   @include smallfont;
   margin:5% 5%;
@@ -61,7 +61,7 @@
     padding:3%;
     box-sizing:border-box;
     text-transform:uppercase;
-    color:$teal;
+    color:$charcoal;
   }
 }
 // end time and cost
@@ -75,10 +75,15 @@
 
 // submit button
 .prob-detail-submit{
-  color:$teal;
+  color:$charcoal;
   background-color:white;
   @include smallfont;
   padding:2%;
-  padding-top:1%;
+  padding-top:.7%;
   border:transparent;
+}
+
+.prob-detail-submit:hover{
+  color:white;
+  background-color:$charcoal;
 }
