@@ -1,82 +1,6 @@
 @import "variables";
 @import "mixins";
 
-// form {
-//   display: block;
-//   img {
-//     display: inline;
-//   }
-// }
-// input .search{
-//   margin: 0 auto;
-//   width: 100%;
-//   height: 45px;
-//   padding: 0 20px;
-//   font-size: 1rem;
-//   border: 1px solid #D0CFCE;
-//   outline: none;
-//   &:focus{
-//     border: 1px solid #008ABF;
-//     transition: 0.35s ease;
-//     color: #008ABF;
-//     &::-webkit-input-placeholder{
-//       transition: opacity 0.45s ease;
-//   	  opacity: 0;
-//      }
-//     &::-moz-placeholder {
-//       transition: opacity 0.45s ease;
-//   	  opacity: 0;
-//      }
-//     &:-ms-placeholder {
-//      transition: opacity 0.45s ease;
-//   	 opacity: 0;
-//      }
-//    }
-//  }
- // .search-container{
- //   width: 10%;
- //   display: inline;;
- //   margin: 0 auto;
- //   margin-top: 2%;
- // }
-
-// .search-icon{
-//   position: relative;
-//   float: right;
-//   width: 15px;
-//   height: 15px;
-//   top: -62px;
-//   right: -45px;
-// // }
-//
-// .searchbar {
-//   display: inline;
-// }
-// .search{
-//   width:10%;
-//   // margin:2% 0%;
-//   float:left;
-//   position:relative;
-//   bottom:10px;
-// }
-//
-// .searchsite {
-//   margin-left: 3%;
-//   margin-top: 3%;
-// }
-// .searchButton {
-//  background-image: url("../images/search-icon.png");
-//  background-repeat: no-repeat;
-//  background-size: 30px;
-//  width: 30px;
-//  height: 30px;
-//  margin-left: 34%;
-//  margin-top: -1%;
-//
-//
-// }
-
-
 #searchThis {
   height:30px;
   margin-bottom:1.5rem;
@@ -99,17 +23,13 @@ width: 40px;
 
 }
 
+#searchButton:hover {
+background-color:$seafoam;
+border: 0px;
+width: 40px;
+transition: .5s;
 
-// .glass {
-//   margin-top: 2%;
-//   position: absolute;
-//   width: 25px;
-//   background: white;
-//   color: #fff;
-//   cursor: pointer;
-//   font-size: 20px;
-//   float: left;
-// }
+}
 
 .templatenav{
   display: inline;
@@ -156,14 +76,13 @@ width: 40px;
       }
     }
 
-.mainbody{
-  background: linear-gradient(to right, rgba(black,.8),
-  rgba(255,255,255,0)),
-   linear-gradient(
-         rgba(#5c605f, 0.15),
-        rgba(#5c605f, 0.15)
-       ),
-  url("../images/main-background.jpg");
+.mainbody  {
+  background:
+  linear-gradient(
+      rgba(black, 0.45),
+      rgba(black, 0.45)
+    ),
+  url("../images/bikedetails-background.jpg");
   background-size:cover;
   margin:0;
 }
@@ -182,7 +101,7 @@ width: 40px;
 hr {
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 3%;
+  margin-bottom: 4%;
 }
 
 // .diag-state-circle{
@@ -197,16 +116,20 @@ hr {
 
 // select make/year/model box
 .outer-box{
-  background-color:rgba(white, .15);
+  background-color:rgba(#cab298, .40);
   height:auto;
   width: auto;
-  max-width: 50%;
-  // padding-left:3%;
-  padding-top: 1%;
+  max-width: 80%;
+  padding-top: 2%;
   // padding-right: 3%;
-  padding-bottom: 1%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
   margin:0 auto;
   position:relative;
+  margin-left: 10%;
+  margin-right: 10%;
+
 
   .diag-select-title{
     @include mediumfont;
@@ -220,18 +143,20 @@ hr {
 
   .diag-select-box{
     background-color:white;
+    height:45px;
+    width:30%;
+    opacity: .8;
     height:35px;
     width:21%;
     display:inline-block;
     margin-left: 2.85%;
     margin-top:1%;
     margin-bottom: 1%;
-    padding: 0;
-
 
     h4 {
-      @include smallfont;
       color: $teal;
+      @include smallfont;
+      color: $golden;
       margin-top: 5%;
     }
     h4:hover {
@@ -239,9 +164,11 @@ hr {
     }
     .diag-select-text{
       @include regularfont;
+      @include verticalcenter;
+      text-align:center;
       color:$teal;
       font-size:16px;
-      text-align:center;
+      margin:0;
     }
   }
 
@@ -251,14 +178,25 @@ hr {
 
 
   .diag-select-box:hover{
-    background-color:$teal;
+    background-color:$charcoal;
     cursor:pointer;
     transition: .5s;
      .diag-select-text{
-       color:white;
+       color:$darkteal;
      }
   }
 }
+.outer-box .diag-select-title {
+    font-size: 2rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    background-color:rgba($darkteal, .9)
+  }
 
 .progression {
   display: flex;
@@ -266,6 +204,11 @@ hr {
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
+   position: fixed;
+      bottom: 5%;
+      margin: 0 auto;
+      position: relative;
+          width: 100%;
  }
 
 .stepscircles {
@@ -273,9 +216,11 @@ hr {
   width: 20px;
   border-radius: 50px;
   background-color: $seafoam;
-  flex: 0 0 20px;
   margin-left: 10px;
   margin-bottom: 2%;
+  margin-top: 10%;
+
+
 }
 
 .stepscircles:hover {

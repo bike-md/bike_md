@@ -4,12 +4,7 @@
 
 .indexbody{
   margin: 0;
-  background: linear-gradient(to right, rgba(black,1),
-  rgba(255,255,255,0)),
-   linear-gradient(
-         rgba(#5c605f, 0.15),
-        rgba(#5c605f, 0.15)
-       ),
+  background-image:
    url("../images/index-background.jpg");
    background-size: cover;
 
@@ -98,18 +93,23 @@ form input{
     width: 150px;
   }
 
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
   .button{
     height:50px;
     width:100%;
     text-align: center;
     // padding-top:9%;
     box-sizing:border-box;
-    background-color:$seafoam;
+    background-color:$darkteal;
     @include regularfont;
     text-align:center;
     margin-bottom: 10%;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    border: 0;
 
 
     a{
