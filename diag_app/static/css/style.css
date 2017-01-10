@@ -582,12 +582,12 @@ h1 {
   background-attachment: fixed; }
 
 .prob-detail-container {
-  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #709c97 99%);
+  background-color: rgba(49, 50, 55, 0.7);
   text-align: center;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  margin: 5% 20%;
+  margin: 5% 5%;
   padding: 3% 0; }
 
 .prob-detail-title {
@@ -602,6 +602,7 @@ h1 {
 .prob-detail-boxes {
   height: 125px;
   width: 80%;
+  display: block;
   margin: 2% auto 5% auto;
   background-color: rgba(255, 255, 255, 0.9); }
 

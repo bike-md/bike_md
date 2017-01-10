@@ -14,14 +14,15 @@
 }
 
 .prob-detail-container{
-  background:linear-gradient(
-        37.5deg,
-        rgba($seafoam, .5)1%,
-        rgba($teal, 1)99%
-      );
+  // background:linear-gradient(
+  //       37.5deg,
+  //       rgba($seafoam, .5)1%,
+  //       rgba($teal, 1)99%
+  //     );
+  background-color:rgba($charcoal, .7);
   text-align:center;
   @include smallfont;
-  margin:5% 20%;
+  margin:5% 5%;
   padding:3% 0;
 }
 
@@ -36,6 +37,7 @@
 .prob-detail-boxes{
   height:125px;
   width:80%;
+  display:block;
   margin:2% auto 5% auto;
   background-color:rgba(white, .9);
 }
