@@ -39,13 +39,36 @@ header{
   float:left;
 }
 
-.search{
-  width:20%;
-  margin:2% 3%;
-  float:left;
-  position:relative;
-  bottom:10px;
-}
+// .search{
+//   width:20%;
+//   margin:2% 3%;
+//   float:left;
+//   position:relative;
+//   bottom:10px;
+// }
+#searchThis {
+  height: 30px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20% !important; }
+
+#searchBox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0px; }
+
+#searchButton {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 0px;
+  width: 40px; }
+
+#searchButton:hover {
+  background-color: #a8bdba;
+  border: 0px;
+  width: 40px;
+  transition: .5s; }
 
 .templatenav{
 

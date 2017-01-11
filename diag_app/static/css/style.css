@@ -443,14 +443,14 @@ hr {
     margin-left: 2.85%;
     margin-top: 1%;
     margin-bottom: 1%; }
-    .outer-box .diag-select-box h4 {
+    .outer-box .diag-select-box .modaltext {
       color: #709c97;
       font-size: 1rem;
       font-family: gill sans;
       text-transform: uppercase;
       color: #ba973a;
       margin-top: 5%; }
-    .outer-box .diag-select-box h4:hover {
+    .outer-box .diag-select-box .modaltext:hover {
       color: white; }
     .outer-box .diag-select-box .diag-select-text {
       font-size: 1.5rem;
@@ -517,6 +517,30 @@ hr {
   position: absolute;
   bottom: 0; }
 
+#searchThis {
+  height: 30px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20% !important; }
+
+#searchBox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0px; }
+
+#searchButton {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 0px;
+  width: 40px; }
+
+#searchButton:hover {
+  background-color: #a8bdba;
+  border: 0px;
+  width: 40px;
+  transition: .5s; }
+
 .bikedetailsbody {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
@@ -549,7 +573,7 @@ hr {
   margin-left: 10%;
   margin-right: 10%; }
 
-h1 {
+.details-main-title {
   margin-top: 2%;
   margin-bottom: 0%; }
 
@@ -565,7 +589,7 @@ h1 {
 .bikedetailsline {
   display: inline; }
 
-.post-container h4 {
+.problem-title-modal {
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -600,6 +624,30 @@ h1 {
 .bikedetails-footer {
   position: absolute;
   bottom: 0; }
+
+#searchThis {
+  height: 30px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20% !important; }
+
+#searchBox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0px; }
+
+#searchButton {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 0px;
+  width: 40px; }
+
+#searchButton:hover {
+  background-color: #a8bdba;
+  border: 0px;
+  width: 40px;
+  transition: .5s; }
 
 .prob-detailbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
@@ -667,19 +715,25 @@ h1 {
   color: white;
   background-color: #313237; }
 
-h1 {
+.profile-page-username {
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
-  color: #313237; }
+  color: #313237;
+  font-weight: 200;
+  margin-top: 1%; }
 
-h4 {
+.profile-page-information {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: .5%; }
+
+.modaltext {
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
-  font-weight: 400;
-  font-size: .75em; }
+  font-weight: 200; }
 
 .userprofilebody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
@@ -687,25 +741,26 @@ h4 {
   margin: 0;
   overflow: auto; }
 
-.profile-title p {
+.post-container {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237;
+  margin: 0; }
+
+.profile-title {
   font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: white;
   text-align: center;
-  margin-top: 1%;
+  margin-top: 8%;
   margin-bottom: -.25%; }
 
-.profile-photo {
-  background-image: url("../images/userprofileimg1.png");
-  display: inline-block;
-  width: 170px;
-  height: 170px;
-  border: 3px #ba973a solid;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; }
+.profile-photo img {
+  display: block;
+  height: 220px;
+  margin: 0 auto; }
 
 .profile-details {
   display: inline-block;
@@ -715,16 +770,14 @@ h4 {
   margin-right: 10%; }
 
 .profile-box {
-  width: 26%;
-  height: 170px;
+  width: 30%;
+  height: 220px;
   float: left;
   margin-top: 2%;
   margin-left: 2%;
   margin-bottom: 1%;
   background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 4%; }
+  position: relative; }
 
 .profile-information {
   width: 26%;
@@ -732,7 +785,7 @@ h4 {
   float: left;
   background-color: #ffffff;
   margin-left: 2%;
-  margin-bottom: 2%;
+  margin-bottom: -1%;
   padding: 2%;
   overflow: scroll; }
   .profile-information p {
@@ -742,8 +795,7 @@ h4 {
     background-color: #ba973a;
     color: white;
     text-align: center;
-    margin-top: 1px;
-    padding: 2%; }
+    margin-top: 1px; }
 
 .profile-questions-asked {
   width: 60%;

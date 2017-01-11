@@ -15,92 +15,7 @@
     <body class ="userprofilebody">
         <input id="currentTech" type="hidden" name="user_id" value="{{request.user.id}}">
 
-        <header>
-          <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
-
-
-          <!-- search -->
-          <ul>
-              <li>
-                <form id="searchThis" style="display: inline;" method="POST">
-                    {%csrf_token%}
-                    <input onfocus="if(this.value==this.defaultValue)this.value='';"
-                    value="Search Problems"
-                    type="text" id="searchBox"
-                    onblur="if(this.value=='')this.value=this.defaultValue;"
-                    vinput="" name="q"/>
-                    <input id="searchButton" value="Go" type="submit"
-                    data-remodal-target="searchModal" class="link2" href="#searchModal"/>
-                </form>
-              </li>
-          </ul>
-
-          <!-- search modal -->
-          <div class ="search-modal-container">
-              <div class="remodal" data-remodal-id="searchModal">
-                  <button data-remodal-action="close" class="remodal-close"></button>
-
-                  <div id="searchProblemList" class="search-problem-list"></div>
-
-              </div>
-          </div>
-
-          <nav class ="templatenav">
-
-              <!-- ask questions -->
-              <div class ="askmodal-container">
-                <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Post Problem</a></li>
-
-                <div class="remodal" data-remodal-id="askModal">
-                  <button data-remodal-action="close" class="remodal-close"></button>
-                  <!-- new problem form -->
-                  <form class="newProblem" method="POST">
-                      {%csrf_token%}
-                      <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
-
-                      <h4 class ="modaltext">Enter a title for your post:</h4>
-                      <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
-                      <h4 class ="modaltext">Choose Bike:</h4>
-                          <div id="brandSelect" class ="systems-dropdown"></div>
-                          <div id="yearSelect" class ="systems-dropdown"></div>
-                          <div id="modelSelect" class ="systems-dropdown"></div>
-                      <h4 class ="modaltext">Choose System:</h4>
-                          <div id="systemSelect" class ="systems-dropdown"></div>
-                      <br>
-                      <h4 class ="modaltext">Describe your problem:</h4>
-
-                      <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
-                      <br>
-                      <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
-                  </form>
-                  <!-- end new problem form -->
-                </div>
-              </div>
-
-
-              <!-- answer questions -->
-              <div class ="answermodal-container">
-                <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Unsolved Problems</a></li>
-
-                <div class="remodal" data-remodal-id="answerModal">
-                  <button data-remodal-action="close" class="remodal-close"></button>
-
-                  <div id="modalProblemList" class="unsolved-problems-list"></div>
-
-                </div>
-              </div>
-
-
-          <!-- my account -->
-            <li><a class ="link3" href ="#">MY Account</a>
-              <ul class ="dropdown">
-                <li class ="droplist"><a href ="#">Notifications</a></li>
-                <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
-                <li class ="droplist"><a href ="/logout/">Log Out</a></li>
-              </ul>
-            </li>
-          </nav>
-        </header>
+    
 
         <div class="profile-title"><p>User Profile<p></div>
 
@@ -208,10 +123,10 @@
         <script id="info-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                    <h1 class="">{{this.user.username}}</h1>
-                    <h4 class="">experience: {{experience}}</h4>
-                    <h4 class="">Current position: {{job_title}}</h4>
-                    <h4 class="">Shop: {{shop}}</h4>
+                    <h1 class="profile-page-username">{{this.user.username}}</h1>
+                    <h4 class="profile-page-information">experience: {{experience}}</h4>
+                    <h4 class="profile-page-information">Current position: {{job_title}}</h4>
+                    <h4 class="profile-page-information">Shop: {{shop}}</h4>
                 {% endverbatim %}
             </article>
         </script>
@@ -220,8 +135,8 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                    <h3 class="">{{{linkURL this}}}</h3>
-                    <h5 class="">{{{formatTime this.posted}}}</h5>
+                    <h3 class="tech-problem-text">{{{linkURL this}}}</h3>
+                    <h5 class="page-solution-date">{{{formatTime this.posted}}}</h5>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -231,8 +146,8 @@
             <article class="post-container">
                     {% verbatim %}
                     {{#each .}}
-                        <h4 class="">{{{linkURLAnswers this}}}</h4>
-                        <h5 class="">{{{formatTime this.posted}}}</h5>
+                        <h4 class="page-solution">{{{linkURLAnswers this}}}</h4>
+                        <h5 class="page-solution-date">{{{formatTime this.posted}}}</h5>
                     {{/each}}
                     {% endverbatim %}
             </article>
