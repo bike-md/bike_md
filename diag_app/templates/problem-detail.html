@@ -14,35 +14,35 @@
   <body class ="prob-detailbody">
     <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
     <header>
-      <li><a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
-
-      <!-- search -->
-      <ul>
-          <li>
-            <form id="searchThis" style="display: inline;" method="POST">
-                {%csrf_token%}
-                <input onfocus="if(this.value==this.defaultValue)this.value='';"
-                value="Search Problems"
-                type="text" id="searchBox"
-                onblur="if(this.value=='')this.value=this.defaultValue;"
-                vinput="" name="q"/>
-                <input id="searchButton" value="Go" type="submit"
-                data-remodal-target="searchModal" class="link2" href="#searchModal"/>
-            </form>
-          </li>
-      </ul>
-
-      <!-- search modal -->
-      <div class ="search-modal-container">
-          <div class="remodal" data-remodal-id="searchModal">
-              <button data-remodal-action="close" class="remodal-close"></button>
-
-              <div id="searchProblemList" class="search-problem-list"></div>
-
-          </div>
-      </div>
+      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
       <nav class ="templatenav">
+
+        <!-- search -->
+        <ul>
+            <li>
+              <form id="searchThis" style="display: inline;" method="POST">
+                  {%csrf_token%}
+                  <input onfocus="if(this.value==this.defaultValue)this.value='';"
+                  value="Search Problems"
+                  type="text" id="searchBox"
+                  onblur="if(this.value=='')this.value=this.defaultValue;"
+                  vinput="" name="q"/>
+                  <input id="searchButton" value="Go" type="submit"
+                  data-remodal-target="searchModal" class="link2" href="#searchModal"/>
+              </form>
+            </li>
+        </ul>
+
+        <!-- search modal -->
+        <div class ="search-modal-container">
+          <div class="remodal" data-remodal-id="searchModal">
+            <button data-remodal-action="close" class="remodal-close"></button>
+
+            <div id="searchProblemList" class="search-problem-list"></div>
+
+          </div>
+        </div>
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -54,6 +54,7 @@
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
+
                 <h4 class ="modaltext">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
                 <h4 class ="modaltext">Choose Bike:</h4>
@@ -67,7 +68,7 @@
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
-                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button"type="submit" value="Submit">
+                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button" type="submit" value="Submit">
             </form>
             <!-- end new problem form -->
           </div>
@@ -85,17 +86,18 @@
           </div>
         </div>
 
-
-      <!-- my account -->
-        <li><a class ="link3" href ="#">MY Account</a>
-          <ul class ="dropdown">
-            <li class ="droplist"><a href ="#">Notifications</a></li>
-            <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
-            <li class ="droplist"><a href ="/logout/">Log Out</a></li>
+        <!-- my account -->
+          <li><a class ="link3" href ="#">MY Account</a>
+            <ul class ="dropdown">
+              <li class ="droplist"><a href ="#">Notifications</a></li>
+              <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+              <li class ="droplist"><a href ="/logout/">Log Out</a></li>
+            </ul>
+          </li>
           </ul>
-        </li>
       </nav>
     </header>
+
 
 
     <div class="prob-form-background">

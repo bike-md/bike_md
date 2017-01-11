@@ -5,3 +5,5 @@ __pycache__
 scrap.py
 .envrc
 .zshrc
+.map
+.css.map
