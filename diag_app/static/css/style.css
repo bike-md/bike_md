@@ -277,14 +277,16 @@ header {
 
 .create-account-overlay-box {
   display: block;
-  width: 85%;
+  width: 67%;
   background-image: url("../images/register-page-background-image.png");
   background-size: auto;
   height: 550px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-left: 18%;
+  padding-top: 2%; }
 
 .create-account-box {
-  padding-top: 5%; }
+  padding-top: 2%; }
 
 .profile-information {
   width: 66%;
@@ -299,13 +301,40 @@ header {
   padding-bottom: 5%; }
 
 .register-form-questions {
-  margin: 0; }
+  margin: 0;
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase; }
 
 .register-form input {
-  width: 40%; }
+  width: 40%;
+  height: 40px;
+  margin-right: 5%;
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase; }
 
 .register-form-submit-button {
-  background-color: #ba973a; }
+  background-color: rgba(186, 151, 58, 0.8);
+  border: none; }
+
+.register-form-submit-button:hover {
+  background-color: rgba(135, 176, 170, 0.8);
+  border: none; }
+
+.register-user-title {
+  font-size: 3.75rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: .5%; }
+
+.goldendecor {
+  background-color: #ba973a;
+  height: 70px;
+  width: 50%; }
 
 #searchThis {
   height: 30px;
