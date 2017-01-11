@@ -224,9 +224,17 @@ Handlebars.registerHelper('linkURL', function (object){
 function searchProblems(){
     var searchTerm = $("#searchBox").val()
     $.ajax({
-        url: '/api/get-problems',
+        url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
         console.log(results)
+        var problems = results.results
+        var source = $('#search-problem-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(problems)
+        $('#searchProblemList').empty()
+        $('#searchProblemList').append(html)
+
     })
 }
+$("#searchButton").click(searchProblems)

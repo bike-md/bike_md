@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework import viewsets, permissions, generics
+from rest_framework import viewsets, permissions, generics, filters
 from . import models, forms
 from .forms import UserForm, TechForm, LoginForm
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
@@ -17,6 +17,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
 from django.contrib.auth.models import User
 from .permissions import IsStaffOrTargetUser
+
 
 
 def create_account(request):
@@ -85,7 +86,7 @@ class ModelFilter(django_filters.rest_framework.FilterSet):
 
 
 class ModelViewSet(viewsets.ModelViewSet):
-    queryset = Model.objects.all()
+    queryset = Model.objects.all().order_by('name')
     serializer_class = ModelSerializer
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
     filter_class = ModelFilter
@@ -93,7 +94,7 @@ class ModelViewSet(viewsets.ModelViewSet):
 
 
 class BrandViewSet(viewsets.ModelViewSet):
-    queryset = Brand.objects.all()
+    queryset = Brand.objects.all().order_by('name')
     serializer_class = BrandSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
@@ -110,8 +111,9 @@ class ProblemFilter(django_filters.rest_framework.FilterSet):
 class ProblemGetViewSet(viewsets.ModelViewSet):
     queryset = Problem.objects.all()
     serializer_class = ProblemGetSerializer
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,filters.SearchFilter,)
     filter_class = ProblemFilter
+    search_fields = ['title',]
     permission_classes = (permissions.IsAuthenticated,)
 
 
