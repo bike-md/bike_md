@@ -120,24 +120,6 @@
           </form>
         </div>
     </div>
-
-
-    <div id="solutions"></div>
-
-    <div class="solution-container">
-      <h2 class="prob-detail-title">Post new Solution</h2>
-      <!-- post new solution form -->
-        <form class="solution-input" method="POST">
-              {%csrf_token%}
-                <h4 class ="">Time required for solution:</h4>
-                <input id="solutionTime" class ="" type="text" name="solutionTime" value="Enter time here">
-                <h4 class ="">Parts cost for solution:</h4>
-                <input id="partsCost" class ="" type="text" name="partsCost" value="Enter cost here">
-                <h4 class ="prob-detail-title">Describe your solution:</h4>
-                <textarea id="solutionText" class ="" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
-                <input id="newSolutionSubmit" class ="prob-detail-submit" type="submit" value="Submit">
-          </form>
-      </div>
       <!-- end post new solution -->
     </section>
 
