@@ -98,19 +98,36 @@
     </header>
 
 
-    <section class ="prob-detail-container">
-      <h2 class="prob-detail-title">Problem</h2>
+    <div class="prob-form-background">
+      <h2 class ="prob-title">Problem Details</h2>
+        <div id="problemDetail" class ="prob-box">
 
-      <div id="problemDetail" class="prob-detail-question-box prob-detail-boxes">
+        </div>
 
-      </div>
+        <div id="solutions" class="sol-box"></div>
 
-      <div id="solutions"></div>
+      <h2 class ="sol-title">Give a solution</h2>
+        <div class="prob-form-container">
+          <form class="prob-form" method="POST">
+          {%csrf_token%}
+            <h4 class ="form-text">Time required for solution:</h4>
+            <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
+            <h4 class ="form-text">Parts cost for solution:</h4>
+            <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+            <h2 class ="describe-title">Describe your solution:</h2>
+            <textarea id="solutionText" class ="solution-box" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+            <input id="newSolutionSubmit" class ="solution-submit" type="submit" value="Submit">
+          </form>
+        </div>
+    </div>
 
-      <div class="solution-container">
-          <h2 class="prob-detail-title">Post new Solution</h2>
+
+    <div id="solutions"></div>
+
+    <div class="solution-container">
+      <h2 class="prob-detail-title">Post new Solution</h2>
       <!-- post new solution form -->
-          <form class="solution-input" method="POST">
+        <form class="solution-input" method="POST">
               {%csrf_token%}
                 <h4 class ="">Time required for solution:</h4>
                 <input id="solutionTime" class ="" type="text" name="solutionTime" value="Enter time here">
@@ -127,7 +144,6 @@
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
-
 
     <!-- modal scripts     -->
 
@@ -227,7 +243,7 @@
         <article class="post-container">
             {%verbatim%}
             {{#each .}}
-            <div class ="prob-detail-solution-box prob-detail-boxes">
+            <div class ="problem-box">
                 <h2 class="prob-detail-box-name">Solution:</h2>
                 <h5 class="date-time">{{{formatTime this.posted}}}</h5>
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
