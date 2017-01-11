@@ -1,16 +1,22 @@
 @import "variables";
 @import "mixins";
 
-h1 {
+.profile-page-username {
   @include regularfont;
   color: $charcoal;
-}
+font-weight: 200;
+margin-top: 1%;}
 
-h4 {
+
+.profile-page-information {
+font-size: 1rem;
+font-weight: 400;
+margin-top: .5%;
+}
+.modaltext {
   @include smallfont;
   color: $charcoal;
-  font-weight: 400;
-  font-size: .75em;
+  font-weight: 200;
 }
 .userprofilebody {
   background-image:
@@ -24,24 +30,24 @@ h4 {
   overflow:auto;
 }
 
-.profile-title p {
+.post-container {
+  @include smallfont;
+  color: $charcoal;
+  margin: 0;
+}
+.profile-title {
   @include mediumfont;
   color: white;
   text-align: center;
-  margin-top: 1%;
+  margin-top: 8%;
   margin-bottom: -.25%;
 }
 
-.profile-photo {
-  background-image: url("../images/userprofileimg1.png");
-  display: inline-block;
-  width: 170px;
-  height: 170px;
-  border: 3px $golden solid;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+.profile-photo img {
+  display: block;
+  height: 220px;
+  margin: 0 auto;
+  // margin-left: 5%;
 }
 
 .profile-details {
@@ -57,16 +63,17 @@ h4 {
 }
 
 .profile-box {
-    width: 26%;
-    height: 170px;
+    width: 30%;
+    height: 220px;
     float: left;
     margin-top: 2%;
     margin-left: 2%;
     margin-bottom: 1%;
     background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 4%;
+    position: relative;
+    // padding-top: 20px;
+    // padding-bottom: 20px;
+    // padding-left: 4%;
 }
 
 
@@ -76,7 +83,7 @@ h4 {
     float: left;
     background-color: #ffffff;
     margin-left: 2%;
-    margin-bottom: 2%;
+    margin-bottom: -1%;
     padding: 2%;
     overflow: scroll;
 
@@ -86,7 +93,6 @@ h4 {
       color: white;
       text-align: center;
       margin-top: 1px;
-      padding: 2%;
     }
   }
 

@@ -101,18 +101,12 @@
         <h1 class ="diag-main-title">Diagnose a problem</h1>
 
 <hr>
-        <!--Profression circles-->
 
-        <section id="listing" class="outer-box">
-            <!-- <div id="step" class="step"></div> -->
-          <!-- <h3 class ="diag-select-title">select make</h3> -->
-        <!-- <a href=""><div class ="diag-select-box"></div></a> -->
+        <section class="outer-box">
+            <div id="listing"></div>
         </section>
-        <div class="progression">
-                <div class="stepscircles"></div>
-                <div class="stepscircles"></div>
-                <div class="stepscircles"></div>
-        </div>
+
+
         <footer class ="mainfooter">
           <p>Copyright Bike MD 2017. All rights reserved.</p>
         </footer>
@@ -150,7 +144,7 @@
                     {% verbatim %}
                     <option value="none"></option>
                     {{#each .}}
-                    <option  value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
+                    <option  value="{{this.id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                     {{/each}}
                     {% endverbatim %}
                 </select>
@@ -203,8 +197,15 @@
         <script id="brand-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3 class ="diag-select-title">select make</h3>
-                {{#each .}}
+                <h3 class ="diag-select-title">select make
+                    <div class="progression">
+                        <div class="stepscircles">
+                            <h5 class="step-number">1</h5>
+                            </div>
+                        </a>
+                    </div>
+                </h3>
+                    {{#each .}}
                   <a onclick="showYears({{this.id}})">
                       <div class ="diag-select-box">
                           <h4 class="diag-select-text">{{ this.name }}</h4>
@@ -218,7 +219,20 @@
         <script id="year-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3 class ="diag-select-title">select year</h3>
+                <h3 class ="diag-select-title">select year
+                    <div class="progression">
+                        <a onclick="showBrands()">
+                            <div class="stepscircles">
+                                <h5 class="step-number">1</h5>
+                            </div>
+                        </a>
+                        <a onclick="showYears({{this.brandId}})">
+                            <div class="stepscircles">
+                                <h5 class="step-number">2</h5>
+                            </div>
+                        </a>
+                    </div>
+                </h3>
                 <input id="brandId" type="hidden" name="brand" value="{{this.brandId}}">
                     {{#each this.modelYears}}
                     <a onclick="showModels({{this}})">
@@ -227,7 +241,6 @@
                         </div>
                     </a>
                     {{/each}}
-
                 {% endverbatim %}
             </article>
         </script>
@@ -235,8 +248,23 @@
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h3 class ="diag-select-title">select model</h3>
-                {{#each .}}
+                <h3 class ="diag-select-title">select model
+                    <div class="progression">
+                        <a onclick="showBrands()">
+                            <div class="stepscircles">
+                                <h5 class="step-number">1</h5>
+                            </div>
+                        </a>
+                        <a onclick="showYears({{brand}})">
+                            <div class="stepscircles">
+                                <h5 class="step-number">2</h5>
+                            </div>
+                        </a>
+                        <div class="stepscircles"><h5 class="step-number">3</h5></div>
+
+                    </div>
+                </h3>
+                {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">
                         <div class ="diag-select-box">
                             <h4 class="diag-select-text">{{ this.name }}</h4>

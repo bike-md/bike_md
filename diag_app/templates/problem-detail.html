@@ -54,7 +54,6 @@
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
-
                 <h4 class ="modaltext">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
                 <h4 class ="modaltext">Choose Bike:</h4>
@@ -101,31 +100,46 @@
 
     <div class="prob-form-background">
       <h2 class ="prob-title">Problem Details</h2>
-      <div id="problemDetail" class ="prob-box">
+        <div id="problemDetail" class ="prob-box">
 
-      </div>
+        </div>
 
-      <div id="solutions" class="sol-box"></div>
+        <div id="solutions" class="sol-box"></div>
 
       <h2 class ="sol-title">Give a solution</h2>
-      <div class="prob-form-container">
-        <form class="prob-form" method="POST">
+        <div class="prob-form-container">
+          <form class="prob-form" method="POST">
           {%csrf_token%}
-          <h4 class ="form-text">Time required for solution:</h4>
-          <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
-          <h4 class ="form-text">Parts cost for solution:</h4>
-          <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
-          <h2 class ="describe-title">Describe your solution:</h2>
-          <textarea id="solutionText" class ="solution-box" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
-          <input id="newSolutionSubmit" class ="solution-submit" type="submit" value="Submit">
-        </form>
-      </div>
+            <h4 class ="form-text">Time required for solution:</h4>
+            <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
+            <h4 class ="form-text">Parts cost for solution:</h4>
+            <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+            <h2 class ="describe-title">Describe your solution:</h2>
+            <textarea id="solutionText" class ="solution-box" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+            <input id="newSolutionSubmit" class ="solution-submit" type="submit" value="Submit">
+          </form>
+        </div>
     </div>
 
 
+    <div id="solutions"></div>
 
-
-
+    <div class="solution-container">
+      <h2 class="prob-detail-title">Post new Solution</h2>
+      <!-- post new solution form -->
+        <form class="solution-input" method="POST">
+              {%csrf_token%}
+                <h4 class ="">Time required for solution:</h4>
+                <input id="solutionTime" class ="" type="text" name="solutionTime" value="Enter time here">
+                <h4 class ="">Parts cost for solution:</h4>
+                <input id="partsCost" class ="" type="text" name="partsCost" value="Enter cost here">
+                <h4 class ="prob-detail-title">Describe your solution:</h4>
+                <textarea id="solutionText" class ="" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+                <input id="newSolutionSubmit" class ="prob-detail-submit" type="submit" value="Submit">
+          </form>
+      </div>
+      <!-- end post new solution -->
+    </section>
 
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>

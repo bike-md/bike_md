@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 
+class SystemSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = System
+        fields = ['id', 'name', 'url']
+        
+
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
@@ -78,6 +85,8 @@ class SolutionPostSerializer(serializers.ModelSerializer):
 class ProblemGetSerializer(serializers.ModelSerializer):
     solutions = SolutionGetSerializer(many=True, read_only=True)
     tech = TechGetSerializer(many=False, read_only=True)
+    system = SystemSerializer(many=False, read_only=True)
+
     class Meta:
         model = Problem
         fields = ['id', 'title', 'system', 'description', 'tech',
@@ -99,11 +108,7 @@ class RatingSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class SystemSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = System
-        fields = ['id', 'name', 'url']
 
 
 class BrandSerializer(serializers.ModelSerializer):

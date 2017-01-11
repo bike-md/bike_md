@@ -1,81 +1,6 @@
 @import "variables";
 @import "mixins";
 
-#searchThis {
-  height:30px;
-  margin-bottom:1.5rem;
-  text-align:center;
-  text-transform:uppercase;
-  width: 20% !important;;
-}
-
-#searchBox {
-appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance: none;
-  border: 0px;
-}
-
-#searchButton {
-background-color:rgba(white, .55);
-border: 0px;
-width: 40px;
-
-}
-
-#searchButton:hover {
-background-color:$seafoam;
-border: 0px;
-width: 40px;
-transition: .5s;
-
-}
-
-.templatenav{
-  display: inline;
-
-    li{
-      display:inline-block;
-      padding:1% 0%;
-      margin-left: 1%;
-      margin-right: 1%;
-      float:left;
-
-      a{
-        text-decoration:none;
-        color:white;
-        @include smallfont;
-        // font-size: 1.1rem;
-        position:relative;
-      }
-
-}
-
-      a:after{
-        display:block;
-        position:absolute;
-        bottom:30px;
-        height:5px;
-        width:0px;
-        background-color:$golden;
-        transition:width .5s;
-        content:"";
-        z-index:-1;
-      }
-
-      .link1:hover:after{
-        width:100%;
-      }
-
-      .link2:hover:after{
-        width:100%;
-      }
-
-      .link3:hover:after{
-        width:100%;
-      }
-    }
-
 .mainbody  {
   background:
   linear-gradient(
@@ -152,13 +77,13 @@ hr {
     margin-top:1%;
     margin-bottom: 1%;
 
-    h4 {
+    .modaltext {
       color: $teal;
       @include smallfont;
       color: $golden;
       margin-top: 5%;
     }
-    h4:hover {
+    .modaltext:hover {
       color: white;
     }
     .diag-select-text{

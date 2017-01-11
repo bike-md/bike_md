@@ -48,10 +48,17 @@ function getProblems(url){
         type: 'GET',
     }).done(function(results){
         var problems = results.results
-        console.log(problems)
         var source = $('#problem-list-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
+        var systemKey = results.results[0].system
+        var context = {
+            problem: problems,
+            system: systemKey,
+        }
+        var source = $('#problem-list-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(context)
         $('#problemList').append(html)
             $.ajax({
                 url: '/api/models/' + model,
@@ -66,6 +73,7 @@ function getProblems(url){
 }
 
 
+// helpers
 Handlebars.registerHelper('formatTime', function (posted) {
     var time = posted.replace('T', ':')
     var date = time.split(":")[0]
@@ -94,13 +102,22 @@ Handlebars.registerHelper('formatTime', function (posted) {
     return month + " " + day + " " + year
 })
 
-
-Handlebars.registerHelper('linkURL', function (object){
+Handlebars.registerHelper('linkURLProblem', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
     url = '/diag_app/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
+
+Handlebars.registerHelper('linkURLModel', function (object){
+    console.log(object)
+    id = Handlebars.Utils.escapeExpression(object.id)
+    name = Handlebars.Utils.escapeExpression(object.name)
+    url = '/diag_app/model_detail/' + id
+    return '<a href="' +  url + '">' + '<b>' + name + '</b>' + '</a>'
+})
+
+
 
 
 // modal functions
@@ -119,7 +136,6 @@ function loadBrandsAskModal(){
     })
 
 }
-
 $("#ask").click(loadBrandsAskModal)
 
 
@@ -200,7 +216,6 @@ function postProblem(){
     }).done(function(results){
     })
 }
-
 $("#newProbSubmit").click(postProblem)
 
 
@@ -228,7 +243,6 @@ function searchProblems(){
         url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
-        console.log(results)
         var problems = results.results
         var source = $('#search-problem-template').html()
         var template = Handlebars.compile(source)

@@ -2,24 +2,45 @@
   font-size:1rem;
   font-family:gill sans;
   text-transform:uppercase;
+  font-weight: normal;
 }
 
+@mixin smallregularfont {
+  font-size:1.2rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+  font-weight: normal;
+}
 @mixin regularfont{
   font-size:1.5rem;
   font-family:gill sans;
   text-transform:uppercase;
+  font-weight: normal;
 }
+
+@mixin regularmedfont{
+  font-size:1.6rem;
+  font-family:gill sans;
+  text-transform:uppercase;
+  font-weight: normal;
+
+}
+
 
 @mixin mediumfont{
   font-size:2rem;
   font-family:gill sans;
   text-transform:uppercase;
+  font-weight: normal;
+
 }
 
 @mixin largefont{
   font-size:3.75rem;
   font-family:gill sans;
   text-transform:uppercase;
+  font-weight: normal;
+
 }
 
 @mixin verticalcenter{
