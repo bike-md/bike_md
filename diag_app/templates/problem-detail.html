@@ -99,45 +99,37 @@
     </header>
 
 
-    <section class ="prob-detail-container">
-      <h2 class="prob-detail-title">Problem</h2>
-
-      <div id="problemDetail" class="prob-detail-question-box prob-detail-boxes">
-
-      </div>
-
-      <div id="solutions">
+    <div class="prob-form-background">
+      <h2 class ="prob-title">Problem Details</h2>
+      <div id="problemDetail" class ="prob-box">
 
       </div>
 
-      <div class="solution-container">
-      <h2 class="prob-detail-title">Post new Solution</h2>
-      <!-- post new solution form -->
-      <form class="solution-input" action="submit" method="POST">
-          <!-- <h1>Post a new Solution</h1> -->
+      <div id="solutions" class="sol-box"></div>
+
+      <h2 class ="sol-title">Give a solution</h2>
+      <div class="prob-form-container">
+        <form class="prob-form" method="POST">
           {%csrf_token%}
-          <div class ="solutiontimecost-container">
-            <h4 class ="solutiontimecost-text">Time required for solution:</h4>
-            <input id="solutionTime" class ="solutiontimecost-input" type="text" name="solutionTime" value="Enter time here">
-          </div>
-
-          <div class ="solutiontimecost-container">
-            <h4 class ="solutiontimecost-text">Parts cost for solution:</h4>
-            <input id="partsCost" class ="solutiontimecost-input" type="text" name="partsCost" value="Enter cost here">
-          </div>
-
-          <h4 class ="prob-detail-title">Describe your solution:</h4>
-          <textarea id="solutionText" class ="prob-detail-boxes" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
-          <input id="newSolutionSubmit" class ="prob-detail-submit" type="submit" value="Submit">
-      </form>
+          <h4 class ="form-text">Time required for solution:</h4>
+          <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
+          <h4 class ="form-text">Parts cost for solution:</h4>
+          <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+          <h2 class ="describe-title">Describe your solution:</h2>
+          <textarea id="solutionText" class ="solution-box" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
+          <input id="newSolutionSubmit" class ="solution-submit" type="submit" value="Submit">
+        </form>
       </div>
-      <!-- end post new solution -->
-    </section>
+    </div>
+
+
+
+
+
 
     <footer>
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
-
 
     <!-- modal scripts     -->
 
@@ -237,7 +229,7 @@
         <article class="post-container">
             {%verbatim%}
             {{#each .}}
-            <div class ="prob-detail-solution-box prob-detail-boxes">
+            <div class ="problem-box">
                 <h2 class="prob-detail-box-name">Solution:</h2>
                 <h5 class="date-time">{{{formatTime this.posted}}}</h5>
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
