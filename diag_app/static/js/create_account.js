@@ -44,6 +44,7 @@ function createUser(){
         data: context
     }).done(function(results){
         createTech(results.id)
+        linkLogin()
     })
 }
 $("#createAccount").click(createUser)
