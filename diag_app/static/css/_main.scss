@@ -118,48 +118,50 @@ hr {
     color: white;
     text-align: center;
     margin-top: -20px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     background-color:rgba($darkteal, .9)
   }
 
 .progression {
-  display: flex;
+  // display: flex;
   -webkit-align-items: center;
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
-   position: fixed;
+  //  position: fixed;
       bottom: 5%;
       // margin: 0 auto;
       position: relative;
           width: 100%;
  }
-//
-// .stepscircles {
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 50px;
-//   background-color: $seafoam;
-//   margin-left: 10px;
-//   margin-bottom: 2%;
-//   margin-top: 10%;
-//
-//
-// }
-//
-// .stepscircles:hover {
-//   height: 20px;
-//   width: 20px;
-//   border-radius: 50px;
-//   background-color: $golden;
-//   flex: 0 0 20px;
-//   margin-left: 10px;
-//   margin-bottom: 2%;
-// }
 
-.stepnumbers {
-
+.stepscircles {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: white;
+  text-align: center;
+  float: right;
+  margin-right: 7%;
+  margin-top: -3.1%;
 }
+
+.stepscircles:hover {
+
+  background-color: $golden;
+  flex: 0 0 20px;
+}
+
+.step-number {
+margin: 0px;
+@include regularfont;
+color: $darkteal;
+transition: .5s;
+}
+.step-number:hover {
+  color: $charcoal;
+}
+
 .mainfooter{
   position:absolute;
   bottom:0;

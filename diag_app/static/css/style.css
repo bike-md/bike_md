@@ -471,19 +471,42 @@ hr {
   color: white;
   text-align: center;
   margin-top: -20px;
-  margin-bottom: 40px;
   background-color: rgba(135, 176, 170, 0.9); }
 
 .progression {
-  display: flex;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  position: fixed;
   bottom: 5%;
   position: relative;
   width: 100%; }
+
+.stepscircles {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: white;
+  text-align: center;
+  float: right;
+  margin-right: 7%;
+  margin-top: -3.1%; }
+
+.stepscircles:hover {
+  background-color: #ba973a;
+  flex: 0 0 20px; }
+
+.step-number {
+  margin: 0px;
+  font-size: 1.5rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #87b0aa;
+  transition: .5s; }
+
+.step-number:hover {
+  color: #313237; }
 
 .mainfooter {
   position: absolute;
