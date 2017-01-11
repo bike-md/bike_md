@@ -15,109 +15,22 @@
     <body class ="userprofilebody">
         <input id="currentTech" type="hidden" name="user_id" value="{{request.user.id}}">
 
-    
-
         <div class="profile-title"><p>User Profile<p></div>
 
         <div class="profile-details">
-
-          <div class="profile-box">
+            <div class="profile-box">
                 <div id="profileImg" class="profile-photo">
                     <img  src ="{% static 'images/transport-3.png' %}"  alt="">
                 </div>
-          </div>
+            </div>
+            <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
 
-              <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
+            <div id="techInfo" class="profile-information"><p>Information</p></div>
 
-              <div id="techInfo" class="profile-information"><p>Information</p></div>
+            <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
+        </div>
 
-              <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
-      </div>
-
-      <div class="exitbutton"><a href="/diag_app/">close</a></div>
-
-
-      <!-- modal scripts     -->
-
-      <!-- search modal -->
-      <script id="search-problem-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              {%verbatim%}
-              {{#each .}}
-                  <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
-              {{/each}}
-              {% endverbatim %}
-          </article>
-      </script>
-
-      <!-- answer modal -->
-      <script id="unsolved-problem-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              {%verbatim%}
-              {{#each .}}
-                  <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
-              {{/each}}
-              {% endverbatim %}
-          </article>
-      </script>
-
-
-      <!-- ask modal -->
-      <script id="brand-modal-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              <select onchange="loadYearsAskModal(value)" id="probBrand">
-                  {% verbatim %}
-                  <option value="none"></option>
-                  {{#each .}}
-                  <option  value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                  {{/each}}
-                  {% endverbatim %}
-              </select>
-          </article>
-      </script>
-
-
-      <script id="year-modal-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              <select onchange="loadModelsAskModal(value)" id="probYear">
-                  {% verbatim %}
-                  <option value="none"></option>
-                  {{#each .}}
-                      <option value="{{this}}"{{#selected}}selected="selected"{{/selected}}>{{this}}</option>
-                  {{/each}}
-                  {% endverbatim %}
-              </select>
-          </article>
-      </script>
-
-
-      <script id="model-modal-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              <select id="probModel">
-                  {% verbatim %}
-                  <option value="none"></option>
-                  {{#each .}}
-                      <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                  {{/each}}
-                  {% endverbatim %}
-              </select>
-          </article>
-      </script>
-
-
-      <script id="system-modal-template" type="text/x-handlebars-template">
-          <article class="post-container">
-              <select id="probSystem">
-                  {% verbatim %}
-                  <option value="none"></option>
-                  {{#each .}}
-                      <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                  {{/each}}
-                  {% endverbatim %}
-              </select>
-          </article>
-      </script>
-      <!-- end modal scripts -->
+        <div class="exitbutton"><a href="/diag_app/">close</a></div>
 
 
         <script id="info-template" type="text/x-handlebars-template">
@@ -146,8 +59,8 @@
             <article class="post-container">
                     {% verbatim %}
                     {{#each .}}
-                        <h4 class="page-solution">{{{linkURLAnswers this}}}</h4>
-                        <h5 class="page-solution-date">{{{formatTime this.posted}}}</h5>
+                        <h4 class="tech-solution">{{{linkURLAnswers this}}}</h4>
+                        <h5 class="tech-solution-date">{{{formatTime this.posted}}}</h5>
                     {{/each}}
                     {% endverbatim %}
             </article>

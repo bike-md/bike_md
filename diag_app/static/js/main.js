@@ -184,7 +184,6 @@ function postProblem(){
         model: bike,
         title: header,
     }
-    console.log(context)
     $.ajax({
         url: '/api/post-problems/',
         type: 'POST',
@@ -227,7 +226,6 @@ function searchProblems(){
         url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
-        console.log(results)
         var problems = results.results
         var source = $('#search-problem-template').html()
         var template = Handlebars.compile(source)

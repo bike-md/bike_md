@@ -22,6 +22,7 @@
 
 
             <form class ="loginform" name="LoginForm" action="/login/" method="POST">
+                {% csrf_token %}
                     <ul class='form-errors'>
                         <li class="error-message">{{ login_message }}</li>
                     </ul>

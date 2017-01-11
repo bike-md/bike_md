@@ -25,14 +25,15 @@ def create_account(request):
 
 def login_user(request):
     form = LoginForm(request.POST or None)
-    user = authenticate(username = request.POST['username'],
-    password = request.POST['password'])
-    if user is not None and user.is_active:
-        login(request, user)
-        return HttpResponseRedirect('/diag_app/')
-    else:
-        return render(request, 'registration/login.html',{
-            'login_message' : 'Enter the username and password correctly',})
+    if request.POST:
+        user = authenticate(username = request.POST['username'],
+        password = request.POST['password'])
+        if user is not None and user.is_active and form.is_valid():
+            login(request, user)
+            return HttpResponseRedirect('/diag_app/')
+        else:
+            return render(request, 'registration/login.html',{
+                'login_message' : 'Enter the username and password correctly',})
     return render(request, 'registration/login.html')
 
 
