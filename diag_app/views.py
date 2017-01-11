@@ -113,7 +113,7 @@ class ProblemGetViewSet(viewsets.ModelViewSet):
     serializer_class = ProblemGetSerializer
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,filters.SearchFilter,)
     filter_class = ProblemFilter
-    search_fields = ['title',]
+    search_fields = ['title']
     permission_classes = (permissions.IsAuthenticated,)
 
 
