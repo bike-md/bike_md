@@ -130,33 +130,36 @@ hr {
    justify-content: center;
    position: fixed;
       bottom: 5%;
-      margin: 0 auto;
+      // margin: 0 auto;
       position: relative;
           width: 100%;
  }
+//
+// .stepscircles {
+//   height: 20px;
+//   width: 20px;
+//   border-radius: 50px;
+//   background-color: $seafoam;
+//   margin-left: 10px;
+//   margin-bottom: 2%;
+//   margin-top: 10%;
+//
+//
+// }
+//
+// .stepscircles:hover {
+//   height: 20px;
+//   width: 20px;
+//   border-radius: 50px;
+//   background-color: $golden;
+//   flex: 0 0 20px;
+//   margin-left: 10px;
+//   margin-bottom: 2%;
+// }
 
-.stepscircles {
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background-color: $seafoam;
-  margin-left: 10px;
-  margin-bottom: 2%;
-  margin-top: 10%;
-
+.stepnumbers {
 
 }
-
-.stepscircles:hover {
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background-color: $golden;
-  flex: 0 0 20px;
-  margin-left: 10px;
-  margin-bottom: 2%;
-}
-
 .mainfooter{
   position:absolute;
   bottom:0;
