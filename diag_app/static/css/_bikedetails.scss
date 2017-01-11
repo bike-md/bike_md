@@ -98,7 +98,6 @@ hr {
 
 // circles
 .systems{
-  text-align:center;
   position:relative;
   top:20px;
 
@@ -106,7 +105,7 @@ hr {
         text-align:center;
         text-decoration:none;
         @include regularfont;
-        color:$teal;
+        color:$darkteal;
         margin:0;
 
         .sys{
@@ -116,7 +115,7 @@ hr {
           display:inline-block;
           background-color:rgba(white, .8);
           border-radius:100%;
-          padding-top:5.5%;
+          padding-top:7.5%;
           box-sizing:border-box;
         }
       }
@@ -125,6 +124,7 @@ hr {
 
 
     .sys:hover{
+      color:white;
       background-color:rgba($golden, 1);
       transform:rotate(360deg);
       transition:.5s;

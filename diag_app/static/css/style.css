@@ -566,7 +566,6 @@ hr {
   color: white; }
 
 .systems {
-  text-align: center;
   position: relative;
   top: 20px; }
   .systems a {
@@ -576,7 +575,7 @@ hr {
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: normal;
-    color: #709c97;
+    color: #87b0aa;
     margin: 0; }
     .systems a .sys {
       height: 170px;
@@ -585,9 +584,10 @@ hr {
       display: inline-block;
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 100%;
-      padding-top: 5.5%;
+      padding-top: 7.5%;
       box-sizing: border-box; }
   .systems .sys:hover {
+    color: white;
     background-color: #ba973a;
     transform: rotate(360deg);
     transition: .5s; }
@@ -599,29 +599,7 @@ hr {
 .prob-detailbody {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
-<<<<<<< HEAD
   background-attachment: fixed;
-=======
-  overflow: auto;
-  background-attachment: fixed; }
-
-.prob-detail-container {
-  text-align: center;
-  font-size: 1rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
-  margin: 5% 10%;
-  padding: 3% 0; }
-
-.prob-detail-title {
-  font-size: 1.5rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
-  font-weight: 700;
-  text-align: center;
->>>>>>> 12bba78bf0ac4d2a7d66d0c7b6be873a225da471
   margin: 0; }
 
 .prob-form-background {
@@ -635,13 +613,9 @@ hr {
     font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
-<<<<<<< HEAD
+    font-weight: normal;
     color: white;
     background-color: #ba973a;
-=======
-    font-weight: normal; }
-  .solutiontimecost-container .solutiontimecost-input {
->>>>>>> 12bba78bf0ac4d2a7d66d0c7b6be873a225da471
     text-align: center;
     margin: 0; }
   .prob-form-background .sol-title {
@@ -650,13 +624,14 @@ hr {
     font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
-<<<<<<< HEAD
+    font-weight: normal;
     color: black;
     text-align: center; }
   .prob-form-background .form-text {
     font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase;
+    font-weight: normal;
     text-align: center; }
   .prob-form-background .prob-box {
     height: 200px;
@@ -682,29 +657,6 @@ hr {
     display: block;
     margin: 0 auto;
     margin-top: 3%; }
-=======
-    color: #313237; }
-
-.prob-detail-comments-box {
-  width: 40%;
-  float: left;
-  margin: 3% 0 0 20%; }
-
-.prob-detail-submit {
-  color: #313237;
-  background-color: white;
-  font-size: 1rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
-  padding: 2%;
-  padding-top: .7%;
-  border: transparent; }
-
-.prob-detail-submit:hover {
-  color: white;
-  background-color: #313237; }
->>>>>>> 12bba78bf0ac4d2a7d66d0c7b6be873a225da471
 
 .profile-page-username {
   font-size: 1.5rem;
