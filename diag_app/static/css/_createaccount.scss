@@ -17,22 +17,24 @@
 header {
   margin: 0 auto;
 }
+
+
 .create-account-overlay-box {
   display:block;
   width:67%;
       background-image: url("../images/register-page-background-image.png");
-
-background-size: auto;
+  background-size: auto;
   height: 550px;
   margin:0 auto;
   margin-left: 18%;
   padding-top: 2%;
-
 }
+
 
 .create-account-box {
 padding-top: 2%;
 }
+
 
   .profile-information {
     width: 66%;
@@ -66,35 +68,52 @@ padding-top: 2%;
     padding-bottom: 5%;
   }
 
+
   .register-form-questions {
     margin: 0;
     @include smallfont;
+    font-weight: normal;
+    color: $teal;
+    padding: .3%;
   }
+
 
   .register-form input {
     width: 40%;
-    height: 40px;
+    height: 20px;
     margin-right: 5%;
     @include smallfont;
-
+    font-weight: normal;
   }
 
   .register-form-submit-button {
     background-color:rgba($golden, .8);
     border: none;
+    @include smallfont;
+    font-weight: normal;
+    color: white;
+    padding-top: 1.5%;
+    padding-bottom: 3%;
+    float: left;
+    margin-top: 1%;
     }
 
+
     .register-form-submit-button:hover {
-      background-color:rgba($darkteal, .8);
+      background-color:rgba($charcoal, .8);
       border: none;
+
       }
 
 .register-user-title {
   @include largefont;
   color: white;
   font-weight: 400;
-  margin-left: 10%;
+  margin-left: 20%;
   margin-top: .5%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .goldendecor {
@@ -102,3 +121,29 @@ padding-top: 2%;
   height: 70px;
   width: 50%;
 }
+
+.register-exit-button {
+    height:40px;
+    width:100%;
+    box-sizing:border-box;
+    @include smallfont;
+    float: right;
+    text-align: right;
+    margin-right: 2%;
+    margin-top: 2%;
+
+
+    a{
+      text-decoration:none;
+      color:$golden;
+      padding:1%;
+      background-color:$charcoal;
+
+    }
+
+    a:hover{
+      color:$charcoal;
+      background-color:$golden;
+
+    }
+  }
