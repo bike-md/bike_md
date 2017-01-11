@@ -277,9 +277,6 @@ input:-webkit-autofill {
   margin: 0;
   padding: 5%; }
 
-header {
-  margin: 0 auto; }
-
 .create-account-overlay-box {
   display: block;
   width: 67%;
@@ -381,63 +378,6 @@ header {
   .register-exit-button a:hover {
     color: #313237;
     background-color: #ba973a; }
-
-#searchThis {
-  height: 30px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  width: 20% !important; }
-
-#searchBox {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: 0px; }
-
-#searchButton {
-  background-color: rgba(255, 255, 255, 0.55);
-  border: 0px;
-  width: 40px; }
-
-#searchButton:hover {
-  background-color: #a8bdba;
-  border: 0px;
-  width: 40px;
-  transition: .5s; }
-
-.templatenav {
-  display: inline; }
-  .templatenav li {
-    display: inline-block;
-    padding: 1% 0%;
-    margin-left: 1%;
-    margin-right: 1%;
-    float: left; }
-    .templatenav li a {
-      text-decoration: none;
-      color: white;
-      font-size: 1rem;
-      font-family: gill sans;
-      text-transform: uppercase;
-      font-weight: normal;
-      position: relative; }
-  .templatenav a:after {
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    height: 5px;
-    width: 0px;
-    background-color: #ba973a;
-    transition: width .5s;
-    content: "";
-    z-index: -1; }
-  .templatenav .link1:hover:after {
-    width: 100%; }
-  .templatenav .link2:hover:after {
-    width: 100%; }
-  .templatenav .link3:hover:after {
-    width: 100%; }
 
 .mainbody {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bikedetails-background.jpg");
@@ -568,30 +508,6 @@ hr {
   position: absolute;
   bottom: 0; }
 
-#searchThis {
-  height: 30px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  width: 20% !important; }
-
-#searchBox {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: 0px; }
-
-#searchButton {
-  background-color: rgba(255, 255, 255, 0.55);
-  border: 0px;
-  width: 40px; }
-
-#searchButton:hover {
-  background-color: #a8bdba;
-  border: 0px;
-  width: 40px;
-  transition: .5s; }
-
 .bikedetailsbody {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
@@ -679,30 +595,6 @@ hr {
 .bikedetails-footer {
   position: absolute;
   bottom: 0; }
-
-#searchThis {
-  height: 30px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  width: 20% !important; }
-
-#searchBox {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: 0px; }
-
-#searchButton {
-  background-color: rgba(255, 255, 255, 0.55);
-  border: 0px;
-  width: 40px; }
-
-#searchButton:hover {
-  background-color: #a8bdba;
-  border: 0px;
-  width: 40px;
-  transition: .5s; }
 
 .prob-detailbody {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../images/main-background.jpg");
@@ -930,33 +822,29 @@ body {
 header {
   height: 58px;
   padding-left: 10%;
-  padding-top: 1%;
-  padding-bottom: 2%; }
+  padding-top: .5%;
+  padding-bottom: 5%; }
   header .templatelogo {
-    width: 15%;
+    width: 18%;
     float: left;
-    margin-right: 2%;
-    margin-top: 1.5%; }
-  header .search {
-    width: 10%;
-    float: left;
-    position: relative;
-    bottom: 10px; }
+    margin-top: 1.5%;
+    margin-right: .2%; }
   header .templatenav {
     display: inline; }
     header .templatenav li {
       list-style-type: none;
       display: inline-block;
-      margin-left: 2%;
-      float: left; }
+      margin-left: 3.5%;
+      float: left;
+      margin-top: 30px; }
       header .templatenav li a {
         text-decoration: none;
         color: white;
-        font-size: 1rem;
+        font-size: 1.6rem;
         font-family: gill sans;
         text-transform: uppercase;
         font-weight: normal;
-        font-size: 1.25rem;
+        position: relative;
         text-align: right; }
       header .templatenav li a:after {
         display: block;
@@ -978,10 +866,16 @@ header {
   display: none;
   padding: 0;
   position: absolute;
-  top: 70px; }
+  top: 80px; }
+
+header .templatenav .dropdown li {
+  margin-top: 10px; }
 
 header .templatenav .dropdown li a {
-  font-size: 1.1rem; }
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal; }
 
 header .templatenav .dropdown li a:hover {
   color: #ba973a; }
@@ -992,6 +886,40 @@ header .templatenav .dropdown li a:hover {
   width: 100%; }
 
 .droplist:hover {
+  transition: .6s; }
+
+#searchThis {
+  height: 30px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase; }
+
+#searchBox {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0px;
+  height: 25px;
+  width: 250px;
+  border: white solid 1px; }
+
+input, textarea, keygen, select, button {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+#searchButton {
+  background-color: #87b0aa;
+  border: 0px;
+  height: 30px;
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+#searchButton:hover {
+  background-color: #ba973a;
   transition: .5s; }
 
 .remodal {
