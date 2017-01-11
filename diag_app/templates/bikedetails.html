@@ -21,16 +21,27 @@
           <ul>
               <li>
                 <form id="searchThis" style="display: inline;" method="POST">
+                    {%csrf_token%}
                     <input onfocus="if(this.value==this.defaultValue)this.value='';"
-                    value="Search"
+                    value="Search Problems"
                     type="text" id="searchBox"
                     onblur="if(this.value=='')this.value=this.defaultValue;"
                     vinput="" name="q"/>
-                    <input id="searchButton" value="Go" type="submit"/>
+                    <input id="searchButton" value="Go" type="submit"
+                    data-remodal-target="searchModal" class="link2" href="#searchModal"/>
                 </form>
               </li>
           </ul>
 
+        <!-- search modal -->
+        <div class ="search-modal-container">
+            <div class="remodal" data-remodal-id="searchModal">
+                <button data-remodal-action="close" class="remodal-close"></button>
+
+                <div id="searchProblemList" class="search-problem-list"></div>
+
+            </div>
+        </div>
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -103,6 +114,18 @@
 
 
 <!-- modal scripts     -->
+
+    <!-- search modal -->
+    <script id="search-problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+            {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
     <!-- answer modal -->
     <script id="unsolved-problem-template" type="text/x-handlebars-template">
         <article class="post-container">
