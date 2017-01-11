@@ -8,16 +8,13 @@
   margin-left: 10%;
   background-color: rgba(175, 175, 178, 0.35);
   padding: 1%;
-  float: left;
-  overflow: hidden;
   margin-bottom: 0; }
   .indexnav ul {
     text-align: right;
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 20%;
-    float: left; }
+    margin-bottom: 20%; }
     .indexnav ul li {
       clear: both;
       list-style-type: none;
@@ -40,11 +37,11 @@
         content: "";
         z-index: -1; }
       .indexnav ul li .link1:hover:after {
-        width: 155%; }
+        width: 150%; }
       .indexnav ul li .link2:hover:after {
-        width: 165%; }
+        width: 160%; }
       .indexnav ul li .link3:hover:after {
-        width: 138%; }
+        width: 133%; }
     .indexnav ul .logobox {
       width: 100%;
       margin-bottom: 15%; }
@@ -55,37 +52,39 @@
   height: 30px;
   text-align: center;
   text-transform: uppercase;
+  border: transparent;
+  width: 100%;
   margin: 5% auto; }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset; }
 
-.button {
+.loginbutton {
   height: 50px;
   width: 100%;
   text-align: center;
-  box-sizing: border-box;
+  padding: 0;
   background-color: #87b0aa;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 10%;
+  margin: 5% auto;
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
   border: 0; }
-  .button a {
+  .loginbutton a {
     text-decoration: none;
     color: #313237;
     padding: 15%; }
-  .button a:hover {
+  .loginbutton a:hover {
     text-decoration: none;
     color: #a8bdba; }
 
-.button:hover {
-  background-color: #313237;
-  color: #a8bdba; }
+.loginbutton:hover {
+  background-color: #ba973a;
+  color: white; }
 
 /* ----------- iPad mini ----------- */
 /* Portrait and Landscape */
@@ -269,21 +268,23 @@ input:-webkit-autofill {
 .createaccountbody {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
   background-size: cover;
-  margin: 0; }
+  background-position: center;
+  margin: 0;
+  padding: 5%; }
+
+header {
+  margin: 0 auto; }
 
 .create-account-overlay-box {
-  display: inline-block;
-  width: 70%;
-  background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25));
-  margin-left: 16%;
-  margin-right: 10%; }
+  display: block;
+  width: 85%;
+  background-image: url("../images/register-page-background-image.png");
+  background-size: auto;
+  height: 550px;
+  margin: 0 auto; }
 
-.create-account-overlay-box {
-  width: 30%;
-  height: 150px;
-  float: left;
-  background-color: #2B7F7B;
-  margin: 1%; }
+.create-account-box {
+  padding-top: 5%; }
 
 .profile-information {
   width: 66%;
@@ -292,21 +293,19 @@ input:-webkit-autofill {
   background-color: #000000;
   margin: 1%; }
 
-.profile-questions-asked {
-  width: 30%;
-  height: 300px;
-  float: left;
-  background-color: #ffffff;
-  margin-left: 1%;
-  margin-bottom: 1%; }
+.register-form {
+  padding-top: 1%;
+  padding-left: 10%;
+  padding-bottom: 5%; }
 
-.profile-questions-answered {
-  width: 66%;
-  height: 224px;
-  float: right;
-  background-color: #ffffff;
-  margin-right: 1%;
-  margin-bottom: 1%; }
+.register-form-questions {
+  margin: 0; }
+
+.register-form input {
+  width: 40%; }
+
+.register-form-submit-button {
+  background-color: #ba973a; }
 
 #searchThis {
   height: 30px;
