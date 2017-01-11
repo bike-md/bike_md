@@ -19,23 +19,29 @@ from django.contrib.auth.models import User
 from .permissions import IsStaffOrTargetUser
 
 
-
 def create_account(request):
     return render(request, 'create_account.html')
 
 
-
-
 def login_user(request):
     form = LoginForm(request.POST or None)
-    if request.POST and form.is_valid():
-        user = form.login(request)
-        if user:
-            login(request, user)
-            return HttpResponseRedirect("/diag_app/")
+    user = authenticate(username = request.POST['username'],
+    password = request.POST['password'])
+    if user is not None and user.is_active:
+        login(request, user)
+        return HttpResponseRedirect('/diag_app/')
+    else:
+        return render(request, 'registration/login.html',{
+            'login_message' : 'Enter the username and password correctly',})
     return render(request, 'registration/login.html')
 
 
+# if request.POST and form.is_valid():
+#     user = form.login(request)
+#     if user:
+#         login(request, user)
+#         return HttpResponseRedirect("/diag_app/")
+#
 @login_required(login_url='/login/')
 def main_page(request):
     return render(request, 'main.html')

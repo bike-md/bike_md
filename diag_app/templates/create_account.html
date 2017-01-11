@@ -19,7 +19,7 @@
                     <h1 class="register-user-title">Register</h1>
                 </div>
                 <div class="create-account-box">
-                    <form method="POST" class="register-form">
+                    <form action="/login/" method="POST" class="register-form">
                         {%csrf_token%}
                         <h4 class="register-form-questions">Enter username:</h4>
                         <input type="text" name="username" id="newUsername">

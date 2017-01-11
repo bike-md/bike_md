@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 {%load static%}
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <title>Login</title>
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+        <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
+        <title>Login</title>
+    </head>
 
-  <body class ="indexbody">
+    <body class ="indexbody">
 
-    <nav class ="indexnav">
-      <ul>
-        <a href ="#"><li class ="logobox"><img class ="logo" src ="{% static 'images/BikeMDLogo.png' %}"></li></a>
-        <li><a class="link1" href ="/diag_app/create_account">Register</a></li>
-        <li><a class="link2" href ="#">Services</a></li>
-        <li><a class="link3" href ="#">About Us</a></li>
-      </ul>
+        <nav class ="indexnav">
+            <ul>
+                <a href ="#"><li class ="logobox"><img class ="logo" src ="{% static 'images/BikeMDLogo.png' %}"></li></a>
+                <li><a class="link1" href ="/diag_app/create_account">Register</a></li>
+                <li><a class="link2" href ="#">Services</a></li>
+                <li><a class="link3" href ="#">About Us</a></li>
+            </ul>
 
-      <form class ="loginform" name="LoginForm" action="/login/" method="POST">
-        {% csrf_token %}
-        <input class ="loginfield" name="username" type="text" placeholder ="username"></input>
-        <input class ="loginfield" name="password" type="password" placeholder ="password"></input>
-        <button class="loginbutton" type="submit">Login</button>
-      </form>
-    </nav>
 
+
+            <form class ="loginform" name="LoginForm" action="/login/" method="POST">
+                    <ul class='form-errors'>
+                        <li class="error-message">{{ login_message }}</li>
+                    </ul>
+                {% csrf_token %}
+                <input class ="loginfield" name="username" type="text" placeholder ="username"></input>
+                <input class ="loginfield" name="password" type="password" placeholder ="password"></input>
+                <button class="loginbutton" type="submit">Login</button>
+            </form>
+        </nav>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  </body>
+    </body>
 </html>
