@@ -19,16 +19,19 @@ header {
 }
 .create-account-overlay-box {
   display:block;
-  width:85%;
+  width:67%;
       background-image: url("../images/register-page-background-image.png");
 
 background-size: auto;
   height: 550px;
   margin:0 auto;
+  margin-left: 18%;
+  padding-top: 2%;
+
 }
 
 .create-account-box {
-padding-top: 5%;
+padding-top: 2%;
 }
 
   .profile-information {
@@ -65,14 +68,37 @@ padding-top: 5%;
 
   .register-form-questions {
     margin: 0;
+    @include smallfont;
   }
 
   .register-form input {
     width: 40%;
-    height: 50px;
+    height: 40px;
     margin-right: 5%;
+    @include smallfont;
+
   }
 
   .register-form-submit-button {
-    background-color: $golden;
-  }
+    background-color:rgba($golden, .8);
+    border: none;
+    }
+
+    .register-form-submit-button:hover {
+      background-color:rgba($darkteal, .8);
+      border: none;
+      }
+
+.register-user-title {
+  @include largefont;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: .5%;
+}
+
+.goldendecor {
+  background-color: $golden;
+  height: 70px;
+  width: 50%;
+}
