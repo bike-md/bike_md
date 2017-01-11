@@ -38,6 +38,7 @@ function showBrands(){
         var source = $('#brand-template').html()
         var template = Handlebars.compile(source)
         var html = template(results.results)
+        $('#listing').empty()
         $('#listing').append(html)
 
     })
@@ -47,6 +48,7 @@ showBrands()
 
 // year listing step 2
 function showYears(id){
+    console.log(id)
     $.ajax({
         url: '/api/models?brand=' + id,
         type: 'GET'
@@ -59,6 +61,7 @@ function showYears(id){
                 years.push(bike[i].year)
             }
         }
+        years.sort(function(a, b){return b-a})
         var context = {
             modelYears : years,
             brandId : id,
@@ -66,6 +69,7 @@ function showYears(id){
         var source = $('#year-template').html()
         var template = Handlebars.compile(source)
         var html = template(context)
+        $('#listing').empty()
         $('#listing').append(html)
     })
 }
@@ -78,11 +82,17 @@ function showModels(year){
         url: '/api/models?brand=' + brandId + '&year=' + year,
         type: 'GET'
     }).done(function(results){
-        $('#listing').empty()
-        var bikes = results.results
+        var brandID = results.results[0].brand.id
+        var bikeList = results.results
+        var context = {
+            brand: brandID,
+            bikes: bikeList
+        }
+        console.log(context)
         var source = $('#model-template').html()
         var template = Handlebars.compile(source)
-        var html = template(bikes)
+        var html = template(context)
+        $('#listing').empty()
         $('#listing').append(html)
     })
 }

@@ -98,8 +98,7 @@
       </nav>
     </header>
 
-<h1 class="details-main-title">Problem listing by system for:</h1>
-    <div><h2 class="details-main-title" id="model"></h2></div>
+    <div><h1 class="details-main-title" id="model"></h1></div>
 
 <hr>
 
@@ -118,7 +117,7 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                    <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+                    <h2 class="problem-title-modal">{{{linkURLProblem this}}}</h2>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -196,8 +195,9 @@
         <script id="problem-list-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                {{#each .}}
-                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                <h1 class="problem-title">{{system.name}} Problem List:</h1>
+                {{#each problem}}
+                    <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
                     <h2 class="problem-date">{{{formatTime posted}}}</h2>
                     <h2 class="problem-poster">{{tech.user.username}}</h2>
                 {{/each}}
@@ -208,7 +208,7 @@
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                    <h2 class="model-title">{{name}}</h2>
+                    <h1 class="model-title">{{brand.name}} {{{linkURLModel this}}}</h1>
                 {% endverbatim %}
             </article>
         </script>
