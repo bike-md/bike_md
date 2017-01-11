@@ -37,14 +37,14 @@ header{
       list-style-type:none;
       display:inline-block;
       // padding:2% .75%;
-      margin-left: 3.5%;
+      margin-left: 3.1%;
       float:left;
-      margin-top: 30px;
+      margin-top: 25px;
 
       a{
         text-decoration:none;
         color:white;
-        @include regularmedfont;
+        @include smallregularfont;
         position:relative;
         text-align: right;
       }
@@ -80,25 +80,26 @@ header{
 // end hover state overline
 
 // my account dropdown menu
-.dropdown{
+.dropdown {
   display:none;
   padding:0;
   position:absolute;
-  top:80px;
+  top:50px;
 }
 
 header .templatenav .dropdown li {
   margin-top: 10px;
 }
 header .templatenav .dropdown li a {
-  @include smallregularfont;
+  @include smallfont;
 }
 
 header .templatenav .dropdown li a:hover {
     color: $golden;
+    transition: .5s;
 }
 
-  .droplist{
+  .droplist {
     display:block;
     clear:both;
     width: 100%;
@@ -121,9 +122,10 @@ header .templatenav .dropdown li a:hover {
       -moz-appearance:none;
       -webkit-appearance: none;
       border: 0px;
-      height: 25px;
+      height: 19.5px;
       width: 250px;
       border: white solid 1px;
+      margin-top: -1%;
     }
 
       input, textarea, keygen, select, button  {
@@ -133,9 +135,11 @@ header .templatenav .dropdown li a:hover {
     #searchButton {
     background-color:$darkteal;
     border: 0px;
-    height: 30px;
+    height: 24px;
     // border-radius: 100%;
     @include smallfont;
+    margin-top: -1%;
+
     }
 
     #searchButton:hover {

@@ -482,27 +482,8 @@ hr {
   justify-content: center;
   position: fixed;
   bottom: 5%;
-  margin: 0 auto;
   position: relative;
   width: 100%; }
-
-.stepscircles {
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background-color: #a8bdba;
-  margin-left: 10px;
-  margin-bottom: 2%;
-  margin-top: 10%; }
-
-.stepscircles:hover {
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background-color: #ba973a;
-  flex: 0 0 20px;
-  margin-left: 10px;
-  margin-bottom: 2%; }
 
 .mainfooter {
   position: absolute;
@@ -826,13 +807,13 @@ header {
     header .templatenav li {
       list-style-type: none;
       display: inline-block;
-      margin-left: 3.5%;
+      margin-left: 3.1%;
       float: left;
-      margin-top: 30px; }
+      margin-top: 25px; }
       header .templatenav li a {
         text-decoration: none;
         color: white;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-family: gill sans;
         text-transform: uppercase;
         font-weight: normal;
@@ -858,19 +839,20 @@ header {
   display: none;
   padding: 0;
   position: absolute;
-  top: 80px; }
+  top: 50px; }
 
 header .templatenav .dropdown li {
   margin-top: 10px; }
 
 header .templatenav .dropdown li a {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal; }
 
 header .templatenav .dropdown li a:hover {
-  color: #ba973a; }
+  color: #ba973a;
+  transition: .5s; }
 
 .droplist {
   display: block;
@@ -891,9 +873,10 @@ header .templatenav .dropdown li a:hover {
   -moz-appearance: none;
   -webkit-appearance: none;
   border: 0px;
-  height: 25px;
+  height: 19.5px;
   width: 250px;
-  border: white solid 1px; }
+  border: white solid 1px;
+  margin-top: -1%; }
 
 input, textarea, keygen, select, button {
   font-size: 1rem;
@@ -904,11 +887,12 @@ input, textarea, keygen, select, button {
 #searchButton {
   background-color: #87b0aa;
   border: 0px;
-  height: 30px;
+  height: 24px;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: -1%; }
 
 #searchButton:hover {
   background-color: #ba973a;
