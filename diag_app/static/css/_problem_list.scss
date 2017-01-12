@@ -1,16 +1,2 @@
 @import "variables";
 @import "mixins";
-
-
-.problem_list-body {
-  background-image:
-  linear-gradient(
-        rgba(black, 0.75),
-        rgba(black, 0.75)
-      ),
-  url("../images/index-background.jpg");
-  background-size:cover;
-  background-position:center;
-  margin:0;
-  padding: 5%;
-}
