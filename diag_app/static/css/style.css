@@ -381,7 +381,7 @@ input:-webkit-autofill {
     background-color: #ba973a; }
 
 .mainbody {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0; }
@@ -502,7 +502,7 @@ hr {
   bottom: 0; }
 
 .bikedetailsbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size: cover;
   margin: 0; }
 

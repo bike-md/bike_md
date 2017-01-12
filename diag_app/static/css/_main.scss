@@ -2,12 +2,7 @@
 @import "mixins";
 
 .mainbody  {
-  background:
-  linear-gradient(
-      rgba(black, 0.45),
-      rgba(black, 0.45)
-    ),
-  url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size:cover;
   background-repeat: no-repeat;
   margin:0;
