@@ -66,8 +66,13 @@ h2.date-time, h2.posted-by {
   padding-left: 2%;
 }
 
+.problem-container:nth-child(odd){
+  background-color:$charcoal;
+}
+
 .problem-container:hover {
   background-color: $golden;
+  transition: .5s;
   border: 2px $darkteal solid;
 
 }

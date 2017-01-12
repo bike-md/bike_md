@@ -908,8 +908,12 @@ h2.date-time, h2.posted-by {
   border: 2px #ba973a solid;
   padding-left: 2%; }
 
+.problem-container:nth-child(odd) {
+  background-color: #313237; }
+
 .problem-container:hover {
   background-color: #ba973a;
+  transition: .5s;
   border: 2px #87b0aa solid; }
 
 body {
