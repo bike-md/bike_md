@@ -84,23 +84,6 @@ function postSolution(){
 }
 $("#newSolutionSubmit").click(postSolution)
 
-function postVote(id, value){
-    var user = $("#userId").val()
-    var voteValue = value
-    var votedFor = id
-    var context = {
-        tech: user,
-        value: voteValue,
-        solution: votedFor,
-    }
-    $.ajax({
-        url: '/api/votes/',
-        type: 'POST',
-        data: context,
-    }).done(function(results){
-        updateScore(id, value)
-    })
-}
 
 // better way to do this?
 function validateVote(solutionId, value){
@@ -128,11 +111,33 @@ function validateVote(solutionId, value){
 }
 
 
+function postVote(id, value){
+    var user = $("#userId").val()
+    var voteValue = value
+    var votedFor = id
+    var context = {
+        tech: user,
+        value: voteValue,
+        solution: votedFor,
+    }
+    $.ajax({
+        url: '/api/votes/',
+        type: 'POST',
+        data: context,
+    }).done(function(results){
+        updateScore(id, value)
+    })
+}
+
+
 function updateScore(id, voteValue){
     $.ajax({
         url: '/api/get-solutions/' + id ,
         type: 'GET',
     }).done(function(results){
+        var tech = results.tech.id
+        console.log(tech)
+        updateRating(tech, voteValue)
         var currentScore = results.score
         var newScore = currentScore + voteValue
         var context = {
@@ -147,28 +152,30 @@ function updateScore(id, voteValue){
             $(id_container).html('Score: ' + results.score)
         })
     })
-
-
 }
 
 
-// function postCommit(id, ){
-//     var user = $("#userId").val()
-//     var voteValue = value
-//     var votedFor = id
-//     var context = {
-//         tech: user,
-//         value: voteValue,
-//         solution: votedFor,
-//     }
-//     $.ajax({
-//         url: '/api/votes/',
-//         type: 'POST',
-//         data: context,
-//     }).done(function(results){
-//         updateScore(id, value)
-//     })
-// }
+function updateRating(tech, voteValue){
+    $.ajax({
+        url: '/api/get-techs/' + tech,
+        type: 'GET',
+    }).done(function(results){
+        var currentRating = results.tech_rating
+        var newRating = currentRating + (voteValue * 5)
+        context = {
+            tech_rating: newRating
+        }
+        $.ajax({
+            url: '/api/post-techs/' + tech + '/',
+            type: 'PATCH',
+            data: context,
+        }).done(function(results){
+            console.log(results)
+        })
+
+    })
+
+}
 
 
 Handlebars.registerHelper('formatTime', function (posted) {

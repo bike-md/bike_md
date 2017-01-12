@@ -1,35 +1,35 @@
 function getCookie(name) {
    var cookieValue = null;
    if (document.cookie && document.cookie !== '') {
-       var cookies = document.cookie.split(';');
+       var cookies = document.cookie.split(';')
        for (var i = 0; i < cookies.length; i++) {
-           var cookie = jQuery.trim(cookies[i]);
+           var cookie = jQuery.trim(cookies[i])
            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-               cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-               break;
+               cookieValue = decodeURIComponent(cookie.substring(name.length + 1))
+               break
            }
        }
    }
-   return cookieValue;
+   return cookieValue
 }
 
 
 var csrftoken = getCookie('csrftoken');
 function csrfSafeMethod(method) {
-   return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+   return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method))
 }
 
 
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            xhr.setRequestHeader("X-CSRFToken", csrftoken)
         }
     }
-});
+})
 
 
-function createUser(){
+function createUser(e){
     var userName = $("#newUsername").val()
     var userPassword = $("#userPassword").val()
     var emailAddress = $("#emailAddress").val()
@@ -66,9 +66,9 @@ function createTech(id){
         type: 'POST',
         data: context
     }).done(function(results){
-        linkLogin()
     })
 }
+
 
 function linkLogin(){
     url = '/login/'

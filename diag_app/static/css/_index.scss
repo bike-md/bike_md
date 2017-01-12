@@ -84,11 +84,11 @@
 
 .loginform .loginfield{
     height:30px;
-    text-align:center;
-    text-transform:uppercase;
     border:transparent;
     width: 100%;
     margin:5% auto;
+    padding:5%;
+    box-sizing:border-box;
   }
 
   input:-webkit-autofill {

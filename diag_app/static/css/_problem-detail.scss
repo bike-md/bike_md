@@ -46,6 +46,13 @@
     margin:0;
   }
 
+  .tech-rating{
+    display:inline-block;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    padding:0 .5%;
+  }
+
   .date-time{
     display:inline-block;
     color:$teal;
@@ -55,6 +62,15 @@
 
   .solution-score{
     display:inline-block;
+  }
+
+  .solution-time, .solution-cost{
+    float:right;
+    padding:0 1%;
+  }
+
+  .timecost-value{
+    color:$teal;
   }
 
   .describe-title{
