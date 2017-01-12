@@ -11,13 +11,14 @@
     <title>Problem List</title>
   </head>
 
-  <body class ="bikedetailsbody">
+  <body class="bikedetailsbody">
     <header>
-      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+      <a href="/diag_app/"><img class="templatelogo" src="{% static 'images/logo-template.png' %}"></a></li>
 
 
 
-      <nav class ="templatenav">
+      <nav class="templatenav">
+
 
           <!-- search -->
           <ul>
@@ -35,6 +36,7 @@
               </li>
           </ul>
 
+
         <!-- search modal -->
         <div class ="search-modal-container">
             <div class="remodal" data-remodal-id="searchModal">
@@ -44,6 +46,7 @@
 
             </div>
         </div>
+
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -55,7 +58,6 @@
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
-
                 <h4 class ="modaltext">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
                 <h4 class ="modaltext">Choose Bike:</h4>
@@ -104,14 +106,11 @@
 
     <section id="problemList" class =""></section>
 
-
-
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
 
-    <!-- modal scripts     -->
-
+<!-- modal scripts     -->
         <!-- search modal -->
         <script id="search-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -122,6 +121,7 @@
                 {% endverbatim %}
             </article>
         </script>
+
 
         <!-- answer modal -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
@@ -192,23 +192,25 @@
         </script>
         <!-- end modal scripts -->
 
+
         <script id="problem-list-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 <h1 class="problem-title">{{system.name}} Problem List:</h1>
                 {{#each problem}}
                     <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
-                    <h2 class="problem-date">{{{formatTime posted}}}</h2>
-                    <h2 class="problem-poster">{{tech.user.username}}</h2>
+                    <h2 class="date-posted">{{{formatTime posted}}}</h2>
+                    <h2 class="posted-by">{{tech.user.username}}</h2>
                 {{/each}}
                 {% endverbatim %}
             </article>
         </script>
 
+
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                    <h1 class="model-title">{{brand.name}} {{{linkURLModel this}}}</h1>
+                    <h1 class="">{{brand.name}} {{{linkURLModel this}}}</h1>
                 {% endverbatim %}
             </article>
         </script>
