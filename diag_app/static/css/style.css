@@ -279,12 +279,13 @@ input:-webkit-autofill {
 
 .create-account-overlay-box {
   display: block;
-  width: 67%;
+  width: 60%;
   background-image: url("../images/register-page-background-image.png");
-  background-size: auto;
-  height: 550px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: auto;
   margin: 0 auto;
-  margin-left: 18%;
   padding-top: 2%; }
 
 .create-account-box {
@@ -476,7 +477,6 @@ hr {
   padding: 1%; }
 
 .progression {
-  width: 100%;
   margin-top: -1%;
   margin-left: 46%; }
 
@@ -604,6 +604,16 @@ hr {
     font-weight: normal;
     color: white;
     background-color: #ba973a;
+    text-align: center;
+    margin: 0;
+    margin-top: 2%; }
+  .prob-form-background .sol-header, .prob-form-background .sol-name {
+    font-size: 1.5rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: white;
+    background-color: #709c97;
     text-align: center;
     margin: 0;
     margin-top: 2%; }
@@ -1003,10 +1013,12 @@ input, textarea, keygen, select, button {
   transition: .5s; }
 
 .remodal {
-  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #709c97 99%); }
+  background-image: url("../images/logo-template.png");
+  height: auto;
+  background-size: cover;
+  background-position: left; }
 
 .modaltext {
-  color: white;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
