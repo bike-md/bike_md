@@ -26,24 +26,22 @@
 
   .prob-header, .sol-header, .sol-name{
     @include regularfont;
-    color:white;
-    background-color:$golden;
+    color:$seafoam;
+    background-color:$charcoal;
     text-align:center;
     margin:0;
     margin-top:2%;
   }
 
-  .sol-header, .sol-name{
-    @include regularfont;
+  .sol-name{
+    background-color:$charcoal;
     color:white;
-    background-color:$teal;
-    text-align:center;
-    margin:0;
-    margin-top:2%;
+    text-align:left;
+    padding-left:3%;
   }
 
-  .prob-header{
-    margin-top:0;
+  .prob-header, .sol-header{
+    @include largefont;
   }
 
   .prob-title{
@@ -132,7 +130,7 @@
     display:block;
     margin:0 auto;
     margin-top:3%;
-    background-color:$darkteal;
+    background-color:$seafoam;
     border: 0px;
     height: 24px;
     @include smallfont;

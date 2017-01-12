@@ -26,7 +26,6 @@
 
 }
 
-
 @mixin mediumfont{
   font-size:2rem;
   font-family:gill sans;
@@ -36,7 +35,7 @@
 }
 
 @mixin largefont{
-  font-size:3.75rem;
+  font-size:3rem;
   font-family:gill sans;
   text-transform:uppercase;
   font-weight: normal;
