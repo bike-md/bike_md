@@ -113,7 +113,7 @@ header .templatenav .dropdown li a:hover {
       height:30px;
       margin-bottom:1.5rem;
       text-align:center;
-      text-transform:uppercase;
+      // text-transform:uppercase;
       // width: 20% !important;
     }
 //edits the size of the search bar:
@@ -129,7 +129,8 @@ header .templatenav .dropdown li a:hover {
     }
 
       input, textarea, keygen, select, button  {
-        @include smallfont;
+        font-size:1rem;
+        font-family:gill sans;
       }
 
     #searchButton {
@@ -170,7 +171,8 @@ header .templatenav .dropdown li a:hover {
   height:50px;
   width:30%;
   text-align:center;
-  @include smallfont;
+  font-size:1rem;
+  font-family:gill sans;
   color:$charcoal;
 }
 

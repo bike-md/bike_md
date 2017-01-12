@@ -505,18 +505,14 @@ hr {
   margin: 0; }
 
 .background-white {
-  background-color: rgba(202, 178, 152, 0.4);
+  background-color: rgba(202, 178, 152, 0.25);
   height: auto;
-  width: auto;
   max-width: 80%;
-  padding-top: 1%;
-  padding-bottom: 3%;
-  padding-left: 3%;
-  padding-right: 3%;
-  margin: 0 auto;
-  position: relative;
+  padding: 1% 3% 3% 3%;
+  box-sizing: border-box;
   margin-left: 10%;
-  margin-right: 10%; }
+  margin-right: 10%;
+  margin: 0 auto; }
 
 .details-main-title {
   font-size: 2rem;
@@ -600,7 +596,7 @@ hr {
   margin: 0 auto;
   margin-top: 60px;
   padding: 2%; }
-  .prob-form-background .prob-title, .prob-form-background .sol-title {
+  .prob-form-background .prob-header, .prob-form-background .sol-header, .prob-form-background .sol-name {
     font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
@@ -608,9 +604,22 @@ hr {
     color: white;
     background-color: #ba973a;
     text-align: center;
+    margin: 0;
+    margin-top: 2%; }
+  .prob-form-background .prob-header {
+    margin-top: 0; }
+  .prob-form-background .prob-title {
     margin: 0; }
-  .prob-form-background .sol-title {
-    margin-top: 5%; }
+  .prob-form-background .posted-by {
+    display: inline-block;
+    margin: 0; }
+  .prob-form-background .date-time {
+    display: inline-block;
+    color: #709c97;
+    margin: 0;
+    font-weight: 500; }
+  .prob-form-background .solution-score {
+    display: inline-block; }
   .prob-form-background .describe-title {
     font-size: 1.5rem;
     font-family: gill sans;
@@ -619,15 +628,13 @@ hr {
     color: black;
     text-align: center; }
   .prob-form-background .form-text {
-    font-size: 1rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    font-weight: normal;
     text-align: center; }
-  .prob-form-background .prob-box {
-    height: 200px;
+  .prob-form-background .prob-box, .prob-form-background .sol-box {
+    height: auto;
     background-color: white;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 2%;
+    box-sizing: border-box; }
   .prob-form-background .prob-form-container {
     background-color: white;
     height: auto;
@@ -644,10 +651,24 @@ hr {
     margin: 0 auto;
     width: 80%;
     height: auto; }
+  .prob-form-background .solution-text {
+    font-weight: 500;
+    text-transform: none;
+    font-size: 1rem; }
   .prob-form-background .solution-submit {
     display: block;
     margin: 0 auto;
-    margin-top: 3%; }
+    margin-top: 3%;
+    background-color: #87b0aa;
+    border: 0px;
+    height: 24px;
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal; }
+  .prob-form-background .solution-submit:hover {
+    background-color: #ba973a;
+    transition: .5s; }
 
 .profile-page-username {
   font-size: 1.5rem;
@@ -875,8 +896,7 @@ header .templatenav .dropdown li a:hover {
 #searchThis {
   height: 30px;
   margin-bottom: 1.5rem;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: center; }
 
 #searchBox {
   appearance: none;
@@ -890,9 +910,7 @@ header .templatenav .dropdown li a:hover {
 
 input, textarea, keygen, select, button {
   font-size: 1rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal; }
+  font-family: gill sans; }
 
 #searchButton {
   background-color: #87b0aa;
@@ -924,8 +942,6 @@ input, textarea, keygen, select, button {
   text-align: center;
   font-size: 1rem;
   font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
   color: #313237; }
 
 .submit-button {

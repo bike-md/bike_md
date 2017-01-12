@@ -7,6 +7,7 @@
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
     <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
     <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
+    <script src="https://use.fontawesome.com/11db75c5f8.js"></script>
     <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
     <title>Problem Detail</title>
   </head>
@@ -101,21 +102,27 @@
 
 
     <div class="prob-form-background">
-      <h2 class ="prob-title">Problem Details</h2>
+      <h2 class ="prob-header">Problem Details</h2>
         <div id="problemDetail" class ="prob-box">
 
         </div>
 
-        <div id="solutions" class="sol-box"></div>
+        <div id="solutions"></div>
 
-      <h2 class ="sol-title">Give a solution</h2>
+      <h2 class ="sol-header">Give a solution</h2>
         <div class="prob-form-container">
           <form class="prob-form" method="POST">
           {%csrf_token%}
-            <h4 class ="form-text">Time required for solution:</h4>
-            <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
-            <h4 class ="form-text">Parts cost for solution:</h4>
-            <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+            <div class ="time-box">
+              <h4 class ="form-text">Time required for solution:</h4>
+              <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
+            </div>
+
+            <div class ="cost-box">
+              <h4 class ="form-text">Parts cost for solution:</h4>
+              <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+            </div>
+
             <h2 class ="describe-title">Describe your solution:</h2>
             <textarea id="solutionText" class ="solution-box" type="text" name="solutionText" value="" rows="10" cols="65"></textarea>
             <input id="newSolutionSubmit" class ="solution-submit" type="submit" value="Submit">
@@ -215,9 +222,9 @@
         <article class="post-container">
             {%verbatim%}
             <input id="problemId" type="hidden" name="problem_id" value="{{id}}">
-                <h2 class="question-title">{{title}}</h2>
-                <h5 class="date-time">{{{formatTime posted}}}</h5>
+                <h2 class="prob-title">{{title}}</h2>
                 <h5 class="posted-by">{{tech.user.username}}</h5>
+                <h5 class="date-time">{{{formatTime posted}}}</h5>
                 <h5 class="question-text">{{description}}</h5>
             {% endverbatim %}
         </article>
@@ -226,17 +233,19 @@
     <script id="solution-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
+
             {{#each .}}
-            <div class ="problem-box">
-                <h2 class="prob-detail-box-name">Solution:</h2>
-                <h5 class="date-time">{{{formatTime this.posted}}}</h5>
+            <h2 class="sol-name">Solution:</h2>
+            <div class="sol-box">
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
+                <h5 class="date-time">{{{formatTime this.posted}}}</h5>
                 <h5 class="solution-text">{{this.description}}</h5>
-                <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
                 <button class="up-vote" type="submit" onclick="validateVote({{id}}, 1)">
-                Up</button>
+                <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
                 <button class="down-vote" type="submit" onclick="validateVote({{id}}, -1)">
-                Down</button>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
+
             </div>
             {{/each}}
             {% endverbatim %}
