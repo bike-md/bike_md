@@ -103,8 +103,11 @@
     <div><h1 class="details-main-title" id="model"></h1></div>
 
 <hr>
+<!---Containter, start styling here--->
 
-    <section id="problemList" class =""></section>
+<div class="problem-list-box">
+    <div id="problemList" class ="logobackground"></div>
+</div>
 
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>
@@ -199,7 +202,7 @@
                 <h1 class="problem-title">{{system.name}} Problem List:</h1>
                 {{#each problem}}
                     <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
-                    <h2 class="date-posted">{{{formatTime posted}}}</h2>
+                    <h2 class="date-time">{{{formatTime posted}}}</h2>
                     <h2 class="posted-by">{{tech.user.username}}</h2>
                 {{/each}}
                 {% endverbatim %}
