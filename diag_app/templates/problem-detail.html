@@ -142,6 +142,7 @@
         </article>
     </script>
 
+
     <!-- answer modal -->
     <script id="unsolved-problem-template" type="text/x-handlebars-template">
         <article class="post-container">
@@ -211,6 +212,7 @@
     </script>
     <!-- end modal scripts -->
 
+
     <script id="problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -231,6 +233,9 @@
                 <h2 class="prob-detail-box-name">Solution:</h2>
                 <h5 class="date-time">{{{formatTime this.posted}}}</h5>
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
+                <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
+                <h5 class="solution-time">Time: {{this.time_required}}</h5>
+                <h5 class="solution-cost">Cost: {{this.parts_cost}}</h5>
                 <h5 class="solution-text">{{this.description}}</h5>
                 <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
                 <button class="up-vote" type="submit" onclick="validateVote({{id}}, 1)">
