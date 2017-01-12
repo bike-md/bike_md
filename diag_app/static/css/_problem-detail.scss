@@ -24,17 +24,53 @@
   margin-top:60px;
   padding:2%;
 
-  .prob-title{
+  .prob-header, .sol-header, .sol-name{
     @include regularfont;
     color:white;
     background-color:$golden;
     text-align:center;
     margin:0;
+    margin-top:2%;
   }
 
-  .sol-title{
-    @extend .prob-title;
-    margin-top:5%;
+  .prob-header{
+    margin-top:0;
+  }
+
+  .prob-title{
+    margin:0;
+  }
+
+  .posted-by{
+    display:inline-block;
+    margin:0;
+  }
+
+  .tech-rating{
+    display:inline-block;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    padding:0 .5%;
+  }
+
+  .date-time{
+    display:inline-block;
+    color:$teal;
+    margin:0;
+    font-weight:500;
+  }
+
+  .solution-score{
+    display:inline-block;
+  }
+
+  .solution-time, .solution-cost{
+    float:right;
+    padding:0 1%;
+  }
+
+  .timecost-value{
+    color:$teal;
   }
 
   .describe-title{
@@ -44,14 +80,15 @@
   }
 
   .form-text{
-    @include smallfont;
     text-align:center;
   }
 
-  .prob-box{
-    height:200px;
+  .prob-box, .sol-box{
+    height:auto;
     background-color:white;
     margin:0 auto;
+    padding:2%;
+    box-sizing:border-box;;
   }
 
   .prob-form-container{
@@ -76,9 +113,25 @@
     height:auto;
   }
 
+  .solution-text{
+    font-weight:500;
+    text-transform:none;
+    font-size:1rem;
+  }
+
   .solution-submit{
     display:block;
     margin:0 auto;
     margin-top:3%;
+    background-color:$darkteal;
+    border: 0px;
+    height: 24px;
+    @include smallfont;
+  }
+
+  .solution-submit:hover{
+    background-color:$golden;
+    transition: .5s;
+
   }
 }
