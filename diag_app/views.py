@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from rest_framework import permissions
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import viewsets, permissions, generics, filters
 from . import models, forms
@@ -20,6 +21,12 @@ from .permissions import IsStaffOrTargetUser
 
 
 def create_account(request):
+    # if user is not None and request.POST:
+    #     user = authenticate(user_name=request.get('username'),
+    #                         password=request.get('password'))
+    #     login(request, user)
+    #     serializer = UserSerializer(user)
+    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
     return render(request, 'create_account.html')
 
 
@@ -37,12 +44,6 @@ def login_user(request):
     return render(request, 'registration/login.html')
 
 
-# if request.POST and form.is_valid():
-#     user = form.login(request)
-#     if user:
-#         login(request, user)
-#         return HttpResponseRedirect("/diag_app/")
-#
 @login_required(login_url='/login/')
 def main_page(request):
     return render(request, 'main.html')
@@ -69,14 +70,34 @@ def profile(request):
 
 
 # class viewsets and filters
-class UserView(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    model = User
 
-    def get_permissions(self):
-        return (AllowAny() if self.request.method == 'POST'
-                else IsStaffOrTargetUser()),
+    # def create(self, request, *args, **kwargs):
+    #     serializer = self.get_serializer(data=request.data)
+    #     serializer.is_valid(raise_exception=True)
+    #     self.perform_create(serializer)
+    #     headers = self.get_success_headers(serializer.data)
+    #     new_user = authenticate(email=request.POST.get('email'),
+    #         password=request.POST.get('password'),
+    #         )
+    #     if new_user is not None:
+    #         if new_user.is_active:
+    #             login(request, new_user)
+    #     return HttpResponse(serializer.data)
+    #
+    # def get_permissions(self):
+    #     return (AllowAny() if self.request.method == 'POST'
+    #             else IsStaffOrTargetUser()),
+
+
+# class UserView(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#     model = User
+
+
 
 
 class SystemViewSet(viewsets.ModelViewSet):

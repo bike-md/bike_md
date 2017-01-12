@@ -84,6 +84,7 @@ function postSolution(){
 }
 $("#newSolutionSubmit").click(postSolution)
 
+
 function postVote(id, value){
     var user = $("#userId").val()
     var voteValue = value

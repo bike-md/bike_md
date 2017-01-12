@@ -2,6 +2,7 @@ from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
 from .models import Model, Problem_Model, Commit
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from django.contrib.auth import login
 
 
 class SystemSerializer(serializers.ModelSerializer):
@@ -9,25 +10,13 @@ class SystemSerializer(serializers.ModelSerializer):
     class Meta:
         model = System
         fields = ['id', 'name', 'url']
-        
+
 
 class UserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
-
-    def create(self, validated_data):
-        user = User.objects.create(
-            username=validated_data['username'],
-            email=validated_data['email']
-            )
-        user.set_password(validated_data['password'])
-        user.save()
-        return user
 
     class Meta:
         model = User
-        fields = ['id', 'password', 'email', 'username']
-        read_only_fields = ['is_staff', 'is_superuser', 'is_active',
-                            'date_joined',]
+        fields = ['id', 'username', 'password', 'email', 'url']
 
 
 class TechGetSerializer(serializers.ModelSerializer):
@@ -106,9 +95,6 @@ class RatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
         fields = "__all__"
-
-
-
 
 
 class BrandSerializer(serializers.ModelSerializer):

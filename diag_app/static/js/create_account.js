@@ -29,7 +29,7 @@ $.ajaxSetup({
 });
 
 
-function createUser(){
+function createUser(e){
     var userName = $("#newUsername").val()
     var userPassword = $("#userPassword").val()
     var emailAddress = $("#emailAddress").val()
@@ -43,14 +43,18 @@ function createUser(){
         type: 'POST',
         data: context
     }).done(function(results){
-        createTech(results.id)
-        linkLogin()
+        // event.preventDefault(e);
+        console.log(results)
+        // createTech(results.id)
+        // linkLogin()
+        // alert("Hi Mom")
     })
 }
-$("#createAccount").click(createUser)
+// $("#createAccount").click(createUser)
 
 
 function createTech(id){
+    console.log("hi")
     var yrsExperience = $("#yrsExperience").val()
     var jobTitle = $("#jobTitle").val()
     var currentShop = $("#currentShop").val()
@@ -66,7 +70,7 @@ function createTech(id){
         type: 'POST',
         data: context
     }).done(function(results){
-        linkLogin()
+        // linkLogin()
     })
 }
 
