@@ -192,14 +192,15 @@
         </script>
         <!-- end modal scripts -->
 
+<div class="problem_list-body">
         <script id="problem-list-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 <h1 class="problem-title">{{system.name}} Problem List:</h1>
                 {{#each problem}}
                     <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
-                    <h2 class="problem-date">{{{formatTime posted}}}</h2>
-                    <h2 class="problem-poster">{{tech.user.username}}</h2>
+                    <h2 class="date-time">{{{formatTime posted}}}</h2>
+                    <h2 class="posted-by">{{tech.user.username}}</h2>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -213,6 +214,7 @@
             </article>
         </script>
 
+<.div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>

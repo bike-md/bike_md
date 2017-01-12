@@ -107,6 +107,7 @@ hr {
     transition: .5s;
      .diag-select-text{
        color:white;
+
      }
   }
 }
@@ -119,7 +120,8 @@ hr {
     text-align: center;
     margin-top: -20px;
     // margin-bottom: 40px;
-    background-color:rgba($darkteal, .9)
+    background-color:rgba($darkteal, .9);
+    padding: 1%;
   }
 
 .progression  {

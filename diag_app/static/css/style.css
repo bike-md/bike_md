@@ -471,7 +471,8 @@ hr {
   color: white;
   text-align: center;
   margin-top: -20px;
-  background-color: rgba(135, 176, 170, 0.9); }
+  background-color: rgba(135, 176, 170, 0.9);
+  padding: 1%; }
 
 .progression {
   width: 100%;
