@@ -133,6 +133,8 @@ hr {
       // margin: 0 auto;
       position: relative;
           width: 100%;
+          display: inline;
+
  }
 
 .stepscircles {
@@ -144,6 +146,8 @@ hr {
   float: right;
   margin-right: 7%;
   margin-top: -3.1%;
+  display: inline;
+
 }
 
 .stepscircles:hover {
@@ -157,6 +161,7 @@ margin: 0px;
 @include regularfont;
 color: $darkteal;
 transition: .5s;
+margin-left: 1%;
 }
 .step-number:hover {
   color: $charcoal;
