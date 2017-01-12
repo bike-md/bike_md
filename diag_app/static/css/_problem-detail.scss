@@ -33,6 +33,15 @@
     margin-top:2%;
   }
 
+  .sol-header, .sol-name{
+    @include regularfont;
+    color:white;
+    background-color:$teal;
+    text-align:center;
+    margin:0;
+    margin-top:2%;
+  }
+
   .prob-header{
     margin-top:0;
   }
