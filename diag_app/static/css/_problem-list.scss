@@ -1,4 +1,34 @@
-.bikedetailsbody{
-  background-image:url("static/images/bikedetails-background.jpg");
-  background-size:cover;
-}
+@import "variables";
+@import "mixins";
+
+  .problem-list-box {
+    display:block;
+    width:80%;
+        background-image: url("../images/register-page-background-image.png");
+    background-size: auto;
+    height: 550px;
+    margin:0 auto;
+  }
+
+  .details-main-title h1{
+    @include mediumfont;
+    color: white;
+
+    b {
+      color: $darkteal;
+      @include mediumfont;
+      text-decoration: underline;
+    }
+    b:hover {
+      color: $golden;
+    }
+  }
+
+  .problem-title {
+    @include smallregularfont;
+    color: $charcoal;
+    h2 {
+      @include smallregularfont;
+      color: $golden;
+    }
+  }

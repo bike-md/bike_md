@@ -12,12 +12,14 @@
     <title>Problem Detail</title>
   </head>
 
+
   <body class ="prob-detailbody">
     <input id="userId" type="hidden" name="user_id" value="{{request.user.id}}">
     <header>
       <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
       <nav class ="templatenav">
+
 
         <!-- search -->
         <ul>
@@ -35,6 +37,7 @@
             </li>
         </ul>
 
+
         <!-- search modal -->
         <div class ="search-modal-container">
           <div class="remodal" data-remodal-id="searchModal">
@@ -44,6 +47,7 @@
 
           </div>
         </div>
+
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -75,6 +79,7 @@
           </div>
         </div>
 
+
         <!-- answer questions -->
         <div class ="answermodal-container">
           <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Unsolved Problems</a></li>
@@ -87,6 +92,7 @@
           </div>
         </div>
 
+
         <!-- my account -->
           <li><a class ="link3" href ="#">MY Account</a>
             <ul class ="dropdown">
@@ -98,7 +104,6 @@
           </ul>
       </nav>
     </header>
-
 
 
     <div class="prob-form-background">
@@ -136,7 +141,7 @@
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
 
-    <!-- modal scripts     -->
+<!-- modal scripts     -->
 
     <!-- search modal -->
     <script id="search-problem-template" type="text/x-handlebars-template">
@@ -226,11 +231,13 @@
             <input id="problemId" type="hidden" name="problem_id" value="{{id}}">
                 <h2 class="prob-title">{{title}}</h2>
                 <h5 class="posted-by">{{tech.user.username}}</h5>
+                <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
                 <h5 class="date-time"><i>{{{formatTime posted}}}</i></h5>
                 <h5 class="question-text">{{description}}</h5>
             {% endverbatim %}
         </article>
     </script>
+
 
     <script id="solution-template" type="text/x-handlebars-template">
         <article class="post-container">

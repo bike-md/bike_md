@@ -472,7 +472,8 @@ hr {
   color: white;
   text-align: center;
   margin-top: -20px;
-  background-color: rgba(135, 176, 170, 0.9); }
+  background-color: rgba(135, 176, 170, 0.9);
+  padding: 1%; }
 
 .progression {
   margin-top: -1%;
@@ -837,6 +838,43 @@ hr {
   .exitbutton a:hover {
     color: #a8bdba;
     background-color: #313237; }
+
+.problem-list-box {
+  display: block;
+  width: 80%;
+  background-image: url("../images/register-page-background-image.png");
+  background-size: auto;
+  height: 550px;
+  margin: 0 auto; }
+
+.details-main-title h1 {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white; }
+  .details-main-title h1 b {
+    color: #87b0aa;
+    font-size: 2rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-decoration: underline; }
+  .details-main-title h1 b:hover {
+    color: #ba973a; }
+
+.problem-title {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237; }
+  .problem-title h2 {
+    font-size: 1.2rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #ba973a; }
 
 body {
   margin: 0;
