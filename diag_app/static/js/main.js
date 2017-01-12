@@ -194,6 +194,7 @@ function postProblem(){
         model: bike,
         title: header,
     }
+    console.log(context)
     $.ajax({
         url: '/api/post-problems/',
         type: 'POST',
