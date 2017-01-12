@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 
 
 router = routers.DefaultRouter()
-router.register(r'accounts', views.UserViewSet)
+router.register(r'accounts', views.UserView, 'list')
 router.register(r'systems', views.SystemViewSet)
 router.register(r'brands', views.BrandViewSet)
 router.register(r'models', views.ModelViewSet)

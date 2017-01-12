@@ -21,13 +21,34 @@ from .permissions import IsStaffOrTargetUser
 
 
 def create_account(request):
-    # if user is not None and request.POST:
-    #     user = authenticate(user_name=request.get('username'),
-    #                         password=request.get('password'))
-    #     login(request, user)
-    #     serializer = UserSerializer(user)
-    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
     return render(request, 'create_account.html')
+
+# def create_account(request):
+#     # if request.method == 'GET':
+#     #     user_form = UserForm()
+#     #     tech_form = TechForm()
+#     if request.method == "POST":
+#         user = User.objects.create(
+#             username=validated_data['username'],
+#             email=validated_data['email'],
+#             )
+#         user.set_password(validated_data['password'])
+#         user.save(commit=False)
+#         tech = Tech.objects.create(
+#            experience=validated_data['experience'],
+#            job_title=validated_data['job_title'],
+#            shop=validated_data['shop'],
+#            )
+#         tech.user = user
+#         print(tech)
+#         tech.save()
+#         user.save()
+#         print(user)
+#         print(tech)
+#         user = authenticate(username=user.username, password=password)
+#         login(request, user)
+#         return HttpResponseRedirect('/diag_app')
+#     return render(request, 'create_account.html')
 
 
 def login_user(request):
@@ -70,34 +91,33 @@ def profile(request):
 
 
 # class viewsets and filters
-class UserViewSet(viewsets.ModelViewSet):
+class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    model = User
 
-    # def create(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     self.perform_create(serializer)
-    #     headers = self.get_success_headers(serializer.data)
-    #     new_user = authenticate(email=request.POST.get('email'),
-    #         password=request.POST.get('password'),
-    #         )
-    #     if new_user is not None:
-    #         if new_user.is_active:
-    #             login(request, new_user)
-    #     return HttpResponse(serializer.data)
-    #
-    # def get_permissions(self):
-    #     return (AllowAny() if self.request.method == 'POST'
-    #             else IsStaffOrTargetUser()),
+    def get_permissions(self):
+        return (AllowAny() if self.request.method == 'POST'
+                else IsStaffOrTargetUser()),
 
 
 # class UserView(viewsets.ModelViewSet):
 #     queryset = User.objects.all()
 #     serializer_class = UserSerializer
 #     model = User
-
-
+# def create(self, request, *args, **kwargs):
+#     serializer = self.get_serializer(data=request.data)
+#     serializer.is_valid(raise_exception=True)
+#     self.perform_create(serializer)
+#     headers = self.get_success_headers(serializer.data)
+#     new_user = authenticate(email=request.POST.get('email'),
+#         password=request.POST.get('password'),
+#         )
+#     if new_user is not None:
+#         if new_user.is_active:
+#             login(request, new_user)
+#     return HttpResponse(serializer.data)
+#
 
 
 class SystemViewSet(viewsets.ModelViewSet):
