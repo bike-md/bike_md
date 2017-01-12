@@ -1,14 +1,17 @@
 @import "variables";
 @import "mixins";
 
+
   .problem-list-box {
     display:block;
     width:80%;
-        background-image: url("../images/register-page-background-image.png");
+    background-color: white;
     background-size: auto;
-    height: 550px;
+    height: 400px;
     margin:0 auto;
-  }
+    overflow: scroll;
+   }
+
 
   .details-main-title h1{
     @include mediumfont;
@@ -24,11 +27,47 @@
     }
   }
 
-  .problem-title {
+  h2.problem-title b{
     @include smallregularfont;
     color: $charcoal;
-    h2 {
-      @include smallregularfont;
-      color: $golden;
-    }
+    font-weight: 400;
   }
+
+  h1.problem-title {
+    @include smallregularfont;
+    color: $charcoal;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  h2.date-time {
+    @include smallfont;
+    color: $charcoal;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+h2.posted-by {
+  @include smallfont;
+  color: $charcoal;
+  font-weight: 400;
+  text-decoration: none;
+  padding-top: 0;
+}
+
+h2.date-time, h2.posted-by {
+  display: inline;
+}
+
+.problem-container {
+  background-color: $darkteal;
+  border: 2px $golden solid;
+  padding-left: 2%;
+}
+
+.problem-container:hover {
+  background-color: $golden;
+  border: 2px $darkteal solid;
+
+}

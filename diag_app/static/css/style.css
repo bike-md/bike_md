@@ -383,6 +383,7 @@ input:-webkit-autofill {
 .mainbody {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bikedetails-background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 0; }
 
 .diag-main-title {
@@ -840,10 +841,11 @@ hr {
 .problem-list-box {
   display: block;
   width: 80%;
-  background-image: url("../images/register-page-background-image.png");
+  background-color: white;
   background-size: auto;
-  height: 550px;
-  margin: 0 auto; }
+  height: 400px;
+  margin: 0 auto;
+  overflow: scroll; }
 
 .details-main-title h1 {
   font-size: 2rem;
@@ -861,18 +863,54 @@ hr {
   .details-main-title h1 b:hover {
     color: #ba973a; }
 
-.problem-title {
+h2.problem-title b {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal;
-  color: #313237; }
-  .problem-title h2 {
-    font-size: 1.2rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #ba973a; }
+  color: #313237;
+  font-weight: 400; }
+
+h1.problem-title {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center; }
+
+h2.date-time {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none; }
+
+h2.posted-by {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none;
+  padding-top: 0; }
+
+h2.date-time, h2.posted-by {
+  display: inline; }
+
+.problem-container {
+  background-color: #87b0aa;
+  border: 2px #ba973a solid;
+  padding-left: 2%; }
+
+.problem-container:hover {
+  background-color: #ba973a;
+  border: 2px #87b0aa solid; }
 
 body {
   margin: 0;

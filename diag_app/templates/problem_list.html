@@ -201,9 +201,11 @@
                 {%verbatim%}
                 <h1 class="problem-title">{{system.name}} Problem List:</h1>
                 {{#each problem}}
+                <div class="problem-container">
                     <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
                     <h2 class="date-time">{{{formatTime posted}}}</h2>
                     <h2 class="posted-by">{{tech.user.username}}</h2>
+                </div>
                 {{/each}}
                 {% endverbatim %}
             </article>
