@@ -9,16 +9,6 @@
 }
 
 
-
-// diagnose title
-.diag-main-title {
-  @include mediumfont;
-  font-weight:500;
-  color:white;
-  text-align:left;
-  margin-left: 10%;
-}
-
 hr {
   margin-left: 10%;
   margin-right: 10%;
@@ -50,17 +40,6 @@ hr {
   position:relative;
   margin-left: 10%;
   margin-right: 10%;
-
-
-  .diag-select-title{
-    @include mediumfont;
-    font-weight:400;
-    color:white;
-    text-align:center;
-    margin-top:1;
-    margin-bottom: 0;
-
-  }
 
   .diag-select-box{
     background-color:white;
