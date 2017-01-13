@@ -262,10 +262,10 @@
                 <h5 class="solution-time">Time: <span class ="timecost-value">{{this.time_required}} hrs.</span></h5>
                 <h5 class="solution-cost">Cost: <span class ="timecost-value">${{this.parts_cost}}</span></h5>
                 <h5 class="solution-text">{{this.description}}</h5>
-                <button class="up-vote" type="submit" onclick="validateVote({{id}}, 1)">
-                <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-                <button class="down-vote" type="submit" onclick="validateVote({{id}}, -1)">
-                <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                <button class="up-vote vote" type="submit" onclick="validateVote({{id}}, 1)">
+                <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></button>
+                <button class="down-vote vote" type="submit" onclick="validateVote({{id}}, -1)">
+                <i class="fa fa-arrow-down arrow" aria-hidden="true"></i></button>
                 <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
 
             </div>

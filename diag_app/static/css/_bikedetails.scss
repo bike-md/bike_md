@@ -3,7 +3,7 @@
 
 
 .bikedetailsbody{
-  background: 
+  background:
   url("../images/bikedetails-background.jpg");
   background-size:cover;
   margin:0;
@@ -25,18 +25,13 @@
 // }
 
 .background-white {
-  background-color:rgba(#cab298, .25);
   height:auto;
-  max-width: 80%;
+  width: 80%;
   padding:1% 3% 3% 3%;
   box-sizing:border-box;
-  margin-left: 10%;
-  margin-right: 10%;
-  // background-color:rgba(white, .9);
-  // margin:0;
-  // height: 360px;
-  // padding-top: 3%;
+  margin: 0 10%;
 }
+
 .details-main-title{
   @include mediumfont;
   font-weight:500;
@@ -49,22 +44,18 @@ hr {
   margin-left: 10%;
   margin-right: 10%;
 }
-  .details-main-title {
-    margin-top: 2%;
-    margin-bottom: 0%;
-  }
-
-  // h4 {
-  //   margin-top: 0%;
-  //   margin-bottom: 0%;
-  //   color: $teal;
-  // }
+  
 .specs{
   @include regularfont;
-  color:white;
-  font-weight:200;
   text-align:center;
-  background-color: $golden;
+  // background-color: $golden;
+}
+
+.bikedetailsline{
+  @include regularfont;
+  text-align:center;
+  color:white;
+  font-weight:500;
 }
 
 .bikedetailsline {
@@ -101,15 +92,12 @@ hr {
           width:170px;
           margin:0 3%;
           display:inline-block;
-          background-color:rgba(white, .8);
+          background-color:rgba(white, .9);
           border-radius:100%;
           padding-top:7.5%;
           box-sizing:border-box;
         }
       }
-
-
-
 
     .sys:hover{
       color:white;

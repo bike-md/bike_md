@@ -55,8 +55,8 @@
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
 
-                <h4 class ="modaltext">Enter a title for your post:</h4>
-                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
+                <h4 class ="modaltext-1">Enter a title for your post:</h4>
+                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
                 <h4 class ="modaltext">Choose Bike:</h4>
                     <p>Brand: <div id="brandSelect" class ="systems-dropdown"></div></p>
                     <p>Year: <div id="yearSelect" class ="systems-dropdown"></div></p>
@@ -89,7 +89,7 @@
         </div>
 
         <!-- my account -->
-          <li><a class ="link3" href ="#">MY Account</a>
+          <li><a class ="link3" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
               <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
@@ -100,7 +100,7 @@
       </nav>
     </header>
 
-        <h1 class ="diag-main-title">Diagnose a problem</h1>
+        <h1 class ="page-title">Diagnose a problem</h1>
 
 <hr>
 
@@ -121,7 +121,9 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                    <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+                  <div class="problem-container">
+                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  </div>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -141,7 +143,9 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                    <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+                  <div class="problem-container">
+                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  </div>
                 {{/each}}
                 {% endverbatim %}
             </article>

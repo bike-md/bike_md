@@ -97,6 +97,17 @@
     box-sizing:border-box;
   }
 
+  .arrow{
+    color:white;
+    cursor:pointer;
+  }
+
+  .vote{
+    border:0;
+    border-radius:100%;
+    background-color:$charcoal;
+  }
+
   .timecost-input{
     display:block;
     margin:0 auto;

@@ -90,7 +90,7 @@
         </div>
 
         <!-- my account -->
-          <li><a class ="link3" href ="#">MY Account</a>
+          <li><a class ="link3" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
               <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
@@ -100,7 +100,7 @@
       </nav>
     </header>
 
-    <div><h1 class="details-main-title" id="model"></h1></div>
+    <h1 class="page-title" id="model"></h1>
 
 <hr>
 <!---Containter, start styling here--->
@@ -207,13 +207,14 @@
         <script id="problem-list-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                <h1 class="problem-title">{{system.name}} Problem List:</h1>
+                <h1 class="problem-header">{{system.name}} Problem List:</h1>
                 {{#each problem}}
-                <a href="/diag_app/problem_detail/{{this.id}}">
+                <a href='/diag_app/problem_detail/{{this.id}}'>
                     <div class="problem-container">
-                        <h2 class="problem-title">{{this.title}}</h2>
-                        <h2 class="date-time">{{{formatTime posted}}}</h2>
-                        <h2 class="posted-by">{{tech.user.username}}</h2>
+                        <h5 class="problem-title">{{{this.title}}}</h2>
+                        <h5 class="posted-by">{{tech.user.username}}</h2>
+                        <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
+                        <h5 class="date-time"><i>{{{formatTime posted}}}</i></h2>
                     </div>
                 </a>
                 {{/each}}
@@ -225,7 +226,7 @@
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
-                    <h1 class="">{{brand.name}} {{{linkURLModel this}}}</h1>
+                    <h1 class="page-title">{{brand.name}} {{{linkURLModel this}}}</h1>
                 {% endverbatim %}
             </article>
         </script>
