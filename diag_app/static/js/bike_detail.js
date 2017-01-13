@@ -41,7 +41,9 @@ currentURL()
 // get bike details
 function showBike(url){
     var id = url.split('/')
-    id = id[5]
+    console.log(id)
+    id = id[4]
+    console.log(id)
     var url = '/api/models/' + id
     $.ajax({
         url: url,
@@ -90,7 +92,7 @@ function loadSystemModals(name){
 Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/problem_detail/' + id
+    url = '/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 

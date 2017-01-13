@@ -13,7 +13,7 @@
 
   <body class="bikedetailsbody">
     <header>
-      <a href="/diag_app/"><img class="templatelogo" src="{% static 'images/logo-template.png' %}"></a></li>
+      <a href="/"><img class="templatelogo" src="{% static 'images/logo-template.png' %}"></a></li>
 
 
 
@@ -209,7 +209,7 @@
                 {%verbatim%}
                 <h1 class="problem-header">{{system.name}} Problem List:</h1>
                 {{#each problem}}
-                <a href='/diag_app/problem_detail/{{this.id}}'>
+                <a href='/problem_detail/{{this.id}}'>
                     <div class="problem-container">
                         <h5 class="problem-title">{{{this.title}}}</h2>
                         <h5 class="posted-by">{{tech.user.username}}</h2>

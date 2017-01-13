@@ -40,8 +40,8 @@ currentURL()
 
 function getProblems(url){
     var id = url.split('/')
-    var model = id[5]
-    var id = id[6]
+    var model = id[4]
+    var id = id[5]
     var url = '/api/get-problems?system=' + id + '&model=' + model
     $.ajax({
         url: url,
@@ -105,7 +105,7 @@ Handlebars.registerHelper('formatTime', function (posted) {
 Handlebars.registerHelper('linkURLProblem', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/problem_detail/' + id
+    url = '/problem_detail/' + id
     return '<a href="' +  url + '">' + title + '</a>'
 })
 
@@ -113,7 +113,7 @@ Handlebars.registerHelper('linkURLModel', function (object){
     console.log(object)
     id = Handlebars.Utils.escapeExpression(object.id)
     name = Handlebars.Utils.escapeExpression(object.name)
-    url = '/diag_app/model_detail/' + id
+    url = '/model_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + name + '</b>' + '</a>'
 })
 

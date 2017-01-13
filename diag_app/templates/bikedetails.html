@@ -13,7 +13,7 @@
 
   <body class ="bikedetailsbody">
     <header>
-      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
+      <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
       <nav class ="templatenav">
 
@@ -222,7 +222,7 @@
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                    <a href="/diag_app/problem_list/{{model}}/{{system.id}}">
+                    <a href="/problem_list/{{model}}/{{system.id}}">
                         <div class="sys">{{system.name}}</div>
                     </a>
                 {{/each}}

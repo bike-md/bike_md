@@ -39,7 +39,7 @@ currentURL()
 
 function showProblem(url){
     var id = url.split('/')
-    id = id[5]
+    id = id[4]
     var url = '/api/get-problems/' + id
     $.ajax({
         url: url,
@@ -125,7 +125,6 @@ function validateVote(solutionId, value){
             }
         }
         if(voted.length > 0){
-            console.log("You've already voted for that one!")
             alert("You've already voted for that one!")
         }else{
             postVote(solutionId, value)
@@ -159,7 +158,6 @@ function updateScore(id, voteValue){
         type: 'GET',
     }).done(function(results){
         var tech = results.tech.id
-        console.log(tech)
         updateRating(tech, voteValue)
         var currentScore = results.score
         var newScore = currentScore + voteValue
@@ -193,7 +191,6 @@ function updateRating(tech, voteValue){
             type: 'PATCH',
             data: context,
         }).done(function(results){
-            console.log(results)
         })
 
     })
@@ -338,7 +335,6 @@ function loadUnsolvedProblemsModal(){
         type: 'GET',
     }).done(function(results){
         var problems = results.results
-        console.log(problems)
         var source = $('#unsolved-problem-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
@@ -348,11 +344,11 @@ function loadUnsolvedProblemsModal(){
 }
 $("#answer").click(loadUnsolvedProblemsModal)
 
+
 Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/problem_detail/' + id
-    console.log(url)
+    url = '/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 

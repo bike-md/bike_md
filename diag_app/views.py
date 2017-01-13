@@ -58,7 +58,7 @@ def login_user(request):
         password = request.POST['password'])
         if user is not None and user.is_active and form.is_valid():
             login(request, user)
-            return HttpResponseRedirect('/diag_app/')
+            return HttpResponseRedirect('/')
         else:
             return render(request, 'registration/login.html',{
                 'login_message' : 'Enter the username and password correctly',})
