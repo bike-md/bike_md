@@ -593,7 +593,6 @@ hr {
 .prob-form-background {
   height: auto;
   width: 70%;
-  background-color: rgba(255, 255, 255, 0.25);
   margin: 0 auto;
   margin-top: 60px;
   padding: 2%; }
@@ -611,7 +610,7 @@ hr {
     background-color: #313237;
     color: white;
     text-align: left;
-    padding-left: 3%; }
+    padding-left: 2%; }
   .prob-form-background .prob-header, .prob-form-background .sol-header {
     font-size: 3rem;
     font-family: gill sans;
@@ -648,17 +647,12 @@ hr {
     text-align: center; }
   .prob-form-background .form-text {
     text-align: center; }
-  .prob-form-background .prob-box, .prob-form-background .sol-box {
+  .prob-form-background .prob-box, .prob-form-background .sol-box, .prob-form-background .sol-form-container {
     height: auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 0 auto;
     padding: 2%;
     box-sizing: border-box; }
-  .prob-form-background .prob-form-container {
-    background-color: white;
-    height: auto;
-    margin: 0 auto;
-    padding: 2%; }
   .prob-form-background .timecost-input {
     display: block;
     margin: 0 auto;
