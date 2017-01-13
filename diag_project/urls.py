@@ -23,7 +23,7 @@ router.register(r'ratings', views.RatingViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
-    url(r'^diag_app/', include('diag_app.urls')),
+    url(r'^', include('diag_app.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', views.login_user, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': 'login'},

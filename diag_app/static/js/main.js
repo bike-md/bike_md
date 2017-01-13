@@ -88,7 +88,6 @@ function showModels(year){
             brand: brandID,
             bikes: bikeList
         }
-        console.log(context)
         var source = $('#model-template').html()
         var template = Handlebars.compile(source)
         var html = template(context)
@@ -100,7 +99,7 @@ function showModels(year){
 
 // link to specific model detail page
 function linkBike (id){
-    url = '/diag_app/model_detail/' + id
+    url = '/model_detail/' + id
     window.location = url;
 }
 
@@ -138,10 +137,14 @@ function loadYearsAskModal(id){
                 years.push(bike[i].year)
             }
         }
+        console.log(years)
+        years.sort(function(a, b){return b-a})
+        console.log(years)
         var source = $('#year-modal-template').html()
         var template = Handlebars.compile(source)
         var html = template(years)
         $('#yearSelect').append(html)
+        loadModelsAskModal()
     })
 }
 
@@ -179,6 +182,17 @@ function loadSystemsAskModal(){
 }
 $("#ask").click(loadSystemsAskModal)
 
+
+function charRemainingText(){
+    $('#probText').keyup(function () {
+        var left = 1000 - $(this).val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text('Characters left: ' + left);
+    })
+}
+charRemainingText()
 
 // post new problem modal
 function postProblem(){
@@ -225,7 +239,7 @@ $("#answer").click(loadUnsolvedProblemsModal)
 Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/problem_detail/' + id
+    url = '/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 
@@ -238,12 +252,25 @@ function searchProblems(){
         type: 'GET'
     }).done(function(results){
         var problems = results.results
-        var source = $('#search-problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#searchProblemList').empty()
-        $('#searchProblemList').append(html)
-
+        var length = problems.length
+        var message = '<h5>' + "There are no problems that match your search. Add one" +
+            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var noResults = {
+            message: message,
+        }
+        if (length == 0){
+            var source = $('#search-problem-template-two').html()
+            var template = Handlebars.compile(source)
+            var html = template(noResults)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }else{
+            var source = $('#search-problem-template').html()
+            var template = Handlebars.compile(source)
+            var html = template(problems)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }
     })
 }
 $("#searchButton").click(searchProblems)

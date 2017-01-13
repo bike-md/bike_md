@@ -41,7 +41,9 @@ currentURL()
 // get bike details
 function showBike(url){
     var id = url.split('/')
-    id = id[5]
+    console.log(id)
+    id = id[4]
+    console.log(id)
     var url = '/api/models/' + id
     $.ajax({
         url: url,
@@ -90,7 +92,7 @@ function loadSystemModals(name){
 Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/diag_app/problem_detail/' + id
+    url = '/problem_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 
@@ -171,6 +173,18 @@ function loadSystemsAskModal(){
 $("#ask").click(loadSystemsAskModal)
 
 
+function charRemainingText(){
+    $('#probText').keyup(function () {
+        var left = 1000 - $(this).val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text('Characters left: ' + left);
+    })
+}
+charRemainingText()
+
+
 // post new problem modal
 function postProblem(){
     var bike =  $("#probModel option:selected").val()
@@ -221,14 +235,26 @@ function searchProblems(){
         url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
-        console.log(results)
         var problems = results.results
-        var source = $('#search-problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#searchProblemList').empty()
-        $('#searchProblemList').append(html)
-
+        var length = problems.length
+        var message = '<h5>' + "There are no problems that match your search. Add one" +
+            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var noResults = {
+            message: message,
+        }
+        if (length == 0){
+            var source = $('#search-problem-template-two').html()
+            var template = Handlebars.compile(source)
+            var html = template(noResults)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }else{
+            var source = $('#search-problem-template').html()
+            var template = Handlebars.compile(source)
+            var html = template(problems)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }
     })
 }
 $("#searchButton").click(searchProblems)

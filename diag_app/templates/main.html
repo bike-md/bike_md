@@ -14,7 +14,7 @@
   <body class ="mainbody">
 
     <header>
-      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
+      <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
       <nav class ="templatenav">
 
@@ -36,12 +36,12 @@
 
         <!-- search modal -->
         <div class ="search-modal-container">
-          <div class="remodal" data-remodal-id="searchModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="remodal" data-remodal-id="searchModal">
+                <button data-remodal-action="close" class="remodal-close"></button>
 
-            <div id="searchProblemList" class="search-problem-list"></div>
+                <div id="searchProblemList" class="search-problem-list"></div>
 
-          </div>
+            </div>
         </div>
 
         <!-- ask questions -->
@@ -58,13 +58,15 @@
                 <h4 class ="modaltext-1">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
                 <h4 class ="modaltext">Choose Bike:</h4>
-                    <div id="brandSelect" class ="systems-dropdown"></div>
-                    <div id="yearSelect" class ="systems-dropdown"></div>
-                    <div id="modelSelect" class ="systems-dropdown"></div>
+                    <p>Brand: <div id="brandSelect" class="systems-dropdown"></div></p>
+                    <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
+                    <p>Model: <div id="modelSelect" class="systems-dropdown"></div></p>
                 <h4 class ="modaltext">Choose System:</h4>
                     <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
+
                 <h4 class ="modaltext">Describe your problem:</h4>
+                <p class="counter" id="counter"></p>
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
@@ -87,7 +89,7 @@
         </div>
 
         <!-- my account -->
-          <li><a class ="link3" href ="#">MY Account</a>
+          <li><a class ="link3" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
               <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
@@ -127,6 +129,15 @@
             </article>
         </script>
 
+        <script id="search-problem-template-two" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                    {{{message}}}
+                {% endverbatim %}
+            </article>
+        </script>
+
+
         <!-- answer modal -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -146,7 +157,7 @@
             <article class="post-container">
                 <select onchange="loadYearsAskModal(value)" id="probBrand">
                     {% verbatim %}
-                    <option value="none"></option>
+                    <option value="none">Select One</option>
                     {{#each .}}
                     <option  value="{{this.id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                     {{/each}}
@@ -160,7 +171,7 @@
             <article class="post-container">
                 <select onchange="loadModelsAskModal(value)" id="probYear">
                     {% verbatim %}
-                    <option value="none"></option>
+                    <option value="none">Select One</option>
                     {{#each .}}
                         <option value="{{this}}"{{#selected}}selected="selected"{{/selected}}>{{this}}</option>
                     {{/each}}
@@ -174,7 +185,7 @@
             <article class="post-container">
                 <select id="probModel">
                     {% verbatim %}
-                    <option value="none"></option>
+                    <option value="none">Select One</option>
                     {{#each .}}
                         <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                     {{/each}}
@@ -202,12 +213,10 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
-                    <div class="progression">
                         <div class="stepscircles">
                             <h5 id="currentStep" class="step-number">1</h5>
                             </div>
                         </a>
-                    </div>
                 </h3>
                     {{#each .}}
                   <a onclick="showYears({{this.id}})">
@@ -224,7 +233,6 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select year
-                    <div class="progression">
                         <a onclick="showBrands()">
                             <div class="stepscircles">
                                 <h5 class="step-number">1</h5>
@@ -235,7 +243,6 @@
                                 <h5 id="currentStep" class="step-number">2</h5>
                             </div>
                         </a>
-                    </div>
                 </h3>
                 <input id="brandId" type="hidden" name="brand" value="{{this.brandId}}">
                     {{#each this.modelYears}}
@@ -253,7 +260,6 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select model
-                    <div class="progression">
                         <a onclick="showBrands()">
                             <div class="stepscircles">
                                 <h5 class="step-number">1</h5>
@@ -265,8 +271,6 @@
                             </div>
                         </a>
                         <div id="currentStep" class="stepscircles"><h5 class="step-number">3</h5></div>
-
-                    </div>
                 </h3>
                 {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">

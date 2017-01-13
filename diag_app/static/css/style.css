@@ -306,6 +306,7 @@ input:-webkit-autofill {
   margin: 0;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   font-weight: normal;
   color: #709c97;
   padding: .3%; }
@@ -316,6 +317,7 @@ input:-webkit-autofill {
   margin-right: 5%;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   font-weight: normal; }
 
 .register-form-submit-button {
@@ -323,6 +325,7 @@ input:-webkit-autofill {
   border: none;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   font-weight: normal;
   color: white;
   float: left;
@@ -364,6 +367,7 @@ input:-webkit-autofill {
   box-sizing: border-box;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   float: right;
   text-align: right;
   margin-right: 1%;
@@ -415,6 +419,7 @@ hr {
       color: #709c97;
       font-size: 1rem;
       font-family: gill sans;
+      text-transform: uppercase;
       color: #ba973a;
       margin-top: 5%; }
     .outer-box .diag-select-box .modaltext:hover {
@@ -450,10 +455,6 @@ hr {
   background-color: rgba(135, 176, 170, 0.9);
   padding: 1%; }
 
-.progression {
-  margin-top: -1%;
-  margin-left: 46%; }
-
 .stepscircles {
   display: inline-block;
   height: 20px;
@@ -465,6 +466,7 @@ hr {
   margin: 0px;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #87b0aa;
   transition: .5s;
   margin-left: 1%; }
@@ -522,18 +524,22 @@ hr {
   text-transform: uppercase;
   color: white; }
 
+.systems-background {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 2% 0;
+  margin: 0 10%; }
+
 .systems {
-  position: relative;
-  top: 20px; }
+  text-align: center; }
   .systems a {
     text-align: center;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: gill sans;
     text-transform: uppercase;
-    color: #87b0aa;
+    color: #313237;
     margin: 0; }
-    .systems a .sys {
+    .systems a .circle {
       height: 170px;
       width: 170px;
       margin: 0 3%;
@@ -542,18 +548,38 @@ hr {
       border-radius: 100%;
       padding-top: 7.5%;
       box-sizing: border-box; }
-  .systems .sys:hover {
+  .systems .circle:hover {
     color: white;
-    background-color: #ba973a;
+    background-color: #709c97;
     transform: rotate(360deg);
     transition: .5s; }
+
+.specs {
+  background-color: #313237;
+  margin: 0 10%;
+  padding: .5% 0; }
+
+.bikedetails {
+  color: white;
+  font-size: 1.5rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  text-transform: none;
+  font-weight: 300;
+  display: inline;
+  padding: 0 2%; }
+
+.brand, .year, .model {
+  color: #709c97;
+  font-weight: 100;
+  text-transform: none; }
 
 .bikedetails-footer {
   position: absolute;
   bottom: 0; }
 
 .prob-detailbody {
-  background-image: url("../images/bikedetails-background.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
   background-attachment: fixed;
   margin: 0; }
@@ -648,7 +674,8 @@ hr {
     border: 0px;
     height: 24px;
     font-size: 1rem;
-    font-family: gill sans; }
+    font-family: gill sans;
+    text-transform: uppercase; }
   .prob-form-background .solution-submit:hover {
     background-color: #ba973a;
     transition: .5s; }
@@ -709,6 +736,7 @@ hr {
   .profile-information-details p {
     font-size: 1rem;
     font-family: gill sans;
+    text-transform: uppercase;
     background-color: #ba973a;
     color: white;
     text-align: center;
@@ -726,12 +754,14 @@ hr {
 .modaltext {
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #313237;
   font-weight: 200; }
 
 .post-container {
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #313237;
   margin: 0; }
 
@@ -767,6 +797,7 @@ hr {
   .profile-questions-asked p {
     font-size: 1rem;
     font-family: gill sans;
+    text-transform: uppercase;
     background-color: #a8bdba;
     color: white;
     text-align: center;
@@ -785,6 +816,7 @@ hr {
   .profile-questions-answered p {
     font-size: 1rem;
     font-family: gill sans;
+    text-transform: uppercase;
     background-color: #a8bdba;
     color: white;
     text-align: center;
@@ -797,6 +829,7 @@ hr {
   box-sizing: border-box;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   float: right;
   text-align: right;
   margin-right: 15%;
@@ -814,7 +847,7 @@ h4.tech-rating {
   margin-top: 1%;
   margin-bottom: 1%; }
 
-.page-title {
+.problist-page-title {
   font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -822,10 +855,9 @@ h4.tech-rating {
   font-weight: 500;
   color: white;
   text-align: left;
-  margin-left: 10%;
   margin-bottom: 0; }
 
-.page-title a {
+.problist-page-title a {
   text-decoration: none;
   color: white; }
 
@@ -841,6 +873,7 @@ h4.tech-rating {
 .problem-title {
   font-size: 1.2rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #313237;
   font-weight: 400;
   text-decoration: none; }
@@ -849,6 +882,10 @@ h2, h5 {
   margin: 0; }
 
 .problem-header {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
   text-align: center;
   background-color: #313237;
   color: white;
@@ -857,6 +894,7 @@ h2, h5 {
 .problem-title {
   font-size: 1.2rem;
   font-family: gill sans;
+  text-transform: uppercase;
   font-weight: 400; }
   .problem-title a {
     text-decoration: none;
@@ -865,6 +903,7 @@ h2, h5 {
 .date-time {
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #313237;
   font-weight: 400;
   text-decoration: none; }
@@ -872,6 +911,7 @@ h2, h5 {
 .posted-by {
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   color: #313237;
   font-weight: 400;
   text-decoration: none;
@@ -930,6 +970,7 @@ header {
         color: white;
         font-size: 1.2rem;
         font-family: gill sans;
+        text-transform: uppercase;
         position: relative;
         text-align: right; }
       header .templatenav li a:after {
@@ -959,7 +1000,8 @@ header .templatenav .dropdown li {
 
 header .templatenav .dropdown li a {
   font-size: 1rem;
-  font-family: gill sans; }
+  font-family: gill sans;
+  text-transform: uppercase; }
 
 header .templatenav .dropdown li a:hover {
   color: #ba973a;
@@ -998,6 +1040,7 @@ input, textarea, keygen, select, button {
   height: 24px;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   margin-top: -1%; }
 
 #searchButton:hover {
@@ -1023,7 +1066,8 @@ input, textarea, keygen, select, button {
 
 .modaltext {
   font-size: 1rem;
-  font-family: gill sans; }
+  font-family: gill sans;
+  text-transform: uppercase; }
 
 .problemtitle-field {
   height: 30px;
@@ -1039,6 +1083,7 @@ input, textarea, keygen, select, button {
   border: 1px solid white;
   font-size: 1rem;
   font-family: gill sans;
+  text-transform: uppercase;
   padding: 2%;
   margin-top: 10px;
   box-sizing: border-box; }

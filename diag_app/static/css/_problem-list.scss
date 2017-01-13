@@ -2,19 +2,19 @@
 @import "mixins";
 
 
-.page-title{
+.problist-page-title{
   @include mediumfont;
   font-weight:500;
   color:white;
   text-align:left;
-  margin-left: 10%;
   margin-bottom:0;
 }
 
-.page-title a{
+.problist-page-title a{
   text-decoration:none;
   color:white;
 }
+
 
   .problem-list-box {
     display:block;
@@ -38,6 +38,7 @@
   }
 
   .problem-header{
+    @include mediumfont;
     text-align:center;
     background-color:$charcoal;
     color:white;

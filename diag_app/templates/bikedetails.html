@@ -13,7 +13,7 @@
 
   <body class ="bikedetailsbody">
     <header>
-      <a href ="/diag_app/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
+      <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
       <nav class ="templatenav">
 
@@ -33,15 +33,15 @@
               </li>
           </ul>
 
-        <!-- search modal -->
-        <div class ="search-modal-container">
-            <div class="remodal" data-remodal-id="searchModal">
-                <button data-remodal-action="close" class="remodal-close"></button>
+          <!-- search modal -->
+          <div class ="search-modal-container">
+              <div class="remodal" data-remodal-id="searchModal">
+                  <button data-remodal-action="close" class="remodal-close"></button>
 
-                <div id="searchProblemList" class="search-problem-list"></div>
+                  <div id="searchProblemList" class="search-problem-list"></div>
 
-            </div>
-        </div>
+              </div>
+          </div>
 
         <!-- ask questions -->
         <div class ="askmodal-container">
@@ -64,6 +64,7 @@
                     <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
                 <h4 class ="modaltext">Describe your problem:</h4>
+                <p class="counter" id="counter"></p>
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>
@@ -101,11 +102,11 @@
 
 <hr>
 
-    <!-- <section id="bikeSpecs" class ="specs"></section> -->
-
-      <div class="background-white">
-          <section id="bikeSpecs" class ="specs"></section>
-          <section id="system" class ="systems"></section>
+          <!-- circles -->
+      <section id="bikeSpecs" class="specs"></section>
+        <div class="systems-background">
+          <!-- circles -->
+      <section id="system" class ="systems"></section>
         </div>
 
     <footer class ="bikedetails-footer">
@@ -122,6 +123,14 @@
             {{#each .}}
                 <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
             {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
+    <script id="search-problem-template-two" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+                {{{message}}}
             {% endverbatim %}
         </article>
     </script>
@@ -200,9 +209,9 @@
         <article class="post-container">
             {%verbatim%}
             <input id="modelId" type="hidden" name="user_id" value="{{id}}">
-                <h4 class="bikedetailsline">Brand: {{brand.name}}</h4>
-                <h4 class="bikedetailsline">Year: {{year}}</h4>
-                <h4 id="{{id}}" class="bikedetailsline">Model: {{name}}</h4>
+                <h4 class="bikedetails">Brand: <span class="brand">{{brand.name}}</span></h4>
+                <h4 class="bikedetails">Year: <span class="year">{{year}}</h4></span>
+                <h4 id="{{id}}" class="bikedetails line">Model: <span class="model">{{name}}</span></h4>
             {% endverbatim %}
         </article>
     </script>
@@ -213,8 +222,8 @@
         <article class="post-container">
             {%verbatim%}
                 {{#each .}}
-                    <a href="/diag_app/problem_list/{{model}}/{{system.id}}">
-                        <div class="sys">{{system.name}}</div>
+                    <a href="/problem_list/{{model}}/{{system.id}}">
+                        <div class="circle">{{system.name}}</div>
                     </a>
                 {{/each}}
             {% endverbatim %}
