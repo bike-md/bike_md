@@ -2,6 +2,20 @@
 @import "mixins";
 
 
+.page-title{
+  @include mediumfont;
+  font-weight:500;
+  color:white;
+  text-align:left;
+  margin-left: 10%;
+  margin-bottom:0;
+}
+
+.page-title a{
+  text-decoration:none;
+  color:white;
+}
+
   .problem-list-box {
     display:block;
     width:80%;
@@ -9,70 +23,80 @@
     background-size: auto;
     height: 400px;
     margin:0 auto;
-    overflow: scroll;
+    overflow:auto;
    }
 
-
-  .details-main-title h1{
-    @include mediumfont;
-    color: white;
-
-    b {
-      color: $darkteal;
-      @include mediumfont;
-      text-decoration: underline;
-    }
-    b:hover {
-      color: $golden;
-    }
-  }
-
-  h2.problem-title b{
+  .problem-title{
     @include smallregularfont;
     color: $charcoal;
     font-weight: 400;
+    text-decoration:none;
   }
 
-  h1.problem-title {
+  h2, h5{
+    margin:0;
+  }
+
+  .problem-header{
+    text-align:center;
+    background-color:$charcoal;
+    color:white;
+    margin:0;
+  }
+
+  .problem-title {
     @include smallregularfont;
-    color: $charcoal;
-    font-weight: 400;
-    text-decoration: none;
-    text-align: center;
+    font-weight:400;
+
+    a{
+      text-decoration:none;
+      color:$charcoal;
+    }
   }
 
-  h2.date-time {
+  .date-time {
     @include smallfont;
     color: $charcoal;
     font-weight: 400;
     text-decoration: none;
   }
 
-h2.posted-by {
-  @include smallfont;
-  color: $charcoal;
-  font-weight: 400;
-  text-decoration: none;
-  padding-top: 0;
+  .posted-by {
+    @include smallfont;
+    color: $charcoal;
+    font-weight: 400;
+    text-decoration: none;
+    padding-top: 0;
+  }
+
+  .date-time, .posted-by {
+    display: inline;
+  }
+
+  .date-time{
+    display:inline-block;
+    color:$teal;
+    margin:0;
+    font-weight:500;
 }
 
-h2.date-time, h2.posted-by {
-  display: inline;
-}
+  .tech-rating{
+    display:inline-block;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    padding:0 .5%;
+  }
 
-.problem-container {
-  background-color: $darkteal;
-  border: 2px $golden solid;
-  padding-left: 2%;
-}
+  .problem-container {
+    background-color:rgba(lightgray, .3);
+    padding:1%;
+  }
 
-.problem-container:nth-child(odd){
-  background-color:$charcoal;
-}
+  .problem-container:nth-child(odd){
+    background-color:white;
+  }
 
-.problem-container:hover {
-  background-color: $golden;
-  transition: .5s;
-  border: 2px $darkteal solid;
-
-}
+  .problem-container:hover{
+    background-color:rgba($golden, .4);
+    transition: .5s;
+  }
