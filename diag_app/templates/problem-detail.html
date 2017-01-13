@@ -115,7 +115,7 @@
         <div id="solutions"></div>
 
       <h2 class ="sol-header">Give a solution</h2>
-        <div class="prob-form-container">
+        <div class="sol-form-container">
           <form class="prob-form" method="POST">
           {%csrf_token%}
             <div class ="time-box">
@@ -154,6 +154,13 @@
         </article>
     </script>
 
+    <script id="search-problem-template-two" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+                {{{message}}}
+            {% endverbatim %}
+        </article>
+    </script>
 
     <!-- answer modal -->
     <script id="unsolved-problem-template" type="text/x-handlebars-template">

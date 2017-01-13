@@ -106,7 +106,7 @@
 <!---Containter, start styling here--->
 
 <div class="problem-list-box">
-    <div id="problemList" class ="logobackground"></div>
+    <div id="problemList" class="logobackground"></div>
 </div>
 
     <footer class ="bikedetails-footer">
@@ -114,16 +114,24 @@
     </footer>
 
 <!-- modal scripts     -->
-        <!-- search modal -->
-        <script id="search-problem-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                {{#each .}}
-                    <h2 class="problem-title-modal">{{{linkURLProblem this}}}</h2>
-                {{/each}}
-                {% endverbatim %}
-            </article>
-        </script>
+    <!-- search modal -->
+    <script id="search-problem-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+            {{/each}}
+            {% endverbatim %}
+        </article>
+    </script>
+
+    <script id="search-problem-template-two" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+                {{{message}}}
+            {% endverbatim %}
+        </article>
+    </script>
 
 
         <!-- answer modal -->
@@ -201,9 +209,13 @@
                 {%verbatim%}
                 <h1 class="problem-title">{{system.name}} Problem List:</h1>
                 {{#each problem}}
-                    <h2 class="problem-title">{{{linkURLProblem this}}}</h2>
-                    <h2 class="date-time">{{{formatTime posted}}}</h2>
-                    <h2 class="posted-by">{{tech.user.username}}</h2>
+                <a href="/diag_app/problem_detail/{{this.id}}">
+                    <div class="problem-container">
+                        <h2 class="problem-title">{{this.title}}</h2>
+                        <h2 class="date-time">{{{formatTime posted}}}</h2>
+                        <h2 class="posted-by">{{tech.user.username}}</h2>
+                    </div>
+                </a>
                 {{/each}}
                 {% endverbatim %}
             </article>

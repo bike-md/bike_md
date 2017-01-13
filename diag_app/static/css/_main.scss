@@ -2,13 +2,9 @@
 @import "mixins";
 
 .mainbody  {
-  background:
-  linear-gradient(
-      rgba(black, 0.45),
-      rgba(black, 0.45)
-    ),
-  url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size:cover;
+  background-repeat: no-repeat;
   margin:0;
 }
 
@@ -124,8 +120,7 @@ hr {
     padding: 1%;
   }
 
-.progression  {
-  width: 100%;
+.progression{
   margin-top: -1%;
   margin-left: 46%;
  }

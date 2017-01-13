@@ -279,12 +279,13 @@ input:-webkit-autofill {
 
 .create-account-overlay-box {
   display: block;
-  width: 67%;
+  width: 60%;
   background-image: url("../images/register-page-background-image.png");
-  background-size: auto;
-  height: 550px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: auto;
   margin: 0 auto;
-  margin-left: 18%;
   padding-top: 2%; }
 
 .create-account-box {
@@ -341,7 +342,7 @@ input:-webkit-autofill {
   border: none; }
 
 .register-user-title {
-  font-size: 3.75rem;
+  font-size: 3rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal;
@@ -380,8 +381,9 @@ input:-webkit-autofill {
     background-color: #ba973a; }
 
 .mainbody {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   margin: 0; }
 
 .diag-main-title {
@@ -475,7 +477,6 @@ hr {
   padding: 1%; }
 
 .progression {
-  width: 100%;
   margin-top: -1%;
   margin-left: 46%; }
 
@@ -501,7 +502,7 @@ hr {
   bottom: 0; }
 
 .bikedetailsbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
+  background: url("../images/bikedetails-background.jpg");
   background-size: cover;
   margin: 0; }
 
@@ -592,7 +593,6 @@ hr {
 .prob-form-background {
   height: auto;
   width: 70%;
-  background-color: rgba(255, 255, 255, 0.25);
   margin: 0 auto;
   margin-top: 60px;
   padding: 2%; }
@@ -601,13 +601,21 @@ hr {
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: normal;
-    color: white;
-    background-color: #ba973a;
+    color: #a8bdba;
+    background-color: #313237;
     text-align: center;
     margin: 0;
     margin-top: 2%; }
-  .prob-form-background .prob-header {
-    margin-top: 0; }
+  .prob-form-background .sol-name {
+    background-color: #313237;
+    color: white;
+    text-align: left;
+    padding-left: 2%; }
+  .prob-form-background .prob-header, .prob-form-background .sol-header {
+    font-size: 3rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal; }
   .prob-form-background .prob-title {
     margin: 0; }
   .prob-form-background .posted-by {
@@ -639,17 +647,12 @@ hr {
     text-align: center; }
   .prob-form-background .form-text {
     text-align: center; }
-  .prob-form-background .prob-box, .prob-form-background .sol-box {
+  .prob-form-background .prob-box, .prob-form-background .sol-box, .prob-form-background .sol-form-container {
     height: auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 0 auto;
     padding: 2%;
     box-sizing: border-box; }
-  .prob-form-background .prob-form-container {
-    background-color: white;
-    height: auto;
-    margin: 0 auto;
-    padding: 2%; }
   .prob-form-background .timecost-input {
     display: block;
     margin: 0 auto;
@@ -669,7 +672,7 @@ hr {
     display: block;
     margin: 0 auto;
     margin-top: 3%;
-    background-color: #87b0aa;
+    background-color: #a8bdba;
     border: 0px;
     height: 24px;
     font-size: 1rem;
@@ -832,10 +835,11 @@ hr {
 .problem-list-box {
   display: block;
   width: 80%;
-  background-image: url("../images/register-page-background-image.png");
+  background-color: white;
   background-size: auto;
-  height: 550px;
-  margin: 0 auto; }
+  height: 400px;
+  margin: 0 auto;
+  overflow: scroll; }
 
 .details-main-title h1 {
   font-size: 2rem;
@@ -853,18 +857,58 @@ hr {
   .details-main-title h1 b:hover {
     color: #ba973a; }
 
-.problem-title {
+h2.problem-title b {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal;
-  color: #313237; }
-  .problem-title h2 {
-    font-size: 1.2rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #ba973a; }
+  color: #313237;
+  font-weight: 400; }
+
+h1.problem-title {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center; }
+
+h2.date-time {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none; }
+
+h2.posted-by {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #313237;
+  font-weight: 400;
+  text-decoration: none;
+  padding-top: 0; }
+
+h2.date-time, h2.posted-by {
+  display: inline; }
+
+.problem-container {
+  background-color: #87b0aa;
+  border: 2px #ba973a solid;
+  padding-left: 2%; }
+
+.problem-container:nth-child(odd) {
+  background-color: #313237; }
+
+.problem-container:hover {
+  background-color: #ba973a;
+  transition: .5s;
+  border: 2px #87b0aa solid; }
 
 body {
   margin: 0;
@@ -974,10 +1018,12 @@ input, textarea, keygen, select, button {
   transition: .5s; }
 
 .remodal {
-  background: linear-gradient(37.5deg, rgba(168, 189, 186, 0.5) 1%, #709c97 99%); }
+  background-image: url("../images/logo-template.png");
+  height: auto;
+  background-size: cover;
+  background-position: left; }
 
 .modaltext {
-  color: white;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;

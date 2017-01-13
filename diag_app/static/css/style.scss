@@ -156,15 +156,13 @@ header .templatenav .dropdown li a:hover {
 
 // modal
 .remodal{
-  background:linear-gradient(
-        37.5deg,
-        rgba($seafoam, .5)1%,
-        rgba($teal, 1)99%
-      );
+  background-image:url("../images/logo-template.png");
+  height:auto;
+  background-size:cover;
+  background-position:left;
 }
 
 .modaltext{
-  color:white;
   @include smallfont;
 }
 

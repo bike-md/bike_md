@@ -36,13 +36,12 @@
 
         <!-- search modal -->
         <div class ="search-modal-container">
-          <div class="remodal" data-remodal-id="searchModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="remodal" data-remodal-id="searchModal">
+                <button data-remodal-action="close" class="remodal-close"></button>
 
-            <div id="searchProblemList" class="search-problem-list">
+                <div id="searchProblemList" class="search-problem-list"></div>
+
             </div>
-
-          </div>
         </div>
 
         <!-- ask questions -->
@@ -125,6 +124,15 @@
                 {% endverbatim %}
             </article>
         </script>
+
+        <script id="search-problem-template-two" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                    {{{message}}}
+                {% endverbatim %}
+            </article>
+        </script>
+
 
         <!-- answer modal -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
