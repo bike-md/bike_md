@@ -238,6 +238,18 @@ function searchProblems(){
         type: 'GET'
     }).done(function(results){
         var problems = results.results
+        console.log(problems)
+        var length = problems.length
+        // var output = 0
+        // var message = '<h5>' + "There are no problems that match your search. Add one" +
+        //     '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + "here" + '</a>' + '</h5>';
+        // var noResults = [message]
+        // if (length == 0){
+        //     output = message
+        // }else{
+        //     output = problems
+        //
+        // }
         var source = $('#search-problem-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
