@@ -290,7 +290,8 @@ input:-webkit-autofill {
   margin: 0 auto; }
 
 .create-account-box {
-  padding-top: 2%; }
+  padding-top: 2%;
+  background-color: white; }
 
 .profile-information {
   width: 66%;
@@ -586,7 +587,7 @@ hr {
   bottom: 0; }
 
 .prob-detailbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
+  background-image: url("../images/bikedetails-background.jpg");
   background-size: cover;
   background-attachment: fixed;
   margin: 0; }
