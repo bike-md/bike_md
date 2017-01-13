@@ -44,7 +44,7 @@ hr {
   margin-left: 10%;
   margin-right: 10%;
 }
-  
+
 .specs{
   @include regularfont;
   text-align:center;
@@ -76,18 +76,23 @@ hr {
 
 
 // circles
+.systems-background{
+  background-color:rgba(white, .25);
+  padding:2% 0;
+  margin:0 10%;
+}
+
 .systems{
-  position:relative;
-  top:20px;
+  text-align:center;
 
       a{
         text-align:center;
         text-decoration:none;
         @include regularfont;
-        color:$darkteal;
+        color:$charcoal;
         margin:0;
 
-        .sys{
+        .circle{
           height:170px;
           width:170px;
           margin:0 3%;
@@ -99,12 +104,33 @@ hr {
         }
       }
 
-    .sys:hover{
+    .circle:hover{
       color:white;
-      background-color:rgba($golden, 1);
+      background-color:rgba($teal, 1);
       transform:rotate(360deg);
       transition:.5s;
     }
+}
+
+.specs{
+  background-color:$charcoal;
+  margin:0 10%;
+  padding:.5% 0;
+}
+
+.bikedetails{
+  color:white;
+  @include regularfont;
+  text-transform:none;
+  font-weight:300;
+  display:inline;
+  padding:0 2%;
+}
+
+.brand, .year, .model{
+  color:$teal;
+  font-weight:100;
+  text-transform:none;
 }
 
 .bikedetails-footer{

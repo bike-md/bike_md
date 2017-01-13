@@ -115,6 +115,7 @@ Handlebars.registerHelper('linkURLModel', function (object){
     name = Handlebars.Utils.escapeExpression(object.name)
     url = '/model_detail/' + id
     return '<a href="' +  url + '">' + '<b>' + name + '</b>' + '</a>'
+
 })
 
 

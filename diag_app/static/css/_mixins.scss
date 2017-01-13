@@ -1,11 +1,13 @@
 @mixin smallfont{
   font-size:1rem;
   font-family:gill sans;
+  text-transform:uppercase;
 }
 
 @mixin smallregularfont {
   font-size:1.2rem;
   font-family:gill sans;
+  text-transform:uppercase;
 }
 @mixin regularfont{
   font-size:1.5rem;

@@ -102,11 +102,11 @@
 
 <hr>
 
-    <!-- <section id="bikeSpecs" class ="specs"></section> -->
-
-      <div class="background-white">
-          <section id="bikeSpecs" class ="specs"></section>
-          <section id="system" class ="systems"></section>
+          <!-- circles -->
+      <section id="bikeSpecs" class ="specs"></section>
+        <div class="systems-background">
+          <!-- circles -->
+      <section id="system" class ="systems"></section>
         </div>
 
     <footer class ="bikedetails-footer">
@@ -209,9 +209,9 @@
         <article class="post-container">
             {%verbatim%}
             <input id="modelId" type="hidden" name="user_id" value="{{id}}">
-                <h4 class="bikedetailsline">Brand: {{brand.name}}</h4>
-                <h4 class="bikedetailsline">Year: {{year}}</h4>
-                <h4 id="{{id}}" class="bikedetailsline">Model: {{name}}</h4>
+                <h4 class="bikedetails">Brand: <span class="brand">{{brand.name}}</span></h4>
+                <h4 class="bikedetails">Year: <span class="year">{{year}}</h4></span>
+                <h4 id="{{id}}" class="bikedetails line">Model: <span class="model">{{name}}</span></h4>
             {% endverbatim %}
         </article>
     </script>
