@@ -1,167 +1,199 @@
 @import "variables";
 @import "mixins";
 
-.profile-page-username {
-  @include regularfont;
-  color: $charcoal;
-font-weight: 200;
-margin-top: 1%;}
+.userprofilebody {
+background-image:
+linear-gradient(
+rgba(black, 0.75),
+rgba(black, 0.75)
+),
+url("../images/index-background.jpg");
+background-size:cover;
+background-position:center;
+margin:0;
+padding: 5%;
+}
+.profile-details-goldendecor {
+background-color: $golden;
+height: 70px;
+width: 50%;
+}
+.profile-details-container {
+// display:block;
+height: auto;
+width:70%;
+background-color: white;
+// background-size:cover;
+// background-position:center;
+// background-attachment:fixed;
+padding-top: 2%;
+padding-bottom: 2%;
+box-sizing:border-box;
+margin: 0 auto;
+margin-top: 3%;
+overflow:hidden;
+}
 
+.photo-box {
+// width: 30%;
+height: 220px;
+float: left;
+margin-top: 2%;
+margin-left: 2%;
+margin-bottom: 1%;
+padding:1%;
+background-color: white;
+// position: relative;
+// padding-top: 20px;
+// padding-bottom: 20px;
+// padding-left: 4%;
+.profile-photo img {
+// display: block;
+margin: 0 auto;
+// margin-left: 5%;
+}
+}
+.profile-photo {
 
-.profile-page-information {
+}
+.profile-page-information-area {
 font-size: 1rem;
 font-weight: 400;
 margin-top: .5%;
+box-sizing:border-box;
+height: 210px;
 }
-.modaltext {
-  @include smallfont;
-  color: $charcoal;
-  font-weight: 200;
+.profile-information-details {
+width: 52%;
+float: right;
+background-color: white;
+margin-left: 1%;
+margin-right: 2%;
+margin-top: 2%;
+padding: 2%;
+overflow: scroll;
+h4 {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
-.userprofilebody {
-  background-image:
-  linear-gradient(
-        rgba(black, 0.75),
-        rgba(black, 0.75)
-      ),
-  url("../images/index-background.jpg");
-  background-size:cover;
-  margin:0;
-  overflow:auto;
+p {
+@include smallfont;
+background-color: $golden;
+color: white;
+text-align: center;
+margin-top: 1px;
 }
+}
+.profile-page-username {
+@include regularfont;
+color: $charcoal;
+font-weight: 200;
+margin-top: 1%;
+margin-bottom: 1%;}
 
+.modaltext {
+@include smallfont;
+color: $charcoal;
+font-weight: 200;
+}
 .post-container {
-  @include smallfont;
-  color: $charcoal;
-  margin: 0;
+@include smallfont;
+color: $charcoal;
+margin: 0;
 }
 .profile-title {
-  @include mediumfont;
-  color: white;
-  text-align: center;
-  margin-top: 8%;
-  margin-bottom: -.25%;
+@include mediumfont;
+color: white;
+text-align: center;
+margin-top: 8%;
+margin-bottom: -.25%;
 }
-
-.profile-photo img {
-  display: block;
-  height: 220px;
-  margin: 0 auto;
-  // margin-left: 5%;
-}
-
-.profile-details {
-  display: inline-block;
-  width:70%;
-  background-color: white;
-  margin: 0 auto;
-  margin-top: 10%;
-}
-
 .profile-box {
-    width: 30%;
-    height: 220px;
-    float: left;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-bottom: 1%;
-    background-color: white;
-    position: relative;
-    // padding-top: 20px;
-    // padding-bottom: 20px;
-    // padding-left: 4%;
+width: 30%;
+height: 220px;
+float: left;
+margin-top: 2%;
+margin-left: 2%;
+margin-bottom: 1%;
+background-color: white;
+position: relative;
+// padding-top: 20px;
+// padding-bottom: 20px;
+// padding-left: 4%;
+}
+.profile-questions-asked {
+width: 92%;
+height: 220px;
+float: right;
+background-color: #ffffff;
+margin-right: 2%;
+margin-top: 2%;
+padding: 2%;
+overflow: scroll;
+p {
+@include smallfont;
+background-color: $seafoam;
+color: white;
+text-align: center;
+margin-top: 1px;
+padding: 2%;
+}
+}
+.techAnswers {
+
+}
+.profile-questions-answered {
+width: 92%;
+height: 220px;
+float: right;
+background-color: #ffffff;
+margin-right: 2%;
+margin-bottom: 1%;
+padding: 2%;
+overflow: scroll;
+p {
+@include smallfont;
+background-color: $seafoam;
+color: white;
+text-align: center;
+margin-top: 1px;
+padding: 2%;
+}
+}
+.profile-techQuestions {
+
+}
+.exitbutton {
+height:40px;
+width:100%;
+// padding-top:9%;
+box-sizing:border-box;
+@include smallfont;
+float: right;
+text-align: right;
+margin-right: 15%;
+margin-top: 1%;
+// margin-bottom: 10%;
+
+
+a{
+text-decoration:none;
+color:$charcoal;
+padding:.5%;
+background-color:$seafoam;
+
 }
 
+a:hover{
+color:$seafoam;
+background-color:$charcoal;
+}
+}
 
-  .profile-information {
-    width: 26%;
-    height: 170px;
-    float: left;
-    background-color: #ffffff;
-    margin-left: 2%;
-    margin-bottom: -1%;
-    padding: 2%;
-    overflow: scroll;
-
-    p {
-      @include smallfont;
-      background-color: $golden;
-      color: white;
-      text-align: center;
-      margin-top: 1px;
-    }
-  }
-
-  .profile-questions-asked {
-    width: 60%;
-    height: 170px;
-    float: right;
-    background-color: #ffffff;
-    margin-right: 2%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    padding: 2%;
-    overflow: scroll;
-
-      p {
-        @include smallfont;
-        background-color: $seafoam;
-        color: white;
-        text-align: center;
-        margin-top: 1px;
-        padding: 2%;
-      }
-  }
-
-
-  .profile-questions-answered {
-    width: 60%;
-    height: 170px;
-    float: right;
-    background-color: #ffffff;
-    margin-right: 2%;
-    margin-bottom: 2%;
-    padding: 2%;
-    overflow: scroll;
-      p {
-        @include smallfont;
-        background-color: $seafoam;
-        color: white;
-        text-align: center;
-        margin-top: 1px;
-        padding: 2%;
-      }
-  }
-
-
-    .exitbutton {
-      height:40px;
-      width:100%;
-      // padding-top:9%;
-      box-sizing:border-box;
-      @include smallfont;
-      float: right;
-      text-align: right;
-      margin-right: 15%;
-      margin-top: 1%;
-      // margin-bottom: 10%;
-
-
-      a{
-        text-decoration:none;
-        color:$charcoal;
-        padding:.5%;
-        background-color:$seafoam;
-
-      }
-
-      a:hover{
-        color:$seafoam;
-        background-color:$charcoal;
-
-      }
-    }
-
+h4.tech-rating {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 
 
 //

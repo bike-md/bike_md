@@ -684,6 +684,69 @@ hr {
     background-color: #ba973a;
     transition: .5s; }
 
+.userprofilebody {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 5%; }
+
+.profile-details-goldendecor {
+  background-color: #ba973a;
+  height: 70px;
+  width: 50%; }
+
+.profile-details-container {
+  height: auto;
+  width: 70%;
+  background-color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow: hidden; }
+
+.photo-box {
+  height: 220px;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  padding: 1%;
+  background-color: white; }
+  .photo-box .profile-photo img {
+    margin: 0 auto; }
+
+.profile-page-information-area {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: .5%;
+  box-sizing: border-box;
+  height: 210px; }
+
+.profile-information-details {
+  width: 52%;
+  float: right;
+  background-color: white;
+  margin-left: 1%;
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  overflow: scroll; }
+  .profile-information-details h4 {
+    margin-top: 1%;
+    margin-bottom: 1%; }
+  .profile-information-details p {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: normal;
+    background-color: #ba973a;
+    color: white;
+    text-align: center;
+    margin-top: 1px; }
+
 .profile-page-username {
   font-size: 1.5rem;
   font-family: gill sans;
@@ -691,12 +754,8 @@ hr {
   font-weight: normal;
   color: #313237;
   font-weight: 200;
-  margin-top: 1%; }
-
-.profile-page-information {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: .5%; }
+  margin-top: 1%;
+  margin-bottom: 1%; }
 
 .modaltext {
   font-size: 1rem;
@@ -705,12 +764,6 @@ hr {
   font-weight: normal;
   color: #313237;
   font-weight: 200; }
-
-.userprofilebody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
-  background-size: cover;
-  margin: 0;
-  overflow: auto; }
 
 .post-container {
   font-size: 1rem;
@@ -730,18 +783,6 @@ hr {
   margin-top: 8%;
   margin-bottom: -.25%; }
 
-.profile-photo img {
-  display: block;
-  height: 220px;
-  margin: 0 auto; }
-
-.profile-details {
-  display: inline-block;
-  width: 70%;
-  background-color: white;
-  margin: 0 auto;
-  margin-top: 10%; }
-
 .profile-box {
   width: 30%;
   height: 220px;
@@ -752,33 +793,13 @@ hr {
   background-color: white;
   position: relative; }
 
-.profile-information {
-  width: 26%;
-  height: 170px;
-  float: left;
-  background-color: #ffffff;
-  margin-left: 2%;
-  margin-bottom: -1%;
-  padding: 2%;
-  overflow: scroll; }
-  .profile-information p {
-    font-size: 1rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    font-weight: normal;
-    background-color: #ba973a;
-    color: white;
-    text-align: center;
-    margin-top: 1px; }
-
 .profile-questions-asked {
-  width: 60%;
-  height: 170px;
+  width: 92%;
+  height: 220px;
   float: right;
   background-color: #ffffff;
   margin-right: 2%;
   margin-top: 2%;
-  margin-bottom: 2%;
   padding: 2%;
   overflow: scroll; }
   .profile-questions-asked p {
@@ -793,12 +814,12 @@ hr {
     padding: 2%; }
 
 .profile-questions-answered {
-  width: 60%;
-  height: 170px;
+  width: 92%;
+  height: 220px;
   float: right;
   background-color: #ffffff;
   margin-right: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   padding: 2%;
   overflow: scroll; }
   .profile-questions-answered p {
@@ -832,6 +853,10 @@ hr {
   .exitbutton a:hover {
     color: #a8bdba;
     background-color: #313237; }
+
+h4.tech-rating {
+  margin-top: 1%;
+  margin-bottom: 1%; }
 
 .problem-list-box {
   display: block;
