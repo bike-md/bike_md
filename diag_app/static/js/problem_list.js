@@ -195,6 +195,20 @@ function loadSystemsAskModal(){
 $("#ask").click(loadSystemsAskModal)
 
 
+
+
+function charRemainingText(){
+    $('#probText').keyup(function () {
+        var left = 1000 - $(this).val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text('Characters left: ' + left);
+    })
+}
+charRemainingText()
+
+
 // post new problem modal
 function postProblem(){
     var bike =  $("#probModel option:selected").val()

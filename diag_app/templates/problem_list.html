@@ -36,16 +36,15 @@
               </li>
           </ul>
 
+          <!-- search modal -->
+          <div class ="search-modal-container">
+              <div class="remodal" data-remodal-id="searchModal">
+                  <button data-remodal-action="close" class="remodal-close"></button>
 
-        <!-- search modal -->
-        <div class ="search-modal-container">
-            <div class="remodal" data-remodal-id="searchModal">
-                <button data-remodal-action="close" class="remodal-close"></button>
+                  <div id="searchProblemList" class="search-problem-list"></div>
 
-                <div id="searchProblemList" class="search-problem-list"></div>
-
-            </div>
-        </div>
+              </div>
+          </div>
 
 
         <!-- ask questions -->
@@ -68,6 +67,7 @@
                     <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
                 <h4 class ="modaltext">Describe your problem:</h4>
+                <p class="counter" id="counter"></p>
 
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
                 <br>

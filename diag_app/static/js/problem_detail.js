@@ -58,6 +58,29 @@ function showProblem(url){
     })
 }
 
+function charRemainingProb(){
+    $('#solutionText').keyup(function () {
+    var left = 1000 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterSolution').text('Characters left: ' + left);
+    })
+}
+charRemainingSolution()
+
+
+function charRemainingSolution(){
+    $('#probText').keyup(function () {
+    var left = 1000 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterProb').text('Characters left: ' + left);
+})
+}
+charRemainingProb()
+
 
 function postSolution(){
     var text = $("#solutionText").val()
