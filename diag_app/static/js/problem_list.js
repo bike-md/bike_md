@@ -114,7 +114,7 @@ Handlebars.registerHelper('linkURLModel', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     name = Handlebars.Utils.escapeExpression(object.name)
     url = '/diag_app/model_detail/' + id
-    return '<a href="' +  url + '">' + '<b>' + name + '</b>' + '</a>'
+    return '<a href="' +  url + '">' + name + '</a>'
 })
 
 
