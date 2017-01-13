@@ -58,6 +58,29 @@ function showProblem(url){
     })
 }
 
+function charRemainingProb(){
+    $('#solutionText').keyup(function () {
+    var left = 1000 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterSolution').text('Characters left: ' + left);
+    })
+}
+charRemainingSolution()
+
+
+function charRemainingSolution(){
+    $('#probText').keyup(function () {
+    var left = 1000 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counterProb').text('Characters left: ' + left);
+})
+}
+charRemainingProb()
+
 
 function postSolution(){
     var text = $("#solutionText").val()
@@ -341,14 +364,26 @@ function searchProblems(){
         url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
-        console.log(results)
         var problems = results.results
-        var source = $('#search-problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#searchProblemList').empty()
-        $('#searchProblemList').append(html)
-
+        var length = problems.length
+        var message = '<h5>' + "There are no problems that match your search. Add one" +
+            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var noResults = {
+            message: message,
+        }
+        if (length == 0){
+            var source = $('#search-problem-template-two').html()
+            var template = Handlebars.compile(source)
+            var html = template(noResults)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }else{
+            var source = $('#search-problem-template').html()
+            var template = Handlebars.compile(source)
+            var html = template(problems)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }
     })
 }
 $("#searchButton").click(searchProblems)

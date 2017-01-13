@@ -180,6 +180,17 @@ function loadSystemsAskModal(){
 $("#ask").click(loadSystemsAskModal)
 
 
+function charRemainingText(){
+    $('#probText').keyup(function () {
+        var left = 1000 - $(this).val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text('Characters left: ' + left);
+    })
+}
+charRemainingText()
+
 // post new problem modal
 function postProblem(){
     var bike =  $("#probModel option:selected").val()
@@ -238,12 +249,25 @@ function searchProblems(){
         type: 'GET'
     }).done(function(results){
         var problems = results.results
-        var source = $('#search-problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#searchProblemList').empty()
-        $('#searchProblemList').append(html)
-
+        var length = problems.length
+        var message = '<h5>' + "There are no problems that match your search. Add one" +
+            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var noResults = {
+            message: message,
+        }
+        if (length == 0){
+            var source = $('#search-problem-template-two').html()
+            var template = Handlebars.compile(source)
+            var html = template(noResults)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }else{
+            var source = $('#search-problem-template').html()
+            var template = Handlebars.compile(source)
+            var html = template(problems)
+            $('#searchProblemList').empty()
+            $('#searchProblemList').append(html)
+        }
     })
 }
 $("#searchButton").click(searchProblems)
