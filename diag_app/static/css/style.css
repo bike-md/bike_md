@@ -1,12 +1,13 @@
 .indexbody {
   margin: 0;
   background-image: url("../images/index-background.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .indexnav {
   width: 11%;
   margin-left: 10%;
-  background-color: rgba(175, 175, 178, 0.35);
+  background-color: rgba(202, 178, 152, 0.3);
   padding: 1%;
   margin-bottom: 0; }
   .indexnav ul {
@@ -14,7 +15,7 @@
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 20%; }
+    margin-bottom: 15%; }
     .indexnav ul li {
       clear: both;
       list-style-type: none;
@@ -44,7 +45,7 @@
         width: 133%; }
     .indexnav ul .logobox {
       width: 100%;
-      margin-bottom: 15%; }
+      margin-bottom: 36%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
@@ -272,21 +273,22 @@ input:-webkit-autofill {
   margin: 0;
   padding: 5%; }
 
-.create-account-overlay-box {
+.create-account-container {
   display: block;
   width: 70%;
-  background-color: white;
-  background-size: cover;
-  background-position: center;
+  background-position: relative;
+  right: 0;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: auto;
-  padding-top: 2%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   margin: 0 auto; }
 
 .create-account-box {
-  padding-top: 2%;
-  background-color: white; }
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url("../images/register-page-background-image.png");
+  width: 96%;
+  background-size: cover;
+  padding: 2%; }
 
 .profile-information {
   width: 66%;
@@ -296,7 +298,7 @@ input:-webkit-autofill {
   margin: 1%; }
 
 .register-form {
-  padding-top: 1%;
+  padding-top: 2%;
   padding-left: 10%;
   padding-bottom: 5%; }
 
@@ -323,31 +325,38 @@ input:-webkit-autofill {
   font-family: gill sans;
   font-weight: normal;
   color: white;
-  padding-top: 1.5%;
-  padding-bottom: 3%;
   float: left;
-  margin-top: 1%; }
+  margin-top: 1%;
+  margin-bottom: 0%; }
 
 .register-form-submit-button:hover {
   background-color: rgba(49, 50, 55, 0.8);
   border: none; }
 
 .register-user-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: normal;
   color: white;
   font-weight: 400;
-  margin-left: 20%;
-  margin-top: .5%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
   font-weight: 200;
   padding-top: 1%;
   padding-bottom: 1%; }
+  .register-user-title hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%; }
 
 .goldendecor {
   background-color: #ba973a;
+  width: 70%;
+  padding-top: 1%;
   height: 70px;
-  width: 50%; }
+  margin: 0 auto; }
 
 .register-exit-button {
   height: 40px;
@@ -357,8 +366,8 @@ input:-webkit-autofill {
   font-family: gill sans;
   float: right;
   text-align: right;
-  margin-right: 2%;
-  margin-top: 2%; }
+  margin-right: 1%;
+  margin-top: -4%; }
   .register-exit-button a {
     text-decoration: none;
     color: #ba973a;
@@ -700,8 +709,6 @@ hr {
   .profile-information-details p {
     font-size: 1rem;
     font-family: gill sans;
-    text-transform: uppercase;
-    font-weight: normal;
     background-color: #ba973a;
     color: white;
     text-align: center;
@@ -747,23 +754,6 @@ hr {
   margin-bottom: 1%;
   background-color: white;
   position: relative; }
-
-.profile-information {
-  width: 26%;
-  height: 170px;
-  float: left;
-  background-color: #ffffff;
-  margin-left: 2%;
-  margin-bottom: -1%;
-  padding: 2%;
-  overflow: scroll; }
-  .profile-information p {
-    font-size: 1rem;
-    font-family: gill sans;
-    background-color: #ba973a;
-    color: white;
-    text-align: center;
-    margin-top: 1px; }
 
 .profile-questions-asked {
   width: 92%;
@@ -823,7 +813,7 @@ hr {
 h4.tech-rating {
   margin-top: 1%;
   margin-bottom: 1%; }
-=======
+
 .page-title {
   font-size: 2rem;
   font-family: gill sans;

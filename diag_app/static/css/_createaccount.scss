@@ -14,27 +14,32 @@
   padding: 5%;
 }
 
-.create-account-overlay-box {
+.create-account-container{
   display:block;
   width:70%;
-  background-color: white;
-  background-size:cover;
-  background-position:center;
+
+  // background-size:auto;
+
+  background-position: relative;
+  right: 0;
   background-attachment:fixed;
+  background-repeat: no-repeat;
   height: auto;
-  padding-top: 2%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   margin: 0 auto;
 }
 
-
 .create-account-box {
-padding-top: 2%;
-background-color: white;
-
-
+  background: linear-gradient(
+        rgba(white, 0.55),
+        rgba(white, 0.55)
+      ), url("../images/register-page-background-image.png");
+  width: 96%;
+  background-size: cover;
+// padding-top: 2%;
+// background-color: white;
+padding: 2%;
 }
-
 
   .profile-information {
     width: 66%;
@@ -44,26 +49,8 @@ background-color: white;
     margin: 1%;
   }
 
-  // .profile-questions-asked {
-  //   width: 30%;
-  //   height: 300px;
-  //   float: left;
-  //   background-color: #ffffff;
-  //   margin-left: 1%;
-  //   margin-bottom: 1%;
-  // }
-
-  // .profile-questions-answered {
-  //   width: 66%;
-  //   height: 224px;
-  //   float: right;
-  //   background-color: #ffffff;
-  //   margin-right: 1%;
-  //   margin-bottom: 1%;
-  // }
-
   .register-form {
-    padding-top: 1%;
+    padding-top: 2%;
     padding-left:10%;
     padding-bottom: 5%;
   }
@@ -92,10 +79,9 @@ background-color: white;
     @include smallfont;
     font-weight: normal;
     color: white;
-    padding-top: 1.5%;
-    padding-bottom: 3%;
     float: left;
     margin-top: 1%;
+    margin-bottom: 0%;
     }
 
 
@@ -105,20 +91,29 @@ background-color: white;
       }
 
 .register-user-title {
-  @include largefont;
+  @include mediumfont;
   color: white;
   font-weight: 400;
-  margin-left: 20%;
-  margin-top: .5%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
   font-weight: 200;
   padding-top: 1%;
   padding-bottom: 1%;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
 }
+
 
 .goldendecor {
   background-color: $golden;
-  height: 70px;
-  width: 50%;
+  width: 70%;
+  padding-top: 1%;
+height: 70px;
+margin: 0 auto;
 }
 
 .register-exit-button {
@@ -128,8 +123,8 @@ background-color: white;
     @include smallfont;
     float: right;
     text-align: right;
-    margin-right: 2%;
-    margin-top: 2%;
+    margin-right: 1%;
+    margin-top: -4%;
 
 
     a{
