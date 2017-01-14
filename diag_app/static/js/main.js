@@ -40,7 +40,7 @@ function showBrands(){
         var html = template(results.results)
         $('#listing').empty()
         $('#listing').append(html)
-
+        $('#brandStep').toggleClass('selected')
     })
 }
 showBrands()
@@ -48,7 +48,6 @@ showBrands()
 
 // year listing step 2
 function showYears(id){
-    console.log(id)
     $.ajax({
         url: '/api/models?brand=' + id,
         type: 'GET'
@@ -71,6 +70,7 @@ function showYears(id){
         var html = template(context)
         $('#listing').empty()
         $('#listing').append(html)
+        $('#yearStep').toggleClass('selected')
     })
 }
 
@@ -93,6 +93,7 @@ function showModels(year){
         var html = template(context)
         $('#listing').empty()
         $('#listing').append(html)
+        $('#modelStep').toggleClass('selected')
     })
 }
 

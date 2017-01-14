@@ -210,11 +210,12 @@
                 <h1 class="problem-header">{{system.name}} Problem List:</h1>
                 {{#each problem}}
                 <a href='/problem_detail/{{this.id}}'>
-                    <div class="problem-container">
-                        <h5 class="problem-title">{{{this.title}}}</h2>
-                        <h5 class="posted-by">{{tech.user.username}}</h2>
+                    <div class="problist-problem-container">
+                        <h5 class="problist-problem-title">{{{this.title}}}</h5>
+                        <h5 class="problist-posted-by">{{tech.user.username}}</h5>
                         <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
-                        <h5 class="date-time"><i>{{{formatTime posted}}}</i></h2>
+                        <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
+                        <br>
                     </div>
                 </a>
                 {{/each}}

@@ -43,10 +43,11 @@
 
             </div>
         </div>
-
+        <!-- diagnose -->
+        <li class ="link1"><a href="/">Diagnose</a></li>
         <!-- ask questions -->
         <div class ="askmodal-container">
-          <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Post Problem</a></li>
+          <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
 
           <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -91,7 +92,7 @@
 
         <!-- answer questions -->
         <div class ="answermodal-container">
-          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Unsolved Problems</a></li>
+          <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Unsolved Problems</a></li>
 
           <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -102,7 +103,7 @@
         </div>
 
         <!-- my account -->
-          <li><a class ="link3" href ="#">My Account</a>
+          <li><a class ="link4" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
               <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
@@ -226,17 +227,16 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
-                        <div class="stepscircles">
-                            <h5 id="currentStep" class="step-number">1</h5>
-                            </div>
-                        </a>
+                        <div id="brandStep" class="stepscircles">
+                            <h5 class="step-number">1</h5>
+                        </div>
                 </h3>
                     {{#each .}}
-                  <a onclick="showYears({{this.id}})">
-                      <div class ="diag-select-box">
-                          <h4 class="diag-select-text">{{ this.name }}</h4>
-                      </div>
-                  </a>
+                    <a id="clickOne" onclick="showYears({{this.id}})">
+                        <div class ="diag-select-box">
+                            <h4 class="diag-select-text">{{ this.name }}</h4>
+                        </div>
+                    </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -252,8 +252,8 @@
                             </div>
                         </a>
                         <a onclick="showYears({{this.brandId}})">
-                            <div class="stepscircles">
-                                <h5 id="currentStep" class="step-number">2</h5>
+                            <div id="yearStep" class="stepscircles">
+                                <h5 class="step-number">2</h5>
                             </div>
                         </a>
                 </h3>
@@ -283,7 +283,9 @@
                                 <h5 class="step-number">2</h5>
                             </div>
                         </a>
-                        <div id="currentStep" class="stepscircles"><h5 class="step-number">3</h5></div>
+                        <div id="modelStep" class="stepscircles">
+                            <h5 class="step-number">3</h5>
+                        </div>
                 </h3>
                 {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">
