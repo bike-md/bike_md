@@ -213,17 +213,16 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
-                        <div class="stepscircles">
-                            <h5 id="currentStep" class="step-number">1</h5>
-                            </div>
-                        </a>
+                        <div id="brandStep" class="stepscircles">
+                            <h5 class="step-number">1</h5>
+                        </div>
                 </h3>
                     {{#each .}}
-                  <a onclick="showYears({{this.id}})">
-                      <div class ="diag-select-box">
-                          <h4 class="diag-select-text">{{ this.name }}</h4>
-                      </div>
-                  </a>
+                    <a id="clickOne" onclick="showYears({{this.id}})">
+                        <div class ="diag-select-box">
+                            <h4 class="diag-select-text">{{ this.name }}</h4>
+                        </div>
+                    </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -239,8 +238,8 @@
                             </div>
                         </a>
                         <a onclick="showYears({{this.brandId}})">
-                            <div class="stepscircles">
-                                <h5 id="currentStep" class="step-number">2</h5>
+                            <div id="yearStep" class="stepscircles">
+                                <h5 class="step-number">2</h5>
                             </div>
                         </a>
                 </h3>
@@ -270,7 +269,9 @@
                                 <h5 class="step-number">2</h5>
                             </div>
                         </a>
-                        <div id="currentStep" class="stepscircles"><h5 class="step-number">3</h5></div>
+                        <div id="modelStep" class="stepscircles">
+                            <h5 class="step-number">3</h5>
+                        </div>
                 </h3>
                 {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">

@@ -1,4 +1,5 @@
-.indexbody { margin: 0;
+.indexbody {
+  margin: 0;
   background-image: url("../images/index-background.jpg");
   background-size: cover; }
 
@@ -459,6 +460,9 @@ hr {
   transition: .5s;
   margin-left: 1%; }
 
+.selected {
+  background-color: grey; }
+
 .mainfooter {
   position: absolute;
   bottom: 0; }
@@ -511,11 +515,6 @@ hr {
   font-family: gill sans;
   text-transform: uppercase;
   color: white; }
-
- .counter{
-    text-align: right;
-    margin-right: 7%;
- }
 
 .systems-background {
   background-color: rgba(255, 255, 255, 0.25);
