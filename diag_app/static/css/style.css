@@ -475,6 +475,9 @@ hr {
   position: absolute;
   bottom: 0; }
 
+.modaltext p {
+  display: inline; }
+
 .bikedetailsbody {
   background: url("../images/bikedetails-background.jpg");
   background-size: cover;

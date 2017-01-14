@@ -64,7 +64,6 @@ hr {
     text-decoration:none;
   }
 
-
   .diag-select-box:hover{
     background-color:$golden;
     cursor:pointer;
@@ -75,6 +74,7 @@ hr {
      }
   }
 }
+
 .outer-box .diag-select-title {
     font-size: 2rem;
     font-family: gill sans;
@@ -105,8 +105,17 @@ transition: .5s;
 margin-left: 1%;
 }
 
-
 .mainfooter{
   position:absolute;
   bottom:0;
+}
+
+
+//POST PROBLEM MODAL STYLING
+.remodal {
+
+}
+
+.modaltext p {
+  display: inline;
 }
