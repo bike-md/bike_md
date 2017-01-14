@@ -57,15 +57,28 @@
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
                 <div class="goldendecor">
                     <h1 class="modal-header">Post a Problem</h1>
+                    <hr>
                 </div>
+
                 <h4 class ="modaltext">Choose Bike:</h4>
+              <div class="select-brand-model-year containerDropdown">
+                  <div class="bikeFeature">
                     <p>Brand: <div id="brandSelect" class="systems-dropdown"></div></p>
+                  </div>
+                  <div class="bikeFeature">
                     <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
+                  </div>
+                  <div class="bikeFeature">
                     <p>Model: <div id="modelSelect" class="systems-dropdown"></div></p>
-                <h4 class ="modaltext">Choose System:</h4>
+                  </div>
+                  <div class="bikeFeature">
+                    <h4 class ="modaltext-1">Choose System:</h4>
                     <div id="systemSelect" class ="systems-dropdown"></div>
+                  </div>
+              </div>
+
                 <br>
-                <h4 class ="modaltext-1">Enter a title for your post:</h4>
+                <h4 class ="modaltext">Enter a title for your post:</h4>
                 <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
                 <h4 class ="modaltext">Describe your problem:</h4>
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
@@ -156,7 +169,7 @@
         <!-- ask modal -->
         <script id="brand-modal-template" type="text/x-handlebars-template">
             <article class="post-container">
-                <select onchange="loadYearsAskModal(value)" id="probBrand">
+                <select class="dropdownlist" onchange="loadYearsAskModal(value)" id="probBrand">
                     {% verbatim %}
                     <option value="none">Select One</option>
                     {{#each .}}
@@ -170,7 +183,7 @@
 
         <script id="year-modal-template" type="text/x-handlebars-template">
             <article class="post-container">
-                <select onchange="loadModelsAskModal(value)" id="probYear">
+                <select class="dropdownlist" onchange="loadModelsAskModal(value)" id="probYear">
                     {% verbatim %}
                     <option value="none">Select One</option>
                     {{#each .}}
@@ -184,7 +197,7 @@
 
         <script id="model-modal-template" type="text/x-handlebars-template">
             <article class="post-container">
-                <select id="probModel">
+                <select class="dropdownlist" id="probModel">
                     {% verbatim %}
                     <option value="none">Select One</option>
                     {{#each .}}
@@ -198,7 +211,7 @@
 
         <script id="system-modal-template" type="text/x-handlebars-template">
             <article class="post-container">
-                <select id="probSystem">
+                <select class="dropdownlist" id="probSystem">
                     {% verbatim %}
                     <option value="none"></option>
                     {{#each .}}

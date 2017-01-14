@@ -4,34 +4,44 @@
 .createaccountbody {
   background-image:
   linear-gradient(
-        rgba(black, 0.75),
-        rgba(black, 0.75)
+        rgba($charcoal, 0.5),
+        rgba($charcoal, 0.5)
       ),
   url("../images/index-background.jpg");
   background-size:cover;
   background-position:center;
+  background-repeat: no-repeat;
   margin:0;
-  padding: 5%;
+  // padding: 5%;
 }
 
-.create-account-overlay-box {
+.create-account-container{
   display:block;
-  width:60%;
-      background-image: url("../images/register-page-background-image.png");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  height: auto;
-  margin:0 auto;
-  // margin-left: 18%;
-  padding-top: 2%;
-}
+  width:70%;
 
+  // background-size:auto;
+
+  background-position: relative;
+  right: 0;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  height: auto;
+  padding-bottom: 3%;
+  margin: 0 auto;
+}
 
 .create-account-box {
-padding-top: 2%;
+  background: linear-gradient(
+        rgba(white, 0.55),
+        rgba(white, 0.55)
+      ), url("../images/register-page-background-image.png");
+  width: 96%;
+  background-size: cover;
+// padding-top: 2%;
+// background-color: white;
+padding: 2%;
+  margin-bottom: 7%;
 }
-
 
   .profile-information {
     width: 66%;
@@ -41,26 +51,8 @@ padding-top: 2%;
     margin: 1%;
   }
 
-  // .profile-questions-asked {
-  //   width: 30%;
-  //   height: 300px;
-  //   float: left;
-  //   background-color: #ffffff;
-  //   margin-left: 1%;
-  //   margin-bottom: 1%;
-  // }
-
-  // .profile-questions-answered {
-  //   width: 66%;
-  //   height: 224px;
-  //   float: right;
-  //   background-color: #ffffff;
-  //   margin-right: 1%;
-  //   margin-bottom: 1%;
-  // }
-
   .register-form {
-    padding-top: 1%;
+    padding-top: 2%;
     padding-left:10%;
     padding-bottom: 5%;
   }
@@ -89,34 +81,44 @@ padding-top: 2%;
     @include smallfont;
     font-weight: normal;
     color: white;
-    padding-top: 1.5%;
-    padding-bottom: 3%;
     float: left;
     margin-top: 1%;
+    margin-bottom: 0%;
     }
 
 
     .register-form-submit-button:hover {
       background-color:rgba($charcoal, .8);
       border: none;
-
       }
 
 .register-user-title {
-  @include largefont;
+  @include mediumfont;
   color: white;
   font-weight: 400;
-  margin-left: 20%;
-  margin-top: .5%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
   font-weight: 200;
   padding-top: 1%;
   padding-bottom: 1%;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
 }
+
 
 .goldendecor {
   background-color: $golden;
+  width: 70%;
+  padding-top: 1%;
   height: 70px;
-  width: 50%;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
+
 }
 
 .register-exit-button {
@@ -126,8 +128,8 @@ padding-top: 2%;
     @include smallfont;
     float: right;
     text-align: right;
-    margin-right: 2%;
-    margin-top: 2%;
+    margin-right: 1%;
+    margin-top: -4%;
 
 
     a{

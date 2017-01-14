@@ -15,17 +15,6 @@ hr {
   margin-bottom: 4%;
 }
 
-// .diag-state-circle{
-//   height:10px;
-//   width:10px;
-//   display:inline-block;
-//   text-align:center;
-//   background-color:rgba($seafoam, .75);
-//   border-radius:100%;
-//   padding:1%;
-// }
-
-// select make/year/model box
 .outer-box{
   background-color:rgba(#cab298, .40);
   height:auto;
@@ -74,7 +63,6 @@ hr {
     text-decoration:none;
   }
 
-
   .diag-select-box:hover{
     background-color:$golden;
     cursor:pointer;
@@ -85,6 +73,7 @@ hr {
      }
   }
 }
+
 .outer-box .diag-select-title {
     font-size: 2rem;
     font-family: gill sans;
@@ -115,11 +104,25 @@ transition: .5s;
 margin-left: 1%;
 }
 
+<<<<<<< HEAD
+=======
 .selected{
     background-color: grey;
 }
 
+>>>>>>> 3280449455b9cc2eb8b6c218faa054d8d3268dcf
 .mainfooter{
   position:absolute;
   bottom:0;
+}
+
+.new-problem-header {
+  background-color: $golden;
+  width: 100%;
+  height: 60px;
+}
+
+.new-problem-header-title {
+  margin-top: 0%;
+  margin-bottom: 0%;
 }

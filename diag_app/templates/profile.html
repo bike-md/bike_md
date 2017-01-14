@@ -14,21 +14,66 @@
     <body class ="userprofilebody">
         <input id="currentTech" type="hidden" name="user_id" value="{{request.user.id}}">
 
-        <div class="profile-title"><p>User Profile<p></div>
+<!--White Box background styling-->
+<div class="profile-details-container">
 
-        <div class="profile-details">
-            <div class="profile-box">
-                <div id="profileImg" class="profile-photo">
-                    <img  src ="{% static 'images/transport-3.png' %}"  alt="">
-                </div>
+
+  <!--Title-->
+  <div class="profile-details-goldendecor">
+    <h1 class="profile-title">User Profile</h1>
+</div>
+
+<!--Boxes all of the data-->
+<div class="profile-details-box">
+
+
+<!--Data form-->
+  <div class="photo-box">
+    <div id="profileImg" class="profile-photo">
+        <img  src ="{% static 'images/transport-3.png' %}"  alt="">
+    </div>
+  </div>
+
+  <div class="profile-page-information-area">
+  <div id="techInfo" class="profile-information-details"><p>Information</p></div>
+  </div>
+
+
+  <div class="profile-techAnswers">
+      <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
+  </div>
+
+  <div class="profile-techQuestions">
+      <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
+  </div>
+
+</div>
+</div>
+
+
+
+<!--
+
+        <div class="profile-details-container">
+          <div class="profile-details-box">
+            <div class="profile-details-goldendecor">
+              <h1 class="profile-title">User Profile</h1>
             </div>
-            <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
+              <div class="profile-box">
+                  <div id="profileImg" class="profile-photo">
+                      <img  src ="{% static 'images/transport-3.png' %}"  alt="">
+                  </div>
+              </div>
+              <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
 
-            <div id="techInfo" class="profile-information"><p>Information</p></div>
+              <div id="techInfo" class="profile-information"><p>Information</p></div>
 
-            <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
+              <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
+            </div>
         </div>
 
+
+        <div class="exitbutton"><a href="/diag_app/">close</a></div> -->
         <div class="exitbutton"><a href="/">close</a></div>
 
 
