@@ -1127,6 +1127,13 @@ footer {
     text-transform: uppercase;
     text-align: center; }
 
+.no-result-text h5 {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237;
+  text-align: center; }
+
 .remodal {
   padding: 0; }
   .remodal .goldendecor {
@@ -1173,5 +1180,26 @@ footer {
 
 .textarea-border {
   border: 1px solid #c0bebf; }
+
+.no-result-modal {
+  padding: 10%; }
+  .no-result-modal h5 {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    color: #313237;
+    font-weight: 200;
+    margin-bottom: 10%; }
+  .no-result-modal .post-problem-button {
+    text-decoration: none;
+    background-color: #87b0aa;
+    padding: 5%;
+    color: white; }
+
+.post-problem-button:hover {
+  text-decoration: none;
+  background-color: #313237;
+  color: white;
+  transition: .5s; }
 
 /*# sourceMappingURL=style.css.map */
