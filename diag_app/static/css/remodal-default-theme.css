@@ -22,7 +22,7 @@
 /* Default theme styles of the overlay */
 
 .remodal-overlay {
-  background: rgba(43, 46, 56, 0.9);
+  background: rgba(49, 50, 55, .5);
 }
 
 .remodal-overlay.remodal-is-opening,
@@ -303,7 +303,7 @@
    ========================================================================== */
 
 .lt-ie9 .remodal-overlay {
-  background: #2b2e38;
+  background: #cab298;
 }
 
 .lt-ie9 .remodal {

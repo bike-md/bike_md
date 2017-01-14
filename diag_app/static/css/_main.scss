@@ -110,12 +110,13 @@ margin-left: 1%;
   bottom:0;
 }
 
-
-//POST PROBLEM MODAL STYLING
-.remodal {
-
+.new-problem-header {
+  background-color: $golden;
+  width: 100%;
+  height: 60px;
 }
 
-.modaltext p {
-  display: inline;
+.new-problem-header-title {
+  margin-top: 0%;
+  margin-bottom: 0%;
 }

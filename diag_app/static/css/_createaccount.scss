@@ -4,14 +4,15 @@
 .createaccountbody {
   background-image:
   linear-gradient(
-        rgba(black, 0.75),
-        rgba(black, 0.75)
+        rgba($charcoal, 0.5),
+        rgba($charcoal, 0.5)
       ),
   url("../images/index-background.jpg");
   background-size:cover;
   background-position:center;
+  background-repeat: no-repeat;
   margin:0;
-  padding: 5%;
+  // padding: 5%;
 }
 
 .create-account-container{
@@ -39,6 +40,7 @@
 // padding-top: 2%;
 // background-color: white;
 padding: 2%;
+  margin-bottom: 7%;
 }
 
   .profile-information {
@@ -112,8 +114,11 @@ padding: 2%;
   background-color: $golden;
   width: 70%;
   padding-top: 1%;
-height: 70px;
-margin: 0 auto;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
+
 }
 
 .register-exit-button {

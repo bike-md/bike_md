@@ -156,6 +156,9 @@ header .templatenav .dropdown li a:hover {
 // modal
 .remodal{
   height:auto;
+  textarea {
+    width: 90%;
+  }
 }
 
 .systems-dropdown{
@@ -169,7 +172,7 @@ header .templatenav .dropdown li a:hover {
 
 .problemtitle-field{
   height:30px;
-  width:40%;
+  width:90%;
   text-align:left;
   font-size:1rem;
   font-family:gill sans;
@@ -206,4 +209,11 @@ footer{
     text-transform:uppercase;
     text-align:center;
   }
+}
+
+//POST PROBLEM MODAL STYLING
+
+
+.modaltext p {
+  display: inline;
 }
