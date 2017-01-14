@@ -47,7 +47,7 @@
             </div>
         </div>
         <!-- diagnose -->
-        <li class ="link1"><a href="/">Diagnose</a></li>
+        <li><a href="/" class ="link1">Diagnose</a></li>
         <!-- ask questions -->
         <div class ="askmodal-container">
           <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
@@ -221,7 +221,7 @@
             <article class="post-container">
                 <select class="dropdownlist" id="probSystem">
                     {% verbatim %}
-                    <option value="none"></option>
+                    <option value="none">Select One</option>
                     {{#each .}}
                         <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                     {{/each}}
@@ -230,7 +230,7 @@
             </article>
         </script>
         <!-- end modal scripts -->
-
+        <!-- step circles -->
         <script id="brand-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
@@ -250,20 +250,23 @@
             </article>
         </script>
 
+
         <script id="year-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select year
-                        <a onclick="showBrands()">
-                            <div class="stepscircles">
-                                <h5 class="step-number">1</h5>
-                            </div>
-                        </a>
-                        <a onclick="showYears({{this.brandId}})">
-                            <div id="yearStep" class="stepscircles">
-                                <h5 class="step-number">2</h5>
-                            </div>
-                        </a>
+
+                  <a onclick="showYears({{this.brandId}})">
+                      <div id="yearStep" class="stepscircles">
+                          <h5 class="step-number">2</h5>
+                      </div>
+                  </a>
+                  <a onclick="showBrands()">
+                      <div class="stepscircles">
+                          <h5 class="step-number">1</h5>
+                      </div>
+                  </a>
+
                 </h3>
                 <input id="brandId" type="hidden" name="brand" value="{{this.brandId}}">
                     {{#each this.modelYears}}
@@ -281,19 +284,22 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select model
-                        <a onclick="showBrands()">
-                            <div class="stepscircles">
-                                <h5 class="step-number">1</h5>
-                            </div>
-                        </a>
-                        <a onclick="showYears({{brand}})">
-                            <div class="stepscircles">
-                                <h5 class="step-number">2</h5>
-                            </div>
-                        </a>
-                        <div id="modelStep" class="stepscircles">
-                            <h5 class="step-number">3</h5>
+                  <div id="modelStep" class="stepscircles">
+                      <h5 class="step-number">3</h5>
+                  </div>
+
+                    <a onclick="showYears({{brand}})">
+                        <div class="stepscircles">
+                            <h5 class="step-number">2</h5>
                         </div>
+                    </a>
+
+                    <a onclick="showBrands()">
+                        <div class="stepscircles">
+                            <h5 class="step-number">1</h5>
+                        </div>
+                    </a>
+
                 </h3>
                 {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">

@@ -400,14 +400,8 @@ hr {
   height: auto;
   width: auto;
   max-width: 80%;
-  padding-top: 2%;
-  padding-bottom: 3%;
-  padding-left: 1%;
-  padding-right: 1%;
-  margin: 0 auto;
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%; }
+  padding-bottom: 2%;
+  margin: 0 auto; }
   .outer-box .diag-select-box {
     background-color: white;
     height: 45px;
@@ -435,35 +429,40 @@ hr {
       top: 50%;
       transform: translateY(-50%);
       text-align: center;
-      color: #709c97;
+      color: #313237;
       font-size: 16px;
       margin: 0; }
   .outer-box a {
     text-decoration: none; }
   .outer-box .diag-select-box:hover {
-    background-color: #ba973a;
+    background-color: #313237;
+    color: white;
     cursor: pointer;
     transition: .5s; }
     .outer-box .diag-select-box:hover .diag-select-text {
       color: white; }
 
-.outer-box .diag-select-title {
+.diag-select-title {
   font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: normal;
+  background-color: #313237;
+  text-transform: uppercase;
   font-weight: 400;
   color: white;
-  text-align: center;
-  margin-top: -20px;
-  background-color: rgba(135, 176, 170, 0.9);
-  padding: 1%; }
+  padding: .5% 0 .5% 38%;
+  margin-top: -26px; }
 
 .stepscircles {
   display: inline-block;
   height: 20px;
   width: 20px;
-  border-radius: 50px;
-  background-color: white; }
+  border-radius: 50%;
+  float: right;
+  margin: 1.2% 2% 0 .5%;
+  background-color: white;
+  text-align: center; }
 
 .step-number {
   margin: 0px;
