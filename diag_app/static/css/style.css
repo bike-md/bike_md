@@ -630,6 +630,10 @@ hr {
     text-align: center; }
   .prob-form-background .form-text {
     text-align: center; }
+  .prob-form-background .counterSolution {
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 1%; }
   .prob-form-background .prob-box, .prob-form-background .sol-box, .prob-form-background .sol-form-container {
     height: auto;
     background-color: rgba(255, 255, 255, 0.9);
