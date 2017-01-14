@@ -16,7 +16,6 @@ body {
 
 
 header{
-  // background-color:rgba(black, .30);
   height:58px;
   padding-left: 10%;
   padding-top: .5%;
@@ -26,27 +25,23 @@ header{
   width:18%;
   float:left;
   margin-top: 1.5%;
-  margin-right: .2%;
-
+  padding-right:.9%;
 }
 
 .templatenav{
-  display: inline;
 
     li{
       list-style-type:none;
       display:inline-block;
-      // padding:2% .75%;
-      margin-left: 3.1%;
+      padding:0 .9%;
       float:left;
-      margin-top: 25px;
+      margin-top:15px;
 
       a{
+        position:relative;
         text-decoration:none;
         color:white;
         @include smallregularfont;
-        position:relative;
-        text-align: right;
       }
 
 
@@ -54,27 +49,18 @@ header{
       a:after{
         display:block;
         position:absolute;
-        bottom:30px;
+        bottom:25px;
         height:5px;
         width:0px;
-        background-color:$seafoam;
+        background-color:$teal;
         transition:width .5s;
         content:"";
       }
 
-      .link1:hover:after{
-        width:100%;
-      }
-
-      .link2:hover:after{
-        width:100%;
-      }
-
-      .link3:hover:after{
+      a:hover:after{
         width:100%;
       }
     }
-
   }
 }
 // end hover state overline
@@ -120,10 +106,8 @@ header .templatenav .dropdown li a:hover {
       -moz-appearance:none;
       -webkit-appearance: none;
       border: 0px;
-      height: 19.5px;
-      width: 250px;
-      border: white solid 1px;
-      margin-top: -1%;
+      height: 22px;
+      width: 125px;
     }
 
       input, textarea, keygen, select, button  {
@@ -132,7 +116,8 @@ header .templatenav .dropdown li a:hover {
       }
 
     #searchButton {
-      background-color:$darkteal;
+      background-color:$teal;
+      color:white;
       border: 0px;
       height: 24px;
       @include smallfont;
@@ -140,7 +125,7 @@ header .templatenav .dropdown li a:hover {
     }
 
     #searchButton:hover {
-      background-color:$golden;
+      background-color:$charcoal;
       transition: .5s;
     }
 

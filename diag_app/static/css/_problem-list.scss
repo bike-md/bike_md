@@ -26,11 +26,16 @@
     overflow:auto;
    }
 
-  .problem-title{
+  .problist-problem-title{
     @include smallregularfont;
     color: $charcoal;
     font-weight: 400;
     text-decoration:none;
+
+    a{
+      text-decoration:none;
+      color:$charcoal;
+    }
   }
 
   h2, h5{
@@ -45,59 +50,53 @@
     margin:0;
   }
 
-  .problem-title {
-    @include smallregularfont;
-    font-weight:400;
-
-    a{
-      text-decoration:none;
-      color:$charcoal;
-    }
-  }
-
-  .date-time {
+  .problist-date-time {
     @include smallfont;
     color: $charcoal;
     font-weight: 400;
     text-decoration: none;
   }
 
-  .posted-by {
+  .problist-posted-by {
     @include smallfont;
     color: $charcoal;
     font-weight: 400;
     text-decoration: none;
     padding-top: 0;
+
   }
 
-  .date-time, .posted-by {
+  .problist-date-time, .problist-posted-by{
     display: inline;
   }
 
-  .date-time{
-    display:inline-block;
+  .problist-date-time{
+    @include smallfont;
+    font-weight: 400;
+    text-decoration: none;
     color:$teal;
     margin:0;
-    font-weight:500;
-}
+
+  }
 
   .tech-rating{
     display:inline-block;
     border-left:1px solid black;
     border-right:1px solid black;
     padding:0 .5%;
+    color:$charcoal;
   }
 
-  .problem-container {
+  .problist-problem-container {
     background-color:rgba(lightgray, .3);
     padding:1%;
   }
 
-  .problem-container:nth-child(odd){
+  .problist-problem-container:nth-child(odd){
     background-color:white;
   }
 
-  .problem-container:hover{
+  .problist-problem-container:hover{
     background-color:rgba($golden, .4);
     transition: .5s;
   }
