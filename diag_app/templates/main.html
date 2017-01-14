@@ -55,9 +55,9 @@
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
-
-                <h4 class ="modaltext-1">Enter a title for your post:</h4>
-                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
+                <div class="goldendecor">
+                    <h1 class="modal-header">Post a Problem</h1>
+                </div>
                 <h4 class ="modaltext">Choose Bike:</h4>
                     <p>Brand: <div id="brandSelect" class="systems-dropdown"></div></p>
                     <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
@@ -65,11 +65,11 @@
                 <h4 class ="modaltext">Choose System:</h4>
                     <div id="systemSelect" class ="systems-dropdown"></div>
                 <br>
-
+                <h4 class ="modaltext-1">Enter a title for your post:</h4>
+                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
                 <h4 class ="modaltext">Describe your problem:</h4>
-                <p class="counter" id="counter"></p>
-
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
+                <p class="counter" id="counter"></p>
                 <br>
                 <input data-remodal-action="close" id="newProbSubmit" class ="submit-button" type="submit" value="Submit">
             </form>
@@ -214,17 +214,16 @@
             <article class="post-container">
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
-                        <div class="stepscircles">
-                            <h5 id="currentStep" class="step-number">1</h5>
-                            </div>
-                        </a>
+                        <div id="brandStep" class="stepscircles">
+                            <h5 class="step-number">1</h5>
+                        </div>
                 </h3>
                     {{#each .}}
-                  <a onclick="showYears({{this.id}})">
-                      <div class ="diag-select-box">
-                          <h4 class="diag-select-text">{{ this.name }}</h4>
-                      </div>
-                  </a>
+                    <a id="clickOne" onclick="showYears({{this.id}})">
+                        <div class ="diag-select-box">
+                            <h4 class="diag-select-text">{{ this.name }}</h4>
+                        </div>
+                    </a>
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -240,8 +239,8 @@
                             </div>
                         </a>
                         <a onclick="showYears({{this.brandId}})">
-                            <div class="stepscircles">
-                                <h5 id="currentStep" class="step-number">2</h5>
+                            <div id="yearStep" class="stepscircles">
+                                <h5 class="step-number">2</h5>
                             </div>
                         </a>
                 </h3>
@@ -271,7 +270,9 @@
                                 <h5 class="step-number">2</h5>
                             </div>
                         </a>
-                        <div id="currentStep" class="stepscircles"><h5 class="step-number">3</h5></div>
+                        <div id="modelStep" class="stepscircles">
+                            <h5 class="step-number">3</h5>
+                        </div>
                 </h3>
                 {{#each bikes}}
                     <a onclick="linkBike({{this.id}})">
