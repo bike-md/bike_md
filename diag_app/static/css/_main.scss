@@ -92,16 +92,20 @@ hr {
   text-align:center;
 }
 
+.stepscircles:hover{
+  cursor:pointer;
+}
+
 .step-number {
   margin: 0px;
   @include smallfont;
-  color: $darkteal;
+  color:$charcoal;
   transition: .5s;
   margin-left: 1%;
 }
 
 .selected{
-    background-color: grey;
+    background-color:$teal;
 }
 
 .mainfooter{
