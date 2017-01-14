@@ -209,6 +209,14 @@ footer{
   }
 }
 
+.no-result-text {
+  h5 {
+    @include smallregularfont;
+    color: $charcoal;
+    text-align: center;
+  }
+}
+
 //POST PROBLEM MODAL STYLING
 .remodal {
 padding:0;
@@ -258,3 +266,26 @@ padding:0;
 .textarea-border {
   border: 1px solid #c0bebf;
 }
+
+.no-result-modal {
+  padding: 10%;
+  h5 {
+    @include smallfont;
+    color: $charcoal;
+    font-weight: 200;
+    margin-bottom: 10%;
+  }
+  .post-problem-button {
+ text-decoration: none;
+ background-color: $darkteal;
+ padding: 5%;
+ color: white;
+ }
+}
+
+  .post-problem-button:hover {
+    text-decoration: none;
+    background-color: $charcoal;
+    color: white;
+    transition: .5s;
+  }

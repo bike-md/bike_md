@@ -254,8 +254,8 @@ function searchProblems(){
     }).done(function(results){
         var problems = results.results
         var length = problems.length
-        var message = '<h5>' + "There are no problems that match your search. Add one" +
-            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var message = '<h5 class="no-result-text">' + "There are no problems that match your search."+ '</h5>' +
+            '<a class="post-problem-button"  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >' + "Post a new problem here" + '</a>';
         var noResults = {
             message: message,
         }

@@ -38,7 +38,10 @@
         <div class ="search-modal-container">
             <div class="remodal" data-remodal-id="searchModal">
                 <button data-remodal-action="close" class="remodal-close"></button>
-
+                <div class="goldendecor">
+                  <h1 class="modal-header"> Search Results</h1>
+                  <hr>
+                </div>
                 <div id="searchProblemList" class="search-problem-list"></div>
 
             </div>
@@ -146,7 +149,9 @@
         <script id="search-problem-template-two" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
+                <div class="no-result-modal">
                     {{{message}}}
+                </div>
                 {% endverbatim %}
             </article>
         </script>
