@@ -65,7 +65,7 @@ input:-webkit-autofill {
   width: 100%;
   text-align: center;
   padding: 0;
-  background-color: #554d1d;
+  background-color: #87b0aa;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -455,7 +455,7 @@ hr {
   color: white;
   text-align: center;
   margin-top: -20px;
-  background-color: rgba(85, 77, 29, 0.9);
+  background-color: rgba(135, 176, 170, 0.9);
   padding: 1%; }
 
 .stepscircles {
@@ -470,7 +470,7 @@ hr {
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  color: #554d1d;
+  color: #87b0aa;
   transition: .5s;
   margin-left: 1%; }
 
@@ -1047,7 +1047,7 @@ input, textarea, keygen, select, button {
   font-family: gill sans; }
 
 #searchButton {
-  background-color: #554d1d;
+  background-color: #87b0aa;
   border: 0px;
   height: 24px;
   font-size: 1rem;
