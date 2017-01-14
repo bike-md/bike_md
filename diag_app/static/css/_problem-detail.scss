@@ -18,7 +18,6 @@
 .prob-form-background{
   height:auto;
   width:70%;
-  // background-color:rgba(white, .25);
   margin:0 auto;
   margin-top:60px;
   padding:2%;
@@ -49,7 +48,7 @@
 
   .posted-by{
     display:inline-block;
-    margin:0;
+    margin-bottom:10px;
   }
 
   .tech-rating{
@@ -115,6 +114,10 @@
     background-color:$charcoal;
   }
 
+  .solution-score{
+    margin-top:30px;
+  }
+
   .timecost-input{
     display:block;
     margin:0 auto;
@@ -149,6 +152,5 @@
   .solution-submit:hover{
     background-color:$golden;
     transition: .5s;
-
   }
 }
