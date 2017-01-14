@@ -3,7 +3,8 @@
 
 
 .prob-detailbody{
-  background: linear-gradient(to right, rgba(black,.7),
+  background-image:
+ linear-gradient(to right, rgba(black,.7),
   rgba(255,255,255,0)),
    linear-gradient(
          rgba(#5c605f, 0.15),
@@ -87,6 +88,13 @@
   .form-text{
     text-align:center;
   }
+
+  .counterSolution{
+      text-align: right;
+      margin-right: 10%;
+      margin-top: 1%;
+  }
+
 
   .prob-box, .sol-box, .sol-form-container{
     height:auto;

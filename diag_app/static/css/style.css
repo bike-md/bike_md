@@ -1,12 +1,13 @@
 .indexbody {
   margin: 0;
   background-image: url("../images/index-background.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .indexnav {
   width: 11%;
   margin-left: 10%;
-  background-color: rgba(175, 175, 178, 0.35);
+  background-color: rgba(202, 178, 152, 0.3);
   padding: 1%;
   margin-bottom: 0; }
   .indexnav ul {
@@ -14,7 +15,7 @@
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 20%; }
+    margin-bottom: 15%; }
     .indexnav ul li {
       clear: both;
       list-style-type: none;
@@ -44,7 +45,7 @@
         width: 133%; }
     .indexnav ul .logobox {
       width: 100%;
-      margin-bottom: 15%; }
+      margin-bottom: 36%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
@@ -266,25 +267,29 @@ input:-webkit-autofill {
           height: 150px;
           width: auto; } }
 .createaccountbody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-image: linear-gradient(rgba(49, 50, 55, 0.5), rgba(49, 50, 55, 0.5)), url("../images/index-background.jpg");
   background-size: cover;
   background-position: center;
-  margin: 0;
-  padding: 5%; }
+  background-repeat: no-repeat;
+  margin: 0; }
 
-.create-account-overlay-box {
+.create-account-container {
   display: block;
-  width: 60%;
-  background-image: url("../images/register-page-background-image.png");
-  background-size: cover;
-  background-position: center;
+  width: 70%;
+  background-position: relative;
+  right: 0;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: auto;
-  margin: 0 auto;
-  padding-top: 2%; }
+  padding-bottom: 3%;
+  margin: 0 auto; }
 
 .create-account-box {
-  padding-top: 2%; }
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url("../images/register-page-background-image.png");
+  width: 96%;
+  background-size: cover;
+  padding: 2%;
+  margin-bottom: 7%; }
 
 .profile-information {
   width: 66%;
@@ -294,7 +299,7 @@ input:-webkit-autofill {
   margin: 1%; }
 
 .register-form {
-  padding-top: 1%;
+  padding-top: 2%;
   padding-left: 10%;
   padding-bottom: 5%; }
 
@@ -324,31 +329,40 @@ input:-webkit-autofill {
   text-transform: uppercase;
   font-weight: normal;
   color: white;
-  padding-top: 1.5%;
-  padding-bottom: 3%;
   float: left;
-  margin-top: 1%; }
+  margin-top: 1%;
+  margin-bottom: 0%; }
 
 .register-form-submit-button:hover {
   background-color: rgba(49, 50, 55, 0.8);
   border: none; }
 
 .register-user-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: normal;
   color: white;
   font-weight: 400;
-  margin-left: 20%;
-  margin-top: .5%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
   font-weight: 200;
   padding-top: 1%;
   padding-bottom: 1%; }
+  .register-user-title hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%; }
 
 .goldendecor {
   background-color: #ba973a;
+  width: 70%;
+  padding-top: 1%;
   height: 70px;
-  width: 50%; }
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%; }
 
 .register-exit-button {
   height: 40px;
@@ -359,8 +373,8 @@ input:-webkit-autofill {
   text-transform: uppercase;
   float: right;
   text-align: right;
-  margin-right: 2%;
-  margin-top: 2%; }
+  margin-right: 1%;
+  margin-top: -4%; }
   .register-exit-button a {
     text-decoration: none;
     color: #ba973a;
@@ -466,6 +480,15 @@ hr {
   position: absolute;
   bottom: 0; }
 
+.new-problem-header {
+  background-color: #ba973a;
+  width: 100%;
+  height: 60px; }
+
+.new-problem-header-title {
+  margin-top: 0%;
+  margin-bottom: 0%; }
+
 .bikedetailsbody {
   background: url("../images/bikedetails-background.jpg");
   background-size: cover;
@@ -570,7 +593,7 @@ hr {
   bottom: 0; }
 
 .prob-detailbody {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
   background-size: cover;
   background-attachment: fixed;
   margin: 0; }
@@ -629,6 +652,10 @@ hr {
     text-align: center; }
   .prob-form-background .form-text {
     text-align: center; }
+  .prob-form-background .counterSolution {
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 1%; }
   .prob-form-background .prob-box, .prob-form-background .sol-box, .prob-form-background .sol-form-container {
     height: auto;
     background-color: rgba(255, 255, 255, 0.9);
@@ -673,18 +700,76 @@ hr {
     background-color: #ba973a;
     transition: .5s; }
 
+.userprofilebody {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 5%; }
+
+.profile-details-goldendecor {
+  background-color: #ba973a;
+  height: 70px;
+  width: 50%; }
+
+.profile-details-container {
+  height: auto;
+  width: 70%;
+  background-color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow: hidden; }
+
+.photo-box {
+  height: 220px;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  padding: 1%;
+  background-color: white; }
+  .photo-box .profile-photo img {
+    margin: 0 auto; }
+
+.profile-page-information-area {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: .5%;
+  box-sizing: border-box;
+  height: 210px; }
+
+.profile-information-details {
+  width: 52%;
+  float: right;
+  background-color: white;
+  margin-left: 1%;
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  overflow: scroll; }
+  .profile-information-details h4 {
+    margin-top: 1%;
+    margin-bottom: 1%; }
+  .profile-information-details p {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    background-color: #ba973a;
+    color: white;
+    text-align: center;
+    margin-top: 1px; }
+
 .profile-page-username {
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
   font-weight: 200;
-  margin-top: 1%; }
-
-.profile-page-information {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: .5%; }
+  margin-top: 1%;
+  margin-bottom: 1%; }
 
 .modaltext {
   font-size: 1rem;
@@ -692,12 +777,6 @@ hr {
   text-transform: uppercase;
   color: #313237;
   font-weight: 200; }
-
-.userprofilebody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
-  background-size: cover;
-  margin: 0;
-  overflow: auto; }
 
 .post-container {
   font-size: 1rem;
@@ -716,18 +795,6 @@ hr {
   margin-top: 8%;
   margin-bottom: -.25%; }
 
-.profile-photo img {
-  display: block;
-  height: 220px;
-  margin: 0 auto; }
-
-.profile-details {
-  display: inline-block;
-  width: 70%;
-  background: linear-gradient(rgba(175, 175, 178, 0.55), rgba(175, 175, 178, 0.55));
-  margin-left: 16%;
-  margin-right: 10%; }
-
 .profile-box {
   width: 30%;
   height: 220px;
@@ -738,32 +805,13 @@ hr {
   background-color: white;
   position: relative; }
 
-.profile-information {
-  width: 26%;
-  height: 170px;
-  float: left;
-  background-color: #ffffff;
-  margin-left: 2%;
-  margin-bottom: -1%;
-  padding: 2%;
-  overflow: scroll; }
-  .profile-information p {
-    font-size: 1rem;
-    font-family: gill sans;
-    text-transform: uppercase;
-    background-color: #ba973a;
-    color: white;
-    text-align: center;
-    margin-top: 1px; }
-
 .profile-questions-asked {
-  width: 60%;
-  height: 170px;
+  width: 92%;
+  height: 220px;
   float: right;
   background-color: #ffffff;
   margin-right: 2%;
   margin-top: 2%;
-  margin-bottom: 2%;
   padding: 2%;
   overflow: scroll; }
   .profile-questions-asked p {
@@ -777,12 +825,12 @@ hr {
     padding: 2%; }
 
 .profile-questions-answered {
-  width: 60%;
-  height: 170px;
+  width: 92%;
+  height: 220px;
   float: right;
   background-color: #ffffff;
   margin-right: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   padding: 2%;
   overflow: scroll; }
   .profile-questions-answered p {
@@ -814,6 +862,10 @@ hr {
   .exitbutton a:hover {
     color: #a8bdba;
     background-color: #313237; }
+
+h4.tech-rating {
+  margin-top: 1%;
+  margin-bottom: 1%; }
 
 .problist-page-title {
   font-size: 2rem;
@@ -1018,18 +1070,31 @@ input, textarea, keygen, select, button {
 
 .remodal {
   height: auto; }
+  .remodal textarea {
+    width: 90%; }
 
 .systems-dropdown {
   display: inline-block; }
 
 .modaltext {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  margin-bottom: 1%;
+  font-weight: 400;
+  margin-top: 1%; }
+
+.modaltext-1 {
   font-size: 1rem;
   font-family: gill sans;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: 200;
+  margin: 0;
+  margin-bottom: 10%; }
 
 .problemtitle-field {
   height: 30px;
-  width: 40%;
+  width: 90%;
   text-align: left;
   font-size: 1rem;
   font-family: gill sans;
@@ -1043,13 +1108,15 @@ input, textarea, keygen, select, button {
   font-family: gill sans;
   text-transform: uppercase;
   padding: 2%;
-  margin-top: 10px;
+  margin-top: 0%;
+  margin-bottom: 2%;
   box-sizing: border-box; }
 
 .submit-button:hover {
   color: #313237;
   background-color: white;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: .5s; }
 
 footer {
   clear: both;
@@ -1062,5 +1129,80 @@ footer {
     font-family: gill sans;
     text-transform: uppercase;
     text-align: center; }
+
+.no-result-text h5 {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237;
+  text-align: center; }
+
+.remodal {
+  padding: 0; }
+  .remodal .goldendecor {
+    margin: 0;
+    width: 100%;
+    height: 80px; }
+
+.modal-header {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  font-weight: 200;
+  text-align: left;
+  margin-bottom: 0;
+  margin-left: 10%; }
+  .modal-header hr {
+    margin-top: 0; }
+
+.containerDropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.select-brand-model-year {
+  margin-bottom: 2%; }
+  .select-brand-model-year p {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin-bottom: 10px; }
+
+.dropdownlist {
+  background-color: #313237;
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 200; }
+
+.textarea-border {
+  border: 1px solid #c0bebf; }
+
+.no-result-modal {
+  padding: 10%; }
+  .no-result-modal h5 {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    color: #313237;
+    font-weight: 200;
+    margin-bottom: 10%; }
+  .no-result-modal .post-problem-button {
+    text-decoration: none;
+    background-color: #87b0aa;
+    padding: 5%;
+    color: white; }
+
+.post-problem-button:hover {
+  text-decoration: none;
+  background-color: #313237;
+  color: white;
+  transition: .5s; }
 
 /*# sourceMappingURL=style.css.map */
