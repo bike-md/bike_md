@@ -122,36 +122,42 @@
 
     <h1 class="page-title" id="model"></h1>
 
-<hr>
-<!---Containter, start styling here--->
+    <hr>
+    <!---Containter, start styling here--->
 
-<div class="problem-list-box">
-    <div id="problemList" class="logobackground"></div>
-</div>
+    <div class="problem-list-box">
+        <div id="problemList" class="logobackground"></div>
+    </div>
 
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>
     </footer>
 
-<!-- modal scripts     -->
-    <!-- search modal -->
-    <script id="search-problem-template" type="text/x-handlebars-template">
-        <article class="post-container">
-            {%verbatim%}
-            {{#each .}}
-                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
-            {{/each}}
-            {% endverbatim %}
-        </article>
-    </script>
+    <!-- modal scripts     -->
 
-    <script id="search-problem-template-two" type="text/x-handlebars-template">
-        <article class="post-container">
-            {%verbatim%}
-                {{{message}}}
-            {% endverbatim %}
-        </article>
-    </script>
+        <!-- search modal -->
+        <script id="search-problem-template" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                {{#each .}}
+                  <div class="problem-container">
+                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  </div>
+                {{/each}}
+                {% endverbatim %}
+            </article>
+        </script>
+
+
+        <script id="search-problem-template-two" type="text/x-handlebars-template">
+            <article class="post-container">
+                {%verbatim%}
+                <div class="no-result-modal">
+                    {{{message}}}
+                </div>
+                {% endverbatim %}
+            </article>
+        </script>
 
 
         <!-- answer modal -->

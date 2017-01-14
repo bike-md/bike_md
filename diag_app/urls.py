@@ -11,6 +11,8 @@ urlpatterns = [
     url((r'^problem_detail/([0-9]+)'), views.problem_detail, name='problem_detail'),
     url((r'^profile/$'), views.profile, name='profile'),
     url(r'^create_account/$', views.create_account, name='create_account'),
+    url((r'^about/$'), views.about_us, name='about'),
+
 
     # developemnt urls
     url((r'^problems/'),TemplateView.as_view(template_name="build_templates/problem_listing.html")),

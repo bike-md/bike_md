@@ -12,13 +12,15 @@
     <title>Main</title>
   </head>
 
+
   <body class ="mainbody">
+
 
     <header>
       <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
-      <nav class ="templatenav">
 
+      <nav class ="templatenav">
         <!-- search -->
         <ul>
             <li>
@@ -35,6 +37,7 @@
             </li>
         </ul>
 
+
         <!-- search modal -->
         <div class ="search-modal-container">
             <div class="remodal" data-remodal-id="searchModal">
@@ -47,8 +50,12 @@
 
             </div>
         </div>
+
+
         <!-- diagnose -->
         <li><a href="/" class ="link1">Diagnose</a></li>
+
+
         <!-- ask questions -->
         <div class ="askmodal-container">
           <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
@@ -94,6 +101,7 @@
           </div>
         </div>
 
+
         <!-- answer questions -->
         <div class ="answermodal-container">
           <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Unsolved Problems</a></li>
@@ -105,7 +113,6 @@
                 <hr>
             </div>
             <div id="modalProblemList" class="unsolved-problems-list"></div>
-
           </div>
         </div>
 
@@ -137,6 +144,7 @@
 
 <!-- modal scripts     -->
 
+
         <!-- search modal -->
         <script id="search-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -149,6 +157,7 @@
                 {% endverbatim %}
             </article>
         </script>
+
 
         <script id="search-problem-template-two" type="text/x-handlebars-template">
             <article class="post-container">
@@ -231,6 +240,8 @@
             </article>
         </script>
         <!-- end modal scripts -->
+
+
         <!-- step circles -->
         <script id="brand-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -281,6 +292,7 @@
             </article>
         </script>
 
+
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
@@ -312,6 +324,7 @@
                 {% endverbatim %}
             </article>
         </script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
