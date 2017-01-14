@@ -464,17 +464,20 @@ hr {
   background-color: white;
   text-align: center; }
 
+.stepscircles:hover {
+  cursor: pointer; }
+
 .step-number {
   margin: 0px;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  color: #87b0aa;
+  color: #313237;
   transition: .5s;
   margin-left: 1%; }
 
 .selected {
-  background-color: grey; }
+  background-color: #709c97; }
 
 .mainfooter {
   position: absolute;
