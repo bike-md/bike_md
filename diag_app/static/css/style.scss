@@ -155,7 +155,7 @@ header .templatenav .dropdown li a:hover {
   @include smallregularfont;
   margin-bottom: 1%;
   font-weight: 400;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 .modaltext-1{
@@ -223,17 +223,19 @@ padding:0;
   .goldendecor {
     margin: 0;
     width: 100%;
-    height: 80px;
+    height: 60px;
+    margin-bottom: 2%;
     }
 }
 
 .modal-header {
   @include mediumfont;
   color: white;
-  font-weight: 200;
+  font-weight: 500;
   text-align: left;
-  margin-bottom: 0;
+  margin-bottom: -1%;;
   margin-left: 10%;
+  margin-top: 1%;
   hr {
     margin-top: 0;
   }
