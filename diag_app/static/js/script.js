@@ -27,7 +27,7 @@ $("#loadBikes").click(loadModels)
 
 
 $(document).ready(function(){
-  $(".link3").click(function(){
+  $(".link4").click(function(){
     $(".dropdown").slideToggle();
   });
 });
