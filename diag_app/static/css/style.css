@@ -273,6 +273,33 @@ input:-webkit-autofill {
   background-repeat: no-repeat;
   margin: 0; }
 
+.goldendecor {
+  background-color: #ba973a;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%; }
+
+.register-user-title {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+  .register-user-title hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%; }
+
 .create-account-container {
   display: block;
   width: 70%;
@@ -336,33 +363,6 @@ input:-webkit-autofill {
 .register-form-submit-button:hover {
   background-color: rgba(49, 50, 55, 0.8);
   border: none; }
-
-.register-user-title {
-  font-size: 2rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
-  color: white;
-  font-weight: 400;
-  margin-left: 10%;
-  margin-top: 2%;
-  margin-bottom: -2%;
-  font-weight: 200;
-  padding-top: 1%;
-  padding-bottom: 1%; }
-  .register-user-title hr {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 5%; }
-
-.goldendecor {
-  background-color: #ba973a;
-  width: 70%;
-  padding-top: 1%;
-  height: 70px;
-  margin-left: 15%;
-  margin-top: 7%;
-  margin-right: 15%; }
 
 .register-exit-button {
   height: 40px;
@@ -895,6 +895,7 @@ h4.tech-rating {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: 200;
   color: #313237;
   font-weight: 400;
   text-decoration: none; }
@@ -962,94 +963,88 @@ h2, h5 {
   background-color: rgba(186, 151, 58, 0.4);
   transition: .5s; }
 
-.aboutusbody {
-  margin: 0;
-  background-image: url("../images/main-background.jpg");
+.aboutbody {
+  background-image: linear-gradient(rgba(49, 50, 55, 0.5), rgba(49, 50, 55, 0.5)), url("../images/index-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  background-repeat: no-repeat; }
+  margin: 0; }
 
-.indexnav {
-  width: 11%;
-  margin-left: 10%;
-  background-color: rgba(202, 178, 152, 0.3);
-  padding: 1%;
-  margin-bottom: 0; }
-  .indexnav ul {
-    text-align: right;
-    text-transform: uppercase;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 15%; }
-    .indexnav ul li {
-      clear: both;
-      list-style-type: none;
-      padding-bottom: 1%;
-      font-size: 1.5rem;
-      font-family: gill sans;
-      text-transform: uppercase; }
-      .indexnav ul li a {
-        text-decoration: none;
-        color: white;
-        position: relative; }
-      .indexnav ul li a:after {
-        display: block;
-        position: absolute;
-        bottom: 0px;
-        height: 1.2em;
-        width: 0px;
-        background-color: #ba973a;
-        transition: width .5s;
-        content: "";
-        z-index: -1; }
-      .indexnav ul li .link1:hover:after {
-        width: 150%; }
-      .indexnav ul li .link2:hover:after {
-        width: 160%; }
-      .indexnav ul li .link3:hover:after {
-        width: 133%; }
-    .indexnav ul .logobox {
-      width: 100%;
-      margin-bottom: 36%; }
-      .indexnav ul .logobox .logo {
-        width: 100%; }
+.goldendecor {
+  background-color: #ba973a;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%; }
 
-.loginform .loginfield {
-  height: 30px;
-  border: transparent;
-  width: 100%;
-  margin: 5% auto;
-  padding: 5%;
-  box-sizing: border-box; }
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset; }
-
-.loginbutton {
-  height: 50px;
-  width: 100%;
-  text-align: center;
-  padding: 0;
-  background-color: #87b0aa;
-  font-size: 1.5rem;
+.about-page-title {
+  font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
-  text-align: center;
-  margin: 5% auto;
-  -webkit-transition-duration: 0.4s;
-  /* Safari */
-  transition-duration: 0.4s;
-  border: 0; }
-  .loginbutton a {
-    text-decoration: none;
-    color: #313237;
-    padding: 15%; }
-  .loginbutton a:hover {
-    text-decoration: none;
-    color: #a8bdba; }
+  font-weight: normal;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+  .about-page-title hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%; }
 
-.loginbutton:hover {
-  background-color: #ba973a;
-  color: white; }
+.about-container {
+  display: block;
+  width: 70%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-bottom: 3%;
+  margin: 0 auto; }
+
+.about-background-box {
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url("../images/register-page-background-image.png");
+  width: 80%;
+  height: auto;
+  background-size: auto;
+  background-repeat: no-repeat;
+  padding: 10%;
+  margin-bottom: 7%; }
+
+.about-box p {
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  color: #313237;
+  text-align: left; }
+.about-box .bikemd {
+  font-size: 1.2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: 200; }
+
+.about-exit-button {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  float: right;
+  text-align: right;
+  margin-right: 1%;
+  margin-top: -4%; }
+  .about-exit-button a {
+    text-decoration: none;
+    color: #ba973a;
+    padding: 1%;
+    background-color: #313237; }
+  .about-exit-button a:hover {
+    color: #313237;
+    background-color: #ba973a; }
 
 /* ----------- iPad mini ----------- */
 /* Portrait and Landscape */
@@ -1256,7 +1251,8 @@ header {
       color: white;
       font-size: 1.2rem;
       font-family: gill sans;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-weight: 200; }
     header .templatenav li a:after {
       display: block;
       position: absolute;
@@ -1349,6 +1345,7 @@ input, textarea, keygen, select, button {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: 200;
   margin-bottom: 1%;
   font-weight: 400;
   margin-top: 2%; }
@@ -1403,6 +1400,7 @@ footer {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
+  font-weight: 200;
   color: #313237;
   text-align: center; }
 

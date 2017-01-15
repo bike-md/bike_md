@@ -12,86 +12,18 @@
   background-position:center;
   background-repeat: no-repeat;
   margin:0;
-  // padding: 5%;
 }
-
-.create-account-container{
-  display:block;
-  width:70%;
-
-  // background-size:auto;
-
-  background-position: relative;
-  right: 0;
-  background-attachment:fixed;
-  background-repeat: no-repeat;
-  height: auto;
-  padding-bottom: 3%;
-  margin: 0 auto;
+ //Color background for title
+.goldendecor {
+  background-color: $golden;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
 }
-
-.create-account-box {
-  background: linear-gradient(
-        rgba(white, 0.55),
-        rgba(white, 0.55)
-      ), url("../images/register-page-background-image.png");
-  width: 96%;
-  background-size: cover;
-// padding-top: 2%;
-// background-color: white;
-padding: 2%;
-  margin-bottom: 7%;
-}
-
-  .profile-information {
-    width: 66%;
-    height: 224px;
-    float: right;
-    background-color: #000000;
-    margin: 1%;
-  }
-
-  .register-form {
-    padding-top: 2%;
-    padding-left:10%;
-    padding-bottom: 5%;
-  }
-
-
-  .register-form-questions {
-    margin: 0;
-    @include smallfont;
-    font-weight: normal;
-    color: $teal;
-    padding: .3%;
-  }
-
-
-  .register-form input {
-    width: 40%;
-    height: 20px;
-    margin-right: 5%;
-    @include smallfont;
-    font-weight: normal;
-  }
-
-  .register-form-submit-button {
-    background-color:rgba($golden, .8);
-    border: none;
-    @include smallfont;
-    font-weight: normal;
-    color: white;
-    float: left;
-    margin-top: 1%;
-    margin-bottom: 0%;
-    }
-
-
-    .register-form-submit-button:hover {
-      background-color:rgba($charcoal, .8);
-      border: none;
-      }
-
+//Title
 .register-user-title {
   @include mediumfont;
   color: white;
@@ -108,19 +40,71 @@ padding: 2%;
     margin-left: 5%;
   }
 }
-
-
-.goldendecor {
-  background-color: $golden;
-  width: 70%;
-  padding-top: 1%;
-  height: 70px;
-  margin-left: 15%;
-  margin-top: 7%;
-  margin-right: 15%;
-
+//Box wrapper
+.create-account-container{
+  display:block;
+  width:70%;
+  background-position: relative;
+  right: 0;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  height: auto;
+  padding-bottom: 3%;
+  margin: 0 auto;
 }
-
+//Box background image
+.create-account-box {
+  background: linear-gradient(
+        rgba(white, 0.55),
+        rgba(white, 0.55)
+      ), url("../images/register-page-background-image.png");
+  width: 96%;
+  background-size: cover;
+  padding: 2%;
+  margin-bottom: 7%;
+}
+//Start Form area
+  .profile-information {
+    width: 66%;
+    height: 224px;
+    float: right;
+    background-color: #000000;
+    margin: 1%;
+  }
+  .register-form {
+    padding-top: 2%;
+    padding-left:10%;
+    padding-bottom: 5%;
+  }
+  .register-form-questions {
+    margin: 0;
+    @include smallfont;
+    font-weight: normal;
+    color: $teal;
+    padding: .3%;
+  }
+  .register-form input {
+    width: 40%;
+    height: 20px;
+    margin-right: 5%;
+    @include smallfont;
+    font-weight: normal;
+  }
+  .register-form-submit-button {
+    background-color:rgba($golden, .8);
+    border: none;
+    @include smallfont;
+    font-weight: normal;
+    color: white;
+    float: left;
+    margin-top: 1%;
+    margin-bottom: 0%;
+    }
+    .register-form-submit-button:hover {
+      background-color:rgba($charcoal, .8);
+      border: none;
+      }
+//Close Button
 .register-exit-button {
     height:40px;
     width:100%;
@@ -130,19 +114,14 @@ padding: 2%;
     text-align: right;
     margin-right: 1%;
     margin-top: -4%;
-
-
     a{
       text-decoration:none;
       color:$golden;
       padding:1%;
       background-color:$charcoal;
-
     }
-
     a:hover{
       color:$charcoal;
       background-color:$golden;
-
     }
   }

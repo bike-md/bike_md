@@ -1,123 +1,104 @@
 @import "variables";
 @import "mixins";
 
-
-.aboutusbody{
-  margin: 0;
+.aboutbody{
   background-image:
-   url("../images/main-background.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
+  linear-gradient(
+        rgba($charcoal, 0.5),
+        rgba($charcoal, 0.5)
+      ),
+  url("../images/index-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin:0;
 }
-
-  .indexnav{
-    width:11%;
-    margin-left:10%;
-    background-color:rgba($overlaylt, .3);
-    padding:1%;
-    margin-bottom:0;
-
-    ul{
-      text-align:right;
-      text-transform:uppercase;
-      padding:0;
-      margin:0;
-      margin-bottom:15%;
-
-      li{
-        clear:both;
-        list-style-type:none;
-        padding-bottom:1%;
-        @include regularfont;
-
-        a{
-          text-decoration:none;
-          color:white;
-          position:relative;
-
-        }
-
-        a:after{
-          display:block;
-          position:absolute;
-          bottom:0px;
-          height:1.2em;
-          width:0px;
-          background-color:$golden;
-          transition:width .5s;
-          content:"";
-          z-index:-1;
-        }
-
-        .link1:hover:after{
-          width:150%;
-        }
-
-        .link2:hover:after{
-          width:160%;
-        }
-
-        .link3:hover:after{
-          width:133%;
-        }
-      }
-
-      .logobox{
-        width:100%;
-        margin-bottom:36%;
-
-        .logo{
-          width:100%;
-        }
-      }
-    }
-  }
-
-
-
-.loginform .loginfield{
-    height:30px;
-    border:transparent;
-    width: 100%;
-    margin:5% auto;
-    padding:5%;
-    box-sizing:border-box;
-  }
-
-  input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
+//Color background for title//
+.goldendecor {
+  background-color: $golden;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
 }
-
-  .loginbutton{
-    height:50px;
+//Title
+.about-page-title {
+  @include mediumfont;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
+}
+//Box wrapper
+.about-container {
+  display:block;
+  width:70%;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  padding-bottom: 3%;
+  margin: 0 auto;
+}
+//Box background image
+.about-background-box {
+    background: linear-gradient(
+          rgba(white, 0.55),
+          rgba(white, 0.55)
+        ), url("../images/register-page-background-image.png");
+    width: 80%;
+    height: auto;
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 10%;
+    margin-bottom: 7%;
+  }
+.about-box {
+  p {
+    @include smallfont;
+    color: $charcoal;
+    text-align: left;
+  }
+  .bikemd {
+    @include smallregularfont;
+  }
+}
+.about-exit-button {
+    height:40px;
     width:100%;
-    text-align: center;
-    padding:0;
-    background-color:$darkteal;
-    @include regularfont;
-    text-align:center;
-    margin:5% auto;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    border: 0;
+    box-sizing:border-box;
+    @include smallfont;
+    float: right;
+    text-align: right;
+    margin-right: 1%;
+    margin-top: -4%;
 
 
     a{
       text-decoration:none;
-      color:$charcoal;
-      padding:15%;
+      color:$golden;
+      padding:1%;
+      background-color:$charcoal;
+
     }
 
     a:hover{
-      text-decoration:none;
-      color:$seafoam;
+      color:$charcoal;
+      background-color:$golden;
+
     }
   }
 
-  .loginbutton:hover{
-    background-color:$golden;
-    color:white;
-  }
+
 
   /* ----------- iPad mini ----------- */
 
