@@ -82,9 +82,9 @@ body {
           display:block;
           position:absolute;
           bottom:25px;
-          height:5px;
+          height:3px;
           width:0px;
-          background-color:$teal;
+          background-color:white;
           transition:width .5s;
           content:"";
         }

@@ -245,7 +245,7 @@
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
                         <div id="brandStep" class="stepscircles">
-                            <h5 class="step-number">1</h5>
+                            <h5 id="brand-number" class="step-number">1</h5>
                         </div>
                 </h3>
                     {{#each .}}
@@ -267,7 +267,7 @@
 
                   <a onclick="showYears({{this.brandId}})">
                       <div id="yearStep" class="stepscircles">
-                          <h5 class="step-number">2</h5>
+                          <h5 id="year-number" class="step-number">2</h5>
                       </div>
                   </a>
                   <a onclick="showBrands()">
@@ -295,7 +295,7 @@
                 {%verbatim%}
                 <h3 class ="diag-select-title">select model
                   <div id="modelStep" class="stepscircles">
-                      <h5 class="step-number">3</h5>
+                      <h5 id="model-number" class="step-number">3</h5>
                   </div>
 
                     <a onclick="showYears({{brand}})">
@@ -321,7 +321,6 @@
                 {% endverbatim %}
             </article>
         </script>
-
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
