@@ -60,7 +60,7 @@ function showProblem(url){
 
 function charRemainingProb(){
     $('#solutionText').keyup(function () {
-    var left = 1000 - $(this).val().length;
+    var left = 500 - $(this).val().length;
     if (left < 0) {
         left = 0;
     }
