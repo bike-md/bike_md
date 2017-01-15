@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 {%load static%}
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-        <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-        <title>About Us</title>
-    </head>
+  
+  <head>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
+    <title>About Us</title>
+  </head>
 
-    <body class ="aboutusbody">
+  <body class ="aboutuspagebody">
+    <header>
+      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
 
-        <nav class ="indexnav">
-            <ul>
-                <a href ="#"><li class ="logobox"><img class ="logo" src ="{% static 'images/BikeMDLogo.png' %}"></li></a>
-                <li><a class="link1" href ="/create_account">Register</a></li>
-                <li><a class="link2" href ="#">Services</a></li>
-                <li><a class="link3" href ="#">About Us</a></li>
-            </ul>
+      <form>
+        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
+      <form>
 
+      <nav class ="templatenav">
+        <li><a class ="link1" href ="#">Ask Question</a></li>
+        <li><a class ="link2" href ="#">Notifications</a></li>
+        <li><a class ="link3" href ="#">MY Account</a></li>
+      </nav>
+    </header>
 
-
-            <form class ="loginform" name="LoginForm" action="/login/" method="POST">
-                {% csrf_token %}
-                    <ul class='form-errors'>
-                        <li class="error-message">{{ login_message }}</li>
-                    </ul>
-                {% csrf_token %}
-                <input class ="loginfield" name="username" type="text" placeholder ="username"></input>
-                <input class ="loginfield" name="password" type="password" placeholder ="password"></input>
-                <button class="loginbutton" type="submit">Login</button>
-            </form>
-        </nav>
-
-        <div class="info-section">
+    <div class="info-section">
 <h1 class="about-page-title">About Bike MD</h1>
 <br>
 <p>Bike MD is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. "</p>
-        </div>
+    </div>
+
+
+
+    <div class="about-us-details">
+
+About Us Page Info
+      </div>
+
+
+    <footer>
+      <p>Copyright Bike MD 2017. All rights reserved.</p>
+    </footer>
+>>>>>>> 13cd7c6e0115e088329aa79fc443f4a810dccf8c
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </body>
