@@ -45,7 +45,6 @@
                 <button data-remodal-action="close" class="remodal-close"></button>
                 <div class="goldendecor">
                   <h1 class="modal-header"> Search Results</h1>
-                  <hr>
                 </div>
                 <div id="searchProblemList" class="search-problem-list"></div>
 
@@ -54,7 +53,7 @@
 
 
         <!-- diagnose -->
-        <li><a href="/" class ="link1">Home</a></li>
+        <li><a href="/" class ="link1">Diagnose</a></li>
 
 
         <!-- ask questions -->
@@ -69,7 +68,6 @@
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
                 <div class="goldendecor">
                     <h1 class="modal-header">Post a Problem</h1>
-                    <hr>
                 </div>
 
                 <h4 class ="modaltext">Choose Bike:</h4>
@@ -110,7 +108,6 @@
             <button data-remodal-action="close" class="remodal-close"></button>
             <div class="goldendecor">
                 <h1 class="modal-header">Solve a problem</h1>
-                <hr>
             </div>
             <div id="modalProblemList" class="unsolved-problems-list"></div>
           </div>
@@ -249,7 +246,7 @@
                 {%verbatim%}
                 <h3 class ="diag-select-title">select make
                         <div id="brandStep" class="stepscircles">
-                            <h5 class="step-number">1</h5>
+                            <h5 id="brand-number" class="step-number">1</h5>
                         </div>
                 </h3>
                     {{#each .}}
@@ -271,7 +268,7 @@
 
                   <a onclick="showYears({{this.brandId}})">
                       <div id="yearStep" class="stepscircles">
-                          <h5 class="step-number">2</h5>
+                          <h5 id="year-number" class="step-number">2</h5>
                       </div>
                   </a>
                   <a onclick="showBrands()">
@@ -299,7 +296,7 @@
                 {%verbatim%}
                 <h3 class ="diag-select-title">select model
                   <div id="modelStep" class="stepscircles">
-                      <h5 class="step-number">3</h5>
+                      <h5 id="model-number" class="step-number">3</h5>
                   </div>
 
                     <a onclick="showYears({{brand}})">
@@ -325,7 +322,6 @@
                 {% endverbatim %}
             </article>
         </script>
-
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

@@ -87,16 +87,25 @@
     color:$charcoal;
   }
 
-  .problist-problem-container {
-    background-color:rgba(lightgray, .3);
-    padding:1%;
+.problem-list-box{
+
+
+  .unsolved-problem-link{
+
+      .problist-problem-container {
+        background-color:gray;
+        padding:1%;
+      }
+
+      .problist-problem-container:nth-child(odd){
+        background-color:white;
+      }
+
+      .problist-problem-container:hover{
+        background-color:rgba($golden, .4);
+        transition: .5s;
+      }
+
   }
 
-  .problist-problem-container:nth-child(odd){
-    background-color:white;
-  }
-
-  .problist-problem-container:hover{
-    background-color:rgba($golden, .4);
-    transition: .5s;
-  }
+}

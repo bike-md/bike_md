@@ -105,7 +105,7 @@ hr {
       }
 
     .circle:hover{
-      color:white;
+      color:$charcoal;
       background-color:rgba($teal, 1);
       transform:rotate(360deg);
       transition:.5s;

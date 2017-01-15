@@ -41,6 +41,7 @@ function showBrands(){
         $('#listing').empty()
         $('#listing').append(html)
         $('#brandStep').toggleClass('selected')
+        $('#brand-number').toggleClass('selected-number')
     })
 }
 showBrands()
@@ -71,6 +72,7 @@ function showYears(id){
         $('#listing').empty()
         $('#listing').append(html)
         $('#yearStep').toggleClass('selected')
+        $('#year-number').toggleClass('selected-number')
     })
 }
 
@@ -94,6 +96,8 @@ function showModels(year){
         $('#listing').empty()
         $('#listing').append(html)
         $('#modelStep').toggleClass('selected')
+        $('#model-number').toggleClass('selected-number')
+
     })
 }
 
@@ -208,12 +212,12 @@ function postProblem(){
         model: bike,
         title: header,
     }
-    console.log(context)
     $.ajax({
         url: '/api/post-problems/',
         type: 'POST',
         data: context,
     }).done(function(results){
+        alert("Your problem was posted.")
     })
 }
 $("#newProbSubmit").click(postProblem)
