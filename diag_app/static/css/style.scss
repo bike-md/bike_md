@@ -168,17 +168,17 @@ body {
 .submit-button{
   color:white;
   background-color:$charcoal;
-  border:1px solid white;
+  color:white;
   @include smallfont;
   padding:2%;
   margin-top:0%;
   margin-bottom: 2%;
+  border:0px;
   box-sizing:border-box;
 }
 
 .submit-button:hover{
-  color:$charcoal;
-  background-color:white;
+  background-color:$teal;
   cursor:pointer;
   transition: .5s;
 }
@@ -245,7 +245,7 @@ footer{
   @include mediumfont;
   color: white;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   margin-bottom: -1%;;
   margin-left: 10%;
   margin-top: 1%;
@@ -296,15 +296,14 @@ footer{
 
   .post-problem-button{
    text-decoration: none;
-   background-color: $darkteal;
-   padding: 5%;
+   background-color: $charcoal;
    color: white;
+   padding: 5%;
  }
 }
 
   .post-problem-button:hover{
     text-decoration: none;
-    background-color: $charcoal;
-    color: white;
+    background-color: $teal;
     transition: .5s;
   }
