@@ -978,6 +978,29 @@ header {
     float: left;
     margin-top: 1.5%;
     padding-right: .9%; }
+  header .templatenav .search-form {
+    height: 30px;
+    margin-bottom: 1.5rem;
+    text-align: center; }
+  header .templatenav .search-field {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 0px;
+    height: 22px;
+    width: 125px; }
+  header .templatenav .search-submit {
+    background-color: #709c97;
+    color: white;
+    border: 0px;
+    height: 24px;
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    margin-top: -1%; }
+  header .templatenav .search-submit:hover {
+    background-color: #313237;
+    transition: .5s; }
   header .templatenav li {
     list-style-type: none;
     display: inline-block;
@@ -1008,57 +1031,18 @@ header {
   padding: 0;
   position: absolute;
   top: 50px; }
-
-header .templatenav .dropdown li {
-  margin-top: 10px; }
-
-header .templatenav .dropdown li a {
-  font-size: 1rem;
-  font-family: gill sans;
-  text-transform: uppercase; }
-
-header .templatenav .dropdown li a:hover {
-  color: #709c97;
-  transition: .5s; }
-
-.droplist {
-  display: block;
-  clear: both;
-  width: 100%; }
-
-.droplist:hover {
-  transition: .6s; }
-
-#searchThis {
-  height: 30px;
-  margin-bottom: 1.5rem;
-  text-align: center; }
-
-#searchBox {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: 0px;
-  height: 22px;
-  width: 125px; }
-
-input, textarea, keygen, select, button {
-  font-size: 1rem;
-  font-family: gill sans; }
-
-#searchButton {
-  background-color: #709c97;
-  color: white;
-  border: 0px;
-  height: 24px;
-  font-size: 1rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  margin-top: -1%; }
-
-#searchButton:hover {
-  background-color: #313237;
-  transition: .5s; }
+  .dropdown .droplist {
+    display: block;
+    clear: both;
+    width: 100%;
+    margin-top: 10px; }
+    .dropdown .droplist a {
+      font-size: 1rem;
+      font-family: gill sans;
+      text-transform: uppercase; }
+    .dropdown .droplist a:hover {
+      color: #709c97;
+      transition: .5s; }
 
 .page-title {
   font-size: 2rem;
@@ -1121,6 +1105,22 @@ input, textarea, keygen, select, button {
   cursor: pointer;
   transition: .5s; }
 
+.unsolved-problem-container {
+  padding: 2% 0; }
+
+.unsolved-problem-container:nth-child(odd) {
+  background-color: rgba(49, 50, 55, 0.1); }
+
+.unsolved-problem-container:hover {
+  background-color: rgba(186, 151, 58, 0.5); }
+
+.unsolved-problem-title {
+  text-transform: capitalize; }
+
+.unsolved-problem-link {
+  text-decoration: none;
+  color: #313237; }
+
 footer {
   clear: both;
   width: 100%; }
@@ -1145,8 +1145,7 @@ footer {
   .remodal .goldendecor {
     margin: 0;
     width: 100%;
-    height: 60px;
-    margin-bottom: 2%; }
+    height: 60px; }
 
 .modal-header {
   font-size: 2rem;
