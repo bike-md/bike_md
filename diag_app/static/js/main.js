@@ -208,12 +208,12 @@ function postProblem(){
         model: bike,
         title: header,
     }
-    console.log(context)
     $.ajax({
         url: '/api/post-problems/',
         type: 'POST',
         data: context,
     }).done(function(results){
+        alert("Your problem was posted.")
     })
 }
 $("#newProbSubmit").click(postProblem)
@@ -240,7 +240,7 @@ Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
     url = '/problem_detail/' + id
-    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>'
 })
 
 

@@ -129,9 +129,7 @@
     <hr>
     <!---Containter, start styling here--->
 
-    <div class="problem-list-box">
-        <div id="problemList" class="logobackground"></div>
-    </div>
+    <div id="problemList" class="problem-list-box"></div>
 
     <footer class ="bikedetails-footer">
       <p>Copyright Bike MD 2017. All rights reserved.</p>
@@ -240,7 +238,7 @@
                 {%verbatim%}
                 <h1 class="problem-header">{{system.name}} Problem List:</h1>
                 {{#each problem}}
-                <a href='/problem_detail/{{this.id}}'>
+                <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
                     <div class="problist-problem-container">
                         <h5 class="problist-problem-title">{{{this.title}}}</h5>
                         <h5 class="problist-posted-by">{{tech.user.username}}</h5>
