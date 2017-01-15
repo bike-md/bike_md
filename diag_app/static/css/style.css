@@ -917,7 +917,6 @@ h4.tech-rating {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
-  font-weight: 200;
   color: #313237;
   font-weight: 400;
   text-decoration: none; }
@@ -1043,8 +1042,7 @@ h2, h5 {
 .about-box .bikemd {
   font-size: 1.2rem;
   font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: 200; }
+  text-transform: uppercase; }
 
 .about-exit-button {
   height: 40px;
@@ -1296,8 +1294,7 @@ header {
       color: white;
       font-size: 1.2rem;
       font-family: gill sans;
-      text-transform: uppercase;
-      font-weight: 200; }
+      text-transform: uppercase; }
     header .templatenav li a:after {
       display: block;
       position: absolute;
@@ -1351,7 +1348,6 @@ header {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
-  font-weight: 200;
   margin-bottom: 1%;
   font-weight: 400;
   margin-top: 2%; }
@@ -1422,7 +1418,6 @@ footer {
   font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
-  font-weight: 200;
   color: #313237;
   text-align: center; }
 
