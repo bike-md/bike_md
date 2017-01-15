@@ -39,14 +39,14 @@ class Model(models.Model):
 class Problem(models.Model):
     title = models.CharField(max_length=65)
     system = models.ForeignKey(System, related_name='problems')
-    description = models.TextField(max_length=1000)
+    description = models.TextField(max_length=500)
     tech = models.ForeignKey(Tech, related_name='problems')
     model = models.ForeignKey(Model)
     posted = models.DateTimeField(auto_now=True)
 
 
 class Solution(models.Model):
-    description = models.TextField(max_length=1000)
+    description = models.TextField(max_length=500)
     time_required = models.FloatField(default=0)
     parts_cost = models.DecimalField(max_digits=6, decimal_places=2)
     problem = models.ForeignKey(Problem, related_name='solutions')
