@@ -1,2 +1,379 @@
 @import "variables";
 @import "mixins";
+
+
+.aboutusbody{
+  margin: 0;
+  background-image:
+   url("../images/main-background.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+  .indexnav{
+    width:11%;
+    margin-left:10%;
+    background-color:rgba($overlaylt, .3);
+    padding:1%;
+    margin-bottom:0;
+
+    ul{
+      text-align:right;
+      text-transform:uppercase;
+      padding:0;
+      margin:0;
+      margin-bottom:15%;
+
+      li{
+        clear:both;
+        list-style-type:none;
+        padding-bottom:1%;
+        @include regularfont;
+
+        a{
+          text-decoration:none;
+          color:white;
+          position:relative;
+
+        }
+
+        a:after{
+          display:block;
+          position:absolute;
+          bottom:0px;
+          height:1.2em;
+          width:0px;
+          background-color:$golden;
+          transition:width .5s;
+          content:"";
+          z-index:-1;
+        }
+
+        .link1:hover:after{
+          width:150%;
+        }
+
+        .link2:hover:after{
+          width:160%;
+        }
+
+        .link3:hover:after{
+          width:133%;
+        }
+      }
+
+      .logobox{
+        width:100%;
+        margin-bottom:36%;
+
+        .logo{
+          width:100%;
+        }
+      }
+    }
+  }
+
+
+
+.loginform .loginfield{
+    height:30px;
+    border:transparent;
+    width: 100%;
+    margin:5% auto;
+    padding:5%;
+    box-sizing:border-box;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+  .loginbutton{
+    height:50px;
+    width:100%;
+    text-align: center;
+    padding:0;
+    background-color:$darkteal;
+    @include regularfont;
+    text-align:center;
+    margin:5% auto;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 0;
+
+
+    a{
+      text-decoration:none;
+      color:$charcoal;
+      padding:15%;
+    }
+
+    a:hover{
+      text-decoration:none;
+      color:$seafoam;
+    }
+  }
+
+  .loginbutton:hover{
+    background-color:$golden;
+    color:white;
+  }
+
+  /* ----------- iPad mini ----------- */
+
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+  {
+
+      .indexbody{
+        background:
+        url("../images/media-index-background.jpg");
+        background-width: auto;
+        background-height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position: 40% 10%;
+        margin:0;
+      }
+
+      .indexnav{
+        height:100%;
+        width:60%;
+        margin:10%;
+        background-color:rgba(#afafb2, .35);
+        padding:10%;
+        float:left;
+        overflow:hidden;
+
+        ul{
+          text-align:left;
+          text-transform:uppercase;
+          padding:0;
+          margin:0;
+          margin-bottom:5%;
+          float:left;
+
+          li{
+            clear:both;
+            list-style-type:none;
+            padding-bottom:1%;
+            @include regularfont;
+
+            a{
+              text-decoration:none;
+              color:white;
+              position:relative;
+            }
+
+            a:after{
+              display:block;
+              position:absolute;
+              bottom:0px;
+              height:1.2em;
+              width:0px;
+              background-color:$golden;
+              transition:width .5s;
+              content:"";
+              z-index:-1;
+            }
+
+            .link1:hover:after{
+              width:155%;
+            }
+
+            .link2:hover:after{
+              width:165%;
+            }
+
+            .link3:hover:after{
+              width:138%;
+            }
+          }
+
+          .logobox{
+            width:100%;
+            margin-bottom:35%;
+
+            .logo{
+              height:150px;
+              width: auto;
+            }
+          }
+        }
+      }
+  }
+
+  /* ----------- iPad 1 and 2 ----------- */
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    {
+
+        .indexbody{
+          background:
+          url("../images/media-index-background.jpg");
+          background-width: auto;
+          background-height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-position: 40% 10%;
+          margin:0;
+        }
+
+        .indexnav{
+          height:100%;
+          width:60%;
+          margin:10%;
+          background-color:rgba(#afafb2, .35);
+          padding:10%;
+          float:left;
+          overflow:hidden;
+
+
+          ul{
+            text-align:left;
+            text-transform:uppercase;
+            padding:0;
+            margin:0;
+            margin-bottom:15%;
+            float:left;
+
+            li{
+              clear:both;
+              list-style-type:none;
+              padding-bottom:5%;
+              @include regularfont;
+
+              a{
+                text-decoration:none;
+                color:white;
+                position:relative;
+              }
+
+              a:after{
+                display:block;
+                position:absolute;
+                bottom:0px;
+                height:1.2em;
+                width:0px;
+                background-color:$golden;
+                transition:width .5s;
+                content:"";
+                z-index:-1;
+              }
+
+              .link1:hover:after{
+                width:155%;
+              }
+
+              .link2:hover:after{
+                width:165%;
+              }
+
+              .link3:hover:after{
+                width:138%;
+              }
+            }
+
+            .logobox{
+              width:100%;
+              margin-bottom:35%;
+
+              .logo{
+                height:275px;
+                width: auto;
+              }
+            }
+          }
+        }
+    }
+
+
+    /* Portrait and Landscape */
+    @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2)   {
+
+            .indexbody{
+              background:
+              url("../images/media-index-background.jpg");
+              background-width: auto;
+              background-height: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-position: 40% 10%;
+              margin:0;
+            }
+
+            .indexnav{
+              height:100%;
+              width:60%;
+              margin:10%;
+              background-color:rgba(#afafb2, .35);
+              padding:10%;
+              float:left;
+              overflow:hidden;
+
+              ul{
+                text-align:left;
+                text-transform:uppercase;
+                padding:0;
+                margin:0;
+                margin-bottom:5%;
+                float:left;
+
+                li{
+                  clear:both;
+                  list-style-type:none;
+                  padding-bottom:1%;
+                  @include regularfont;
+
+                  a{
+                    text-decoration:none;
+                    color:white;
+                    position:relative;
+                  }
+
+                  a:after{
+                    display:block;
+                    position:absolute;
+                    bottom:0px;
+                    height:1.2em;
+                    width:0px;
+                    background-color:$golden;
+                    transition:width .5s;
+                    content:"";
+                    z-index:-1;
+                  }
+
+                  .link1:hover:after{
+                    width:155%;
+                  }
+
+                  .link2:hover:after{
+                    width:165%;
+                  }
+
+                  .link3:hover:after{
+                    width:138%;
+                  }
+                }
+
+                .logobox{
+                  width:100%;
+                  margin-bottom:35%;
+
+                  .logo{
+                    height:150px;
+                    width: auto;
+                  }
+                }
+              }
+            }
+        }

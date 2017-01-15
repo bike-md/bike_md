@@ -400,8 +400,14 @@ hr {
   height: auto;
   width: auto;
   max-width: 80%;
-  padding-bottom: 2%;
-  margin: 0 auto; }
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0 auto;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%; }
   .outer-box .diag-select-box {
     background-color: white;
     height: 45px;
@@ -429,55 +435,47 @@ hr {
       top: 50%;
       transform: translateY(-50%);
       text-align: center;
-      color: #313237;
+      color: #709c97;
       font-size: 16px;
       margin: 0; }
   .outer-box a {
     text-decoration: none; }
   .outer-box .diag-select-box:hover {
-    background-color: #313237;
-    color: white;
+    background-color: #ba973a;
     cursor: pointer;
     transition: .5s; }
     .outer-box .diag-select-box:hover .diag-select-text {
       color: white; }
 
-.diag-select-title {
+.outer-box .diag-select-title {
   font-size: 2rem;
   font-family: gill sans;
   text-transform: uppercase;
-  font-weight: normal;
-  background-color: #313237;
-  text-transform: uppercase;
   font-weight: 400;
   color: white;
-  padding: .5% 0 .5% 38%;
-  margin-top: -26px; }
+  text-align: center;
+  margin-top: -20px;
+  background-color: rgba(135, 176, 170, 0.9);
+  padding: 1%; }
 
 .stepscircles {
   display: inline-block;
   height: 20px;
   width: 20px;
-  border-radius: 50%;
-  float: right;
-  margin: 1.2% 2% 0 .5%;
-  background-color: white;
-  text-align: center; }
-
-.stepscircles:hover {
-  cursor: pointer; }
+  border-radius: 50px;
+  background-color: white; }
 
 .step-number {
   margin: 0px;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
-  color: #313237;
+  color: #87b0aa;
   transition: .5s;
   margin-left: 1%; }
 
 .selected {
-  background-color: #709c97; }
+  background-color: grey; }
 
 .mainfooter {
   position: absolute;
@@ -964,6 +962,274 @@ h2, h5 {
   background-color: rgba(186, 151, 58, 0.4);
   transition: .5s; }
 
+.aboutusbody {
+  margin: 0;
+  background-image: url("../images/main-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.indexnav {
+  width: 11%;
+  margin-left: 10%;
+  background-color: rgba(202, 178, 152, 0.3);
+  padding: 1%;
+  margin-bottom: 0; }
+  .indexnav ul {
+    text-align: right;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15%; }
+    .indexnav ul li {
+      clear: both;
+      list-style-type: none;
+      padding-bottom: 1%;
+      font-size: 1.5rem;
+      font-family: gill sans;
+      text-transform: uppercase; }
+      .indexnav ul li a {
+        text-decoration: none;
+        color: white;
+        position: relative; }
+      .indexnav ul li a:after {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        height: 1.2em;
+        width: 0px;
+        background-color: #ba973a;
+        transition: width .5s;
+        content: "";
+        z-index: -1; }
+      .indexnav ul li .link1:hover:after {
+        width: 150%; }
+      .indexnav ul li .link2:hover:after {
+        width: 160%; }
+      .indexnav ul li .link3:hover:after {
+        width: 133%; }
+    .indexnav ul .logobox {
+      width: 100%;
+      margin-bottom: 36%; }
+      .indexnav ul .logobox .logo {
+        width: 100%; }
+
+.loginform .loginfield {
+  height: 30px;
+  border: transparent;
+  width: 100%;
+  margin: 5% auto;
+  padding: 5%;
+  box-sizing: border-box; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+.loginbutton {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  background-color: #87b0aa;
+  font-size: 1.5rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 5% auto;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  border: 0; }
+  .loginbutton a {
+    text-decoration: none;
+    color: #313237;
+    padding: 15%; }
+  .loginbutton a:hover {
+    text-decoration: none;
+    color: #a8bdba; }
+
+.loginbutton:hover {
+  background-color: #ba973a;
+  color: white; }
+
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5rem;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #ba973a;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 15%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 5%;
+        font-size: 1.5rem;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #ba973a;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 275px;
+          width: auto; } }
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .indexbody {
+    background: url("../images/media-index-background.jpg");
+    background-width: auto;
+    background-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    margin: 0; }
+
+  .indexnav {
+    height: 100%;
+    width: 60%;
+    margin: 10%;
+    background-color: rgba(175, 175, 178, 0.35);
+    padding: 10%;
+    float: left;
+    overflow: hidden; }
+    .indexnav ul {
+      text-align: left;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5%;
+      float: left; }
+      .indexnav ul li {
+        clear: both;
+        list-style-type: none;
+        padding-bottom: 1%;
+        font-size: 1.5rem;
+        font-family: gill sans;
+        text-transform: uppercase; }
+        .indexnav ul li a {
+          text-decoration: none;
+          color: white;
+          position: relative; }
+        .indexnav ul li a:after {
+          display: block;
+          position: absolute;
+          bottom: 0px;
+          height: 1.2em;
+          width: 0px;
+          background-color: #ba973a;
+          transition: width .5s;
+          content: "";
+          z-index: -1; }
+        .indexnav ul li .link1:hover:after {
+          width: 155%; }
+        .indexnav ul li .link2:hover:after {
+          width: 165%; }
+        .indexnav ul li .link3:hover:after {
+          width: 138%; }
+      .indexnav ul .logobox {
+        width: 100%;
+        margin-bottom: 35%; }
+        .indexnav ul .logobox .logo {
+          height: 150px;
+          width: auto; } }
 body {
   margin: 0;
   overflow: auto; }
