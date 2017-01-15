@@ -240,7 +240,7 @@ Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
     url = '/problem_detail/' + id
-    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>'
 })
 
 

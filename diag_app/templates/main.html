@@ -25,14 +25,14 @@
         <!-- search -->
         <ul>
             <li>
-              <form id="searchThis" style="display: inline;" method="POST">
+              <form id="searchThis" class ="search-form" style="display: inline;" method="POST">
                   {%csrf_token%}
                   <input onfocus="if(this.value==this.defaultValue)this.value='';"
                   value="Search Problems"
-                  type="text" id="searchBox"
+                  type="text" id="searchBox" class ="search-field"
                   onblur="if(this.value=='')this.value=this.defaultValue;"
                   vinput="" name="q"/>
-                  <input id="searchButton" value="Go" type="submit"
+                  <input id="searchButton" class ="search-submit" value="Go" type="submit"
                   data-remodal-target="searchModal" class="link2" href="#searchModal"/>
               </form>
             </li>
@@ -102,8 +102,7 @@
           </div>
         </div>
 
-
-        <!-- answer questions -->
+        <!-- unsolved problems -->
         <div class ="answermodal-container">
           <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Solve a problem</a></li>
 
@@ -143,23 +142,24 @@
         </footer>
 
 
-<!-- modal scripts     -->
+        <!-- modal scripts     -->
 
 
-        <!-- search modal -->
+        <!-- search modal scripts -->
+        <!-- with results -->
         <script id="search-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                  <div class="problem-container">
-                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  <div class="unsolved-problem-container">
+                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
                   </div>
                 {{/each}}
                 {% endverbatim %}
             </article>
         </script>
 
-
+        <!-- no results -->
         <script id="search-problem-template-two" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
@@ -171,13 +171,13 @@
         </script>
 
 
-        <!-- answer modal -->
+        <!--unsolved problem script -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                  <div class="problem-container">
-                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  <div class="unsolved-problem-container">
+                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
                   </div>
                 {{/each}}
                 {% endverbatim %}
