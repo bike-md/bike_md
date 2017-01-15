@@ -477,7 +477,11 @@ hr {
   margin-left: 1%; }
 
 .selected {
-  background-color: #709c97; }
+  background-color: #1c6e6d;
+  color: white; }
+
+.selected-number {
+  color: white; }
 
 .mainfooter {
   position: absolute;
@@ -605,26 +609,23 @@ hr {
   height: auto;
   width: 70%;
   margin: 0 auto;
-  margin-top: 60px;
   padding: 2%; }
   .prob-form-background .prob-header, .prob-form-background .sol-header, .prob-form-background .sol-name {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: gill sans;
     text-transform: uppercase;
-    color: #a8bdba;
+    font-weight: normal;
+    color: white;
     background-color: #313237;
     text-align: center;
     margin: 0;
-    margin-top: 2%; }
-  .prob-form-background .sol-name {
-    background-color: #313237;
-    color: white;
-    text-align: left;
-    padding-left: 2%; }
-  .prob-form-background .prob-header, .prob-form-background .sol-header {
-    font-size: 3rem;
+    padding: .5% 0; }
+  .prob-form-background .sol-header, .prob-form-background .sol-name {
+    font-size: 1.5rem;
     font-family: gill sans;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    background-color: #ccc;
+    color: #313237; }
   .prob-form-background .prob-title {
     margin: 0; }
   .prob-form-background .posted-by {
@@ -659,10 +660,17 @@ hr {
     text-align: right;
     margin-right: 10%;
     margin-top: 1%; }
-  .prob-form-background .prob-box, .prob-form-background .sol-box, .prob-form-background .sol-form-container {
+  .prob-form-background .prob-box, .prob-form-background .sol-form-container {
     height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: white;
     margin: 0 auto;
+    padding: 2%;
+    box-sizing: border-box; }
+  .prob-form-background .sol-box {
+    height: auto;
+    background-color: white;
+    margin: 0 auto;
+    border-bottom: .5px solid #ccc;
     padding: 2%;
     box-sizing: border-box; }
   .prob-form-background .arrow {
@@ -693,14 +701,16 @@ hr {
     display: block;
     margin: 0 auto;
     margin-top: 3%;
-    background-color: #a8bdba;
+    background-color: #313237;
+    color: white;
     border: 0px;
     height: 24px;
     font-size: 1rem;
     font-family: gill sans;
     text-transform: uppercase; }
   .prob-form-background .solution-submit:hover {
-    background-color: #ba973a;
+    background-color: #709c97;
+    color: #313237;
     transition: .5s; }
 
 .userprofilebody {
@@ -1018,9 +1028,9 @@ header {
       display: block;
       position: absolute;
       bottom: 25px;
-      height: 5px;
+      height: 3px;
       width: 0px;
-      background-color: #709c97;
+      background-color: white;
       transition: width .5s;
       content: ""; }
     header .templatenav li .link1:hover:after, header .templatenav li .link2:hover:after, header .templatenav li .link3:hover:after, header .templatenav li .link4:hover:after {
