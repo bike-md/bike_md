@@ -136,6 +136,7 @@ function loadYearsAskModal(id){
         var template = Handlebars.compile(source)
         var html = template(years)
         $('#yearSelect').append(html)
+        loadModelsAskModal()
     })
 }
 

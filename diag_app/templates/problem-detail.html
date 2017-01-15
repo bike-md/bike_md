@@ -49,8 +49,12 @@
 
             </div>
         </div>
+
+
         <!-- diagnose -->
         <li><a href="/" class ="link1">Diagnose</a></li>
+
+
         <!-- ask questions -->
         <div class ="askmodal-container">
           <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
@@ -203,11 +207,11 @@
     <!-- ask modal -->
     <script id="brand-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
-            <select onchange="loadYearsAskModal(value)" id="probBrand">
+            <select class="dropdownlist" onchange="loadYearsAskModal(value)" id="probBrand">
                 {% verbatim %}
-                <option value="none"></option>
+                <option value="none">Select One</option>
                 {{#each .}}
-                <option  value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
+                <option  value="{{this.id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                 {{/each}}
                 {% endverbatim %}
             </select>
@@ -217,9 +221,9 @@
 
     <script id="year-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
-            <select onchange="loadModelsAskModal(value)" id="probYear">
+            <select class="dropdownlist" onchange="loadModelsAskModal(value)" id="probYear">
                 {% verbatim %}
-                <option value="none"></option>
+                <option value="none">Select One</option>
                 {{#each .}}
                     <option value="{{this}}"{{#selected}}selected="selected"{{/selected}}>{{this}}</option>
                 {{/each}}
@@ -231,9 +235,9 @@
 
     <script id="model-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
-            <select id="probModel">
+            <select class="dropdownlist" id="probModel">
                 {% verbatim %}
-                <option value="none"></option>
+                <option value="none">Select One</option>
                 {{#each .}}
                     <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                 {{/each}}
@@ -245,9 +249,9 @@
 
     <script id="system-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
-            <select id="probSystem">
+            <select class="dropdownlist" id="probSystem">
                 {% verbatim %}
-                <option value="none"></option>
+                <option value="none">Select One</option>
                 {{#each .}}
                     <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
                 {{/each}}
@@ -256,6 +260,7 @@
         </article>
     </script>
     <!-- end modal scripts -->
+
 
 
     <script id="problem-template" type="text/x-handlebars-template">

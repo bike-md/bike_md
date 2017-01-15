@@ -2,6 +2,7 @@
 {%load static%}
 <html>
   <head>
+
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +45,6 @@
                 <button data-remodal-action="close" class="remodal-close"></button>
                 <div class="goldendecor">
                   <h1 class="modal-header"> Search Results</h1>
-                  <hr>
                 </div>
                 <div id="searchProblemList" class="search-problem-list"></div>
 
@@ -53,7 +53,7 @@
 
 
         <!-- diagnose -->
-        <li><a href="/" class ="link1">Home</a></li>
+        <li><a href="/" class ="link1">Diagnose</a></li>
 
 
         <!-- ask questions -->
@@ -68,7 +68,6 @@
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
                 <div class="goldendecor">
                     <h1 class="modal-header">Post a Problem</h1>
-                    <hr>
                 </div>
 
                 <h4 class ="modaltext">Choose Bike:</h4>
@@ -109,7 +108,6 @@
             <button data-remodal-action="close" class="remodal-close"></button>
             <div class="goldendecor">
                 <h1 class="modal-header">Solve a problem</h1>
-                <hr>
             </div>
             <div id="modalProblemList" class="unsolved-problems-list"></div>
           </div>

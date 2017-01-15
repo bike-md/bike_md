@@ -1,2 +1,360 @@
 @import "variables";
 @import "mixins";
+
+.aboutbody{
+  background-image:
+  linear-gradient(
+        rgba($charcoal, 0.5),
+        rgba($charcoal, 0.5)
+      ),
+  url("../images/index-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin:0;
+}
+//Color background for title//
+.goldendecor {
+  background-color: $golden;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
+}
+//Title
+.about-page-title {
+  @include mediumfont;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
+}
+//Box wrapper
+.about-container {
+  display:block;
+  width:70%;
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  padding-bottom: 3%;
+  margin: 0 auto;
+}
+//Box background image
+.about-background-box {
+    background: linear-gradient(
+          rgba(white, 0.55),
+          rgba(white, 0.55)
+        ), url("../images/register-page-background-image.png");
+    width: 80%;
+    height: auto;
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 10%;
+    margin-bottom: 7%;
+  }
+.about-box {
+  p {
+    @include smallfont;
+    color: $charcoal;
+    text-align: left;
+  }
+  .bikemd {
+    @include smallregularfont;
+  }
+}
+.about-exit-button {
+    height:40px;
+    width:100%;
+    box-sizing:border-box;
+    @include smallfont;
+    float: right;
+    text-align: right;
+    margin-right: 1%;
+    margin-top: -4%;
+
+
+    a{
+      text-decoration:none;
+      color:$golden;
+      padding:1%;
+      background-color:$charcoal;
+
+    }
+
+    a:hover{
+      color:$charcoal;
+      background-color:$golden;
+
+    }
+  }
+
+
+
+  /* ----------- iPad mini ----------- */
+
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+  {
+
+      .indexbody{
+        background:
+        url("../images/media-index-background.jpg");
+        background-width: auto;
+        background-height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position: 40% 10%;
+        margin:0;
+      }
+
+      .indexnav{
+        height:100%;
+        width:60%;
+        margin:10%;
+        background-color:rgba(#afafb2, .35);
+        padding:10%;
+        float:left;
+        overflow:hidden;
+
+        ul{
+          text-align:left;
+          text-transform:uppercase;
+          padding:0;
+          margin:0;
+          margin-bottom:5%;
+          float:left;
+
+          li{
+            clear:both;
+            list-style-type:none;
+            padding-bottom:1%;
+            @include regularfont;
+
+            a{
+              text-decoration:none;
+              color:white;
+              position:relative;
+            }
+
+            a:after{
+              display:block;
+              position:absolute;
+              bottom:0px;
+              height:1.2em;
+              width:0px;
+              background-color:$golden;
+              transition:width .5s;
+              content:"";
+              z-index:-1;
+            }
+
+            .link1:hover:after{
+              width:155%;
+            }
+
+            .link2:hover:after{
+              width:165%;
+            }
+
+            .link3:hover:after{
+              width:138%;
+            }
+          }
+
+          .logobox{
+            width:100%;
+            margin-bottom:35%;
+
+            .logo{
+              height:150px;
+              width: auto;
+            }
+          }
+        }
+      }
+  }
+
+  /* ----------- iPad 1 and 2 ----------- */
+  /* Portrait and Landscape */
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    {
+
+        .indexbody{
+          background:
+          url("../images/media-index-background.jpg");
+          background-width: auto;
+          background-height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-position: 40% 10%;
+          margin:0;
+        }
+
+        .indexnav{
+          height:100%;
+          width:60%;
+          margin:10%;
+          background-color:rgba(#afafb2, .35);
+          padding:10%;
+          float:left;
+          overflow:hidden;
+
+
+          ul{
+            text-align:left;
+            text-transform:uppercase;
+            padding:0;
+            margin:0;
+            margin-bottom:15%;
+            float:left;
+
+            li{
+              clear:both;
+              list-style-type:none;
+              padding-bottom:5%;
+              @include regularfont;
+
+              a{
+                text-decoration:none;
+                color:white;
+                position:relative;
+              }
+
+              a:after{
+                display:block;
+                position:absolute;
+                bottom:0px;
+                height:1.2em;
+                width:0px;
+                background-color:$golden;
+                transition:width .5s;
+                content:"";
+                z-index:-1;
+              }
+
+              .link1:hover:after{
+                width:155%;
+              }
+
+              .link2:hover:after{
+                width:165%;
+              }
+
+              .link3:hover:after{
+                width:138%;
+              }
+            }
+
+            .logobox{
+              width:100%;
+              margin-bottom:35%;
+
+              .logo{
+                height:275px;
+                width: auto;
+              }
+            }
+          }
+        }
+    }
+
+
+    /* Portrait and Landscape */
+    @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2)   {
+
+            .indexbody{
+              background:
+              url("../images/media-index-background.jpg");
+              background-width: auto;
+              background-height: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-position: 40% 10%;
+              margin:0;
+            }
+
+            .indexnav{
+              height:100%;
+              width:60%;
+              margin:10%;
+              background-color:rgba(#afafb2, .35);
+              padding:10%;
+              float:left;
+              overflow:hidden;
+
+              ul{
+                text-align:left;
+                text-transform:uppercase;
+                padding:0;
+                margin:0;
+                margin-bottom:5%;
+                float:left;
+
+                li{
+                  clear:both;
+                  list-style-type:none;
+                  padding-bottom:1%;
+                  @include regularfont;
+
+                  a{
+                    text-decoration:none;
+                    color:white;
+                    position:relative;
+                  }
+
+                  a:after{
+                    display:block;
+                    position:absolute;
+                    bottom:0px;
+                    height:1.2em;
+                    width:0px;
+                    background-color:$golden;
+                    transition:width .5s;
+                    content:"";
+                    z-index:-1;
+                  }
+
+                  .link1:hover:after{
+                    width:155%;
+                  }
+
+                  .link2:hover:after{
+                    width:165%;
+                  }
+
+                  .link3:hover:after{
+                    width:138%;
+                  }
+                }
+
+                .logobox{
+                  width:100%;
+                  margin-bottom:35%;
+
+                  .logo{
+                    height:150px;
+                    width: auto;
+                  }
+                }
+              }
+            }
+        }

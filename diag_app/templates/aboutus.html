@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 {%load static%}
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+        <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
+        <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
+        <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
+        <title>Create Account</title>
+    </head>
+    <body class ="aboutbody">
+
+<!--White Box background styling-->
+<div class="goldendecor">
+    <h1 class="about-page-title">About Bike MD</h1>
+    <hr class="about-form-underline">
+</div>
+
+        <div class="about-container">
+          <div class="about-background-box">
+            <div class="about-box">
+
+          <p><b>Bike MD</b> is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. </p>
+          <p><b>Bike MD</b> is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. </p>
+          <p><b>Bike MD</b> is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. </p>
+          <p><b>Bike MD</b> is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. </p>
+          <p><b>Bike MD</b> is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. </p>
+
+
+                    <div class="about-exit-button"><a href="/login/">close</a></div>
+
+            </div>
+          </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/create_account.js' %}"></script>
+    </body>
+</html>
+<!-- <!DOCTYPE html>
+{%load static%}
+<html>
+
   <head>
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
     <meta charset="utf-8">
@@ -11,36 +54,40 @@
   </head>
 
   <body class ="aboutuspagebody">
-    <header>
-      <li><a href ="#"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a></li>
+    <nav class ="indexnav">
+        <ul>
+            <a href ="#"><li class ="logobox"><img class ="logo" src ="{% static 'images/BikeMDLogo.png' %}"></li></a>
+            <li><a class="link1" href ="/create_account">Register</a></li>
+            <li><a class="link2" href ="#">Services</a></li>
+            <li><a class="link3" href ="/about">About Us</a></li>
+        </ul>
 
-      <form>
-        <input class ="search" type ="text" placeholder ="Search" name ="search"></input>
-      <form>
 
-      <nav class ="templatenav">
-        <li><a class ="link1" href ="#">Ask Question</a></li>
-        <li><a class ="link2" href ="#">Notifications</a></li>
-        <li><a class ="link3" href ="#">MY Account</a></li>
-      </nav>
-    </header>
 
-<div class="about-title">
-  <p>About Us<p>
+        <form class ="loginform" name="LoginForm" action="/login/" method="POST">
+            {% csrf_token %}
+                <ul class='form-errors'>
+                    <li class="error-message">{{ login_message }}</li>
+                </ul>
+            {% csrf_token %}
+            <input class ="loginfield" name="username" type="text" placeholder ="username"></input>
+            <input class ="loginfield" name="password" type="password" placeholder ="password"></input>
+            <button class="loginbutton" type="submit">Login</button>
+        </form>
+    </nav>
+
+
+<div class="abouttitle">
+<h1 class="about-page-title">About Bike MD</h1>
+
+    <div class="info-section">
+<br>
+<p>Bike MD is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. "</p>
+    </div>
   </div>
 
 
-    <div class="about-us-details">
-
-About Us Page Info
-      </div>
-
-
-    <footer>
-      <p>Copyright Bike MD 2017. All rights reserved.</p>
-    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src ="js/script.js" type ="text/javascript"></script>
-  </body>
-</html>
+    </body>
+</html> -->

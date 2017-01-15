@@ -2,35 +2,53 @@
 @import "mixins";
 
 .userprofilebody {
-background-image:
-linear-gradient(
-rgba(black, 0.75),
-rgba(black, 0.75)
-),
-url("../images/index-background.jpg");
-background-size:cover;
-background-position:center;
-margin:0;
-padding: 5%;
+  background-image:
+  linear-gradient(
+        rgba($charcoal, 0.5),
+        rgba($charcoal, 0.5)
+      ),
+  url("../images/index-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin:0;
 }
+//Title background
 .profile-details-goldendecor {
-background-color: $golden;
-height: 70px;
-width: 50%;
+  background-color: $golden;
+  width: 70%;
+  padding-top: 1%;
+  height: 70px;
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%;
 }
+//Page Title
+.profile-title {
+  @include mediumfont;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+  }
+}
+//Container for the profile page
 .profile-details-container {
-// display:block;
 height: auto;
 width:70%;
 background-color: white;
-// background-size:cover;
-// background-position:center;
-// background-attachment:fixed;
 padding-top: 2%;
 padding-bottom: 2%;
 box-sizing:border-box;
 margin: 0 auto;
-margin-top: 3%;
 overflow:hidden;
 }
 
@@ -101,13 +119,7 @@ font-weight: 200;
 color: $charcoal;
 margin: 0;
 }
-.profile-title {
-@include mediumfont;
-color: white;
-text-align: center;
-margin-top: 8%;
-margin-bottom: -.25%;
-}
+
 .profile-box {
 width: 30%;
 height: 220px;
