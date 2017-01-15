@@ -709,7 +709,6 @@ hr {
     text-transform: uppercase; }
   .prob-form-background .solution-submit:hover {
     background-color: #709c97;
-    color: #313237;
     transition: .5s; }
 
 .userprofilebody {
@@ -1372,17 +1371,17 @@ header {
 .submit-button {
   color: white;
   background-color: #313237;
-  border: 1px solid white;
+  color: white;
   font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   padding: 2%;
   margin-top: 0%;
   margin-bottom: 2%;
+  border: 0px;
   box-sizing: border-box; }
 
 .submit-button:hover {
-  color: #313237;
   background-color: #709c97;
   cursor: pointer;
   transition: .5s; }
@@ -1438,9 +1437,8 @@ footer {
   font-weight: normal;
   color: white;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   margin-bottom: -1%;
-  margin-left: 10%;
   margin-top: 1%; }
   .modal-header hr {
     margin-top: 0; }
@@ -1485,7 +1483,8 @@ footer {
     text-decoration: none;
     background-color: #313237;
     padding: 5%;
-    color: white; }
+    color: white;
+    padding: 5%; }
 
 .post-problem-button:hover {
   text-decoration: none;

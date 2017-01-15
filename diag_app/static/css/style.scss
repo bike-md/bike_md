@@ -172,16 +172,16 @@ body {
 .submit-button{
   color:white;
   background-color:$charcoal;
-  border:1px solid white;
+  color:white;
   @include smallfont;
   padding:2%;
   margin-top:0%;
   margin-bottom: 2%;
+  border:0px;
   box-sizing:border-box;
 }
 
 .submit-button:hover{
-  color:$charcoal;
   background-color:$teal;
   cursor:pointer;
   transition: .5s;
@@ -251,9 +251,8 @@ footer{
   @include mediumfont;
   color: white;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   margin-bottom: -1%;;
-  margin-left: 10%;
   margin-top: 1%;
 
   hr{
@@ -305,6 +304,7 @@ footer{
    background-color: $charcoal;
    padding: 5%;
    color: white;
+   padding: 5%;
  }
 }
 
