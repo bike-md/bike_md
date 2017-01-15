@@ -396,7 +396,9 @@ hr {
   margin-bottom: 4%; }
 
 .outer-box {
-  background-color: rgba(202, 178, 152, 0.4);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   height: auto;
   width: auto;
   max-width: 80%;
@@ -702,16 +704,38 @@ hr {
     transition: .5s; }
 
 .userprofilebody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../images/index-background.jpg");
+  background-image: linear-gradient(rgba(49, 50, 55, 0.5), rgba(49, 50, 55, 0.5)), url("../images/index-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  margin: 0;
-  padding: 5%; }
+  margin: 0; }
 
 .profile-details-goldendecor {
   background-color: #ba973a;
+  width: 70%;
+  padding-top: 1%;
   height: 70px;
-  width: 50%; }
+  margin-left: 15%;
+  margin-top: 7%;
+  margin-right: 15%; }
+
+.profile-title {
+  font-size: 2rem;
+  font-family: gill sans;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  font-weight: 400;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: -2%;
+  font-weight: 200;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+  .profile-title hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%; }
 
 .profile-details-container {
   height: auto;
@@ -721,7 +745,6 @@ hr {
   padding-bottom: 2%;
   box-sizing: border-box;
   margin: 0 auto;
-  margin-top: 3%;
   overflow: hidden; }
 
 .photo-box {
@@ -785,16 +808,6 @@ hr {
   text-transform: uppercase;
   color: #313237;
   margin: 0; }
-
-.profile-title {
-  font-size: 2rem;
-  font-family: gill sans;
-  text-transform: uppercase;
-  font-weight: normal;
-  color: white;
-  text-align: center;
-  margin-top: 8%;
-  margin-bottom: -.25%; }
 
 .profile-box {
   width: 30%;

@@ -16,7 +16,11 @@ hr {
 }
 
 .outer-box{
-  background-color:rgba(#cab298, .40);
+background-color:rgba(#ffffff, .50);
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+  // background-color:rgba(#0e0902, .40);
   height:auto;
   width: auto;
   max-width: 80%;
