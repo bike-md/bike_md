@@ -65,7 +65,7 @@ input:-webkit-autofill {
   width: 100%;
   text-align: center;
   padding: 0;
-  background-color: #87b0aa;
+  background-color: #709c97;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -77,15 +77,15 @@ input:-webkit-autofill {
   border: 0; }
   .loginbutton a {
     text-decoration: none;
-    color: #313237;
+    color: white;
     padding: 15%; }
   .loginbutton a:hover {
     text-decoration: none;
-    color: #a8bdba; }
+    color: #709c97; }
 
 .loginbutton:hover {
-  background-color: #ba973a;
-  color: white; }
+  background-color: white;
+  color: #313237; }
 
 /* ----------- iPad mini ----------- */
 /* Portrait and Landscape */
@@ -620,9 +620,10 @@ hr {
     margin: 0;
     padding: .5% 0; }
   .prob-form-background .sol-header, .prob-form-background .sol-name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: gill sans;
     text-transform: uppercase;
+    font-weight: 200;
     background-color: #ccc;
     color: #313237; }
   .prob-form-background .prob-title {
@@ -1281,7 +1282,6 @@ header {
     margin-top: 1%; }
   header .templatenav .search-submit:hover {
     background-color: #709c97;
-    color: #313237;
     transition: .5s;
     cursor: pointer; }
   header .templatenav li {

@@ -93,7 +93,7 @@
     width:100%;
     text-align: center;
     padding:0;
-    background-color:$darkteal;
+    background-color:$teal;
     @include regularfont;
     text-align:center;
     margin:5% auto;
@@ -104,19 +104,19 @@
 
     a{
       text-decoration:none;
-      color:$charcoal;
+      color:white;
       padding:15%;
     }
 
     a:hover{
       text-decoration:none;
-      color:$seafoam;
+      color:$teal;
     }
   }
 
   .loginbutton:hover{
-    background-color:$golden;
-    color:white;
+    background-color:white;
+    color:$charcoal;
   }
 
   /* ----------- iPad mini ----------- */
