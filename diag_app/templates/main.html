@@ -2,6 +2,7 @@
 {%load static%}
 <html>
   <head>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
@@ -11,13 +12,15 @@
     <title>Main</title>
   </head>
 
+
   <body class ="mainbody">
+
 
     <header>
       <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
-      <nav class ="templatenav">
 
+      <nav class ="templatenav">
         <!-- search -->
         <ul>
             <li>
@@ -34,6 +37,7 @@
             </li>
         </ul>
 
+
         <!-- search modal -->
         <div class ="search-modal-container">
             <div class="remodal" data-remodal-id="searchModal">
@@ -46,11 +50,15 @@
 
             </div>
         </div>
+
+
         <!-- diagnose -->
-        <li><a href="/" class ="link1">Diagnose</a></li>
+        <li><a href="/" class ="link1">Home</a></li>
+
+
         <!-- ask questions -->
         <div class ="askmodal-container">
-          <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
+          <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post a Problem</a></li>
 
           <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -95,16 +103,15 @@
 
         <!-- unsolved problems -->
         <div class ="answermodal-container">
-          <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Unsolved Problems</a></li>
+          <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Solve a problem</a></li>
 
           <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
             <div class="goldendecor">
-                <h1 class="modal-header">Unsolved problems</h1>
+                <h1 class="modal-header">Solve a problem</h1>
                 <hr>
             </div>
             <div id="modalProblemList" class="unsolved-problems-list"></div>
-
           </div>
         </div>
 
@@ -112,7 +119,7 @@
           <li><a class ="link4" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
-              <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+              <li class ="droplist"><a href ="/profile/">Profile</a></li>
               <li class ="droplist"><a href ="/logout/">Log Out</a></li>
             </ul>
           </li>
@@ -134,7 +141,8 @@
         </footer>
 
 
-<!-- modal scripts     -->
+        <!-- modal scripts     -->
+
 
         <!-- search modal scripts -->
         <!-- with results -->
@@ -149,6 +157,7 @@
                 {% endverbatim %}
             </article>
         </script>
+
         <!-- no results -->
         <script id="search-problem-template-two" type="text/x-handlebars-template">
             <article class="post-container">
@@ -283,6 +292,7 @@
             </article>
         </script>
 
+
         <script id="model-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
@@ -314,6 +324,7 @@
                 {% endverbatim %}
             </article>
         </script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

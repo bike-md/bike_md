@@ -2,6 +2,7 @@
 {%load static%}
 <html>
   <head>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
@@ -20,7 +21,6 @@
 
       <nav class ="templatenav">
 
-
         <!-- search -->
         <ul>
             <li>
@@ -37,21 +37,23 @@
             </li>
         </ul>
 
-
         <!-- search modal -->
         <div class ="search-modal-container">
-          <div class="remodal" data-remodal-id="searchModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="remodal" data-remodal-id="searchModal">
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <div class="goldendecor">
+                  <h1 class="modal-header"> Search Results</h1>
+                  <hr>
+                </div>
+                <div id="searchProblemList" class="search-problem-list"></div>
 
-            <div id="searchProblemList" class="search-problem-list"></div>
-
-          </div>
+            </div>
         </div>
-
-
+        <!-- diagnose -->
+        <li><a href="/" class ="link1">Diagnose</a></li>
         <!-- ask questions -->
         <div class ="askmodal-container">
-          <li><a data-remodal-target="askModal" id="ask" class ="link1" href="#askModal">Post Problem</a></li>
+          <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
 
           <div class="remodal" data-remodal-id="askModal">
             <button data-remodal-action="close" class="remodal-close"></button>
@@ -59,20 +61,34 @@
             <form class="newProblem" method="POST">
                 {%csrf_token%}
                 <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
+                <div class="goldendecor">
+                    <h1 class="modal-header">Post a Problem</h1>
+                    <hr>
+                </div>
 
-                <h4 class ="modaltext">Enter a title for your post:</h4>
-                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="Enter Problem title">
                 <h4 class ="modaltext">Choose Bike:</h4>
-                    <div id="brandSelect" class ="systems-dropdown"></div>
-                    <div id="yearSelect" class ="systems-dropdown"></div>
-                    <div id="modelSelect" class ="systems-dropdown"></div>
-                <h4 class ="modaltext">Choose System:</h4>
+              <div class="select-brand-model-year containerDropdown">
+                  <div class="bikeFeature">
+                    <p>Brand: <div id="brandSelect" class="systems-dropdown"></div></p>
+                  </div>
+                  <div class="bikeFeature">
+                    <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
+                  </div>
+                  <div class="bikeFeature">
+                    <p>Model: <div id="modelSelect" class="systems-dropdown"></div></p>
+                  </div>
+                  <div class="bikeFeature">
+                    <h4 class ="modaltext-1">Choose System:</h4>
                     <div id="systemSelect" class ="systems-dropdown"></div>
-                <br>
-                <h4 class ="modaltext">Describe your problem:</h4>
+                  </div>
+              </div>
 
+                <br>
+                <h4 class ="modaltext">Enter a title for your post:</h4>
+                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
+                <h4 class ="modaltext">Describe your problem:</h4>
                 <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
-                <p class="counterAsk" id="counterProb"></p>
+                <p class="counterAsk" id="counter"></p>
                 <br>
                 <input data-remodal-action="close" id="newProbSubmit" class ="submit-button" type="submit" value="Submit">
             </form>
@@ -80,32 +96,32 @@
           </div>
         </div>
 
-
         <!-- answer questions -->
         <div class ="answermodal-container">
-          <li><a id="answer" data-remodal-target="answerModal" class="link2" href="#answerModal">Unsolved Problems</a></li>
+          <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Unsolved Problems</a></li>
 
           <div class="remodal" data-remodal-id="answerModal">
             <button data-remodal-action="close" class="remodal-close"></button>
-
+            <div class="goldendecor">
+                <h1 class="modal-header">Unsolved problems</h1>
+                <hr>
+            </div>
             <div id="modalProblemList" class="unsolved-problems-list"></div>
 
           </div>
         </div>
 
-
         <!-- my account -->
-          <li><a class ="link3" href ="#">MY Account</a>
+          <li><a class ="link4" href ="#">My Account</a>
             <ul class ="dropdown">
               <li class ="droplist"><a href ="#">Notifications</a></li>
-              <li class ="droplist"><a href ="/diag_app/profile/">Profile</a></li>
+              <li class ="droplist"><a href ="/profile/">Profile</a></li>
               <li class ="droplist"><a href ="/logout/">Log Out</a></li>
             </ul>
           </li>
           </ul>
       </nav>
     </header>
-
 
     <div class="prob-form-background">
       <h2 class ="prob-header">Problem Details</h2>
@@ -146,24 +162,30 @@
 
 <!-- modal scripts     -->
 
-    <!-- search modal -->
+<!-- search modal -->
     <script id="search-problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
             {{#each .}}
-                <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+              <div class="problem-container">
+                <h2 class="problem-title">{{{linkURL this}}}</h2>
+              </div>
             {{/each}}
             {% endverbatim %}
         </article>
     </script>
 
+
     <script id="search-problem-template-two" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
+            <div class="no-result-modal">
                 {{{message}}}
+            </div>
             {% endverbatim %}
         </article>
     </script>
+
 
     <!-- answer modal -->
     <script id="unsolved-problem-template" type="text/x-handlebars-template">
@@ -259,8 +281,8 @@
                 <h5 class="posted-by">{{this.tech.user.username}}</h5>
                 <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
                 <h5 class="date-time"><i>{{{formatTime this.posted}}}</i></h5>
-                <h5 class="solution-time">Time: <span class ="timecost-value">{{this.time_required}} hrs.</span></h5>
-                <h5 class="solution-cost">Cost: <span class ="timecost-value">${{this.parts_cost}}</span></h5>
+                <h5 class="solution-time">Repair time: <span class ="timecost-value">{{this.time_required}} hrs.</span></h5>
+                <h5 class="solution-cost">Parts cost: <span class ="timecost-value">${{this.parts_cost}}</span></h5>
                 <h5 class="solution-text">{{this.description}}</h5>
                 <button class="up-vote vote" type="submit" onclick="validateVote({{id}}, 1)">
                 <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></button>

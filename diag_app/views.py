@@ -23,6 +23,9 @@ from .permissions import IsStaffOrTargetUser
 def create_account(request):
     return render(request, 'create_account.html')
 
+def about_us(request):
+    return render(request, 'aboutus.html')
+
 # def create_account(request):
 #     # if request.method == 'GET':
 #     #     user_form = UserForm()

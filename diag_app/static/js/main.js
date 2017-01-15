@@ -122,6 +122,7 @@ function loadBrandsAskModal(){
 
 }
 $("#ask").click(loadBrandsAskModal)
+$("#askSearch").click(loadBrandsAskModal)
 
 
 // year select step modal
@@ -138,9 +139,7 @@ function loadYearsAskModal(id){
                 years.push(bike[i].year)
             }
         }
-        console.log(years)
         years.sort(function(a, b){return b-a})
-        console.log(years)
         var source = $('#year-modal-template').html()
         var template = Handlebars.compile(source)
         var html = template(years)
@@ -186,7 +185,7 @@ $("#ask").click(loadSystemsAskModal)
 
 function charRemainingText(){
     $('#probText').keyup(function () {
-        var left = 1000 - $(this).val().length;
+        var left = 500 - $(this).val().length;
         if (left < 0) {
             left = 0;
         }
@@ -255,7 +254,7 @@ function searchProblems(){
         var problems = results.results
         var length = problems.length
         var message = '<h5 class="no-result-text">' + "There are no problems that match your search."+ '</h5>' +
-            '<a class="post-problem-button"  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >' + "Post a new problem here" + '</a>';
+            '<a class="post-problem-button"  data-remodal-target="askModal" id="askSearch" class="link1" href="#askModal" >' + "Post a new problem here" + '</a>';
         var noResults = {
             message: message,
         }
