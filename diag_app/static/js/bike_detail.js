@@ -41,9 +41,7 @@ currentURL()
 // get bike details
 function showBike(url){
     var id = url.split('/')
-    console.log(id)
     id = id[4]
-    console.log(id)
     var url = '/api/models/' + id
     $.ajax({
         url: url,
@@ -62,13 +60,11 @@ function showBike(url){
 // load systems
 function loadSystemModals(name){
     var model = name
-    console.log(model)
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
         var system = results.results
-        console.log(system)
         var list = {}
         var index = 0;
         $.each(system, function() {
@@ -77,8 +73,7 @@ function loadSystemModals(name){
                 model : model
             };
         index++;
-        });
-        console.log(list)
+        })
         var source = $('#system-template').html()
         var template = Handlebars.compile(source)
         var html = template(list)
@@ -87,6 +82,35 @@ function loadSystemModals(name){
     })
 }
 
+
+// helpers
+Handlebars.registerHelper('formatTime', function (posted) {
+    var time = posted.replace('T', ':')
+    var date = time.split(":")[0]
+    var year = Number(date.split("-")[0])
+    var month = Number(date.split("-")[1])
+    var day = Number(date.split("-")[2])
+    var months = {
+        "January": 1,
+        "February ": 2,
+        "March": 3,
+        "April": 4,
+        "May": 5,
+        "June": 6,
+        "July": 7,
+        "August": 8,
+        "September": 9,
+        "October": 10,
+        "November": 11,
+        "December": 12,
+    }
+    for(var i in months){
+        if(month == months[i]){
+            month = i
+        }
+    }
+    return month + " " + day + " " + year
+})
 
 
 Handlebars.registerHelper('linkURL', function (object){

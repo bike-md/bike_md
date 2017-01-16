@@ -5,7 +5,8 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .indexnav {
   width: 11%;
@@ -36,7 +37,7 @@
         bottom: 0px;
         height: 1.2em;
         width: 0px;
-        background-color: #ba973a;
+        background-color: #9fc0bc;
         transition: width .5s;
         content: "";
         z-index: -1; }
@@ -573,7 +574,7 @@ hr {
       padding-top: 7.5%;
       box-sizing: border-box; }
   .systems .circle:hover {
-    color: #313237;
+    color: white;
     background-color: #9fc0bc;
     transform: rotate(360deg);
     transition: .5s; }
@@ -1263,15 +1264,15 @@ header {
   header .templatenav .search-form {
     height: 30px;
     margin-bottom: 1.5rem;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 1%; }
   header .templatenav .search-field {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     border: 0px;
     height: 22px;
-    width: 125px;
-    margin-top: -1%; }
+    width: 125px; }
   header .templatenav .search-submit {
     background-color: #3e3d42;
     color: white;
@@ -1279,8 +1280,7 @@ header {
     height: 24px;
     font-size: 1rem;
     font-family: gill sans;
-    text-transform: uppercase;
-    margin-top: 1%; }
+    text-transform: uppercase; }
   header .templatenav .search-submit:hover {
     background-color: #9fc0bc;
     transition: .5s;
@@ -1290,7 +1290,7 @@ header {
     display: inline-block;
     padding: 0 .9%;
     float: left;
-    margin-top: 15px; }
+    margin-top: 27px; }
     header .templatenav li a {
       position: relative;
       text-decoration: none;
