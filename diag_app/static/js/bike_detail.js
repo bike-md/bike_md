@@ -93,12 +93,13 @@ Handlebars.registerHelper('linkURL', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     title = Handlebars.Utils.escapeExpression(object.title)
     url = '/problem_detail/' + id
-    return '<a href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
+    return '<a class="unsolved-problem-link" href="' +  url + '">' + '<b>' + title + '</b>' + '</a>'
 })
 
 
 // modal functions
 function loadBrandsAskModal(){
+    loadSystemsAskModal()
     $.ajax({
         url: '/api/brands/',
         type: 'GET',
@@ -113,8 +114,7 @@ function loadBrandsAskModal(){
     })
 
 }
-
-$("#ask").click(loadBrandsAskModal)
+loadBrandsAskModal()
 
 
 // year select step modal
@@ -171,7 +171,6 @@ function loadSystemsAskModal(){
         $('#systemSelect').append(html)
     })
 }
-$("#ask").click(loadSystemsAskModal)
 
 
 function charRemainingText(){
@@ -238,8 +237,8 @@ function searchProblems(){
     }).done(function(results){
         var problems = results.results
         var length = problems.length
-        var message = '<h5>' + "There are no problems that match your search. Add one" +
-            '<a  data-remodal-target="askModal" id="ask" class="link1" href="#askModal" >'  + " here" + '</a>' + '</h5>';
+        var message = '<h5 class="no-result-text">' + "There are no problems that match your search."+ '</h5>' +
+            '<a class="post-problem-button"  data-remodal-target="askModal" id="askSearch" class="link1" href="#askModal" >' + "Post a new problem here" + '</a>';
         var noResults = {
             message: message,
         }
