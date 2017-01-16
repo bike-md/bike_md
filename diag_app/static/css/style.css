@@ -10,8 +10,8 @@
 
 .indexnav {
   width: 11%;
-  margin-left: 10%;
-  background-color: rgba(202, 178, 152, 0.3);
+  margin-left: 14%;
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 1%;
   margin-bottom: 0;
   height: 100%; }
@@ -20,7 +20,7 @@
     text-transform: uppercase;
     padding: 0;
     margin: 0;
-    margin-bottom: 15%; }
+    margin-bottom: 20%; }
     .indexnav ul li {
       clear: both;
       list-style-type: none;
@@ -50,7 +50,7 @@
         width: 133%; }
     .indexnav ul .logobox {
       width: 100%;
-      margin-bottom: 36%; }
+      margin-bottom: 56%; }
       .indexnav ul .logobox .logo {
         width: 100%; }
 
@@ -70,10 +70,11 @@ input:-webkit-autofill {
   width: 100%;
   text-align: center;
   padding: 0;
-  background-color: #9fc0bc;
+  background-color: #313237;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
+  color: white;
   text-align: center;
   margin: 5% auto;
   -webkit-transition-duration: 0.4s;
@@ -151,7 +152,7 @@ input:-webkit-autofill {
         width: 100%;
         margin-bottom: 35%; }
         .indexnav ul .logobox .logo {
-          height: 150px;
+          height: 160px;
           width: auto; } }
 /* ----------- iPad 1 and 2 ----------- */
 /* Portrait and Landscape */
@@ -660,7 +661,10 @@ hr {
     color: black;
     text-align: center; }
   .prob-form-background .form-text {
-    text-align: center; }
+    text-align: center;
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase; }
   .prob-form-background .counterSolution {
     text-align: right;
     margin-right: 10%;

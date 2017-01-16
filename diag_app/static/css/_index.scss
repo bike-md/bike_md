@@ -16,8 +16,8 @@
 
   .indexnav{
     width:11%;
-    margin-left:10%;
-    background-color:rgba($overlaylt, .3);
+    margin-left:14%;
+    background-color:rgba(white, .3);
     padding:1%;
     margin-bottom:0;
     height: 100%;
@@ -27,7 +27,7 @@
       text-transform:uppercase;
       padding:0;
       margin:0;
-      margin-bottom:15%;
+      margin-bottom:20%;
 
       li{
         clear:both;
@@ -69,7 +69,7 @@
 
       .logobox{
         width:100%;
-        margin-bottom:36%;
+        margin-bottom:56%;
 
         .logo{
           width:100%;
@@ -98,8 +98,9 @@
     width:100%;
     text-align: center;
     padding:0;
-    background-color:$teal;
+    background-color:$charcoal;
     @include regularfont;
+    color: white;
     text-align:center;
     margin:5% auto;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -205,7 +206,7 @@
             margin-bottom:35%;
 
             .logo{
-              height:150px;
+              height:160px;
               width: auto;
             }
           }
