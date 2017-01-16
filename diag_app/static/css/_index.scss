@@ -6,9 +6,8 @@
   margin: 0;
   background-image:
    url("../images/index-background.jpg");
-   background-size: auto;
+   background-size:auto;
    background-repeat:no-repeat;
-   margin-top: 1%;
 }
 
   .indexnav{
@@ -44,7 +43,7 @@
           bottom:0px;
           height:1.2em;
           width:0px;
-          background-color:$golden;
+          background-color:$teal;
           transition:width .5s;
           content:"";
           z-index:-1;
