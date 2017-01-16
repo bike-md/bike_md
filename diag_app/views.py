@@ -160,7 +160,7 @@ class ProblemFilter(django_filters.rest_framework.FilterSet):
 
 
 class ProblemGetViewSet(viewsets.ModelViewSet):
-    queryset = Problem.objects.all()
+    queryset = Problem.objects.all().order_by('-posted')
     serializer_class = ProblemGetSerializer
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,filters.SearchFilter,)
     filter_class = ProblemFilter

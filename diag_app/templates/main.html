@@ -123,7 +123,7 @@
       </nav>
     </header>
 
-        <h1 class ="page-title">Diagnose a problem</h1>
+        <h1 class ="page-title">Diagnose</h1>
 
 <hr>
 
@@ -140,7 +140,7 @@
         <!-- modal scripts     -->
 
 
-        <!-- search modal scripts -->
+    <!-- search modal scripts -->
         <!-- with results -->
         <script id="search-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
@@ -148,6 +148,7 @@
                 {{#each .}}
                   <div class="unsolved-problem-container">
                     <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
                   </div>
                 {{/each}}
                 {% endverbatim %}
@@ -173,6 +174,7 @@
                 {{#each .}}
                   <div class="unsolved-problem-container">
                     <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
                   </div>
                 {{/each}}
                 {% endverbatim %}

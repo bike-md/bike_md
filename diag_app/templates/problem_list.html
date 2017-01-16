@@ -132,21 +132,21 @@
     </footer>
 
     <!-- modal scripts     -->
-
-        <!-- search modal -->
+        <!-- with results -->
         <script id="search-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                  <div class="problem-container">
-                    <h2 class="problem-title">{{{linkURL this}}}</h2>
+                  <div class="unsolved-problem-container">
+                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
                   </div>
                 {{/each}}
                 {% endverbatim %}
             </article>
         </script>
 
-
+        <!-- no results -->
         <script id="search-problem-template-two" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
@@ -158,12 +158,15 @@
         </script>
 
 
-        <!-- answer modal -->
+        <!--unsolved problem script -->
         <script id="unsolved-problem-template" type="text/x-handlebars-template">
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
-                    <h2 class="problem-title-modal">{{{linkURL this}}}</h2>
+                  <div class="unsolved-problem-container">
+                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
+                  </div>
                 {{/each}}
                 {% endverbatim %}
             </article>
