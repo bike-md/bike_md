@@ -1,8 +1,9 @@
 .indexbody {
   margin: 0;
   background-image: url("../images/index-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-size: auto;
+  background-repeat: no-repeat;
+  margin-top: 1%; }
 
 .indexnav {
   width: 11%;
@@ -623,7 +624,6 @@ hr {
     font-size: 1.2rem;
     font-family: gill sans;
     text-transform: uppercase;
-    font-weight: 200;
     background-color: #ccc;
     color: #313237; }
   .prob-form-background .prob-title {
