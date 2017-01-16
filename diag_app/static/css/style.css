@@ -912,8 +912,6 @@ h4.tech-rating {
   display: block;
   width: 80%;
   background-color: white;
-  background-size: auto;
-  height: 400px;
   margin: 0 auto;
   overflow: auto; }
 
@@ -1339,7 +1337,7 @@ header {
   text-align: left;
   margin-left: 10%;
   margin-bottom: 0;
-  margin-top: 5%; }
+  margin-top: 3%; }
 
 .remodal {
   height: auto; }
