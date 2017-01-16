@@ -156,6 +156,7 @@ function loadYearsAskModal(id){
                 years.push(bike[i].year)
             }
         }
+        years.sort(function(a, b){return b-a})
         var source = $('#year-modal-template').html()
         var template = Handlebars.compile(source)
         var html = template(years)
