@@ -32,7 +32,7 @@
   }
 
   .sol-header, .sol-name{
-    @include regularfont;
+    @include smallregularfont;
     background-color:#ccc;
     color:$charcoal;
   }
