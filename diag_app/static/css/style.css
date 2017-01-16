@@ -13,7 +13,8 @@
   margin-left: 10%;
   background-color: rgba(202, 178, 152, 0.3);
   padding: 1%;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  height: 100%; }
   .indexnav ul {
     text-align: right;
     text-transform: uppercase;
