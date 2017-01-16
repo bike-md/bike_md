@@ -77,7 +77,7 @@ function showYears(id){
 }
 
 
-// model listing step 3
+//model listing step 3
 function showModels(year){
     var brandId = $("#brandId").val()
     $.ajax({
@@ -111,6 +111,7 @@ function linkBike (id){
 
 // modal functions
 function loadBrandsAskModal(){
+    loadSystemsAskModal()
     $.ajax({
         url: '/api/brands/',
         type: 'GET',
@@ -125,9 +126,7 @@ function loadBrandsAskModal(){
     })
 
 }
-$("#ask").click(loadBrandsAskModal)
-$("#askSearch").click(loadBrandsAskModal)
-
+loadBrandsAskModal()
 
 // year select step modal
 function loadYearsAskModal(id){
@@ -172,6 +171,7 @@ function loadModelsAskModal(year){
 
 // load systems modal
 function loadSystemsAskModal(){
+    console.log("sys")
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
@@ -184,7 +184,6 @@ function loadSystemsAskModal(){
         $('#systemSelect').append(html)
     })
 }
-$("#ask").click(loadSystemsAskModal)
 
 
 function charRemainingText(){

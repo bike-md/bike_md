@@ -65,7 +65,7 @@ input:-webkit-autofill {
   width: 100%;
   text-align: center;
   padding: 0;
-  background-color: #709c97;
+  background-color: #9fc0bc;
   font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
@@ -81,7 +81,7 @@ input:-webkit-autofill {
     padding: 15%; }
   .loginbutton a:hover {
     text-decoration: none;
-    color: #709c97; }
+    color: #9fc0bc; }
 
 .loginbutton:hover {
   background-color: white;
@@ -336,7 +336,7 @@ input:-webkit-autofill {
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal;
-  color: #709c97;
+  color: #9fc0bc;
   padding: .3%; }
 
 .register-form input {
@@ -392,8 +392,7 @@ input:-webkit-autofill {
 
 hr {
   margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 4%; }
+  margin-right: 10%; }
 
 .outer-box {
   background-color: rgba(202, 178, 152, 0.4);
@@ -401,7 +400,8 @@ hr {
   width: auto;
   max-width: 80%;
   padding-bottom: 2%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 2%; }
   .outer-box .diag-select-box {
     background-color: white;
     height: 45px;
@@ -413,7 +413,7 @@ hr {
     margin-top: 1%;
     margin-bottom: 1%; }
     .outer-box .diag-select-box .modaltext {
-      color: #709c97;
+      color: #9fc0bc;
       font-size: 1rem;
       font-family: gill sans;
       text-transform: uppercase;
@@ -452,7 +452,7 @@ hr {
   font-weight: 400;
   color: white;
   padding: .5% 0 .5% 38%;
-  margin-top: -26px; }
+  margin-top: -18px; }
 
 .stepscircles {
   display: inline-block;
@@ -477,7 +477,7 @@ hr {
   margin-left: 1%; }
 
 .selected {
-  background-color: #709c97; }
+  background-color: #9fc0bc; }
 
 .selected-number {
   color: white; }
@@ -545,7 +545,7 @@ hr {
   color: white; }
 
 .systems-background {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(202, 178, 152, 0.4);
   padding: 2% 0;
   margin: 0 10%; }
 
@@ -570,7 +570,7 @@ hr {
       box-sizing: border-box; }
   .systems .circle:hover {
     color: #313237;
-    background-color: #709c97;
+    background-color: #9fc0bc;
     transform: rotate(360deg);
     transition: .5s; }
 
@@ -590,7 +590,7 @@ hr {
   padding: 0 2%; }
 
 .brand, .year, .model {
-  color: #709c97;
+  color: #9fc0bc;
   font-weight: 100;
   text-transform: none; }
 
@@ -637,7 +637,7 @@ hr {
     padding: 0 .5%; }
   .prob-form-background .date-time {
     display: inline-block;
-    color: #709c97;
+    color: #9fc0bc;
     margin: 0;
     font-weight: 500; }
   .prob-form-background .solution-score {
@@ -646,7 +646,7 @@ hr {
     float: right;
     padding: 0 1%; }
   .prob-form-background .timecost-value {
-    color: #709c97; }
+    color: #9fc0bc; }
   .prob-form-background .describe-title {
     font-size: 1.5rem;
     font-family: gill sans;
@@ -708,7 +708,7 @@ hr {
     font-family: gill sans;
     text-transform: uppercase; }
   .prob-form-background .solution-submit:hover {
-    background-color: #709c97;
+    background-color: #9fc0bc;
     transition: .5s; }
 
 .userprofilebody {
@@ -962,7 +962,7 @@ h2, h5 {
   text-transform: uppercase;
   font-weight: 400;
   text-decoration: none;
-  color: #709c97;
+  color: #9fc0bc;
   margin: 0; }
 
 .tech-rating {
@@ -1278,7 +1278,7 @@ header {
     text-transform: uppercase;
     margin-top: 1%; }
   header .templatenav .search-submit:hover {
-    background-color: #709c97;
+    background-color: #9fc0bc;
     transition: .5s;
     cursor: pointer; }
   header .templatenav li {
@@ -1321,7 +1321,7 @@ header {
       font-family: gill sans;
       text-transform: uppercase; }
     .dropdown .droplist a:hover {
-      color: #709c97;
+      color: #9fc0bc;
       transition: .5s; }
 
 .page-title {
@@ -1381,7 +1381,7 @@ header {
   box-sizing: border-box; }
 
 .submit-button:hover {
-  background-color: #709c97;
+  background-color: #9fc0bc;
   cursor: pointer;
   transition: .5s; }
 
@@ -1487,7 +1487,7 @@ footer {
 
 .post-problem-button:hover {
   text-decoration: none;
-  background-color: #709c97;
+  background-color: #9fc0bc;
   color: white;
   transition: .5s; }
 
