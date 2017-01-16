@@ -33,7 +33,7 @@
         bottom: 0px;
         height: 1.2em;
         width: 0px;
-        background-color: #ba973a;
+        background-color: #709c97;
         transition: width .5s;
         content: "";
         z-index: -1; }
@@ -623,7 +623,6 @@ hr {
     font-size: 1.2rem;
     font-family: gill sans;
     text-transform: uppercase;
-    font-weight: 200;
     background-color: #ccc;
     color: #313237; }
   .prob-form-background .prob-title {
