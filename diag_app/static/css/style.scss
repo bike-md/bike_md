@@ -59,6 +59,7 @@ body {
       .search-submit:hover{
         background-color:white;
         color:$charcoal;
+        border:1px solid $charcoal;
         transition: .5s;
         cursor:pointer;
       }
@@ -184,6 +185,7 @@ body {
 .submit-button:hover{
   color:$charcoal;
   background-color:white;
+  border:1px solid $charcoal;
   cursor:pointer;
   transition: .5s;
 }

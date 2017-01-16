@@ -1,7 +1,6 @@
 @import "variables";
 @import "mixins";
 
-
 .problist-page-title{
   @include mediumfont;
   font-weight:500;
@@ -16,94 +15,92 @@
 }
 
 
-  .problem-list-box {
-    display:block;
-    width:80%;
-    background-color: white;
-    height: 300px;
-    margin:0 auto;
-    overflow:auto;
-   }
+.problem-list-box {
+  display:block;
+  width:80%;
+  background-color: white;
+  height: 300px;
+  margin:0 auto;
+  overflow:auto;
+ }
 
-  .problist-problem-title{
-    @include smallregularfont;
-    color: $charcoal;
-    font-weight: 400;
+.problist-problem-title{
+  @include smallregularfont;
+  color: $charcoal;
+  font-weight: 400;
+  text-decoration:none;
+
+  a{
     text-decoration:none;
-
-    a{
-      text-decoration:none;
-      color:$charcoal;
-    }
-  }
-
-  h2, h5{
-    margin:0;
-  }
-
-  .problem-header{
-    @include mediumfont;
-    text-align:center;
-    background-color:$charcoal;
-    color:white;
-    margin:0;
-  }
-
-  .problist-date-time {
-    @include smallfont;
-    color: $charcoal;
-    font-weight: 400;
-    text-decoration: none;
-  }
-
-  .problist-posted-by {
-    @include smallfont;
-    color: $charcoal;
-    font-weight: 400;
-    text-decoration: none;
-    padding-top: 0;
-
-  }
-
-  .problist-date-time, .problist-posted-by{
-    display: inline;
-  }
-
-  .problist-date-time{
-    @include smallfont;
-    font-weight: 400;
-    text-decoration: none;
-    color:$teal;
-    margin:0;
-
-  }
-
-  .tech-rating{
-    display:inline-block;
-    border-left:1px solid black;
-    border-right:1px solid black;
-    padding:0 .5%;
     color:$charcoal;
   }
+}
+
+h2, h5{
+    margin:0;
+}
+
+.problem-header{
+  @include mediumfont;
+  text-align:center;
+  background-color:$charcoal;
+  color:white;
+  margin:0;
+}
+
+.problist-date-time {
+  @include smallfont;
+  color: $charcoal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.problist-posted-by {
+  @include smallfont;
+  color: $charcoal;
+  font-weight: 400;
+  text-decoration: none;
+  padding-top: 0;
+}
+
+.problist-date-time, .problist-posted-by{
+  display: inline;
+}
+
+.problist-date-time{
+  @include smallfont;
+  font-weight: 400;
+  text-decoration: none;
+  color:$teal;
+  margin:0;
+
+}
+
+.tech-rating{
+  display:inline-block;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  padding:0 .5%;
+  color:$charcoal;
+}
 
 .problem-list-box{
 
-
   .unsolved-problem-link{
 
-      .problist-problem-container {
-        background-color:gray;
-        padding:1%;
-      }
+    .problist-problem-container {
+      background-color:gray;
+      padding:1%;
+    }
 
-      .problist-problem-container:nth-child(odd){
-        background-color:white;
-      }
+    .problist-problem-container:nth-child(odd){
+      background-color:white;
+    }
 
-      .problist-problem-container:hover{
-        background-color:rgba($teal, .3);
-        transition: .5s;
-      }
+    .problist-problem-container:hover{
+      background-color:rgba($teal, .3);
+      transition: .5s;
+    }
 
   }
 

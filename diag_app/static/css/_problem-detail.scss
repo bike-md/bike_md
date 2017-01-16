@@ -3,14 +3,7 @@
 
 
 .prob-detailbody{
-  background-image:
- linear-gradient(to right, rgba(black,.7),
-  rgba(255,255,255,0)),
-   linear-gradient(
-         rgba(#5c605f, 0.15),
-        rgba(#5c605f, 0.15)
-       ),
-  url("../images/bikedetails-background.jpg");
+  background-image:url("../images/bikedetails-background.jpg");
   background-size:cover;
   background-attachment:fixed;
   margin:0;
@@ -145,18 +138,21 @@
   }
 
   .solution-submit{
+    color:white;
+    background-color:$charcoal;
+    @include smallfont;
+    padding:2%;
     display:block;
     margin:0 auto;
-    margin-top:3%;
-    background-color:$charcoal;
-    color:white;
-    border: 0px;
-    height: 24px;
-    @include smallfont;
+    margin-bottom: 2%;
+    border:0px;
+    box-sizing:border-box;
   }
 
   .solution-submit:hover{
-    background-color:$teal;
+    background-color:white;
+    color:$charcoal;
+    border:1px solid $charcoal;
     transition: .5s;
   }
 }

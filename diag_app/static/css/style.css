@@ -606,7 +606,7 @@ hr {
   bottom: 0; }
 
 .prob-detailbody {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0)), linear-gradient(rgba(92, 96, 95, 0.15), rgba(92, 96, 95, 0.15)), url("../images/bikedetails-background.jpg");
+  background-image: url("../images/bikedetails-background.jpg");
   background-size: cover;
   background-attachment: fixed;
   margin: 0; }
@@ -707,18 +707,21 @@ hr {
     text-transform: none;
     font-size: 1rem; }
   .prob-form-background .solution-submit {
-    display: block;
-    margin: 0 auto;
-    margin-top: 3%;
-    background-color: #313237;
     color: white;
-    border: 0px;
-    height: 24px;
+    background-color: #313237;
     font-size: 1rem;
     font-family: gill sans;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: 2%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    border: 0px;
+    box-sizing: border-box; }
   .prob-form-background .solution-submit:hover {
-    background-color: #9fc0bc;
+    background-color: white;
+    color: #313237;
+    border: 1px solid #313237;
     transition: .5s; }
 
 .userprofilebody {
@@ -1289,6 +1292,7 @@ header {
   header .templatenav .search-submit:hover {
     background-color: white;
     color: #313237;
+    border: 1px solid #313237;
     transition: .5s;
     cursor: pointer; }
   header .templatenav li {
@@ -1394,6 +1398,7 @@ header {
 .submit-button:hover {
   color: #313237;
   background-color: white;
+  border: 1px solid #313237;
   cursor: pointer;
   transition: .5s; }
 
