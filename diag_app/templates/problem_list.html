@@ -133,10 +133,12 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
+                <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
                   <div class="unsolved-problem-container">
-                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h2 class="unsolved-problem-title">{{ this.title }}</h2>
                     <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
                   </div>
+                </a> 
                 {{/each}}
                 {% endverbatim %}
             </article>
@@ -159,10 +161,12 @@
             <article class="post-container">
                 {%verbatim%}
                 {{#each .}}
+                <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
                   <div class="unsolved-problem-container">
-                    <h2 class="unsolved-problem-title">{{{linkURL this}}}</h2>
+                    <h2 class="unsolved-problem-title">{{ this.title }}</h2>
                     <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
                   </div>
+                </a>
                 {{/each}}
                 {% endverbatim %}
             </article>

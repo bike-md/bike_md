@@ -51,6 +51,7 @@ function getProblems(url){
         var source = $('#problem-list-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
+        console.log(problems)
         var systemKey = results.results[0].system
         var context = {
             problem: problems,
