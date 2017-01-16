@@ -17,8 +17,7 @@
         <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
         <nav class ="templatenav">
-          <!-- search -->
-          <ul>
+          <!-- search -->        
               <li>
                 <form id="searchThis" class ="search-form" style="display: inline;" method="POST">
                     {%csrf_token%}
@@ -31,7 +30,6 @@
                     data-remodal-target="searchModal" class="link2" href="#searchModal"/>
                 </form>
               </li>
-          </ul>
 
 
           <!-- search modal -->
