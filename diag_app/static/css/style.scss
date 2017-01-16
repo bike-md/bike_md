@@ -44,12 +44,12 @@ body {
         -moz-appearance:none;
         -webkit-appearance:none;
         border: 0px;
-        height: 22px;
+        height: 21px;
         width: 125px;
       }
 
       .search-submit{
-        background-color:#3e3d42;
+        background-color:$charcoal;
         color:white;
         border: 0px;
         height: 24px;
@@ -57,7 +57,8 @@ body {
       }
 
       .search-submit:hover{
-        background-color:$teal;
+        background-color:white;
+        color:$charcoal;
         transition: .5s;
         cursor:pointer;
       }
@@ -181,7 +182,8 @@ body {
 }
 
 .submit-button:hover{
-  background-color:$teal;
+  color:$charcoal;
+  background-color:white;
   cursor:pointer;
   transition: .5s;
 }
@@ -196,7 +198,7 @@ body {
 }
 
 .unsolved-problem-container:hover{
-  background-color:rgba($golden, .5);
+  background-color:rgba($teal, .5);
 }
 
 .unsolved-problem-title{

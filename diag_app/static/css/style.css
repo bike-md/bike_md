@@ -43,11 +43,11 @@
         content: "";
         z-index: -1; }
       .indexnav ul li .link1:hover:after {
-        width: 150%; }
+        width: 149%; }
       .indexnav ul li .link2:hover:after {
-        width: 160%; }
+        width: 159%; }
       .indexnav ul li .link3:hover:after {
-        width: 133%; }
+        width: 132%; }
     .indexnav ul .logobox {
       width: 100%;
       margin-bottom: 56%; }
@@ -987,7 +987,7 @@ h2, h5 {
 .problem-list-box .unsolved-problem-link .problist-problem-container:nth-child(odd) {
   background-color: white; }
 .problem-list-box .unsolved-problem-link .problist-problem-container:hover {
-  background-color: rgba(186, 151, 58, 0.4);
+  background-color: rgba(159, 192, 188, 0.3);
   transition: .5s; }
 
 .aboutbody {
@@ -1276,10 +1276,10 @@ header {
     -moz-appearance: none;
     -webkit-appearance: none;
     border: 0px;
-    height: 22px;
+    height: 21px;
     width: 125px; }
   header .templatenav .search-submit {
-    background-color: #3e3d42;
+    background-color: #313237;
     color: white;
     border: 0px;
     height: 24px;
@@ -1287,7 +1287,8 @@ header {
     font-family: gill sans;
     text-transform: uppercase; }
   header .templatenav .search-submit:hover {
-    background-color: #9fc0bc;
+    background-color: white;
+    color: #313237;
     transition: .5s;
     cursor: pointer; }
   header .templatenav li {
@@ -1391,7 +1392,8 @@ header {
   box-sizing: border-box; }
 
 .submit-button:hover {
-  background-color: #9fc0bc;
+  color: #313237;
+  background-color: white;
   cursor: pointer;
   transition: .5s; }
 
@@ -1402,7 +1404,7 @@ header {
   background-color: rgba(49, 50, 55, 0.1); }
 
 .unsolved-problem-container:hover {
-  background-color: rgba(186, 151, 58, 0.5); }
+  background-color: rgba(159, 192, 188, 0.5); }
 
 .unsolved-problem-title {
   text-transform: capitalize; }
