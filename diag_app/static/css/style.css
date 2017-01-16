@@ -912,6 +912,7 @@ h4.tech-rating {
   display: block;
   width: 80%;
   background-color: white;
+  height: 300px;
   margin: 0 auto;
   overflow: auto; }
 
