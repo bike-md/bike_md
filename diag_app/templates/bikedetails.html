@@ -17,22 +17,22 @@
         <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
         <nav class ="templatenav">
-
           <!-- search -->
           <ul>
               <li>
-                <form id="searchThis" style="display: inline;" method="POST">
+                <form id="searchThis" class ="search-form" style="display: inline;" method="POST">
                     {%csrf_token%}
                     <input onfocus="if(this.value==this.defaultValue)this.value='';"
                     value="Search Problems"
-                    type="text" id="searchBox"
+                    type="text" id="searchBox" class ="search-field"
                     onblur="if(this.value=='')this.value=this.defaultValue;"
                     vinput="" name="q"/>
-                    <input id="searchButton" value="Go" type="submit"
+                    <input id="searchButton" class ="search-submit" value="Go" type="submit"
                     data-remodal-target="searchModal" class="link2" href="#searchModal"/>
                 </form>
               </li>
           </ul>
+
 
           <!-- search modal -->
           <div class ="search-modal-container">
@@ -40,17 +40,20 @@
                   <button data-remodal-action="close" class="remodal-close"></button>
                   <div class="goldendecor">
                     <h1 class="modal-header"> Search Results</h1>
-                    <hr>
                   </div>
                   <div id="searchProblemList" class="search-problem-list"></div>
 
               </div>
           </div>
+
+
           <!-- diagnose -->
           <li><a href="/" class ="link1">Diagnose</a></li>
+
+
           <!-- ask questions -->
           <div class ="askmodal-container">
-            <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post Problem</a></li>
+            <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post a Problem</a></li>
 
             <div class="remodal" data-remodal-id="askModal">
               <button data-remodal-action="close" class="remodal-close"></button>
@@ -60,13 +63,12 @@
                   <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
                   <div class="goldendecor">
                       <h1 class="modal-header">Post a Problem</h1>
-                      <hr>
                   </div>
 
                   <h4 class ="modaltext">Choose Bike:</h4>
                 <div class="select-brand-model-year containerDropdown">
                     <div class="bikeFeature">
-                      <p>Brand: <div id="brandSelect" class="systems-dropdown"></div></p>
+                      <p>Make: <div id="brandSelect" class="systems-dropdown"></div></p>
                     </div>
                     <div class="bikeFeature">
                       <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
@@ -93,18 +95,16 @@
             </div>
           </div>
 
-          <!-- answer questions -->
+          <!-- unsolved problems -->
           <div class ="answermodal-container">
-            <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Unsolved Problems</a></li>
+            <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Solve a problem</a></li>
 
             <div class="remodal" data-remodal-id="answerModal">
               <button data-remodal-action="close" class="remodal-close"></button>
               <div class="goldendecor">
-                  <h1 class="modal-header">Unsolved problems</h1>
-                  <hr>
+                  <h1 class="modal-header">Solve a problem</h1>
               </div>
               <div id="modalProblemList" class="unsolved-problems-list"></div>
-
             </div>
           </div>
 
