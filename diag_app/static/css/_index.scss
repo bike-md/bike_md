@@ -6,8 +6,13 @@
   margin: 0;
   background-image:
    url("../images/index-background.jpg");
-   background-size: cover;
+  //  background-size: cover;
    background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
   .indexnav{
@@ -100,6 +105,8 @@
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     border: 0;
+    cursor: pointer;
+
 
 
     a{
