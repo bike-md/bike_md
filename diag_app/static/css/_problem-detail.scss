@@ -129,9 +129,9 @@
   .time-input{
     display:inline-block;
     height:20px;
-    width:20%;
+    width:52%;
     text-align:center;
-    margin-left:38%;
+    margin-left:20%;
   }
 
   .cost-input{
@@ -145,16 +145,15 @@
     @include smallfont;
     color:$charcoal;
     display:inline-block;
+    margin-top:1%;
   }
 
   .hrs{
-    float:right;
-    margin:.5% 38% 0 0;
     text-transform:lowercase;
   }
 
   .dollar{
-    margin:0 0 0 37%;
+    margin-left:23%;
   }
 
   .solution-box{
