@@ -11,9 +11,9 @@
 
 .prob-form-background{
   height:auto;
-  width:70%;
+  width:80%;
   margin:0 auto;
-  padding:2%;
+  // padding:2%;
 
   .prob-header, .sol-header, .sol-name{
     @include mediumfont;
@@ -68,13 +68,17 @@
 
   .describe-title{
     @include regularfont;
-    color:black;
+    color:$charcoal;
     text-align:center;
+    font-weight: 400;
+    margin-top: 7%;
   }
 
   .form-text{
     text-align:center;
     @include smallfont;
+    font-weight: 400;
+    margin: 1%;
   }
 
   .counterSolution{
@@ -127,7 +131,7 @@
   .cost-input{
     display:inline-block;
     height:20px;
-    width:20%;
+    width:50%;
     text-align:center;
   }
 
@@ -167,7 +171,7 @@
     padding:2%;
     display:block;
     margin:0 auto;
-    margin-bottom: 2%;
+    // margin-bottom: 2%;
     border:0px;
     box-sizing:border-box;
   }
@@ -177,5 +181,32 @@
     color:$charcoal;
     border:1px solid $charcoal;
     transition: .5s;
+  }
+
+  .time-box {
+    float: left;
+    width: 50%;
+  }
+  .cost-box {
+    float: right;
+    width: 50%;
+  }
+
+  .prob-title {
+    @include regularfont;
+    font-weight: 600;
+  }
+  .posted-by {
+    @include smallfont;
+    font-weight: 600;
+  }
+  .question-text {
+    @include smallfont;
+    font-weight: 400;
+    margin-left: 10%;
+  }
+  .prob-form {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }

@@ -38,7 +38,7 @@
         bottom: 0px;
         height: 1.2em;
         width: 0px;
-        background-color: #9fc0bc;
+        background-color: #8ac3c3;
         transition: width .5s;
         content: "";
         z-index: -1; }
@@ -88,7 +88,7 @@ input:-webkit-autofill {
     padding: 15%; }
   .loginbutton a:hover {
     text-decoration: none;
-    color: #9fc0bc; }
+    color: #8ac3c3; }
 
 .loginbutton:hover {
   background-color: white;
@@ -343,7 +343,7 @@ input:-webkit-autofill {
   font-family: gill sans;
   text-transform: uppercase;
   font-weight: normal;
-  color: #9fc0bc;
+  color: #8ac3c3;
   padding: .3%; }
 
 .register-form input {
@@ -402,7 +402,7 @@ hr {
   margin-right: 10%; }
 
 .outer-box {
-  background-color: rgba(202, 178, 152, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   height: auto;
   width: auto;
   max-width: 80%;
@@ -420,7 +420,7 @@ hr {
     margin-top: 1%;
     margin-bottom: 1%; }
     .outer-box .diag-select-box .modaltext {
-      color: #9fc0bc;
+      color: #8ac3c3;
       font-size: 1rem;
       font-family: gill sans;
       text-transform: uppercase;
@@ -463,28 +463,30 @@ hr {
 
 .stepscircles {
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   float: right;
-  margin: 1.2% 2% 0 .5%;
+  margin: 0.5% 2% 0 .5%;
   background-color: white;
-  text-align: center; }
+  text-align: center;
+  transition: .5s; }
 
 .stepscircles:hover {
   cursor: pointer; }
 
 .step-number {
   margin: 0px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
+  font-weight: 400;
   transition: .5s;
   margin-left: 1%; }
 
 .selected {
-  background-color: #9fc0bc; }
+  background-color: #8ac3c3; }
 
 .selected-number {
   color: white; }
@@ -552,7 +554,7 @@ hr {
   color: white; }
 
 .systems-background {
-  background-color: rgba(202, 178, 152, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 2% 0;
   margin: 0 10%; }
 
@@ -577,7 +579,7 @@ hr {
       box-sizing: border-box; }
   .systems .circle:hover {
     color: white;
-    background-color: #9fc0bc;
+    background-color: #8ac3c3;
     transform: rotate(360deg);
     transition: .5s; }
 
@@ -597,7 +599,7 @@ hr {
   padding: 0 2%; }
 
 .brand, .year, .model {
-  color: #9fc0bc;
+  color: #8ac3c3;
   font-weight: 100;
   text-transform: none; }
 
@@ -644,7 +646,7 @@ hr {
     padding: 0 .5%; }
   .prob-form-background .date-time {
     display: inline-block;
-    color: #9fc0bc;
+    color: #8ac3c3;
     margin: 0;
     font-weight: 500; }
   .prob-form-background .solution-score {
@@ -653,7 +655,7 @@ hr {
     float: right;
     padding: 0 1%; }
   .prob-form-background .timecost-value {
-    color: #9fc0bc; }
+    color: #8ac3c3; }
   .prob-form-background .describe-title {
     font-size: 1.5rem;
     font-family: gill sans;
@@ -991,7 +993,7 @@ h2, h5 {
   text-transform: uppercase;
   font-weight: 400;
   text-decoration: none;
-  color: #9fc0bc;
+  color: #8ac3c3;
   margin: 0; }
 
 .tech-rating {
@@ -1007,7 +1009,7 @@ h2, h5 {
 .problem-list-box .unsolved-problem-link .problist-problem-container:nth-child(odd) {
   background-color: white; }
 .problem-list-box .unsolved-problem-link .problist-problem-container:hover {
-  background-color: rgba(159, 192, 188, 0.3);
+  background-color: rgba(138, 195, 195, 0.3);
   transition: .5s; }
 
 .aboutbody {
@@ -1092,185 +1094,6 @@ h2, h5 {
     color: #313237;
     background-color: #ba973a; }
 
-/* ----------- iPad mini ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .indexbody {
-    background: url("../images/media-index-background.jpg");
-    background-width: auto;
-    background-height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: 40% 10%;
-    margin: 0; }
-
-  .indexnav {
-    height: 100%;
-    width: 60%;
-    margin: 10%;
-    background-color: rgba(175, 175, 178, 0.35);
-    padding: 10%;
-    float: left;
-    overflow: hidden; }
-    .indexnav ul {
-      text-align: left;
-      text-transform: uppercase;
-      padding: 0;
-      margin: 0;
-      margin-bottom: 5%;
-      float: left; }
-      .indexnav ul li {
-        clear: both;
-        list-style-type: none;
-        padding-bottom: 1%;
-        font-size: 1.5rem;
-        font-family: gill sans;
-        text-transform: uppercase; }
-        .indexnav ul li a {
-          text-decoration: none;
-          color: white;
-          position: relative; }
-        .indexnav ul li a:after {
-          display: block;
-          position: absolute;
-          bottom: 0px;
-          height: 1.2em;
-          width: 0px;
-          background-color: #ba973a;
-          transition: width .5s;
-          content: "";
-          z-index: -1; }
-        .indexnav ul li .link1:hover:after {
-          width: 155%; }
-        .indexnav ul li .link2:hover:after {
-          width: 165%; }
-        .indexnav ul li .link3:hover:after {
-          width: 138%; }
-      .indexnav ul .logobox {
-        width: 100%;
-        margin-bottom: 35%; }
-        .indexnav ul .logobox .logo {
-          height: 150px;
-          width: auto; } }
-/* ----------- iPad 1 and 2 ----------- */
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .indexbody {
-    background: url("../images/media-index-background.jpg");
-    background-width: auto;
-    background-height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: 40% 10%;
-    margin: 0; }
-
-  .indexnav {
-    height: 100%;
-    width: 60%;
-    margin: 10%;
-    background-color: rgba(175, 175, 178, 0.35);
-    padding: 10%;
-    float: left;
-    overflow: hidden; }
-    .indexnav ul {
-      text-align: left;
-      text-transform: uppercase;
-      padding: 0;
-      margin: 0;
-      margin-bottom: 15%;
-      float: left; }
-      .indexnav ul li {
-        clear: both;
-        list-style-type: none;
-        padding-bottom: 5%;
-        font-size: 1.5rem;
-        font-family: gill sans;
-        text-transform: uppercase; }
-        .indexnav ul li a {
-          text-decoration: none;
-          color: white;
-          position: relative; }
-        .indexnav ul li a:after {
-          display: block;
-          position: absolute;
-          bottom: 0px;
-          height: 1.2em;
-          width: 0px;
-          background-color: #ba973a;
-          transition: width .5s;
-          content: "";
-          z-index: -1; }
-        .indexnav ul li .link1:hover:after {
-          width: 155%; }
-        .indexnav ul li .link2:hover:after {
-          width: 165%; }
-        .indexnav ul li .link3:hover:after {
-          width: 138%; }
-      .indexnav ul .logobox {
-        width: 100%;
-        margin-bottom: 35%; }
-        .indexnav ul .logobox .logo {
-          height: 275px;
-          width: auto; } }
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  .indexbody {
-    background: url("../images/media-index-background.jpg");
-    background-width: auto;
-    background-height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: 40% 10%;
-    margin: 0; }
-
-  .indexnav {
-    height: 100%;
-    width: 60%;
-    margin: 10%;
-    background-color: rgba(175, 175, 178, 0.35);
-    padding: 10%;
-    float: left;
-    overflow: hidden; }
-    .indexnav ul {
-      text-align: left;
-      text-transform: uppercase;
-      padding: 0;
-      margin: 0;
-      margin-bottom: 5%;
-      float: left; }
-      .indexnav ul li {
-        clear: both;
-        list-style-type: none;
-        padding-bottom: 1%;
-        font-size: 1.5rem;
-        font-family: gill sans;
-        text-transform: uppercase; }
-        .indexnav ul li a {
-          text-decoration: none;
-          color: white;
-          position: relative; }
-        .indexnav ul li a:after {
-          display: block;
-          position: absolute;
-          bottom: 0px;
-          height: 1.2em;
-          width: 0px;
-          background-color: #ba973a;
-          transition: width .5s;
-          content: "";
-          z-index: -1; }
-        .indexnav ul li .link1:hover:after {
-          width: 155%; }
-        .indexnav ul li .link2:hover:after {
-          width: 165%; }
-        .indexnav ul li .link3:hover:after {
-          width: 138%; }
-      .indexnav ul .logobox {
-        width: 100%;
-        margin-bottom: 35%; }
-        .indexnav ul .logobox .logo {
-          height: 150px;
-          width: auto; } }
 body {
   margin: 0;
   overflow: auto; }
@@ -1330,7 +1153,7 @@ header {
       bottom: 25px;
       height: 3px;
       width: 0px;
-      background-color: white;
+      background-color: #8ac3c3;
       transition: width .5s;
       content: ""; }
     header .templatenav li .link1:hover:after, header .templatenav li .link2:hover:after, header .templatenav li .link3:hover:after, header .templatenav li .link4:hover:after {
@@ -1351,7 +1174,7 @@ header {
       font-family: gill sans;
       text-transform: uppercase; }
     .dropdown .droplist a:hover {
-      color: #9fc0bc;
+      color: #8ac3c3;
       transition: .5s; }
 
 .page-title {
@@ -1425,7 +1248,7 @@ header {
   background-color: rgba(49, 50, 55, 0.1); }
 
 .unsolved-problem-container:hover {
-  background-color: rgba(159, 192, 188, 0.5); }
+  background-color: rgba(138, 195, 195, 0.5); }
 
 .unsolved-problem-title {
   text-transform: capitalize; }
