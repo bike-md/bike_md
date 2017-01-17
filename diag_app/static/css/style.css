@@ -641,8 +641,7 @@ h5 {
   .prob-form-background .question-text {
     font-weight: 500;
     text-transform: none;
-    font-size: 1rem;
-    margin-left: -10%; }
+    font-size: 1rem; }
   .prob-form-background .posted-by {
     display: inline-block;
     margin-bottom: 10px; }
