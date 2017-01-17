@@ -72,7 +72,7 @@ charRemainingSolution()
 
 function charRemainingSolution(){
     $('#probText').keyup(function () {
-    var left = 1000 - $(this).val().length;
+    var left = 500 - $(this).val().length;
     if (left < 0) {
         left = 0;
     }
@@ -197,7 +197,7 @@ function updateRating(tech, voteValue){
 
 }
 
-
+// helpers
 Handlebars.registerHelper('formatTime', function (posted) {
     var time = posted.replace('T', ':')
     var date = time.split(":")[0]
@@ -224,6 +224,14 @@ Handlebars.registerHelper('formatTime', function (posted) {
         }
     }
     return month + " " + day + " " + year
+})
+
+
+Handlebars.registerHelper('linkURL', function (object){
+    id = Handlebars.Utils.escapeExpression(object.id)
+    title = Handlebars.Utils.escapeExpression(object.title)
+    url = '/problem_detail/' + id
+    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>'
 })
 
 
@@ -344,14 +352,6 @@ function loadUnsolvedProblemsModal(){
     })
 }
 $("#answer").click(loadUnsolvedProblemsModal)
-
-
-Handlebars.registerHelper('linkURL', function (object){
-    id = Handlebars.Utils.escapeExpression(object.id)
-    title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/problem_detail/' + id
-    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>'
-})
 
 
 // search function

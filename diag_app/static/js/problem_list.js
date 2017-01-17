@@ -51,7 +51,6 @@ function getProblems(url){
         var source = $('#problem-list-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
-        console.log(problems)
         var systemKey = results.results[0].system
         var context = {
             problem: problems,
@@ -111,7 +110,6 @@ Handlebars.registerHelper('linkURLProblem', function (object){
 })
 
 Handlebars.registerHelper('linkURLModel', function (object){
-    console.log(object)
     id = Handlebars.Utils.escapeExpression(object.id)
     name = Handlebars.Utils.escapeExpression(object.name)
     url = '/model_detail/' + id
@@ -199,7 +197,7 @@ function loadSystemsAskModal(){
 
 function charRemainingText(){
     $('#probText').keyup(function () {
-        var left = 1000 - $(this).val().length;
+        var left = 500 - $(this).val().length;
         if (left < 0) {
             left = 0;
         }

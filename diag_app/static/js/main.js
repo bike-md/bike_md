@@ -215,7 +215,6 @@ function postProblem(){
         type: 'POST',
         data: context,
     }).done(function(results){
-        alert("Your problem was posted.")
     })
 }
 $("#newProbSubmit").click(postProblem)

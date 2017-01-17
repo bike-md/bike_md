@@ -200,7 +200,7 @@ function loadSystemsAskModal(){
 
 function charRemainingText(){
     $('#probText').keyup(function () {
-        var left = 1000 - $(this).val().length;
+        var left = 500 - $(this).val().length;
         if (left < 0) {
             left = 0;
         }
@@ -242,7 +242,6 @@ function loadUnsolvedProblemsModal(){
         type: 'GET',
     }).done(function(results){
         var problems = results.results
-        console.log(problems)
         var source = $('#unsolved-problem-template').html()
         var template = Handlebars.compile(source)
         var html = template(problems)
