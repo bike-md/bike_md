@@ -59,7 +59,6 @@ body {
       .search-submit:hover{
         background-color:white;
         color:$charcoal;
-        border:1px solid $charcoal;
         transition: .5s;
         cursor:pointer;
       }
@@ -85,7 +84,7 @@ body {
           bottom:25px;
           height:3px;
           width:0px;
-          background-color:white;
+          background-color:$teal;
           transition:width .5s;
           content:"";
         }
@@ -313,7 +312,8 @@ footer{
 
   .post-problem-button:hover{
     text-decoration: none;
-    background-color: $teal;
-    color: white;
+    background-color:white;
+    color: $charcoal;
+    border:1px solid $charcoal;
     transition: .5s;
   }

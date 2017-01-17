@@ -61,15 +61,10 @@ margin-left: 2%;
 margin-bottom: 1%;
 padding:1%;
 background-color: white;
-// position: relative;
-// padding-top: 20px;
-// padding-bottom: 20px;
-// padding-left: 4%;
+
 .profile-photo img {
-// display: block;
 margin: 0 auto;
-// margin-left: 5%;
-}
+  }
 }
 .profile-photo {
 
@@ -82,163 +77,119 @@ box-sizing:border-box;
 height: 210px;
 }
 .profile-information-details {
-width: 52%;
-float: right;
-background-color: white;
-margin-left: 1%;
-margin-right: 2%;
-margin-top: 2%;
-padding: 2%;
-overflow: scroll;
-h4 {
+  width: 52%;
+  float: right;
+  background-color: white;
+  margin-left: 1%;
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  overflow: scroll;
+    h4 {
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
+    p {
+      @include smallfont;
+      background-color: $golden;
+      color: white;
+      text-align: center;
+      margin-top: 1px;
+    }
+}
+.profile-page-username {
+  @include regularfont;
+  color: $charcoal;
+  font-weight: 200;
   margin-top: 1%;
   margin-bottom: 1%;
 }
-p {
-@include smallfont;
-background-color: $golden;
-color: white;
-text-align: center;
-margin-top: 1px;
-}
-}
-.profile-page-username {
-@include regularfont;
-color: $charcoal;
-font-weight: 200;
-margin-top: 1%;
-margin-bottom: 1%;}
 
 .modaltext {
-@include smallfont;
-color: $charcoal;
-font-weight: 200;
+  @include smallfont;
+  color: $charcoal;
+  font-weight: 200;
 }
 .post-container {
-@include smallfont;
-color: $charcoal;
-margin: 0;
+  @include smallfont;
+  color: $charcoal;
+  margin: 0;
 }
 
 .profile-box {
-width: 30%;
-height: 220px;
-float: left;
-margin-top: 2%;
-margin-left: 2%;
-margin-bottom: 1%;
-background-color: white;
-position: relative;
-// padding-top: 20px;
-// padding-bottom: 20px;
-// padding-left: 4%;
+  width: 30%;
+  height: 220px;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: white;
+  position: relative;
 }
 .profile-questions-asked {
-width: 92%;
-height: 220px;
-float: right;
-background-color: #ffffff;
-margin-right: 2%;
-margin-top: 2%;
-padding: 2%;
-overflow: scroll;
-p {
-@include smallfont;
-background-color: $seafoam;
-color: white;
-text-align: center;
-margin-top: 1px;
-padding: 2%;
-}
+  width: 92%;
+  height: 220px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  overflow: scroll;
+    p {
+      @include smallfont;
+      background-color: $seafoam;
+      color: white;
+      text-align: center;
+      margin-top: 1px;
+      padding: 2%;
+    }
 }
 .techAnswers {
 
 }
 .profile-questions-answered {
-width: 92%;
-height: 220px;
-float: right;
-background-color: #ffffff;
-margin-right: 2%;
-margin-bottom: 1%;
-padding: 2%;
-overflow: scroll;
-p {
-@include smallfont;
-background-color: $seafoam;
-color: white;
-text-align: center;
-margin-top: 1px;
-padding: 2%;
-}
+  width: 92%;
+  height: 220px;
+  float: right;
+  background-color: #ffffff;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  padding: 2%;
+  overflow: scroll;
+    p {
+      @include smallfont;
+      background-color: $seafoam;
+      color: white;
+      text-align: center;
+      margin-top: 1px;
+      padding: 2%;
+    }
 }
 .profile-techQuestions {
 
 }
 .exitbutton {
-height:40px;
-width:100%;
-// padding-top:9%;
-box-sizing:border-box;
-@include smallfont;
-float: right;
-text-align: right;
-margin-right: 15%;
-margin-top: 1%;
-// margin-bottom: 10%;
-
-
-a{
-text-decoration:none;
-color:$charcoal;
-padding:.5%;
-background-color:$seafoam;
-
+  height:40px;
+  width:100%;
+  box-sizing:border-box;
+  @include smallfont;
+  float: right;
+  text-align: right;
+  margin-right: 15%;
+  margin-top: 1%;
+    a{
+      text-decoration:none;
+      color:$charcoal;
+      padding:.5%;
+      background-color:$seafoam;
 }
-
-a:hover{
-color:$seafoam;
-background-color:$charcoal;
-}
+    a:hover{
+      color:$seafoam;
+      background-color:$charcoal;
+      }
 }
 
 h4.tech-rating {
   margin-top: 1%;
   margin-bottom: 1%;
 }
-
-
-//
-//   /* ----------- iPad mini ----------- */
-//
-//   /* Portrait and Landscape */
-//   @media only screen
-//     and (min-device-width: 768px)
-//     and (max-device-width: 1024px)
-//     and (-webkit-min-device-pixel-ratio: 1)
-//
-// {
-//
-//
-// }
-//
-//
-//     /* ----------- iPad 1 and 2 ----------- */
-//     /* Portrait and Landscape */
-//     @media only screen
-//       and (min-device-width: 768px)
-//       and (max-device-width: 1024px)
-//       and (-webkit-min-device-pixel-ratio: 1)
-// {
-//
-//
-// }
-//
-//
-//
-//
-//       /* Portrait and Landscape */
-//       @media only screen
-//         and (min-device-width: 320px)
-//         and (max-device-width: 667px)
-//         and (-webkit-min-device-pixel-ratio: 2)
