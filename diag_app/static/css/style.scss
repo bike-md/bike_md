@@ -312,7 +312,8 @@ footer{
 
   .post-problem-button:hover{
     text-decoration: none;
-    background-color: $teal;
-    color: white;
+    background-color:white;
+    color: $charcoal;
+    border:1px solid $charcoal;
     transition: .5s;
   }

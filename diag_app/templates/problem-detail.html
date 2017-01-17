@@ -134,12 +134,12 @@
           {%csrf_token%}
             <div class ="time-box">
               <h4 class ="form-text">Time required for solution:</h4>
-              <input id="solutionTime" class ="timecost-input" type="text" name="solutionTime" value="">
+              <input id="solutionTime" class ="time-input" type="text" name="solutionTime" value=""><p class ="hrs">Hrs.</p>
             </div>
 
             <div class ="cost-box">
               <h4 class ="form-text">Parts cost for solution:</h4>
-              <input id="partsCost" class ="timecost-input" type="text" name="partsCost" value="">
+              <p class ="dollar">$</p><input id="partsCost" class ="cost-input" type="text" name="partsCost" value="">
             </div>
 
             <br>
@@ -169,7 +169,7 @@
             <h2 class="unsolved-problem-title">{{ this.title }}</h2>
             <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
           </div>
-        </a> 
+        </a>
         {{/each}}
         {% endverbatim %}
     </article>

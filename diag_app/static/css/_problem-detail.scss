@@ -116,12 +116,35 @@
     margin-top:30px;
   }
 
-  .timecost-input{
-    display:block;
-    margin:0 auto;
+  .time-input{
+    display:inline-block;
     height:20px;
     width:20%;
     text-align:center;
+    margin-left:38%;
+  }
+
+  .cost-input{
+    display:inline-block;
+    height:20px;
+    width:20%;
+    text-align:center;
+  }
+
+  .dollar, .hrs{
+    @include smallfont;
+    color:$charcoal;
+    display:inline-block;
+  }
+
+  .hrs{
+    float:right;
+    margin:.5% 38% 0 0;
+    text-transform:lowercase;
+  }
+
+  .dollar{
+    margin:0 0 0 37%;
   }
 
   .solution-box{

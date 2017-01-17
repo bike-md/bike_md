@@ -691,12 +691,29 @@ hr {
     background-color: #313237; }
   .prob-form-background .solution-score {
     margin-top: 30px; }
-  .prob-form-background .timecost-input {
-    display: block;
-    margin: 0 auto;
+  .prob-form-background .time-input {
+    display: inline-block;
+    height: 20px;
+    width: 20%;
+    text-align: center;
+    margin-left: 38%; }
+  .prob-form-background .cost-input {
+    display: inline-block;
     height: 20px;
     width: 20%;
     text-align: center; }
+  .prob-form-background .dollar, .prob-form-background .hrs {
+    font-size: 1rem;
+    font-family: gill sans;
+    text-transform: uppercase;
+    color: #313237;
+    display: inline-block; }
+  .prob-form-background .hrs {
+    float: right;
+    margin: .5% 38% 0 0;
+    text-transform: lowercase; }
+  .prob-form-background .dollar {
+    margin: 0 0 0 37%; }
   .prob-form-background .solution-box {
     display: block;
     margin: 0 auto;
@@ -1503,8 +1520,9 @@ footer {
 
 .post-problem-button:hover {
   text-decoration: none;
-  background-color: #9fc0bc;
-  color: white;
+  background-color: white;
+  color: #313237;
+  border: 1px solid #313237;
   transition: .5s; }
 
 /*# sourceMappingURL=style.css.map */
