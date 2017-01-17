@@ -13,9 +13,11 @@
   background-size: cover;
   margin:0;
 }
+
+
 //Color background for title//
 .goldendecor {
-  background-color: $golden;
+  background-color: $charcoal;
   width: 70%;
   padding-top: 1%;
   height: 70px;
@@ -23,15 +25,17 @@
   margin-top: 7%;
   margin-right: 15%;
 }
+
+
 //Title
 .about-page-title {
   @include mediumfont;
   color: white;
+  text-align: center;
   font-weight: 400;
-  margin-left: 10%;
-  margin-top: 2%;
-  margin-bottom: -2%;
-  font-weight: 200;
+  margin-top: 0%;
+  margin-bottom: -7%;
+  font-weight: 400;
   padding-top: 1%;
   padding-bottom: 1%;
   hr {
@@ -40,6 +44,8 @@
     margin-left: 5%;
   }
 }
+
+
 //Box wrapper
 .about-container {
   display:block;
@@ -49,29 +55,37 @@
   padding-bottom: 3%;
   margin: 0 auto;
 }
+
+
 //Box background image
 .about-background-box {
-    background: linear-gradient(
-          rgba(white, 0.55),
-          rgba(white, 0.55)
-        ), url("../images/register-page-background-image.png");
-    width: 80%;
+    // background: linear-gradient(
+    //       rgba(white, 0.55),
+    //       rgba(white, 0.55)
+    //     ), url("../images/register-page-background-image.png");
+    // width: 80%;
+    background-color: white;
     height: auto;
     background-size: auto;
     background-repeat: no-repeat;
     padding: 10%;
     margin-bottom: 7%;
   }
+
+
 .about-box {
   p {
-    @include smallfont;
+    @include smallregularfont;
     color: $charcoal;
     text-align: left;
+    margin-top: -3%;
   }
   .bikemd {
     @include smallregularfont;
   }
 }
+
+
 .about-exit-button {
     height:40px;
     width:100%;
@@ -79,13 +93,13 @@
     @include smallfont;
     float: right;
     text-align: right;
-    margin-right: 1%;
-    margin-top: -4%;
+    margin-right: -6%;
+    margin-top: 5%;
 
 
     a{
       text-decoration:none;
-      color:$golden;
+      color:white;
       padding:1%;
       background-color:$charcoal;
 
@@ -93,7 +107,8 @@
 
     a:hover{
       color:$charcoal;
-      background-color:$golden;
+      background-color:white;
+      border: solid $charcoal 1px;
 
     }
   }

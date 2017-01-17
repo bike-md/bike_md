@@ -634,6 +634,10 @@ hr {
     color: #313237; }
   .prob-form-background .prob-title {
     margin: 0; }
+  .prob-form-background .question-text {
+    font-weight: 500;
+    text-transform: none;
+    font-size: 1rem; }
   .prob-form-background .posted-by {
     display: inline-block;
     margin-bottom: 10px; }
@@ -717,7 +721,8 @@ hr {
     margin: 0 auto;
     margin-bottom: 2%;
     border: 0px;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    cursor: pointer; }
   .prob-form-background .solution-submit:hover {
     background-color: white;
     color: #313237;
@@ -1001,7 +1006,7 @@ h2, h5 {
   margin: 0; }
 
 .goldendecor {
-  background-color: #ba973a;
+  background-color: #313237;
   width: 70%;
   padding-top: 1%;
   height: 70px;
@@ -1015,11 +1020,11 @@ h2, h5 {
   text-transform: uppercase;
   font-weight: normal;
   color: white;
+  text-align: center;
   font-weight: 400;
-  margin-left: 10%;
-  margin-top: 2%;
-  margin-bottom: -2%;
-  font-weight: 200;
+  margin-top: 0%;
+  margin-bottom: -7%;
+  font-weight: 400;
   padding-top: 1%;
   padding-bottom: 1%; }
   .about-page-title hr {
@@ -1036,8 +1041,7 @@ h2, h5 {
   margin: 0 auto; }
 
 .about-background-box {
-  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url("../images/register-page-background-image.png");
-  width: 80%;
+  background-color: white;
   height: auto;
   background-size: auto;
   background-repeat: no-repeat;
@@ -1045,11 +1049,12 @@ h2, h5 {
   margin-bottom: 7%; }
 
 .about-box p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
-  text-align: left; }
+  text-align: left;
+  margin-top: -3%; }
 .about-box .bikemd {
   font-size: 1.2rem;
   font-family: gill sans;
@@ -1064,16 +1069,17 @@ h2, h5 {
   text-transform: uppercase;
   float: right;
   text-align: right;
-  margin-right: 1%;
-  margin-top: -4%; }
+  margin-right: -6%;
+  margin-top: 5%; }
   .about-exit-button a {
     text-decoration: none;
-    color: #ba973a;
+    color: white;
     padding: 1%;
     background-color: #313237; }
   .about-exit-button a:hover {
     color: #313237;
-    background-color: #ba973a; }
+    background-color: white;
+    border: solid #313237 1px; }
 
 /* ----------- iPad mini ----------- */
 /* Portrait and Landscape */
