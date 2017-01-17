@@ -206,7 +206,7 @@ h5{
   .question-text {
     @include smallfont;
     font-weight: 400;
-    text-transform:capitalize;
+    text-transform:none;
   }
   .prob-form {
     margin-left: 10%;

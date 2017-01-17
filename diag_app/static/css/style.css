@@ -768,7 +768,7 @@ h5 {
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 400;
-    text-transform: capitalize; }
+    text-transform: none; }
   .prob-form-background .prob-form {
     margin-left: 10%;
     margin-right: 10%; }
