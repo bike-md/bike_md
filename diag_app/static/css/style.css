@@ -607,6 +607,9 @@ hr {
   position: absolute;
   bottom: 0; }
 
+h5 {
+  margin: 0; }
+
 .prob-detailbody {
   background-image: url("../images/bikedetails-background.jpg");
   background-size: cover;
@@ -704,9 +707,9 @@ hr {
   .prob-form-background .time-input {
     display: inline-block;
     height: 20px;
-    width: 20%;
+    width: 52%;
     text-align: center;
-    margin-left: 38%; }
+    margin-left: 20%; }
   .prob-form-background .cost-input {
     display: inline-block;
     height: 20px;
@@ -717,13 +720,12 @@ hr {
     font-family: gill sans;
     text-transform: uppercase;
     color: #313237;
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 1%; }
   .prob-form-background .hrs {
-    float: right;
-    margin: .5% 38% 0 0;
     text-transform: lowercase; }
   .prob-form-background .dollar {
-    margin: 0 0 0 37%; }
+    margin-left: 23%; }
   .prob-form-background .solution-box {
     display: block;
     margin: 0 auto;
@@ -771,7 +773,7 @@ hr {
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 400;
-    margin-left: 10%; }
+    text-transform: capitalize; }
   .prob-form-background .prob-form {
     margin-left: 10%;
     margin-right: 10%; }
