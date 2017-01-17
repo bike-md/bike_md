@@ -43,11 +43,11 @@
         content: "";
         z-index: -1; }
       .indexnav ul li .link1:hover:after {
-        width: 149%; }
+        width: 150%; }
       .indexnav ul li .link2:hover:after {
-        width: 159%; }
+        width: 134%; }
       .indexnav ul li .link3:hover:after {
-        width: 132%; }
+        width: 133%; }
     .indexnav ul .logobox {
       width: 100%;
       margin-bottom: 56%; }
@@ -503,6 +503,9 @@ hr {
 .new-problem-header-title {
   margin-top: 0%;
   margin-bottom: 0%; }
+
+.contact {
+  display: inline-block; }
 
 .bikedetailsbody {
   background: url("../images/bikedetails-background.jpg");
@@ -1093,12 +1096,14 @@ h2, h5 {
   margin-bottom: 7%; }
 
 .about-box p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: gill sans;
   text-transform: uppercase;
   color: #313237;
   text-align: left;
-  margin-top: -3%; }
+  margin-top: -3%;
+  font-weight: 400;
+  text-transform: none; }
 .about-box .bikemd {
   font-size: 1.2rem;
   font-family: gill sans;
@@ -1113,8 +1118,8 @@ h2, h5 {
   text-transform: uppercase;
   float: right;
   text-align: right;
-  margin-right: 1%;
-  margin-top: -4%; }
+  margin-right: -5%;
+  margin-top: 4%; }
   .about-exit-button a {
     text-decoration: none;
     color: white;

@@ -12,6 +12,8 @@ urlpatterns = [
     url((r'^profile/$'), views.profile, name='profile'),
     url(r'^create_account/$', views.create_account, name='create_account'),
     url((r'^about/$'), views.about_us, name='about'),
+    url((r'^notifications/$'), views.notifications, name='notifications'),
+
 
 
     # developemnt urls

@@ -75,10 +75,13 @@
 
 .about-box {
   p {
-    @include smallregularfont;
+    @include smallfont;
     color: $charcoal;
     text-align: left;
     margin-top: -3%;
+    font-weight: 400;
+    text-transform:none;
+
   }
   .bikemd {
     @include smallregularfont;
@@ -93,8 +96,8 @@
     @include smallfont;
     float: right;
     text-align: right;
-    margin-right: 1%;
-    margin-top: -4%;
+    margin-right: -5%;
+    margin-top: 4%;
     a{
       text-decoration:none;
       color:white;
