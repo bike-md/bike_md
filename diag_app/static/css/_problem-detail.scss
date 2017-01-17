@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+h5{
+  margin:0;
+}
 
 .prob-detailbody{
   background-image:url("../images/bikedetails-background.jpg");
@@ -209,7 +212,7 @@
   .question-text {
     @include smallfont;
     font-weight: 400;
-    margin-left: 10%;
+    text-transform:capitalize;
   }
   .prob-form {
     margin-left: 10%;

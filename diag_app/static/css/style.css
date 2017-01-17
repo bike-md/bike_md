@@ -607,6 +607,9 @@ hr {
   position: absolute;
   bottom: 0; }
 
+h5 {
+  margin: 0; }
+
 .prob-detailbody {
   background-image: url("../images/bikedetails-background.jpg");
   background-size: cover;
@@ -769,7 +772,7 @@ hr {
     font-family: gill sans;
     text-transform: uppercase;
     font-weight: 400;
-    margin-left: 10%; }
+    text-transform: capitalize; }
   .prob-form-background .prob-form {
     margin-left: 10%;
     margin-right: 10%; }
