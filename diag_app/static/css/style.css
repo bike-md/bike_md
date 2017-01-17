@@ -638,10 +638,6 @@ h5 {
     color: #313237; }
   .prob-form-background .prob-title {
     margin: 0; }
-  .prob-form-background .question-text {
-    font-weight: 500;
-    text-transform: none;
-    font-size: 1rem; }
   .prob-form-background .posted-by {
     display: inline-block;
     margin-bottom: 10px; }
