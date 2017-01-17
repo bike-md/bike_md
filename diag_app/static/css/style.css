@@ -638,7 +638,8 @@ hr {
   .prob-form-background .question-text {
     font-weight: 500;
     text-transform: none;
-    font-size: 1rem; }
+    font-size: 1rem;
+    margin-left: -10%; }
   .prob-form-background .posted-by {
     display: inline-block;
     margin-bottom: 10px; }
