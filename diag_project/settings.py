@@ -61,7 +61,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'diag_project.wsgi.application'
 
 
-DATABASES = { 'default': {} }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bike_____MD',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 

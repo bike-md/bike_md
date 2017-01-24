@@ -8,114 +8,25 @@
         <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
         <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
         <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-        <title>Profile</title>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
+        <title>Notifications</title>
     </head>
+    <body class ="aboutbody">
 
-    <body class ="userprofilebody">
-        <input id="currentTech" type="hidden" name="user_id" value="{{request.user.id}}">
-
-        <div class="profile-details-goldendecor">
-          <h1 class="profile-title">User Profile</h1>
-          <hr class="profile-title-line">
+        <!--White Box background styling-->
+        <div class="goldendecor">
+            <h1 class="about-page-title">About Bike MD</h1>
         </div>
 
+        <div class="about-container">
+            <div class="about-background-box">
+                <div class="about-box">
 
-<!--White Box background styling-->
-<div class="profile-details-container">
-
-
-
-<!--Boxes all of the data-->
-<div class="profile-details-box">
-
-<div class="profile-page-information-area">
-<!--Username and in-->
-  <div class="photo-box">
-    <div id="profileImg" class="profile-photo">
-        <img  src ="{% static 'images/transport-3.png' %}"  alt="">
-    </div>
-  </div>
-  <div id="techInfo" class="profile-information-details"><p>Tech Information</p></div>
-  </div>
-
-
-  <div class="profile-techAnswers">
-      <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
-  </div>
-
-  <div class="profile-techQuestions">
-      <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
-  </div>
-
-</div>
-</div>
-
-
-
-<!--
-
-        <div class="profile-details-container">
-          <div class="profile-details-box">
-            <div class="profile-details-goldendecor">
-              <h1 class="profile-title">User Profile</h1>
-            </div>
-              <div class="profile-box">
-                  <div id="profileImg" class="profile-photo">
-                      <img  src ="{% static 'images/transport-3.png' %}"  alt="">
-                  </div>
-              </div>
-              <div id="techQuestions" class="profile-questions-asked"><p>questions asked</p></div>
-
-              <div id="techInfo" class="profile-information"><p>Information</p></div>
-
-              <div id="techAnswers" class="profile-questions-answered"><p>answers</p></div>
+                    <p><b>Bike MD</b> This feature is still under construction.
+                    </p>
+                </div>
+                <div class="about-exit-button"><a href="/">close</a></div>
             </div>
         </div>
-
-
-        <div class="exitbutton"><a href="/diag_app/">close</a></div> -->
-        <div class="exitbutton"><a href="/">close</a></div>
-
-
-        <script id="info-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                    <h1 class="profile-page-username">{{this.user.username}}</h1>
-                    <h4 class="tech-rating">{{tech_rating}}</h4>
-                    <h4 class="profile-page-information">experience: {{experience}}</h4>
-                    <h4 class="profile-page-information">Current position: {{job_title}}</h4>
-                    <h4 class="profile-page-information">Shop: {{shop}}</h4>
-                {% endverbatim %}
-            </article>
-        </script>
-
-        <script id="techProblem-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                {{#each .}}
-                    <h3 class="tech-problem-text">{{{linkURL this}}}</h3>
-                    <h5 class="page-solution-date">{{{formatTime this.posted}}}</h5>
-                {{/each}}
-                {% endverbatim %}
-            </article>
-        </script>
-
-        <script id="techSolution-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                    {% verbatim %}
-                    {{#each .}}
-                        <h4 class="tech-solution">{{{linkURLAnswers this}}}</h4>
-                        <h5 class="tech-solution-date">{{{formatTime this.posted}}}</h5>
-                    {{/each}}
-                    {% endverbatim %}
-            </article>
-        </script>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/profile.js' %}"></script>
     </body>
 </html>
