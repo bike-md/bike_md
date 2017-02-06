@@ -1,248 +1,25 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {%load static%}
-<html>
-  <head>
 
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="favicon.ico">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link src ="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
-    <link rel="stylesheet" href="{% static 'css/remodal.css' %}">
-    <link rel="stylesheet" href="{% static 'css/remodal-default-theme.css' %}">
-    <link href ="{% static 'css/style.css' %}" type ="text/css" rel ="stylesheet">
-    <title>Main</title>
-  </head>
+    {% block titlecontent %}
+    <title>main</title>
+    {% endblock %}
 
-
-  <body class ="mainbody">
-
-
-    <header>
-      <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
-
-
-      <nav class ="templatenav">
-        <!-- search -->
-            <li>
-              <form id="searchThis" class ="search-form" style="display: inline;" method="POST">
-                  {%csrf_token%}
-                  <input onfocus="if(this.value==this.defaultValue)this.value='';"
-                  value="Search Problems"
-                  type="text" id="searchBox" class ="search-field"
-                  onblur="if(this.value=='')this.value=this.defaultValue;"
-                  vinput="" name="q"/>
-                  <input id="searchButton" class ="search-submit" value="Go" type="submit"
-                  data-remodal-target="searchModal" class="link2" href="#searchModal"/>
-              </form>
-            </li>
-
-
-        <!-- search modal -->
-        <div class ="search-modal-container">
-            <div class="remodal" data-remodal-id="searchModal">
-                <button data-remodal-action="close" class="remodal-close"></button>
-                <div class="goldendecor">
-                  <h1 class="modal-header"> Search Results</h1>
-                </div>
-                <div id="searchProblemList" class="search-problem-list"></div>
-
-            </div>
-        </div>
-
-
-        <!-- diagnose -->
-        <li><a href="/" class ="link1">Diagnose</a></li>
-
-
-        <!-- ask questions -->
-        <div class ="askmodal-container">
-          <li><a data-remodal-target="askModal" id="ask" class ="link2" href="#askModal">Post a Problem</a></li>
-
-          <div class="remodal" data-remodal-id="askModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
-            <!-- new problem form -->
-            <form class="newProblem" method="POST">
-                {%csrf_token%}
-                <input id="userId" type="hidden" name="user_id" value="{{request.user.tech.id}}">
-                <div class="goldendecor">
-                    <h1 class="modal-header">Post a Problem</h1>
-                </div>
-
-                <h4 class ="modaltext">Choose Bike:</h4>
-              <div class="select-brand-model-year containerDropdown">
-                  <div class="bikeFeature">
-                    <p>Make: <div id="brandSelect" class="systems-dropdown"></div></p>
-                  </div>
-                  <div class="bikeFeature">
-                    <p>Year: <div id="yearSelect" class="systems-dropdown"></div></p>
-                  </div>
-                  <div class="bikeFeature">
-                    <p>Model: <div id="modelSelect" class="systems-dropdown"></div></p>
-                  </div>
-                  <div class="bikeFeature">
-                    <h4 class ="modaltext-1">Choose System:</h4>
-                    <div id="systemSelect" class ="systems-dropdown"></div>
-                  </div>
-              </div>
-
-                <br>
-                <h4 class ="modaltext">Enter a title for your post:</h4>
-                <input id="probTitle" class ="problemtitle-field"type="text" name="probTitle" value="">
-                <h4 class ="modaltext">Describe your problem:</h4>
-                <textarea id="probText" type="text" name="probText" value="" rows="10" cols="65"></textarea>
-                <p class="counterAsk" id="counter"></p>
-                <br>
-                <input data-remodal-action="close" id="newProbSubmit" class ="submit-button" type="submit" value="Submit">
-            </form>
-            <!-- end new problem form -->
-          </div>
-        </div>
-
-        <!-- unsolved problems -->
-        <div class ="answermodal-container">
-          <li><a id="answer" data-remodal-target="answerModal" class="link3" href="#answerModal">Solve a problem</a></li>
-
-          <div class="remodal" data-remodal-id="answerModal">
-            <button data-remodal-action="close" class="remodal-close"></button>
-            <div class="goldendecor">
-                <h1 class="modal-header">Solve a problem</h1>
-            </div>
-            <div id="modalProblemList" class="unsolved-problems-list"></div>
-          </div>
-        </div>
-
-        <!-- my account -->
-          <li><a class ="link4" href ="#">My Account</a>
-            <ul class ="dropdown">
-              <li class ="droplist"><a href ="/notifications">Notifications</a></li>
-              <li class ="droplist"><a href ="/profile/">Profile</a></li>
-              <li class ="droplist"><a href ="/logout/">Log Out</a></li>
-            </ul>
-          </li>
-          </ul>
-      </nav>
-    </header>
-
+    {% block bodycontent %}
+    <body class="mainbody">
+    {% endblock %}
+        {%block content%}
         <h1 class ="page-title">Diagnose</h1>
 
-<hr>
+        <hr>
 
         <section class="outer-box">
             <div id="listing"></div>
         </section>
 
-
-        <footer class ="mainfooter">
-          <p>Copyright Bike MD 2017. All rights reserved.</p>
-        </footer>
-
-
-        <!-- modal scripts     -->
-
-
-    <!-- search modal scripts -->
-        <!-- with results -->
-        <script id="search-problem-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                {{#each .}}
-                <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
-                  <div class="unsolved-problem-container">
-                    <h2 class="unsolved-problem-title">{{ this.title }}</h2>
-                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
-                  </div>
-                </a>
-                {{/each}}
-                {% endverbatim %}
-            </article>
-        </script>
-
-        <!-- no results -->
-        <script id="search-problem-template-two" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                <div class="no-result-modal">
-                    {{{message}}}
-                </div>
-                {% endverbatim %}
-            </article>
-        </script>
-
-
-        <!--unsolved problem script -->
-        <script id="unsolved-problem-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                {%verbatim%}
-                {{#each .}}
-                <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
-                  <div class="unsolved-problem-container">
-                    <h2 class="unsolved-problem-title">{{ this.title }}</h2>
-                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
-                  </div>
-                </a>
-                {{/each}}
-                {% endverbatim %}
-            </article>
-        </script>
-
-
-        <!-- ask modal -->
-        <script id="brand-modal-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                <select class="dropdownlist" onchange="loadYearsAskModal(value)" id="probBrand">
-                    {% verbatim %}
-                    <option value="none">Select One</option>
-                    {{#each .}}
-                    <option  value="{{this.id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                    {{/each}}
-                    {% endverbatim %}
-                </select>
-            </article>
-        </script>
-
-
-        <script id="year-modal-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                <select class="dropdownlist" onchange="loadModelsAskModal(value)" id="probYear">
-                    {% verbatim %}
-                    <option value="none">Select One</option>
-                    {{#each .}}
-                        <option value="{{this}}"{{#selected}}selected="selected"{{/selected}}>{{this}}</option>
-                    {{/each}}
-                    {% endverbatim %}
-                </select>
-            </article>
-        </script>
-
-
-        <script id="model-modal-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                <select class="dropdownlist" id="probModel">
-                    {% verbatim %}
-                    <option value="none">Select One</option>
-                    {{#each .}}
-                        <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                    {{/each}}
-                    {% endverbatim %}
-                </select>
-            </article>
-        </script>
-
-
-        <script id="system-modal-template" type="text/x-handlebars-template">
-            <article class="post-container">
-                <select class="dropdownlist" id="probSystem">
-                    {% verbatim %}
-                    <option value="none">Select One</option>
-                    {{#each .}}
-                        <option value="{{id}}"{{#selected}}selected="selected"{{/selected}}>{{this.name}}</option>
-                    {{/each}}
-                    {% endverbatim %}
-                </select>
-            </article>
-        </script>
-        <!-- end modal scripts -->
-
+        {% block footercontent %}
+        <footer class ="mainfooter"><p>Copyright Bike MD 2017. All rights reserved.</p></footer>
+        {% endblock %}
 
         <!-- step circles -->
         <script id="brand-template" type="text/x-handlebars-template">
@@ -326,12 +103,9 @@
                 {% endverbatim %}
             </article>
         </script>
+        {% endblock %}
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
+        {% block jscontent %}
+        <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+        {% endblock %}
     </body>
-</html>

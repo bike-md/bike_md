@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'diag_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bike_____MD',
+        'NAME': 'BIKEMD',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost',
