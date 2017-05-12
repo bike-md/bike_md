@@ -5,12 +5,12 @@ from rest_framework import viewsets, permissions, generics, filters
 from . import models, forms
 from .forms import UserForm, TechForm, LoginForm
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
-from .models import Model, Problem_Model
+from .models import Model, Problem_Model, Notification
 from .serializers import VoteSerializer, ProblemGetSerializer, UserSerializer
 from .serializers import TechGetSerializer, RatingSerializer, SystemSerializer
 from .serializers import BrandSerializer, ModelSerializer, ProblemPostSerializer
 from .serializers import SolutionPostSerializer, SolutionGetSerializer
-from .serializers import TechPostSerializer
+from .serializers import TechPostSerializer, NotificationSerializer
 from django.views.generic import ListView
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -181,4 +181,10 @@ class TechPostViewSet(viewsets.ModelViewSet):
 class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+
+class NotificationViewSet(viewsets.ModelViewSet):
+    queryset = Notification.objects.all()
+    serializer_class = NotificationSerializer
     permission_classes = (permissions.IsAuthenticated,)

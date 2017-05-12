@@ -70,10 +70,11 @@ header {
         width: 100%; }
 
 .dropdown {
-  display: none;
-  padding: 0;
-  position: absolute;
-  top: 70px; }
+    margin-top: 2%;
+    display: none;
+    padding: 5%;
+    position: absolute;
+    top: 500px; }
 
 header .templatenav .dropdown li a {
   font-size: 1.1rem; }

@@ -62,6 +62,15 @@ class Commit(models.Model):
     text = models.TextField(max_length=200)
 
 
+class Notification(models.Model):
+    tech = models.ForeignKey(Tech, related_name='techs')
+    message = models.CharField(max_length=20)
+    # is this the best way to link notifications to events?
+    solution = models.ForeignKey(Solution, related_name='solution',null=True)
+    commit = models.ForeignKey(Commit, related_name='commit',null=True)
+    posted = models.DateTimeField(auto_now=True)
+
+
 class Vote(models.Model):
     tech = models.ForeignKey(Tech)
     solution = models.ForeignKey(Solution, related_name='votes')

@@ -19,6 +19,7 @@ router.register(r'votes', views.VoteViewSet)
 router.register(r'get-techs', views.TechGetViewSet)
 router.register(r'post-techs', views.TechPostViewSet)
 router.register(r'ratings', views.RatingViewSet)
+router.register(r'notifications', views.NotificationViewSet)
 
 
 urlpatterns = [

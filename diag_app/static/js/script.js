@@ -227,6 +227,23 @@ function searchProblems(){
 $("#searchButton").click(searchProblems)
 
 
+// notifications
+function loadNotificationsModal(){
+    $.ajax({
+        url: '/api/notifications/',
+        type: 'GET',
+    }).done(function(results){
+        var notifications = results.results
+        var source = $('#notification-template').html()
+        var template = Handlebars.compile(source)
+        var html = template(notifications)
+        $('#notifyList').empty()
+        $('#notifyList').append(html)
+    })
+}
+$("#notify").click(loadNotificationsModal)
+
+// Dropdown menu
 $(document).ready(function(){
   $(".link4").click(function(){
     $(".dropdown").slideToggle();

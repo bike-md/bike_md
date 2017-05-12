@@ -1,5 +1,5 @@
 from .models import Vote, Problem, Solution, Tech, Rating, System, Brand
-from .models import Model, Problem_Model, Commit
+from .models import Model, Problem_Model, Commit, Notification
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from django.contrib.auth import login
@@ -122,3 +122,10 @@ class ModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Model
         fields = ['id', 'name', 'brand', 'year', 'url']
+
+
+class NotificationSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Notification
+        fields = ['id', 'tech', 'message', 'posted', 'solution', 'commit']

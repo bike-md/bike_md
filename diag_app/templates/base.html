@@ -35,16 +35,16 @@
 
 
           <!-- search modal -->
-          <div class ="search-modal-container">
-              <div class="remodal" data-remodal-id="searchModal">
-                  <button data-remodal-action="close" class="remodal-close"></button>
-                  <div class="goldendecor">
-                    <h1 class="modal-header"> Search Results</h1>
-                  </div>
-                  <div id="searchProblemList" class="search-problem-list"></div>
+            <div class ="search-modal-container">
+                <div class="remodal" data-remodal-id="searchModal">
+                    <button data-remodal-action="close" class="remodal-close"></button>
+                    <div class="goldendecor">
+                        <h1 class="modal-header"> Search Results</h1>
+                    </div>
+                    <div id="searchProblemList" class="search-problem-list"></div>
 
-              </div>
-          </div>
+                </div>
+            </div>
 
 
           <!-- diagnose -->
@@ -111,12 +111,31 @@
           <!-- my account -->
             <li><a class ="link4" href ="#">My Account</a>
               <ul class ="dropdown">
-                <li class ="droplist"><a href ="/notifications">Notifications</a></li>
+                <li class ="droplist">
+                    <a
+                    id="notify"
+                    data-remodal-target="notifyModal"
+                    class="link2"
+                    href="#notifyModal">
+                    Notifications
+                    </a>
+                </li>
                 <li class ="droplist"><a href ="/profile/">Profile</a></li>
                 <li class ="droplist"><a href ="/logout/">Log Out</a></li>
               </ul>
             </li>
-            </ul>
+
+            <!-- notifications modal -->
+            <div class ="notifications-modal-container">
+                <div class="remodal" data-remodal-id="notifyModal">
+                    <button data-remodal-action="close" class="remodal-close"></button>
+                    <div class="goldendecor">
+                        <h1 class="modal-header">Notifications</h1>
+                    </div>
+                    <div id="notifyList" class="notification-list"></div>
+                </div>
+            </div>
+
         </nav>
       </header>
 
@@ -230,6 +249,21 @@
                 {{/each}}
                 {% endverbatim %}
             </select>
+        </article>
+    </script>
+
+    <script id="notification-template" type="text/x-handlebars-template">
+        <article class="post-container">
+            {%verbatim%}
+            {{#each .}}
+            <a id="notify-list" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
+              <div class="unsolved-problem-container">
+                <h2 class="unsolved-problem-title">{{ this.message }}</h2>
+                <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
+              </div>
+            </a>
+            {{/each}}
+            {% endverbatim %}
         </article>
     </script>
     <!-- end modal scripts -->

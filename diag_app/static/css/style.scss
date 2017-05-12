@@ -66,9 +66,9 @@ body {
       li{
       list-style-type:none;
       display:inline-block;
-      padding:0 .9%;
+      padding: 2%;
       float:left;
-      margin-top:27px;
+      margin-top: 47px;
 
         a{
           position:relative;
@@ -102,22 +102,22 @@ body {
   display:none;
   padding:0;
   position:absolute;
-  top:100px;
+  top: 400px;
 
   .droplist{
     display:block;
     clear:both;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 40px;
 
     a {
       @include smallfont;
     }
 
-    a:hover {
-        color: $teal;
-        transition: .5s;
-    }
+    // a:hover {
+    //     color: $teal;
+    //     transition: .5s;
+    // }
   }
 }
 
