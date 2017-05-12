@@ -8,3 +8,8 @@ scrap.py
 .map
 .css.map
 style.css.map
+model_2014.py
+model.csv
+migrate_data.csv
+system.csv
+settings.py
