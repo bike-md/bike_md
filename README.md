@@ -26,7 +26,7 @@ Bike MD is a community of motorcycle technicians, a place where they can connect
 
    a. Set up a database called BIKEMD, I recommend using Potico to manage postgreSQL DBs.
 
-6. Configure your settings_example.py file if needed.
+6. Configure your settings_example.py file if needed:
 
 
    a. Remove the word 'example', making the new title settings.py. This will be your local settings file and will be ignored when you push.
