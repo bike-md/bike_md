@@ -4,6 +4,8 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+### heroku config:set SECRET_KEY=''whjwxt79_m_8impz71nc1@qdzzh99z(h%tkuvrkb8r8f4e''
+### export SECRET_KEY='whjwxt79_m_8impz71nc1@qdzzh99z(h%tkuvrkb8r8f4e'
 SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = True

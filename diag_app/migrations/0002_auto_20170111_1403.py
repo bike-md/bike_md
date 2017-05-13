@@ -6,7 +6,7 @@ from django.db import migrations
 import csv
 
 def load_brands(apps, schema_editor):
-    with open("brand.csv", "r") as f:
+    with open("migrate_data/brand.csv", "r") as f:
         dict_reader = csv.DictReader(f, fieldnames= ['name'])
         Brand = apps.get_model("diag_app", "Brand")
         for row in dict_reader:
@@ -15,7 +15,7 @@ def load_brands(apps, schema_editor):
 
 
 def load_systems(apps, schema_editor):
-    with open("system.csv", "r") as f:
+    with open("migrate_data/system.csv", "r") as f:
         dict_reader = csv.DictReader(f, fieldnames= ['name'])
         System = apps.get_model("diag_app", "System")
         for row in dict_reader:
@@ -24,7 +24,7 @@ def load_systems(apps, schema_editor):
 
 
 def load_models(apps, schema_editor):
-    with open("model.csv", "r") as f:
+    with open("migrate_data/model.csv", "r") as f:
         dict_reader = csv.DictReader(f, fieldnames= ['brand_id','name','year'])
         Model = apps.get_model("diag_app", "Model")
         for row in dict_reader:

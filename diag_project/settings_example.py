@@ -6,13 +6,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
 
 ### SECRET KEY ###
-#secret can be set as environment varible in your shell or directly set here.
+#secret can be set as an environment varible in your shell or here:
+
+### For Shell ###
+#un-comment this line
 #SECRET_KEY = os.environ['SECRET_KEY']
+### Run this command in your terminal ###
+#export SECRET_KEY='whjwxt79_m_8impz71nc1@qdzzh99z(h%tkuvrkb8r8f4e'
+
+### For setting the key here just un-comment the following line ###
 #SECRET_key = 'whjwxt79_m_8impz71nc1@qdzzh99z(h%tkuvrkb8r8f4e'
+
 #secret keys can be generated at http://www.miniwebtool.com/django-secret-key-generator/
 ############
 
-#need for local development
+### Needed for local development ###
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 INSTALLED_APPS = [
@@ -25,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'crispy_forms',
-
 ]
 
 MIDDLEWARE = [
@@ -64,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'diag_project.wsgi.application'
 
-#create postgreSQL DB with the name BIKEMD in order
+#create postgreSQL DB with the name BIKEMD in order use this preset connection.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -76,7 +83,7 @@ DATABASES = {
     }
 }
 
-## Needed for deployment
+### Needed for deployment to heroku.###
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
 # DATABASES['default'] = dj_database_url.config()
