@@ -23,9 +23,9 @@ Bike MD is a community of motorcycle technicians, a place where they can connect
 `python manage.py runserver`
 
 # TODO List:
-    #1. finish profile page.
-    #2. finish notifications.
-    #3. refactor JavaScript to remove repetitive functions and on clicks etc...
-    #4. refactor and clean up CSS.
-    #5. make a better todo list.
+### 1. finish profile page.
+### 2. finish notifications.
+### 3. refactor JavaScript to remove repetitive functions and on clicks etc...
+### 4. refactor and clean up CSS.
+### 5. make a better todo list.
 ## many more to come
