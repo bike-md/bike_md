@@ -51,4 +51,4 @@ Bike MD is a community of motorcycle technicians, a place where they can connect
 #### 4. refactor and clean up CSS.
 #### 5. make site responsive.
 #### 6. make a better todo list.
-#### many more to come
+*Many more items to come*
