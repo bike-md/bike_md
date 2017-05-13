@@ -4,22 +4,28 @@ Bike MD is a community of motorcycle technicians, a place where they can connect
 
 #Local Build:
 1. clone the repo
-    git clone https://github.com/bike-md/bike_md.git
+```git clone https://github.com/bike-md/bike_md.git
+```
 2. create a virtualenv, I prefer this because it eliminates a lot of package install issues
-    echo layout python3 > .envrc
+```echo layout python3 > .envrc
+```
 4. Install packages
-    pip install -r requirements.txt
+```pip install -r requirements.txt
+```
 5. Set up postgreSQL if you don't have it already. Install guide [here](http://postgresguide.com/)
    a. Set up a database called BIKEMD, I recommend using Potico to manage postgreSQL DBs.
 6. Configure your settings_example.py file if needed.
    a. Remove the word 'example', making the new title settings.py. This will be your local settings file and will be ignored when you push.
    Note: IF you used the DB name recommended above there shouldn't be anything to configure.
 7. Run migrations
-    python manage.py migrate
+    ```python manage.py migrate
+    ```
 8. Create super user
-    python manage.py createsuperuser
+    ```python manage.py createsuperuser
+    ```
 9. Thats it! you can now run a local copy of the site
-    python manage.py runserver
+    ```python manage.py runserver
+    ```
 
 
 #TODO List:
