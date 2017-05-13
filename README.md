@@ -66,7 +66,7 @@ of things to do.
 #### 1. Show bike details on problem detail view.
 #### 2. Make password fail message a popup that auto closes after a few seconds.
 #### 4. Error checking feed back to user when operations fail. This is needed everywhere.
-#### 5. If problem list has no content to display a message to that extent instead of failing.
+#### 5. If problem list has no content, display a message to that extent instead of failing.
 #### 6. Tell user if problem post fails and why.
 #### 7. Fix user creation: Either combine tech and user into one object or make the simultaneous
 #### object creations work correctly.
