@@ -1,6 +1,7 @@
 # Bike MD 1.0
 #### See the live site [HERE](bike-md.herokuapp.com)
 Bike MD is a community of motorcycle technicians and  motorcycle owners, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot bikes more efficiently. This website was originally built as my final project for the Iron Yard. It was developed with Python, Django, JavaScript, Sass, Ajax, and PostgreSQL etc...Recently I have started making a list of improvements and bugs that need to be addressed. This is now an open source project and all contributors are welcome! We're in the process of creating documentation, wiki guides, commenting existing code, and creating other support materials so check back soon for more details on how to get involved.
+Please contact me with any questions regarding the TODO list as I will happily give you more details.
 
 ### Local Build:
 1. clone the repo:
@@ -55,7 +56,7 @@ of things to do.
 ## TODO List:
 ## Large items:
 #### 1. Build profile page.
-#### 2. Finish notifications: add to drop down, .
+#### 2. Finish notifications: add to drop down, send emails.
 #### 3. Refactor JavaScript to remove repetitive functions and on clicks etc...
 #### 4. Refactor and clean up CSS.
 #### 5. Make site responsive.
@@ -74,5 +75,5 @@ of things to do.
 #### 9. Implement the commit module, create ability to comment on solutions.
 #### 10. Problem list header: move out of Handlebars script so it always loads instead of only when there's data.
 #### 11. Bike details page: only load system modal if there are problems posted for that system.
-#### 12. Sort solutions on problem detail pages by date, rating etc. 
+#### 12. Sort solutions on problem detail pages by date, rating etc.
 *Many more items to come*
