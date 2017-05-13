@@ -1,13 +1,19 @@
-// get current url
+currentURL()
+//////////////////////////////////////////////////////////////////
+// function: currentUrl
+// parameters: none
+// description: gets current url from browser and calls showBike()
+//////////////////////////////////////////////////////////////////
 function currentURL(){
     var url = window.location.href
     showBike(url)
 
 }
-currentURL()
-
-
-// get bike details
+//////////////////////////////////////////////////////////////////
+// function: showBike
+// parameters: URL of current page
+// description: preforms ajax call to get info for curent bike.
+//////////////////////////////////////////////////////////////////
 function showBike(url){
     var id = url.split('/')
     id = id[4]
@@ -24,29 +30,32 @@ function showBike(url){
 
     })
 }
-
-
-// load systems
-function loadSystemModals(name){
-    var model = name
+//////////////////////////////////////////////////////////////////
+// function: loadSystemModals
+// parameters: model ID
+// description: load system modals on bike detail page.
+//////////////////////////////////////////////////////////////////
+function loadSystemModals(modelID){
+    console.log("model id");
+    console.log(modelID);
+    var model = modelID;
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        var system = results.results
-        var list = {}
+        var system = results.results;
+        var list = {};
         var index = 0;
         $.each(system, function() {
             list[index] = {
                 system : system[index],
                 model : model
             };
-        index++;
-        })
-        var source = $('#system-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(list)
-        $('#system').append(html)
-
-    })
+            index++;
+        });
+        var source = $('#system-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(list);
+        $('#system').append(html);
+    });
 }

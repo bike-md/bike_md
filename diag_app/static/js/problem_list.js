@@ -1,4 +1,8 @@
-// get current url
+//////////////////////////////////////////////////////////////////
+// function: currentUrl
+// parameters: none
+// description: gets current url from browser and calls showBike()
+//////////////////////////////////////////////////////////////////
 function currentURL(){
     var url = window.location.href
     getProblems(url)
@@ -16,27 +20,29 @@ function getProblems(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        var problems = results.results
-        var source = $('#problem-list-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        var systemKey = results.results[0].system
+        console.log(results);
+        var problems = results.results;
+        var source = $('#problem-list-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(problems);
+        console.log(problems);
+        var systemKey = problems[0].system;
         var context = {
             problem: problems,
             system: systemKey,
-        }
-        var source = $('#problem-list-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(context)
-        $('#problemList').append(html)
+        };
+        var source = $('#problem-list-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(context);
+        $('#problemList').append(html);
             $.ajax({
                 url: '/api/models/' + model,
                 type: 'GET',
             }).done(function(results){
-            var source2 = $('#model-template').html()
-            var template2 = Handlebars.compile(source2)
-            var html2 = template2(results)
-            $('#model').append(html2)
+            var source2 = $('#model-template').html();
+            var template2 = Handlebars.compile(source2);
+            var html2 = template2(results);
+            $('#model').append(html2);
         })
     })
 }

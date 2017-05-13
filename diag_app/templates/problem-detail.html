@@ -8,8 +8,8 @@
 {% block bodycontent %}
 <body class ="prob-detailbody">
 {% endblock %}
-    {%block content%}
 
+    {%block content%}
     <div class="prob-form-background">
         <h2 class ="prob-header">Problem Details</h2>
         <div id="problemDetail" class ="prob-box"></div>
@@ -44,7 +44,7 @@
     <script id="problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
-            <input id="problemId" type="hidden" name="problem_id" value="{{id}}">
+                <input id="problemId" type="hidden" name="problem_id" value="{{id}}">
                 <h2 class="prob-title">{{title}}</h2>
                 <h5 class="posted-by">{{tech.user.username}}</h5>
                 <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
@@ -54,33 +54,30 @@
         </article>
     </script>
 
-
     <script id="solution-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
-
             {{#each .}}
-            <h2 class="sol-name">Solution:</h2>
-            <div class="sol-box">
-                <h5 class="posted-by">{{this.tech.user.username}}</h5>
-                <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
-                <h5 class="date-time"><i>{{{formatTime this.posted}}}</i></h5>
-                <h5 class="solution-time">Repair time: <span class ="timecost-value">{{this.time_required}} hrs.</span></h5>
-                <h5 class="solution-cost">Parts cost: <span class ="timecost-value">${{this.parts_cost}}</span></h5>
-                <h5 class="solution-text">{{this.description}}</h5>
-                <button class="up-vote vote" type="submit" onclick="validateVote({{id}}, 1)">
-                <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></button>
-                <button class="down-vote vote" type="submit" onclick="validateVote({{id}}, -1)">
-                <i class="fa fa-arrow-down arrow" aria-hidden="true"></i></button>
-                <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
+                <h2 class="sol-name">Solution:</h2>
+                <div class="sol-box">
+                    <h5 class="posted-by">{{this.tech.user.username}}</h5>
+                    <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
+                    <h5 class="date-time"><i>{{{formatTime this.posted}}}</i></h5>
+                    <h5 class="solution-time">Repair time: <span class ="timecost-value">{{this.time_required}} hrs.</span></h5>
+                    <h5 class="solution-cost">Parts cost: <span class ="timecost-value">${{this.parts_cost}}</span></h5>
+                    <h5 class="solution-text">{{this.description}}</h5>
+                    <button class="up-vote vote" type="submit" onclick="validateVote({{id}}, 1)">
+                    <i class="fa fa-arrow-up arrow" aria-hidden="true"></i></button>
+                    <button class="down-vote vote" type="submit" onclick="validateVote({{id}}, -1)">
+                    <i class="fa fa-arrow-down arrow" aria-hidden="true"></i></button>
+                    <h5 id="solutionScore{{id}}" class="solution-score">Score: {{this.score}}</h5>
 
-            </div>
+                </div>
             {{/each}}
             {% endverbatim %}
         </article>
     </script>
     {% endblock %}
-
 
     {% block jscontent %}
     <script src="https://use.fontawesome.com/11db75c5f8.js"></script>

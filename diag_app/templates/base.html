@@ -13,7 +13,7 @@
   </head>
 {% block titlecontent %}<title>Base</title>{% endblock %}
 
- {% block bodycontent %}<body>{% endblock %}
+{% block bodycontent %}<body>{% endblock %}
       <header>
         <a href ="/"><img class ="templatelogo" src ="{% static 'images/logo-template.png' %}"></a>
 
@@ -147,11 +147,10 @@
     {% endblock %}
 
 
-<!-- modal scripts     -->
+<!--modal scripts-->
 
-    <!-- search modal scripts -->
-
-    <!-- with results -->
+<!--search modal scripts-->
+    <!--with results-->
     <script id="search-problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -167,7 +166,7 @@
         </article>
     </script>
 
-    <!-- no results -->
+    <!--no results-->
     <script id="search-problem-template-two" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -179,7 +178,7 @@
     </script>
 
 
-    <!--unsolved problem script -->
+    <!--unsolved problem script-->
     <script id="unsolved-problem-template" type="text/x-handlebars-template">
         <article class="post-container">
             {%verbatim%}
@@ -196,7 +195,7 @@
     </script>
 
 
-    <!-- ask modal -->
+    <!--ask modal-->
     <script id="brand-modal-template" type="text/x-handlebars-template">
         <article class="post-container">
             <select class="dropdownlist" onchange="loadYearsAskModal(value)" id="probBrand">

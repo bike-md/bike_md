@@ -1,8 +1,8 @@
 # Bike MD 1.0
 #### See the live site [HERE](bike-md.herokuapp.com)
-Bike MD is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. This website was originally built as my final project for the Iron Yard. It was developed with Python, Django, JavaScript, Sass, Ajax, and PostgreSQL etc...Recently I have started making a list of improvements and bugs that need to be addressed. This is now an open source project and all contributors are welcome! We're in the process of creating documentation, wiki guides, commenting existing code, and creating other support materials so check back soon for more details on how to get involved.
+Bike MD is a community of motorcycle technicians and  motorcycle owners, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot bikes more efficiently. This website was originally built as my final project for the Iron Yard. It was developed with Python, Django, JavaScript, Sass, Ajax, and PostgreSQL etc...Recently I have started making a list of improvements and bugs that need to be addressed. This is now an open source project and all contributors are welcome! We're in the process of creating documentation, wiki guides, commenting existing code, and creating other support materials so check back soon for more details on how to get involved.
 
-## Local Build:
+### Local Build:
 1. clone the repo:
 
 
@@ -38,23 +38,41 @@ Bike MD is a community of motorcycle technicians, a place where they can connect
 `python manage.py migrate`
 
 
-8. Create super user:
-
+8. Create super user and tech. For now run the following command 1st.
 
 `python manage.py createsuperuser`
 
+And then create a tech manually using a DB tool. The tech creation method is on the list
+of things to do.
 
-9. Thats it! you can now run a local copy of the site:
+
+9. Thats it! you can now run a fully functional local copy of the site:
 
 
 `python manage.py runserver`
 
 
 ## TODO List:
+## Large items:
 #### 1. Build profile page.
-#### 2. finish notifications: add to drop down, .
-#### 3. refactor JavaScript to remove repetitive functions and on clicks etc...
-#### 4. refactor and clean up CSS.
-#### 5. make site responsive.
-#### 6. make a better todo list.
+#### 2. Finish notifications: add to drop down, .
+#### 3. Refactor JavaScript to remove repetitive functions and on clicks etc...
+#### 4. Refactor and clean up CSS.
+#### 5. Make site responsive.
+
+
+## Smaller problems/bugs:
+#### 1. Show bike details on problem detail view.
+#### 2. Make password fail message a popup that auto closes after a few seconds.
+#### 4. Error checking feed back to user when operations fail. This is needed everywhere.
+#### 5. If problem list has no content to display a message to that extent instead of failing.
+#### 6. Tell user if problem post fails and why.
+#### 7. Fix user creation: Either combine tech and user into one object or make the simultaneous
+#### object creations work correctly.
+#### 8. Remove login requirement for all pages. Account creation will now only be required
+#### for Posting problems, solutions, and comments.
+#### 9. Implement the commit module, create ability to comment on solutions.
+#### 10. Problem list header: move out of Handlebars script so it always loads instead of only when there's data.
+#### 11. Bike details page: only load system modal if there are problems posted for that system.
+#### 12. Sort solutions on problem detail pages by date, rating etc. 
 *Many more items to come*
