@@ -51,29 +51,3 @@ of things to do.
 
 
 `python manage.py runserver`
-
-
-## TODO List:
-## Large items:
-#### 1. Build profile page.
-#### 2. Finish notifications: add to drop down, send emails.
-#### 3. Refactor JavaScript to remove repetitive functions and on clicks etc...
-#### 4. Refactor and clean up CSS.
-#### 5. Make site responsive.
-
-
-## Smaller problems/bugs:
-#### 1. Show bike details on problem detail view.
-#### 2. Make password fail message a popup that auto closes after a few seconds.
-#### 4. Error checking feed back to user when operations fail. This is needed everywhere.
-#### 5. If problem list has no content, display a message to that extent instead of failing.
-#### 6. Tell user if problem post fails and why.
-#### 7. Fix user creation: Either combine tech and user into one object or make the simultaneous
-#### object creations work correctly.
-#### 8. Remove login requirement for all pages. Account creation will now only be required
-#### for Posting problems, solutions, and comments.
-#### 9. Implement the commit module, create ability to comment on solutions.
-#### 10. Problem list header: move out of Handlebars script so it always loads instead of only when there's data.
-#### 11. Bike details page: only load system modal if there are problems posted for that system.
-#### 12. Sort solutions on problem detail pages by date, rating etc.
-*Many more items to come*
