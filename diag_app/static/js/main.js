@@ -1,4 +1,9 @@
-// brand listing step 1
+//////////////////////////////////////////////////////////////////
+// function: showBrands
+// parameters: none
+// description: This function loads the brands currently in the DB
+// return: none
+//////////////////////////////////////////////////////////////////
 function showBrands(){
     $.ajax({
         url: '/api/brands/',

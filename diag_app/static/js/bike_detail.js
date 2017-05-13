@@ -1,14 +1,8 @@
-currentURL()
-//////////////////////////////////////////////////////////////////
-// function: currentUrl
-// parameters: none
-// description: gets current url from browser and calls showBike()
-//////////////////////////////////////////////////////////////////
-function currentURL(){
-    var url = window.location.href
-    showBike(url)
+import currentURL from current_url;
 
-}
+//get url for the ajax call
+var url = currentURL();
+getProblem(url);
 //////////////////////////////////////////////////////////////////
 // function: showBike
 // parameters: URL of current page

@@ -1,21 +1,14 @@
-//////////////////////////////////////////////////////////////////
-// function: currentUrl
-// parameters: none
-// description: gets current url from browser and calls showBike()
-//////////////////////////////////////////////////////////////////
-function currentURL(){
-    var url = window.location.href
-    getProblems(url)
+import currentURL from current_url;
 
-}
-currentURL()
+//get url for the ajax call
+var url = currentURL();
+getProblem(url);
 
-
-function getProblems(url){
-    var id = url.split('/')
-    var model = id[4]
-    var id = id[5]
-    var url = '/api/get-problems?system=' + id + '&model=' + model
+function getProblem(url){
+    var id = url.split('/');
+    var model = id[4];
+    var id = id[5];
+    var url = '/api/get-problems?system=' + id + '&model=' + model;
     $.ajax({
         url: url,
         type: 'GET',
@@ -47,7 +40,7 @@ function getProblems(url){
     })
 }
 
-
+//split helpers into seperate file?
 // helpers
 Handlebars.registerHelper('formatTime', function (posted) {
     var time = posted.replace('T', ':')
