@@ -1,5 +1,5 @@
-# Bike MD
-## Live site [HERE](bike-md.herokuapp.com)
+# Bike MD 1.0
+## Live site [HERE](bike-md.herokuapp.com) *First release version 1.0*
 Bike MD is a community of motorcycle technicians, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot vehicles more efficiently. This website was originally built as my final project for the Iron Yard. It was developed with Python, Django, JavaScript, Sass, Ajax, and PostgreSQL etc...Recently I have started making a list of improvements and bugs that need to be addressed. This is now an open source project and all contributors are welcome! We're in the process of creating documentation, wiki guides, commenting existing code, and creating other support materials so check back soon for more details on how to get involved.
 
 # Local Build:
