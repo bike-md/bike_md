@@ -44,6 +44,9 @@ function showProblem(url){
 // description: Displays Chars remaining for text fields
 // return: none
 //////////////////////////////////////////////////////////////////
+
+// TEST THIS
+
 function charRemaining(){
     $('#solutionText').keyup(function () {
         var left = 500 - $(this).val().length;
