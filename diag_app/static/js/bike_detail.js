@@ -1,5 +1,4 @@
 import currentURL from current_url;
-
 //get url for the ajax call
 var url = currentURL();
 getProblem(url);

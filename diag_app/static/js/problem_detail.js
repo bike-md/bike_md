@@ -147,17 +147,22 @@ function postVote(id, value){
         updateScore(id, value);
     });
 }
-
-
+//////////////////////////////////////////////////////////////////////
+// function: updateScore
+// parameters: solution id and vote's value
+// description: GETS and updates the score for a given solution.
+// Calls updateRating to update the poster's rating.
+// return: none
+//////////////////////////////////////////////////////////////////////
 function updateScore(id, voteValue){
     $.ajax({
         url: '/api/get-solutions/' + id ,
         type: 'GET',
     }).done(function(results){
-        var tech = results.tech.id
-        updateRating(tech, voteValue)
-        var currentScore = results.score
-        var newScore = currentScore + voteValue
+        var tech = results.tech.id;
+        updateRating(tech, voteValue);
+        var currentScore = results.score;
+        var newScore = currentScore + voteValue;
         var context = {
             score: newScore
         }
@@ -166,13 +171,17 @@ function updateScore(id, voteValue){
             type: 'PATCH',
             data: context,
         }).done(function(results){
-            var id_container = '#solutionScore' + results.id
-            $(id_container).html('Score: ' + results.score)
-        })
-    })
+            var id_container = '#solutionScore' + results.id;
+            $(id_container).html('Score: ' + results.score);
+        });
+    });
 }
-
-
+//////////////////////////////////////////////////////////////////////
+// function: updateRating
+// parameters: tech's id and vote's value
+// description: GETS and updates the rating for a given tech.
+// return: none
+//////////////////////////////////////////////////////////////////////
 function updateRating(tech, voteValue){
     $.ajax({
         url: '/api/get-techs/' + tech,
@@ -193,15 +202,18 @@ function updateRating(tech, voteValue){
     })
 
 }
-
-
-// helpers
+////////////////////////////////////////////////////////////////////////////////
+// Helper: formatTime
+// parameters: timestamp
+// description: Formats timestamps to make them pretty and more human readable.
+// return: String of month/day/year
+////////////////////////////////////////////////////////////////////////////////
 Handlebars.registerHelper('formatTime', function (posted) {
-    var time = posted.replace('T', ':')
-    var date = time.split(":")[0]
-    var year = Number(date.split("-")[0])
-    var month = Number(date.split("-")[1])
-    var day = Number(date.split("-")[2])
+    var time = posted.replace('T', ':');
+    var date = time.split(":")[0];
+    var year = Number(date.split("-")[0]);
+    var month = Number(date.split("-")[1]);
+    var day = Number(date.split("-")[2]);
     var months = {
         "January": 1,
         "February ": 2,
@@ -218,8 +230,8 @@ Handlebars.registerHelper('formatTime', function (posted) {
     }
     for(var i in months){
         if(month == months[i]){
-            month = i
+            month = i;
         }
     }
-    return month + " " + day + " " + year
+    return month + " " + day + " " + year;
 })
