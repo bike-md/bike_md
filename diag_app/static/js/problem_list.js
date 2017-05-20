@@ -1,9 +1,15 @@
 import currentURL from current_url;
-
+import formatTime from 'helpers/format_time';
 //get url for the ajax call
 var url = currentURL();
+//kick off ajax
 getProblem(url);
-
+////////////////////////////////////////////////////////////////////////////////
+// Helper: getProblem
+// parameters: URL
+// description: Ajax call for problem and it's solutions.
+// return: none
+////////////////////////////////////////////////////////////////////////////////
 function getProblem(url){
     var id = url.split('/');
     var model = id[4];
@@ -13,12 +19,10 @@ function getProblem(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        console.log(results);
         var problems = results.results;
         var source = $('#problem-list-template').html();
         var template = Handlebars.compile(source);
         var html = template(problems);
-        console.log(problems);
         var systemKey = problems[0].system;
         var context = {
             problem: problems,
@@ -39,15 +43,18 @@ function getProblem(url){
         })
     })
 }
-
-//split helpers into seperate file?
-// helpers
+////////////////////////////////////////////////////////////////////////////////
+// Helper: formatTime
+// parameters: timestamp
+// description: Formats timestamps to make them pretty and more human readable.
+// return: String of month/day/year
+////////////////////////////////////////////////////////////////////////////////
 Handlebars.registerHelper('formatTime', function (posted) {
-    var time = posted.replace('T', ':')
-    var date = time.split(":")[0]
-    var year = Number(date.split("-")[0])
-    var month = Number(date.split("-")[1])
-    var day = Number(date.split("-")[2])
+    var time = posted.replace('T', ':');
+    var date = time.split(":")[0];
+    var year = Number(date.split("-")[0]);
+    var month = Number(date.split("-")[1]);
+    var day = Number(date.split("-")[2]);
     var months = {
         "January": 1,
         "February ": 2,
@@ -61,16 +68,20 @@ Handlebars.registerHelper('formatTime', function (posted) {
         "October": 10,
         "November": 11,
         "December": 12,
-    }
+    };
     for(var i in months){
         if(month == months[i]){
-            month = i
+            month = i;
         }
     }
-    return month + " " + day + " " + year
+    return month + " " + day + " " + year;
 })
-
-
+////////////////////////////////////////////////////////////////////////////////
+// Helper: linkURLModel
+// parameters: model object
+// description: Formats URL to link to detail page.
+// return: String of URL for bike's detail page
+////////////////////////////////////////////////////////////////////////////////
 Handlebars.registerHelper('linkURLModel', function (object){
     id = Handlebars.Utils.escapeExpression(object.id)
     name = Handlebars.Utils.escapeExpression(object.name)

@@ -7,7 +7,8 @@ Also, one selection box should not require a seperate function for each step.
 This same functionality will also need to be addressed in the model selection
 for the problem posting modal.
 *******************************************************************************/
-
+//Start model select box
+showBrands();
 //////////////////////////////////////////////////////////////////
 // function: showBrands
 // parameters: none
@@ -29,7 +30,6 @@ function showBrands(){
         $('#brand-number').toggleClass('selected-number');
     });
 }
-showBrands();
 //////////////////////////////////////////////////////////////////////////
 // function: showYears
 // parameters: none

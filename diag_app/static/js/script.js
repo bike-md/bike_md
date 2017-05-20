@@ -1,23 +1,45 @@
-// modal functions
+//////////////////////////////////////////////////////////////////
+// Get Dom Ready and set up clicks
+//////////////////////////////////////////////////////////////////
+$("#notify").click(loadNotificationsModal);
+$("#newProbSubmit").click(postProblem);
+$("#answer").click(loadUnsolvedProblemsModal);
+$("#searchButton").click(searchProblems);
+loadBrandsAskModal();
+charRemainingText();
+//Dropdown menu on nav bar
+$(document).ready(function(){
+  $(".link4").click(function(){
+    $(".dropdown").slideToggle();
+  });
+});
+//////////////////////////////////////////////////////////////////
+// function: loadBrandsAskModal
+// parameters: none
+// description: This function loads the brands currently in the DB
+// return: none
+//////////////////////////////////////////////////////////////////
 function loadBrandsAskModal(){
     loadSystemsAskModal()
     $.ajax({
         url: '/api/brands/',
         type: 'GET',
     }).done(function(results){
-        $('#brandSelect').empty()
-        var source = $('#brand-modal-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(results.results)
-        $('#brandSelect').append(html)
-        var brand =  $("#probBrand option:selected").val()
-        loadYearsAskModal(brand)
+        $('#brandSelect').empty();
+        var source = $('#brand-modal-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(results.results);
+        $('#brandSelect').append(html);
+        var brand =  $("#probBrand option:selected").val();
+        loadYearsAskModal(brand);
     })
-
 }
-loadBrandsAskModal()
-
-// year select step modal
+//////////////////////////////////////////////////////////////////////////
+// function: loadYearsAskModal
+// parameters: brand id
+// description: This function loads the years for the brand selected.
+// return: none
+//////////////////////////////////////////////////////////////////////////
 function loadYearsAskModal(id){
     $.ajax({
         url: '/api/models?brand=' + id,
@@ -28,52 +50,63 @@ function loadYearsAskModal(id){
         var years = []
         for(var i=0; i < bike.length; i++){
             if (!(years.includes(bike[i].year))){
-                years.push(bike[i].year)
+                years.push(bike[i].year);
             }
         }
         years.sort(function(a, b){return b-a})
-        var source = $('#year-modal-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(years)
-        $('#yearSelect').append(html)
-        loadModelsAskModal()
-    })
+        var source = $('#year-modal-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(years);
+        $('#yearSelect').append(html);
+        loadModelsAskModal();
+    });
 }
-
-
-// model step 3
+//////////////////////////////////////////////////////////////////////////
+// function: loadModelsAskModal
+// parameters: year
+// description: This function loads the models for the brand/year selected.
+// return: none
+//////////////////////////////////////////////////////////////////////////3
 function loadModelsAskModal(year){
-    var brandId =  $("#probBrand option:selected").val()
+    var brandId =  $("#probBrand option:selected").val();
     $.ajax({
         url: '/api/models?brand=' + brandId + '&year=' + year,
         type: 'GET'
     }).done(function(results){
-        $('#modelSelect').empty()
-        var bikes = results.results
-        var source = $('#model-modal-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(bikes)
-        $('#modelSelect').append(html)
-    })
+        $('#modelSelect').empty();
+        var bikes = results.results;
+        var source = $('#model-modal-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(bikes);
+        $('#modelSelect').append(html);
+    });
 }
-
-
-// load systems modal
+//////////////////////////////////////////////////////////////////////////
+// function: loadSystemsAskModal
+// parameters: none
+// description: This function loads the systems for the select menu
+// return: none
+//////////////////////////////////////////////////////////////////////////
 function loadSystemsAskModal(){
     $.ajax({
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results){
-        $('#systemSelect').empty()
-        var systems = results.results
-        var source = $('#system-modal-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(systems)
-        $('#systemSelect').append(html)
+        $('#systemSelect').empty();
+        var systems = results.results;
+        var source = $('#system-modal-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(systems);
+        $('#systemSelect').append(html);
     })
 }
 
-
+//////////////////////////////////////////////////////////////////////////
+// function: charRemainingText
+// parameters: none
+// description: This function displys chars remainging for problem text.
+// return: none
+//////////////////////////////////////////////////////////////////////////
 function charRemainingText(){
     $('#probText').keyup(function () {
         var left = 500 - $(this).val().length;
@@ -83,15 +116,18 @@ function charRemainingText(){
         $('#counter').text('Characters left: ' + left);
     })
 }
-charRemainingText()
-
-// post new problem modal
+//////////////////////////////////////////////////////////////////////////
+// function: postProblem
+// parameters: none
+// description: This function posts a problem to the DB via Ajax.
+// return: none
+//////////////////////////////////////////////////////////////////////////
 function postProblem(){
-    var bike =  $("#probModel option:selected").val()
-    var sys =  $("#probSystem option:selected").val()
-    var text = $("#probText").val()
-    var user = $("#userId").val()
-    var header = $("#probTitle").val()
+    var bike =  $("#probModel option:selected").val();
+    var sys =  $("#probSystem option:selected").val();
+    var text = $("#probText").val();
+    var user = $("#userId").val();
+    var header = $("#probTitle").val();
     var context = {
         system: sys,
         description: text,
@@ -104,35 +140,39 @@ function postProblem(){
         type: 'POST',
         data: context,
     }).done(function(results){
-    })
+    });
 }
-$("#newProbSubmit").click(postProblem)
-
-
-// unsolved modal functions
+//////////////////////////////////////////////////////////////////////////
+// function: loadUnsolvedProblemsModal
+// parameters: none
+// description: This functions pulls unsolved problems from the DB via Ajax.
+// return: none
+//////////////////////////////////////////////////////////////////////////
 function loadUnsolvedProblemsModal(){
     $.ajax({
         url: '/api/get-problems?no_solutions=True',
         type: 'GET',
     }).done(function(results){
-        var problems = results.results
-        var source = $('#unsolved-problem-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(problems)
-        $('#modalProblemList').empty()
-        $('#modalProblemList').append(html)
-    })
+        var problems = results.results;
+        var source = $('#unsolved-problem-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(problems);
+        $('#modalProblemList').empty();
+        $('#modalProblemList').append(html);
+    });
 }
-$("#answer").click(loadUnsolvedProblemsModal)
-
-
-// helpers
+////////////////////////////////////////////////////////////////////////////////
+// Helper: formatTime
+// parameters: timestamp
+// description: Formats timestamps to make them pretty and more human readable.
+// return: String of month/day/year
+////////////////////////////////////////////////////////////////////////////////
 Handlebars.registerHelper('formatTime', function (posted) {
-    var time = posted.replace('T', ':')
-    var date = time.split(":")[0]
-    var year = Number(date.split("-")[0])
-    var month = Number(date.split("-")[1])
-    var day = Number(date.split("-")[2])
+    var time = posted.replace('T', ':');
+    var date = time.split(":")[0];
+    var year = Number(date.split("-")[0]);
+    var month = Number(date.split("-")[1]);
+    var day = Number(date.split("-")[2]);
     var months = {
         "January": 1,
         "February ": 2,
@@ -149,72 +189,74 @@ Handlebars.registerHelper('formatTime', function (posted) {
     }
     for(var i in months){
         if(month == months[i]){
-            month = i
+            month = i;
         }
     }
-    return month + " " + day + " " + year
+    return month + " " + day + " " + year;
 })
-
-
+////////////////////////////////////////////////////////////////////////////////
+// Helper: linkURL
+// parameters: problem object
+// description: Formats URL for a given problem.
+// return: String of URL for problem detail page.
+////////////////////////////////////////////////////////////////////////////////
 Handlebars.registerHelper('linkURL', function (object){
-    id = Handlebars.Utils.escapeExpression(object.id)
-    title = Handlebars.Utils.escapeExpression(object.title)
-    url = '/problem_detail/' + id
-    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>'
-})
-
-
-// search function
+    id = Handlebars.Utils.escapeExpression(object.id);
+    title = Handlebars.Utils.escapeExpression(object.title);
+    url = '/problem_detail/' + id;
+    return '<a class="unsolved-problem-link" href="' +  url + '">' + title + '</a>';
+});
+////////////////////////////////////////////////////////////////////////////////
+// Helper: searchProblems
+// parameters: none
+// description: Search function for nav bar.
+// return: none
+////////////////////////////////////////////////////////////////////////////////
 function searchProblems(){
-    var searchTerm = $("#searchBox").val()
+    var searchTerm = $("#searchBox").val();
     $.ajax({
         url: '/api/get-problems?search=' + searchTerm,
         type: 'GET'
     }).done(function(results){
-        var problems = results.results
-        var length = problems.length
+        var problems = results.results;
+        var length = problems.length;
         var message = '<h5 class="no-result-text">' + "There are no problems that match your search."+ '</h5>' +
             '<a class="post-problem-button"  data-remodal-target="askModal" id="askSearch" class="link1" href="#askModal" >' + "Post a new problem here" + '</a>';
         var noResults = {
             message: message,
         }
         if (length == 0){
-            var source = $('#search-problem-template-two').html()
-            var template = Handlebars.compile(source)
-            var html = template(noResults)
-            $('#searchProblemList').empty()
-            $('#searchProblemList').append(html)
+            var source = $('#search-problem-template-two').html();
+            var template = Handlebars.compile(source);
+            var html = template(noResults);
+            $('#searchProblemList').empty();
+            $('#searchProblemList').append(html);
         }else{
-            var source = $('#search-problem-template').html()
-            var template = Handlebars.compile(source)
-            var html = template(problems)
-            $('#searchProblemList').empty()
-            $('#searchProblemList').append(html)
+            var source = $('#search-problem-template').html();
+            var template = Handlebars.compile(source);
+            var html = template(problems);
+            $('#searchProblemList').empty();
+            $('#searchProblemList').append(html);
         }
-    })
+    });
 }
-$("#searchButton").click(searchProblems)
-
-
-// notifications
+////////////////////////////////////////////////////////////////////////////////
+// Helper: loadNotificationsModal
+// parameters: tech id
+// description: Load notifications for a given user via Ajax.
+// return: String of month/day/year
+////////////////////////////////////////////////////////////////////////////////
+/*IN PROGRESS*/
 function loadNotificationsModal(){
     $.ajax({
         url: '/api/notifications/',
         type: 'GET',
     }).done(function(results){
-        var notifications = results.results
-        var source = $('#notification-template').html()
-        var template = Handlebars.compile(source)
-        var html = template(notifications)
-        $('#notifyList').empty()
-        $('#notifyList').append(html)
-    })
+        var notifications = results.results;
+        var source = $('#notification-template').html();
+        var template = Handlebars.compile(source);
+        var html = template(notifications);
+        $('#notifyList').empty();
+        $('#notifyList').append(html);
+    });
 }
-$("#notify").click(loadNotificationsModal)
-
-// Dropdown menu
-$(document).ready(function(){
-  $(".link4").click(function(){
-    $(".dropdown").slideToggle();
-  });
-});

@@ -11,6 +11,8 @@ var url = currentURL();
 getProblem(url);
 ///start char counter///
 charRemaining()
+//click events
+$("#newSolutionSubmit").click(postSolution)
 //////////////////////////////////////////////////////////////////
 // function: showProblem
 // parameters: URL
@@ -93,7 +95,6 @@ function postSolution(){
     })
 
 }
-$("#newSolutionSubmit").click(postSolution)
 //////////////////////////////////////////////////////////////////
 // function: postSolution
 // parameters: none
@@ -227,7 +228,7 @@ Handlebars.registerHelper('formatTime', function (posted) {
         "October": 10,
         "November": 11,
         "December": 12,
-    }
+    };
     for(var i in months){
         if(month == months[i]){
             month = i;

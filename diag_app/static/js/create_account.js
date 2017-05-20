@@ -2,7 +2,8 @@
 This file needs to be re-worked. Currently the call to create a tech
 does not succeed.
 */
-
+// Click events
+$("#createAccount").click(createUser)
 //////////////////////////////////////////////////////////////////////
 // function: createUser
 // parameters: none
@@ -28,7 +29,6 @@ function createUser(){
         linkLogin()
     })
 }
-$("#createAccount").click(createUser)
 //////////////////////////////////////////////////////////////////////
 // function: createTech
 // parameters: user ID
