@@ -25,7 +25,7 @@ def create_account(request):
 
 
 def about_us(request):
-    return render(request, 'aboutus.html')
+    return render(request, 'about_us.html')
 
 
 def login_user(request):
@@ -59,12 +59,12 @@ def problem_list(request, model, id):
 
 @login_required(login_url='/login/')
 def model_detail(request, id):
-    return render(request, 'bikedetails.html')
+    return render(request, 'bike_detail.html')
 
 
 @login_required(login_url='/login/')
 def problem_detail(request, id):
-    return render(request, 'problem-detail.html')
+    return render(request, 'problem_detail.html')
 
 
 @login_required(login_url='/login/')
