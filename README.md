@@ -51,3 +51,5 @@ of things to do.
 
 
 `python manage.py runserver`
+
+### Please refer to the wiki's for information on how to contribute.
