@@ -3,7 +3,7 @@
 // parameters: none
 // description: gets current url from browser and calls showBike()
 //////////////////////////////////////////////////////////////////
-function currentURL(){
+function currentURL() {
     var url = window.location.href;
     showProblem(url);
 }

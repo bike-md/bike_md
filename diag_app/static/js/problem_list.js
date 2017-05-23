@@ -1,7 +1,6 @@
-import currentURL from current_url;
-import formatTime from 'helpers/format_time';
+
 //get url for the ajax call
-var url = currentURL();
+var url = window.location.href;
 //kick off ajax
 getProblem(url);
 ////////////////////////////////////////////////////////////////////////////////
@@ -10,7 +9,7 @@ getProblem(url);
 // description: Ajax call for problem and it's solutions.
 // return: none
 ////////////////////////////////////////////////////////////////////////////////
-function getProblem(url){
+function getProblem(url) {
     var id = url.split('/');
     var model = id[4];
     var id = id[5];
@@ -18,7 +17,7 @@ function getProblem(url){
     $.ajax({
         url: url,
         type: 'GET',
-    }).done(function(results){
+    }).done(function(results) {
         var problems = results.results;
         var source = $('#problem-list-template').html();
         var template = Handlebars.compile(source);
@@ -69,8 +68,8 @@ Handlebars.registerHelper('formatTime', function (posted) {
         "November": 11,
         "December": 12,
     };
-    for(var i in months){
-        if(month == months[i]){
+    for (var i in months) {
+        if (month === months[i]) {
             month = i;
         }
     }
@@ -82,7 +81,7 @@ Handlebars.registerHelper('formatTime', function (posted) {
 // description: Formats URL to link to detail page.
 // return: String of URL for bike's detail page
 ////////////////////////////////////////////////////////////////////////////////
-Handlebars.registerHelper('linkURLModel', function (object){
+Handlebars.registerHelper('linkURLModel', function (object) {
     id = Handlebars.Utils.escapeExpression(object.id)
     name = Handlebars.Utils.escapeExpression(object.name)
     url = '/model_detail/' + id

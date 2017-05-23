@@ -1,4 +1,3 @@
-import currentURL from current_url;
 /*******************************************************************************
                                 FILE SUMMARY
 This file handles the problem detail page as well as posting sloutions, voting
@@ -6,13 +5,18 @@ for the best solution and updating the rating for the tech that posted that
 solution. There are a couple of repetitive functions here such as the char
 counter and there are also helpers here that could be split out into a help file.
 *******************************************************************************/
-///get url for the ajax call to display problem details///
-var url = currentURL();
-getProblem(url);
-///start char counter///
-charRemaining()
-//click events
-$("#newSolutionSubmit").click(postSolution)
+/////////////////////////////////////////////
+// Set up Dom
+////////////////////////////////////////////
+function setup() {
+    var url = window.location.href;
+    showProblem(url);
+    ///start char counter///
+    charRemaining()
+    //click events
+    $("#newSolutionSubmit").click(postSolution)
+}
+setup()
 //////////////////////////////////////////////////////////////////
 // function: showProblem
 // parameters: URL
@@ -20,7 +24,7 @@ $("#newSolutionSubmit").click(postSolution)
 // a given problem.
 // return: none
 //////////////////////////////////////////////////////////////////
-function showProblem(url){
+function showProblem(url) {
     var id = url.split('/');
     id = id[4];
     var url = '/api/get-problems/' + id;
@@ -28,16 +32,17 @@ function showProblem(url){
         url: url,
         type: 'GET',
     }).done(function(results){
-        var source1 = $("#problem-template").html();
-        var template1 = Handlebars.compile(source1);
-        var html1 = template1(results);
-        $("#problemDetail").append(html1);
+        if (typeof results !== 'undefined') {
+            var source1 = $("#problem-template").html();
+            var template1 = Handlebars.compile(source1);
+            var html1 = template1(results);
+            $("#problemDetail").append(html1);
 
-        var source2 = $("#solution-template").html();
-        var template2 = Handlebars.compile(source2);
-        var html2 = template2(results.solutions);
-        $("#solutions").append(html2);
-
+            var source2 = $("#solution-template").html();
+            var template2 = Handlebars.compile(source2);
+            var html2 = template2(results.solutions);
+            $("#solutions").append(html2);
+        }
     });
 }
 //////////////////////////////////////////////////////////////////
@@ -49,7 +54,7 @@ function showProblem(url){
 
 // TEST THIS
 
-function charRemaining(){
+function charRemaining() {
     $('#solutionText').keyup(function () {
         var left = 500 - $(this).val().length;
         if (left < 0) {
@@ -72,7 +77,7 @@ function charRemaining(){
 // description: Posts a new solution to the DB
 // return: none
 //////////////////////////////////////////////////////////////////
-function postSolution(){
+function postSolution() {
     var text = $("#solutionText").val();
     var user = $("#userId").val();
     var issue = $("#problemId").val();
@@ -85,13 +90,15 @@ function postSolution(){
         parts_cost: cost,
         problem: issue,
     }
+    console.log(context);
     $.ajax({
         url: '/api/post-solutions/',
         type: 'POST',
         data: context,
     }).done(function(results){
         // fix this: reload just solution container.
-        location.reload();
+        // location.reload();
+        $("#solutions").load(location.href + " #solutions");
     })
 
 }
@@ -103,24 +110,24 @@ function postSolution(){
 // return: none
 //////////////////////////////////////////////////////////////////
 // better way to validate votes?
-function validateVote(solutionId, value){
+function validateVote(solutionId, value) {
     var user = $("#userId").val();
     var voted = [];
     var vote = {};
     $.ajax({
         url: '/api/votes?solution=' + solutionId,
         type: 'GET',
-    }).done(function(results){
+    }).done(function(results) {
         var votes = results.results;
-        for (var i=0; i < votes.length; i++){
-            if(user == votes[i].tech){
+        for (var i=0; i < votes.length; i++) {
+            if (user == votes[i].tech) {
                 vote['tech'] = user;
                 voted.push(vote);
             }
         }
-        if(voted.length > 0){
+        if (voted.length > 0){
             alert("You've already voted for that one!");
-        }else{
+        } else {
             postVote(solutionId, value);
         }
     });
@@ -131,7 +138,7 @@ function validateVote(solutionId, value){
 // description: Posts new vote to DB. Calls updateScore for solution.
 // return: none
 //////////////////////////////////////////////////////////////////////
-function postVote(id, value){
+function postVote(id, value) {
     var user = $("#userId").val();
     var voteValue = value;
     var votedFor = id;
@@ -144,7 +151,7 @@ function postVote(id, value){
         url: '/api/votes/',
         type: 'POST',
         data: context,
-    }).done(function(results){
+    }).done(function(results) {
         updateScore(id, value);
     });
 }
@@ -155,11 +162,11 @@ function postVote(id, value){
 // Calls updateRating to update the poster's rating.
 // return: none
 //////////////////////////////////////////////////////////////////////
-function updateScore(id, voteValue){
+function updateScore(id, voteValue) {
     $.ajax({
         url: '/api/get-solutions/' + id ,
         type: 'GET',
-    }).done(function(results){
+    }).done(function(results) {
         var tech = results.tech.id;
         updateRating(tech, voteValue);
         var currentScore = results.score;
@@ -171,7 +178,7 @@ function updateScore(id, voteValue){
             url: '/api/post-solutions/' + id + '/',
             type: 'PATCH',
             data: context,
-        }).done(function(results){
+        }).done(function(results) {
             var id_container = '#solutionScore' + results.id;
             $(id_container).html('Score: ' + results.score);
         });
@@ -183,11 +190,11 @@ function updateScore(id, voteValue){
 // description: GETS and updates the rating for a given tech.
 // return: none
 //////////////////////////////////////////////////////////////////////
-function updateRating(tech, voteValue){
+function updateRating(tech, voteValue) {
     $.ajax({
         url: '/api/get-techs/' + tech,
         type: 'GET',
-    }).done(function(results){
+    }).done(function(results) {
         var currentRating = results.tech_rating
         var newRating = currentRating + (voteValue * 5)
         context = {
@@ -197,7 +204,7 @@ function updateRating(tech, voteValue){
             url: '/api/post-techs/' + tech + '/',
             type: 'PATCH',
             data: context,
-        }).done(function(results){
+        }).done(function(results) {
         })
 
     })
