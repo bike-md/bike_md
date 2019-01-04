@@ -1,3 +1,4 @@
+from django.db import migrations
 import csv
 
 def load_brands(apps, schema_editor):
