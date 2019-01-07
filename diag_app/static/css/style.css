@@ -1384,4 +1384,15 @@ footer {
   border: 1px solid #313237;
   transition: .5s; }
 
+/* This sets the properties off the disabled submit button */
+input#newProbSubmit.submit-button:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/* This sets the color of the text for te error message to red */
+.error-message {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */
