@@ -21,27 +21,27 @@
     {% endblock %}
 
     <script id="problem-list-template" type="text/x-handlebars-template">
-        <article class="post-container">
-            {%verbatim%}
-            <h1 class="problem-header">{{system.name}} Problem List:</h1>
-            {{#each problem}}
-            <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
-                <div class="problist-problem-container">
-                    <h5 class="problist-problem-title">{{{this.title}}}</h5>
-                    <h5 class="problist-posted-by">{{tech.user.username}}</h5>
-                    <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
-                    <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
-                    <br>
-                </div>
-            </a>
-            {{/each}}
-            {% endverbatim %}
-        </article>
+          {% verbatim %}
+          <article class="post-container">
+              <h1 class="problem-header">{{system.name}} Problem List:</h1>
+              {{#each problem}}
+              <a id="problist-problem-container" class="unsolved-problem-link" href='/problem_detail/{{this.id}}'>
+                  <div class="problist-problem-container">
+                      <h5 class="problist-problem-title">{{{this.title}}}</h5>
+                      <h5 class="problist-posted-by">{{tech.user.username}}</h5>
+                      <h5 class="tech-rating">{{this.tech.tech_rating}}</h5>
+                      <h5 class="problist-date-time"><i>{{{formatTime posted}}}</i></h5>
+                      <br>
+                  </div>
+              </a>
+              {{/each}}
+          </article>
+        {% endverbatim %}
     </script>
 
     <script id="model-template" type="text/x-handlebars-template">
         <article class="post-container">
-            {%verbatim%}
+            {% verbatim %}
                 <h1 class="problist-page-title">{{brand.name}} {{{linkURLModel this}}}</h1>
             {% endverbatim %}
         </article>

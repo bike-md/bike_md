@@ -2,6 +2,7 @@
 //get url for the ajax call
 var url = window.location.href;
 //kick off ajax
+getModel(url);
 getProblem(url);
 ////////////////////////////////////////////////////////////////////////////////
 // Helper: getProblem
@@ -19,27 +20,42 @@ function getProblem(url) {
         type: 'GET',
     }).done(function(results) {
         var problems = results.results;
-        var source = $('#problem-list-template').html();
-        var template = Handlebars.compile(source);
-        var html = template(problems);
-        var systemKey = problems[0].system;
-        var context = {
-            problem: problems,
-            system: systemKey,
-        };
-        var source = $('#problem-list-template').html();
-        var template = Handlebars.compile(source);
-        var html = template(context);
-        $('#problemList').append(html);
-            $.ajax({
-                url: '/api/models/' + model,
-                type: 'GET',
-            }).done(function(results){
-            var source2 = $('#model-template').html();
-            var template2 = Handlebars.compile(source2);
-            var html2 = template2(results);
-            $('#model').append(html2);
-        })
+        if (problems.length > 0) {
+            var source = $('#problem-list-template').html();
+            var template = Handlebars.compile(source);
+            var html = template(problems);
+            var systemKey = problems[0].system;
+            var context = {
+                problem: problems,
+                system: systemKey,
+            };
+            var source = $('#problem-list-template').html();
+            var template = Handlebars.compile(source);
+            var html = template(context);
+            $('#problemList').append(html);
+        } else {
+          $('#problemList').append("<h2>No problem was found about this system!</h2>");
+        }
+    })
+}
+////////////////////////////////////////////////////////////////////////////////
+// Helper: getModel
+// parameters: URL
+// description: Ajax call for bike model.
+// return: none
+////////////////////////////////////////////////////////////////////////////////
+function getModel(url) {
+    let splited_url = url.split('/');
+    let model = splited_url[4];
+
+    $.ajax({
+        url: '/api/models/' + model,
+        type: 'GET',
+    }).done(function(results){
+        var source2 = $('#model-template').html();
+        var template2 = Handlebars.compile(source2);
+        var html2 = template2(results);
+        $('#model').append(html2);
     })
 }
 ////////////////////////////////////////////////////////////////////////////////
