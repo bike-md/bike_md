@@ -4,8 +4,9 @@
 function setup() {
     //get url for the ajax call
     var url = window.location.href;
-    getProblem(url);
+    showBike(url);
 }
+setup();
 //////////////////////////////////////////////////////////////////
 // function: showBike
 // parameters: URL of current page
@@ -24,7 +25,6 @@ function showBike(url) {
         var html = template(results);
         $("#bikeSpecs").append(html);
         loadSystemModals(results.id);
-
     });
 }
 //////////////////////////////////////////////////////////////////
@@ -38,7 +38,6 @@ function loadSystemModals(modelID) {
         url: '/api/systems/',
         type: 'GET',
     }).done(function(results) {
-        console.log(results);
         var system = results.results;
         var list = {};
         var index = 0;

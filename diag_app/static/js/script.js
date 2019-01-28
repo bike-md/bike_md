@@ -126,25 +126,57 @@ function charRemainingText() {
 // return: none
 //////////////////////////////////////////////////////////////////////////
 function postProblem() {
-    var bike =  $("#probModel option:selected").val();
-    var sys =  $("#probSystem option:selected").val();
-    var text = $("#probText").val();
-    var user = $("#userId").val();
-    var header = $("#probTitle").val();
+    var modal = $('[data-remodal-id=askModal]').remodal();
+    var bike =  $("#probModel option:selected");
+    var sys =  $("#probSystem option:selected");
+    var text = $("#probText");
+    var user = $("#userId");
+    var header = $("#probTitle");
     var context = {
-        system: sys,
-        description: text,
-        tech: user,
-        model: bike,
-        title: header,
+        system: sys.val(),
+        description: text.val(),
+        tech: user.val(),
+        model: bike.val(),
+        title: header.val(),
     }
     $.ajax({
         url: '/api/post-problems/',
         type: 'POST',
         data: context,
-    }).done(function(results){
+        success: function (response) {
+          modal.close();
+          alert("Problem saved successfully!");
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+          $("p.error-message").empty();
+          if (thrownError === 'Bad Request') {
+            $("p.error-message").append("All the fields are required to create a problem, please check if you've filled them properly and try again.");
+          } else if (thrownError === 'Internal Server Error') {
+            $("p.error-message").append("There were an internal error saving your problem. Please try again later or contact us describing your issue.");
+          } else if (thrownError === 'Forbidden') {
+            $("p.error-message").append("You don't have permissions to create a problem.");
+          } else {
+            $("p.error-message").append("Some weird problem occurred, the description is: Error code = " + xhr.status + " Error Message = " + thrownError + " please try again later or contact us!");
+          }
+        }
+    }).done(function(){
+      $('.newProblem').trigger('reset');
     });
 }
+
+// This function controls if the all the form fields have been filled and unblocks the submit button
+$(".newProblem").on('change mouseover', function(){
+  var bike =  $("#probModel option:selected").val();
+  var sys =  $("#probSystem option:selected").val();
+  var text = $("#probText").val();
+  var user = $("#userId").val();
+  var header = $("#probTitle").val();
+  if ((bike === 'none') || (sys === 'none') || !(text) || !(user) || !(header)){
+    $("input#newProbSubmit.submit-button").prop("disabled", true);
+  } else {
+    $("input#newProbSubmit.submit-button").prop("disabled", false);
+  }
+});
 //////////////////////////////////////////////////////////////////////////
 // function: loadUnsolvedProblemsModal
 // parameters: none
