@@ -83,17 +83,6 @@ class SolutionPostSerializer(serializers.ModelSerializer):
                   'problem', 'tech', 'posted', 'score', 'url']
 
 
-class ProblemGetSerializer(serializers.ModelSerializer):
-    solutions = SolutionGetSerializer(many=True, read_only=True)
-    tech = TechGetSerializer(many=False, read_only=True)
-    system = SystemSerializer(many=False, read_only=True)
-
-    class Meta:
-        model = Problem
-        fields = ['id', 'title', 'system', 'description', 'tech',
-                  'model', 'posted', 'url', 'solutions']
-
-
 class ProblemPostSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -122,6 +111,18 @@ class ModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Model
         fields = ['id', 'name', 'brand', 'year', 'url']
+
+
+class ProblemGetSerializer(serializers.ModelSerializer):
+    solutions = SolutionGetSerializer(many=True, read_only=True)
+    tech = TechGetSerializer(many=False, read_only=True)
+    system = SystemSerializer(many=False, read_only=True)
+    model = ModelSerializer(many=False, read_only=True)
+
+    class Meta:
+        model = Problem
+        fields = ['id', 'title', 'system', 'description', 'tech',
+                  'model', 'posted', 'url', 'solutions']
 
 
 class NotificationSerializer(serializers.ModelSerializer):
