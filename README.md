@@ -1,6 +1,6 @@
 # Bike MD 1.0
 #### See the live site [HERE](http://bike-md.herokuapp.com)
-Bike MD is a community based site for motorcycle technicians and owners, a place where they can connect with each other and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot bikes more efficiently. This website was originally built as a final project for the Iron Yard. It was developed with Python, Django, JavaScript, and PostgreSQL. The complete refactoring of several files is currently in progress. The goal is to bring the code up to a higher standard and strive to follow best practice guide lines. We're always open to suggestions so if you see something that could be done a better way, and I'm sure that there are a lot of things that could be, please don't hesitate to say so. The list of improvements and bugs that need to be addressed is ever growing. Check back often if nothing catches your eye today. This is an open source project and all contributors of all skill levels are welcome! We're in the process of creating documentation, wiki guides, and commenting existing code to make the project easier to work on and understand. There are a few small issues posted already that are on the easy side and will give you a chance to learn the code base.
+Bike MD is a community-based site for motorcycle technicians and owners, a place where they can connect and ask technical questions, browse common problems and solutions by model, and help each other troubleshoot bikes more efficiently. This website was originally built as a final project for the Iron Yard. It was developed with Python, Django, JavaScript, and PostgreSQL. The complete refactoring of several files is currently in progress. The goal is to bring the code up to a higher standard and strive to follow best practice guidelines. We're always open to suggestions so if you see something that could be done a better way, and I'm sure that there are a lot of things that could be, please don't hesitate to say so. The list of improvements and bugs that need to be addressed is ever-growing. Check back often if nothing catches your eye today. This is an open-source project and all contributors of all skill levels are welcome! We're in the process of creating documentation, wiki guides, and commenting on existing code to make the project easier to work on and understand. There are a few small issues posted already that are on the easy side and will give you a chance to learn the codebase.
 Please contact us with any questions regarding contributing to BikeMD!
 
 ### Local Build:
@@ -39,7 +39,7 @@ Please contact us with any questions regarding contributing to BikeMD!
 `python manage.py migrate`
 
 
-8. Create super user and tech. For now run the following command 1st.
+8. Create a super user and tech. For now run the following command 1st.
 
 `python manage.py createsuperuser`
 
@@ -47,7 +47,7 @@ And then create a tech manually using a DB tool. The tech creation method is on 
 of things to do.
 
 
-9. Thats it! you can now run a fully functional local copy of the site:
+9. That's it! you can now run a fully functional local copy of the site:
 
 
 `python manage.py runserver`
