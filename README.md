@@ -4,7 +4,7 @@ Bike MD is a community based site for motorcycle technicians and owners, a place
 Please contact us with any questions regarding contributing to BikeMD!
 
 ### Local Build:
-1. clone the repo:
+1. Clone the repo:
 
 
 `git clone https://github.com/bike-md/bike_md.git`
